@@ -1,27 +1,86 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en"><head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <?=stylesheet_link_tag("core")?>
-  <?=stylesheet_link_tag("styles")?>
-  <script src="http://www.google.com/jsapi"></script>
-  <script>google.load("jquery", "1");</script>
-  <?=javascript_include_tag("application")?>
-  <title>Welcome to PHP-WAX</title>
-  <style type="text/css">
-    html * { padding:0; margin:0; } body * { padding:10px 20px; } body * * { padding:0; }
-    body { font:small sans-serif; } body>div { border-bottom:1px solid #ddd; } h1 { font-weight:normal; }
-    h2 { margin-bottom:.8em; } h2 span { font-size:80%; color:#666; font-weight:normal; }
-    h3 { margin:1em 0 .5em 0; } h4 { margin:0 0 .5em 0; font-weight: normal; } ul { margin-left: 2em; margin-top: 1em; }
-    #summary { background: #000000; color:white; } #summary h2, #environment h2 { font-weight: normal; color: #e1e1e1; }
-    #instructions { background:#f6f6f6; } #environment { background:#f6f6f6; } #environment h2 {color:#111111;} 
-    #info {display:none;}
-  </style>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="charles marshall" />
+	<meta name="keywords" content="<?=keywords($cms_content)?><?=keywords($cms_section)?>" />
+	<meta name="description" content="Charles Marshall's blog.<?=description($cms_section, "introduction")?><?=description($cms_content, "content")?>" />
+
+	<link rel="icon" type="image/gif" href="/favicon.ico" />
+	<link rel="stylesheet" href="/stylesheets/core.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+  <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<link rel="stylesheet" href="/stylesheets/<?=$style?>.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+  <title>
+		<?if($cms_content->id || $cms_section->id):?>
+		<?=(page_title($cms_content, $cms_section, "Charles Marshall", " - "))?>
+		<?elseif($action != "index"):?>
+		<?=ucwords(str_replace("-", " ", $action))?> - Charles Marshall
+		<?else:?>Charles Marshall<?endif?>
+	</title>
+	
 </head>
 
-<body>
-<?=$content_for_layout?>
-
-
+<body id="<?=$body_id?>" class="<?=$body_class?>">
+	<!--[if lte IE 6]>
+	<?=partial("_ie")?>
+	<![endif]-->
+	
+	<!-- section colouring -->
+	<div id="section_marker" class="full">
+		<span><?if($cms_section):?><?=$cms_section->title?><?else:?><?=$controller?><?endif?></span>
+	</div>
+	<!-- end section colouring -->
+	<!-- city scape header -->
+	<div id="cityscape" class="full">
+		<h3>Day &amp; Night Design</h3>
+	</div>
+	<!-- end city scape header -->	
+	<!-- header -->
+	<div id="header" class="restriced clearfix">
+			<!-- logo -->
+			<div id="logo">
+				<!-- oh yes, i'm going to use png's -->
+				<a href="/" title="home" rel="home" accesskey="H"><img src="/images/<?=$style?>/logo.png" alt="logo" title="home"/></a>
+			</div>
+			<!-- end logo -->
+			<!-- main title -->
+			<h1 id="title"><a href="/" title="home" rel="home" accesskey="H">Charles Marshall</a></h1>
+			<!-- end main title -->
+			<!-- search box -->
+			<div id="site_search">
+				<form action="/search" method="post" id="search">
+					<fieldset>
+						<input type="text" name="query" id="search_query_box" />
+						<input type="image" src="/images/<?=$style?>/question-mark.png" id="search_button"/>
+					</fieldset>
+				</form>
+			</div>
+			<!-- end search -->
+	</div>	
+	<!-- end header -->	
+	
+	<!-- site container -->
+	<div id="page" class="full clearfix">
+		<!-- navigation -->
+		<div id="navigation">
+			<ul class="nav">
+				<?=nav("/", "home", $section_stack[0], "selected", array('accesskey'=>"H") )?>
+				<?=nav("/about", "about", $section_stack[0], "selected", array('accesskey'=>"A") )?>								
+				<?=nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W") )?>				
+				<?=nav("/hobbies", "hobbies", $section_stack[0], "selected", array('accesskey'=>"O") )?>
+				<?=nav("/contact-me", "contact", $section_stack[0], "selected", array('accesskey'=>"C") )?>												
+			</ul>
+		</div>
+		<!-- end navigation -->
+		
+		<!-- content -->
+		<div id="content">
+			<?=$content_for_layout?>
+		</div>
+		<!-- end content -->
+	</div>
+	<!-- end site container -->
+	
 </body>
 </html>

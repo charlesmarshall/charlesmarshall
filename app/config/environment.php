@@ -68,7 +68,5 @@ WXException::$redirect_on_error = "/error.html";
 *  This file is run at boot time so if you want to set any systemwide configuration values, 
 *  you can do so below this point */
 
-
-
-
-
+Autoloader::include_from_registry('SiteHelper');
+Autoloader::register_helpers();

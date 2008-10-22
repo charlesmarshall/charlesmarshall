@@ -1,0 +1,79 @@
+/*
+ All about sizes, positions & layout - colours, backgrounds etc are set in the day/night file
+*/
+*,html,body{
+	text-align:left;
+	font-family:arial;
+}
+
+h1{font-size:123.1%;}
+h1 a, h1 a:hover{text-decoration:none;}
+
+em{font-style:italic;}
+strong{font-weight:bold;}
+
+
+/**layout**/
+
+/*ie*/
+#i_use_a_crap_browser{
+	width:100%;
+	margin:0 0 5px 0;
+}
+	#i_use_a_crap_browser h5{text-align:center;}	
+
+/*general div widths*/
+.full{
+	width:100%;
+	margin:0;
+}
+.restricted{width:700px;}
+
+/*section marker*/
+#section_marker{width:100%;}
+	#section_marker span{display:none;}
+/*cityscape*/
+#cityscape{height:4em;}
+	#cityscape h3{display:none;}
+/*logo*/
+#logo{
+	float:left;
+	width:105px;
+	text-align:center;
+}
+/*main h1*/
+#title{
+	width:410px;
+	float:left;
+}
+/*search box*/
+#site_search{
+	width:180px;
+	float:left;
+}
+	#site_search #search_query_box{
+		width:144px;
+		padding:2px 5px;
+	}
+	
+/*navigation*/	
+#navigation{
+	width:105px;
+	float:left;
+}
+	#navigation ul{width:95px;}
+		#navigation ul li{width:95px;}
+			#navigation ul li a{
+				width:75px;
+				display:block;
+				line-height:2.5em;
+				padding-left:10px;				
+			}
+			#navigation ul li#selected a{width:85px;}
+			
+/*content*/
+#content{
+	width:695px;
+	float:left;
+}
+			

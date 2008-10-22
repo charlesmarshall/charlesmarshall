@@ -14,11 +14,11 @@
 # == Database configuration ==
 development:
  db:
-  dbtype: none  
+  dbtype: mysql
   host: localhost
-  database: app_development
+  database: charles
   username: root
-  password: secret
+  password: m74cool
 
 test:
   db:
@@ -30,11 +30,10 @@ test:
 
 production: 
   db: 
-    dbtype: mysql
-    host: localhost
-    database: app_production
-    username: root
-    password: secret
+    database: newtechno
+    username: newtechno
+    password: n3w11techno
+    
 
 #  == Maintenance downtime == 
 #  Use to make the site unavailable to all but one ip

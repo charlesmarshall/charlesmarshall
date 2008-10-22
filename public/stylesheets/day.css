@@ -1,0 +1,26 @@
+
+*,body,html{color:#474444;}
+html{background: white url('/images/day/background.gif') repeat-x top left;}
+
+/*section markers*/
+#section_marker{
+	height:2px;
+	background:#ffbdc6 url('/images/day/section-marker-generic.png') repeat-y top left;
+}
+
+#cityscape{background:url('/images/day/cityscape.png') repeat-x 0px 10px;}
+
+#title, #site_search{margin-top:14px;}
+
+#site_search #search_query_box{
+	background:url('/images/day/search-box.png') no-repeat center left;
+	border:0;
+	font-size:85%;
+	line-height:1.6em;
+	float:left;
+}
+#site_search #search_button{
+	float:left;
+	width:18px;
+	margin-left:4px;
+}
