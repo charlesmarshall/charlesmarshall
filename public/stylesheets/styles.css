@@ -8,7 +8,7 @@
 
 h1{font-size:123.1%;}
 h1 a, h1 a:hover, h3 a, h3 a:hover{text-decoration:none;}
-h4{font-size:93%;}
+h4{font-size:85%;}
 h3{font-size:108%;}
 
 
@@ -30,23 +30,24 @@ p{margin:10px 0;}
 	width:100%;
 	margin:0;
 }
-.restricted{width:700px;}
+.restricted{width:800px;}
 
 /*section marker*/
 #section_marker{width:100%;}
 	#section_marker span{display:none;}
 /*cityscape*/
-#cityscape{height:4em;}
+#cityscape{height:8em;}
 	#cityscape h3{display:none;}
 /*logo*/
 #logo{
 	float:left;
 	width:105px;
+	margin-top:55px;
 }
 	#logo img{margin-left:10px;}
 /*main h1*/
 #title{
-	width:410px;
+	width:510px;
 	float:left;
 }
 /*search box*/
@@ -59,7 +60,7 @@ p{margin:10px 0;}
 		padding:2px 5px;
 	}
 
-#page{padding-top:10px;}	
+#page{padding-top:0px;}	
 /*navigation*/	
 #navigation{
 	width:105px;
@@ -103,3 +104,4 @@ p{margin:10px 0;}
 #content ul.pagination{margin-left:0;}
 #content ul.pagination li{list-style-type:none;}
 .pagination li.pagination_link a, .pagination span.disabled {border:0 solid white;}
+.pagination li.pagination_link .current{font-weight:bold;}

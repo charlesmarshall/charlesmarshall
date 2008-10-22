@@ -1,6 +1,6 @@
 
 *,body,html{color:#474444;}
-html{background: white url('/images/day/background.gif') repeat-x top left;}
+html{background: white url('/images/day/background.png') repeat-x top left;}
 
 /*section markers*/
 #section_marker{
@@ -8,9 +8,9 @@ html{background: white url('/images/day/background.gif') repeat-x top left;}
 	background:#ffbdc6 url('/images/day/section-marker-generic.png') repeat-y top left;
 }
 
-#cityscape{background:url('/images/day/cityscape.png') repeat-x 0px 10px;}
+#cityscape{background:url('/images/day/cityscape.png') repeat-x left 25px;}
 
-#title, #site_search{margin-top:14px;}
+#title, #site_search{margin-top:10px;}
 
 #site_search #search_query_box{
 	background:url('/images/day/search-box.png') no-repeat center left;
