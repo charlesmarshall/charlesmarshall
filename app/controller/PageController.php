@@ -1,6 +1,9 @@
 <?php
 
 class PageController extends ApplicationController {
+
+	public $this_page = 1;
+	public $per_page = 4;
 	
 	public function controller_global(){
 		parent::cms();
@@ -10,7 +13,9 @@ class PageController extends ApplicationController {
 	}
   
   public function index() {
-    
+    $model = new CmsContent("published");
+		if(Request::get('page')) $this->this_page = Request::get('page');
+		$this->cms_content = $model->order('published DESC')->page($this->this_page, $this->per_page);
   }
   
 }

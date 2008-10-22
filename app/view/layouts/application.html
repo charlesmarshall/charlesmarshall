@@ -65,11 +65,11 @@
 		<!-- navigation -->
 		<div id="navigation">
 			<ul class="nav">
-				<?=nav("/", "home", $section_stack[0], "selected", array('accesskey'=>"H") )?>
-				<?=nav("/about", "about", $section_stack[0], "selected", array('accesskey'=>"A") )?>								
-				<?=nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W") )?>				
-				<?=nav("/hobbies", "hobbies", $section_stack[0], "selected", array('accesskey'=>"O") )?>
-				<?=nav("/contact-me", "contact", $section_stack[0], "selected", array('accesskey'=>"C") )?>												
+				<?=nav("/", "home", $section_stack[0], "selected", array('accesskey'=>"H", 'class'=>'home') )?>
+				<?=nav("/about", "about", $section_stack[0], "selected", array('accesskey'=>"A", 'class'=>'about') )?>								
+				<?=nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W", 'class'=>'work') )?>				
+				<?=nav("/hobbies", "hobbies", $section_stack[0], "selected", array('accesskey'=>"O", 'class'=>'hobbies') )?>
+				<?=nav("/contact-me", "contact", $section_stack[0], "selected", array('accesskey'=>"C", 'class'=>'contact') )?>												
 			</ul>
 		</div>
 		<!-- end navigation -->

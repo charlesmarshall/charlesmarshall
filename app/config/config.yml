@@ -18,7 +18,6 @@ development:
   host: localhost
   database: charles
   username: root
-  password: m74cool
 
 test:
   db:

@@ -24,3 +24,41 @@ html{background: white url('/images/day/background.gif') repeat-x top left;}
 	width:18px;
 	margin-left:4px;
 }
+/*navigation*/
+#navigation ul li a,#navigation ul li a:hover{
+	color:white;
+	text-decoration:none;
+}
+/*home*/
+#navigation ul li a.home{background:url('/images/day/nav-home.png') no-repeat center right;}
+#navigation ul li#selected a.home,#navigation ul li a:hover.home{background:url('/images/day/nav-home-on.png') no-repeat center right;}
+/*about*/
+#navigation ul li a.about{background:url('/images/day/nav-about.png') no-repeat center right;}
+#navigation ul li#selected a.about,#navigation ul li a:hover.about{background:url('/images/day/nav-about-on.png') no-repeat center right;}
+/*work*/
+#navigation ul li a.work{background:url('/images/day/nav-work.png') no-repeat center right;}
+#navigation ul li#selected a.work,#navigation ul li a:hover.work{background:url('/images/day/nav-work-on.png') no-repeat center right;}
+/*hobbies*/
+#navigation ul li a.hobbies{background:url('/images/day/nav-hobbies.png') no-repeat center right;}
+#navigation ul li#selected a.hobbies,#navigation ul li a:hover.hobbies{background:url('/images/day/nav-hobbies-on.png') no-repeat center right;}
+/*contact*/
+#navigation ul li a.contact{background:url('/images/day/nav-contact.png') no-repeat center right;}
+#navigation ul li#selected a.contact,#navigation ul li a:hover.contact{background:url('/images/day/nav-contact-on.png') no-repeat center right;}
+
+/*story coloured h*/
+#content a{text-decoration:none;}
+#content .home a{color:#d60321;}
+#content .home a:hover{color:#f70628;}
+
+#content .about a{color:#7104e2;}
+#content .about a:hover{color:#7d06f7;}
+
+#content .hobbies a{color:#01954a;}
+#content .hobbies a:hover{color:#02bb5e;}
+
+#content .work a{color:#041ee2;}
+#content .work a:hover{color:#1531ff;}
+
+/*pagination*/
+#hobbies .pagination li.pagination_link .current{color:#01954a;font-weight:bold;}
+#work .pagination li.pagination_link .current{color:#041ee2;font-weight:bold;}

@@ -14,6 +14,10 @@ class SiteHelper extends WXHelpers {
 	public function short_date($date){
 		return date("dS M", strtotime($date));
 	}
+	public function long_date($date){
+		return date("nS F Y", strtotime($date));
+	}	
+	
 	
 	public function keywords($object, $field="title", $words=8){
 		if($string = $object->$field) return $this->word_truncation($string, $words, true);
@@ -24,7 +28,7 @@ class SiteHelper extends WXHelpers {
 		else return "";
 	}
 
-	public function word_truncation($content, $word_limit=30, $striptags=false, $seperator=",") {		
+	public function word_truncation($content, $word_limit=30, $striptags=false, $seperator=",",$offset=0) {		
 		if($striptags) $content = strip_tags($content);
     $parts = preg_split("/[\s]+/i", $content, -1, PREG_SPLIT_NO_EMPTY|PREG_SPLIT_OFFSET_CAPTURE|PREG_SPLIT_DELIM_CAPTURE);
 		$chunk = array_slice($parts, $offset, $word_limit);
@@ -46,9 +50,14 @@ class SiteHelper extends WXHelpers {
 			}
 			if(count($missing)){
 				$missing = array_reverse($missing);
-				foreach($missing as $needed) $string .= "</".$needed.">";
+				$i=0;
+				foreach($missing as $needed){
+					if($i+1 == count($missing) && count($parts)>$word_limit) $string .= "...";
+					$string .= "</".$needed.">";
+					$i++;
+				}
 			}
-		}
+		}elseif(count($chunk)>$word_limit) $string .= "...";
 
 		return $string;
   }
