@@ -32,31 +32,47 @@ class SiteHelper extends WXHelpers {
 		if($striptags) $content = strip_tags($content);
     $parts = preg_split("/[\s]+/i", $content, -1, PREG_SPLIT_NO_EMPTY|PREG_SPLIT_OFFSET_CAPTURE|PREG_SPLIT_DELIM_CAPTURE);
 		$chunk = array_slice($parts, $offset, $word_limit);
-		$words = array();
-		$tags = array();
+		$words = $tags = $order = array();
+		$self_closing = array('br', 'hr', 'input', 'img', 'link', 'meta');
 		foreach($chunk as $segmant) $words[] = $segmant[0];
 		$string = implode($seperator,$words);
 		//if html is being kept, append closing tags - WILL ONLY WORK IN VALID HTML!
 		if(!$striptags){
 			//find all tags
-			$pattern = "/<([\/]*)([\w]+)>/i";
+			$pattern = "/<([\/]*)([^>]+)>/i";
 			preg_match_all($pattern, $string, $tags, PREG_SET_ORDER);
-			$missing = array();
-			foreach($tags as $tag){
-				$index = $tag[2];
-				//this is an end tag
-				if(strlen($tag[0])>0 && strlen($tag[1]) >0) unset($missing[$index]);
-				else $missing[$index] = true;
-			}
-			if(count($missing)){
-				$missing = array_reverse($missing);
-				$i=0;
-				foreach($missing as $needed){
-					if($i+1 == count($missing) && count($parts)>$word_limit) $string .= "...";
-					$string .= "</".$needed.">";
-					$i++;
+			$counter = array();
+			foreach($tags as $i => $tag){				
+				//find the end of the tag markup ie where a is or code or b etc
+				if(!$pos = strpos($tag[0]," ")) $pos = strlen($tag[0])-2;
+				$clean_tag = substr($tag[0],1,$pos);
+				//strip off all the gubbings so its just the tag type
+				$tag_type = trim(str_replace("/", "", $clean_tag));	
+				//if its not self closing then add to counter			
+				if(!in_array($tag_type, $self_closing)){
+					//if its the close tag decrease it
+					if(strlen($tag[1])>0){
+						$counter[$tag_type]-=1;
+						array_pop($order[$tag_type]);						
+					}
+					//otherwise increase it
+					else{
+						$index = $tag[0];
+						$order[$tag_type][$index]=true;
+						$counter[$tag_type] += 1;
+					}
 				}
 			}
+			$order = array_reverse($order);			
+			$i=0;
+			foreach($order as $type => $missing){
+				if(is_array($missing)){
+					if(count($counter) && ($i+1 == count($order) ) ) $string .="...";
+					$string .= "</".$type.">"; 
+				}
+				$i++;
+			}
+			
 		}elseif(count($chunk)>$word_limit) $string .= "...";
 
 		return $string;
