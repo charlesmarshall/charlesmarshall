@@ -1,0 +1,13 @@
+<div class="page story <?=$cms_content->section->url?> clearfix">
+	<?$images = $cms_content->images?>
+	<?if($images[0]):?>
+		<a href="<?=$images[0]->url?>" title="read '<?=$content->title?>'" rel="full story"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
+	<?endif?>
+	
+	<div class="story_content">
+		<h4><?=long_date($cms_content->published)?></h4>
+		<h3><a href="#top" title="read '<?=$cms_content->title?>'" rel="this page"><?=$cms_content->title?></a></h3>
+		<?=$cms_content->format_content()?>
+	</div>
+	
+</div>

@@ -2,15 +2,92 @@
 *,body,html{color:#474444;}
 html{background: white url('/images/day/background.png') repeat-x top left;}
 
+h1 a:hover{color:#716C6C;}
 /*section markers*/
 #section_marker{
 	height:2px;
 	background:#ffbdc6 url('/images/day/section-marker-generic.png') repeat-y top left;
 }
+/*about*/
+#section_marker.about{background:#bac2ff url('/images/day/section-marker-about.png') repeat-y top left;}
+/*work*/
+#section_marker.work{background:#bac2ff url('/images/day/section-marker-work.png') repeat-y top left;}
+/*hobbies*/
+#section_marker.hobbies{background:#acffd5 url('/images/day/section-marker-hobbies.png') repeat-y top left;}
+
+/*passing of time*/
+#time{
+	position:absolute;
+	z-index:5;
+}
+.hour_07 #time{
+	top:30px;
+	left:35%;
+	opacity:0.5;
+}
+.hour_08 #time{
+	top:25px;
+	left:38%;
+	opacity:0.6;
+}
+.hour_09 #time{
+	top:20px;
+	left:41%;
+	opacity:0.7;
+}
+.hour_10 #time{
+	top:15px;
+	left:44%;
+	opacity:0.8;
+}
+.hour_11 #time{
+	top:10px;
+	left:47%;
+	opacity:0.9;
+}
+.hour_12 #time{
+	top:5px;
+	left:50%;
+}
+.hour_13 #time{
+	top:10px;
+	left:53%;
+	opacity:0.9;
+}
+.hour_14 #time{
+	top:15px;
+	left:56%;
+	opacity:0.8;
+}
+.hour_15 #time{
+	top:20px;
+	left:59%;
+	opacity:0.7;
+}
+.hour_16 #time{
+	top:25px;
+	left:62%;
+	opacity:0.6;
+}
+.hour_17 #time{
+	top:30px;
+	left:65%;
+	opacity:0.6;
+}
+.hour_18 #time{
+	top:35px;
+	left:68%;
+	opacity:0.5;
+}
+.hour_19 #time{
+	top:40px;
+	left:71%;
+	opacity:0.4;
+}
 
 #cityscape{background:url('/images/day/cityscape.png') repeat-x left 25px;}
 
-#title, #site_search{margin-top:10px;}
+#title, #site_search{margin-top:12px;}
 
 #site_search #search_query_box{
 	background:url('/images/day/search-box.png') no-repeat center left;
@@ -47,17 +124,18 @@ html{background: white url('/images/day/background.png') repeat-x top left;}
 
 /*story coloured h*/
 #content a{text-decoration:none;}
-#content .home a{color:#d60321;}
-#content .home a:hover{color:#f70628;}
 
-#content .about a{color:#7104e2;}
-#content .about a:hover{color:#7d06f7;}
+#content .home a, h2.home a{color:#d60321;}
+#content .home a:hover, h2.home a:hover{color:#f70628;}
 
-#content .hobbies a{color:#01954a;}
-#content .hobbies a:hover{color:#02bb5e;}
+#content .about a, h2.about a{color:#7104e2;}
+#content .about a:hover,h2.about a:hover{color:#7d06f7;}
 
-#content .work a{color:#041ee2;}
-#content .work a:hover{color:#1531ff;}
+#content .hobbies a, h2.hobbies a{color:#01954a;}
+#content .hobbies a:hover,h2.hobbies a:hover{color:#02bb5e;}
+
+#content .work a, h2.work a{color:#041ee2;}
+#content .work a:hover, h2.work a:hover{color:#1531ff;}
 
 /*pagination*/
 #hobbies .pagination li.pagination_link .current{color:#01954a;font-weight:bold;}

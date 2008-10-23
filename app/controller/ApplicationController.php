@@ -11,12 +11,12 @@ class ApplicationController extends CMSApplicationController{
 		else return $this->action;
 	}
 	public function get_body_class(){
-		$hour = date("H");
+		return "hour_".date("H");
 	}
 	public function get_stylesheet(){
 		return "day";
 		$hour = date("H");
-		if($hour > 9 && $hour < 19) return "day";
+		if($hour > 7 && $hour < 19) return "day";
 		else return "night";
 	}
 	

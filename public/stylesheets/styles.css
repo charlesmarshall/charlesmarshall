@@ -6,11 +6,11 @@
 	font-family:arial;
 }
 
-h1{font-size:123.1%;}
-h1 a, h1 a:hover, h3 a, h3 a:hover{text-decoration:none;}
+h1,h2{font-size:123.1%;}
+h1 a, h1 a:hover, h3 a, h3 a:hover, h2 a, h2 a:hover{text-decoration:none;}
 h4{font-size:85%;}
 h3{font-size:108%;}
-
+.page h3{font-size:116%;}
 
 em{font-style:italic;}
 strong{font-weight:bold;}
@@ -45,22 +45,32 @@ p{margin:10px 0;}
 	margin-top:55px;
 }
 	#logo img{margin-left:10px;}
+#header{
+	margin-left:105px;
+	width:65%;
+}	
 /*main h1*/
 #title{
-	width:510px;
+	width:55%;
 	float:left;
+}
+#title h2, #title h1{
+	float:left;
+	margin-right:6px;
 }
 /*search box*/
 #site_search{
-	width:180px;
-	float:left;
+	width:40%;
+	float:right;
+	text-align:right;
 }
+#site_search form{float:right;}
 	#site_search #search_query_box{
 		width:144px;
 		padding:2px 5px;
 	}
 
-#page{padding-top:0px;}	
+#page{margin-top:4em;}	
 /*navigation*/	
 #navigation{
 	width:105px;
@@ -82,10 +92,13 @@ p{margin:10px 0;}
 			
 /*content*/
 #content{
-	width:695px;
-	float:left;
+	width:65%;
+	margin-left:105px;
 }
-	.story{margin:0 0 20px 0;}	
+	.story{
+		margin:0 0 20px 0;
+		float:left;
+	}	
 	div.story h4{margin:0 0 4px 0;}
 	div.story h3{margin:0 0 4px 0;}
 	
@@ -100,6 +113,11 @@ p{margin:10px 0;}
 	clear:both;
 	margin:0 10px 10px 0;
 }	
+.page_image{
+	float:right;
+	clear:both;
+	margin:48px 0 10px 10px;
+}
 /*pagination*/
 #content ul.pagination{margin-left:0;}
 #content ul.pagination li{list-style-type:none;}

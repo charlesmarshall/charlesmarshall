@@ -25,33 +25,40 @@
 	<![endif]-->
 	
 	<!-- section colouring -->
-	<div id="section_marker" class="full">
+	<div id="section_marker" class="full<?if($cms_section):?> <?=$cms_section->url?><?elseif($cms_content->id):?><?=$cms_content->url?><?endif?>">
 		<span><?if($cms_section):?><?=$cms_section->title?><?else:?><?=$controller?><?endif?></span>
 	</div>
 	<!-- end section colouring -->
+	<img src="/images/<?=$style?>/time.png" alt="passing of time" id="time"/>
 	<!-- city scape header -->
 	<div id="cityscape" class="full">
 	<!-- header -->
 		<div class="restriced clearfix">
 			<!-- logo -->
 			<div id="logo">
-				<!-- not got one yet -->
-				
+				<!-- not got one yet :( -->				
 			</div>
 			<!-- end logo -->
-			<!-- main title -->
-			<h1 id="title"><a href="/" title="home" rel="home" accesskey="H">Charles Marshall</a></h1>
-			<!-- end main title -->
-			<!-- search box -->
-			<div id="site_search">
-				<form action="/search" method="post" id="search">
-					<fieldset>
-						<input type="text" name="query" id="search_query_box" />
-						<input type="image" src="/images/<?=$style?>/question-mark.png" id="search_button"/>
-					</fieldset>
-				</form>
+			<!-- header -->
+			<div id="header">
+				<!-- search box -->
+				<div id="site_search">
+					<form action="/search" method="post" id="search">
+						<fieldset>
+							<input type="text" name="query" id="search_query_box" />
+							<input type="image" src="/images/<?=$style?>/question-mark.png" id="search_button"/>
+						</fieldset>
+					</form>
+				</div>
+				<!-- end search -->
+				<!-- main title -->
+				<div id="title">
+					<h1><a href="/" title="home" rel="home" accesskey="H">Charles Marshall</a></h1>
+					<?if($cms_section->id > 1):?><h2 class="<?=$cms_section->url?>"> &raquo; <a href="<?=$cms_section->permalink?>" title="<?=$cms_section->title?>" rel="this section"><?=$cms_section->title?></a></h2><?endif?>
+				</div>
+				<!-- end main title -->				
 			</div>
-			<!-- end search -->
+			<!-- end header -->
 		</div>	
 	<!-- end header -->	
 	</div>
