@@ -14,9 +14,8 @@ class ApplicationController extends CMSApplicationController{
 		return "hour_".date("H");
 	}
 	public function get_stylesheet(){
-		return "day";
 		$hour = date("H");
-		if($hour > 7 && $hour < 19) return "day";
+		if($hour > 6 && $hour < 20) return "day";
 		else return "night";
 	}
 	
