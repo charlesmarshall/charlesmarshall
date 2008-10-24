@@ -1,24 +1,28 @@
-<?if($cms_section->introduction):?>
-<div id="intro">
-	<?=$cms_section->introduction?>
-</div>
-<?endif?>
-<?if($cms_content[0]):?>
-	<?foreach($cms_content as $content):?>
+<div class="restricted">
+	
+	<?$content = $cms_content[0]?>
 	<div class="story <?=$content->section->url?> clearfix">
-		<?$images = $content->images?>
-		<?if($images[0]):?>
-			<a href="<?=$content->permalink?>" title="read '<?=$content->title?>'" rel="full story"><img src="<?=$images[0]->permalink(80)?>" alt="story image" title="read '<?=$content->title?>'" class="attached_image"/></a>			
-		<?endif?>
 		<div class="story_content">
+			<h3><a href="<?=$content->permalink()?>" title="read '<?=$content->title?>'" rel="this page"><?=$content->title?></a></h3>
 			<h4><?=long_date($content->published)?></h4>
-			<h3><a href="<?=$content->permalink?>" title="read '<?=$content->title?>'" rel="full story"><?=$content->title?></a></h3>
-			<?=word_truncation($content->content,60,false, " ")?>
-		</div>
+			<?$images = $content->images?>
+			<?if($images[0]):?>
+				<a href="<?=$images[0]->url?>" title="read '<?=$content->title?>'" rel="full story"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
+			<?endif?>
+			<?=word_truncation($content->content, 80);?>
+			<ul class="detail clearfix">
+				<li><a href="<?=$cms_content->permalink?>" title="read more" rel="full story"><strong>Read More...</strong></a></li>
+			</ul>
+			<?if($content->categories && $content->categories[0]):?>
+			<ul class="detail clearfix">
+				<li>Found in:</li>
+				<?foreach($content->categories as $category):?>
+				<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
+				<?endforeach?>
+			</ul>
+			<?endif?>
+		</div>	
 	</div>
-	<?endforeach?>
-
-	<?=paginate_links($cms_content, 2)?>
-<?else:?>
-<p><em>No stories in this section :(</em></p>
-<?endif?>
+	
+	
+</div>

@@ -11,14 +11,15 @@ class ApplicationController extends CMSApplicationController{
 		else return $this->action;
 	}
 	public function get_body_class(){
-		if($time = Request::get('time')) return "hour_".$time;
-		else return "hour_".date("H");
+		if($this->cms_content->id) return "page";
+		elseif($this->cms_section->id) return "list";
+		else return "view";
 	}
-	public function get_stylesheet(){
-		$hour = date("H");
-		if($nd = Request::get('nod')) return $nd;
-		elseif($hour > 6 && $hour < 20) return "day";
-		else return "night";
+	public function get_url(){
+		if($this->cms_content->id) return $this->cms_content->permalink();
+		elseif($this->cms_section->id) return $this->cms_section->permalink();
+		elseif($this->controller != "page") return "/".$controller."/".$action;
+		else return $action;
 	}
 	
 }

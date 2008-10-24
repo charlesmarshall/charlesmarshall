@@ -3,12 +3,11 @@
 <head>
 	
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="charles marshall" />
+	<meta name="author" content="charles marshall - design by gareth brown" />
 	
 	<link rel="icon" type="image/gif" href="/favicon.ico" />
 	<link rel="stylesheet" href="/stylesheets/core.css" type="text/css" media="screen" title="no title" charset="utf-8" />
   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-	<link rel="stylesheet" href="/stylesheets/<?=$style?>.css" type="text/css" media="screen" title="no title" charset="utf-8" />
   <title>
 		<?if($cms_content->id || $cms_section->id):?>
 		<?=(page_title($cms_content, $cms_section, "Charles Marshall", " - "))?>
@@ -23,69 +22,31 @@
 	<!--[if lte IE 6]>
 	<?=partial("_ie")?>
 	<![endif]-->
-	
-	<!-- section colouring -->
-	<div id="section_marker" class="full<?if($cms_section):?> <?=$cms_section->url?><?elseif($cms_content->id):?><?=$cms_content->url?><?endif?>">
-		<span><?if($cms_section):?><?=$cms_section->title?><?else:?><?=$controller?><?endif?></span>
-	</div>
-	<!-- end section colouring -->
-	<div class="full">
-		<img src="/images/<?=$style?>/time.png" alt="passing of time" id="time" />
-	</div>
-	<!-- city scape header -->
-	<div id="cityscape" class="full">
-	<!-- header -->
-		<div class="restriced clearfix">
+	<!-- main content container -->
+	<div id="page" class="full clearfix">
+		<div id="header" class="clearfix restricted">
+			<!-- navigation -->
+			<div id="navigation">
+				<ul>
+	        <?=smart_nav("/", "home", $section_stack[0], "selected", array('accesskey'=>"H", 'class'=>'home') )?>                
+	        <?=smart_nav("/blog", "blog", $section_stack[0], "selected", array('accesskey'=>"B", 'class'=>'blog') )?>        
+	        <?=smart_nav("/gallery", "photos", $section_stack[0], "selected", array('accesskey'=>"G", 'class'=>'hobbies') )?>
+	        <?=smart_nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W", 'class'=>'hobbies') )?>		
+	        <?=smart_nav("/contact-me", "contact", $section_stack[0], "selected", array('accesskey'=>"C", 'class'=>'contact') )?>
+				</ul>
+			</div>
 			<!-- logo -->
 			<div id="logo">
-				<!-- not got one yet :( -->				
+				<a href="/" title="home" rel="home" accesskey="H"><img src="/images/logo.png" title="Charles Marshall" alt="logo"/></a>
 			</div>
-			<!-- end logo -->
-			<!-- header -->
-			<div id="header">
-				<!-- search box -->
-				<div id="site_search">
-					<form action="/search" method="post" id="search">
-						<fieldset>
-							<input type="text" name="query" id="search_query_box" />
-							<input type="image" src="/images/<?=$style?>/question-mark.png" id="search_button"/>
-						</fieldset>
-					</form>
-				</div>
-				<!-- end search -->
-				<!-- main title -->
-				<div id="title">
-					<h1><a href="/" title="home" rel="home" accesskey="H">Charles Marshall</a></h1>
-					<?if($cms_section->id > 1):?><h2 class="<?=$cms_section->url?>"> &raquo; <a href="<?=$cms_section->permalink?>" title="<?=$cms_section->title?>" rel="this section"><?=$cms_section->title?></a></h2><?endif?>
-				</div>
-				<!-- end main title -->				
-			</div>
-			<!-- end header -->
-		</div>	
-	<!-- end header -->	
-	</div>
-	<!-- end city scape header -->
-	<!-- site container -->
-	<div id="page" class="full clearfix">
-		<!-- navigation -->
-		<div id="navigation">
-			<ul class="nav">
-				<?=nav("/", "home", $section_stack[0], "selected", array('accesskey'=>"H", 'class'=>'home') )?>
-				<?=nav("/about", "about", $section_stack[0], "selected", array('accesskey'=>"A", 'class'=>'about') )?>								
-				<?=nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W", 'class'=>'work') )?>				
-				<?=nav("/hobbies", "hobbies", $section_stack[0], "selected", array('accesskey'=>"O", 'class'=>'hobbies') )?>
-				<?=nav("/contact-me", "contact", $section_stack[0], "selected", array('accesskey'=>"C", 'class'=>'contact') )?>												
-			</ul>
+			
 		</div>
-		<!-- end navigation -->
-		
-		<!-- content -->
-		<div id="content">
+		<div id="content" class="clearfix">
 			<?=$content_for_layout?>
 		</div>
-		<!-- end content -->
 	</div>
-	<!-- end site container -->
+	<!--end main content container -->		
+	
 	
 </body>
 </html>
