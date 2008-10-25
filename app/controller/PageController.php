@@ -61,7 +61,7 @@ class PageController extends ApplicationController {
 				$this->this_page = $page;
 				$this->category = new CmsCategory(Request::post('category_id'));
 				$content = $this->category->attached_to;
-				$this->cms_content = $content->order('published DESC')->page($this->this_page, $this->per_age);
+				$this->cms_content = $content->order('published DESC')->page($this->this_page, $this->per_page);
 			}
 		}		
 	}
