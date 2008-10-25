@@ -11,13 +11,13 @@
 				$sizes = $flickr->get_photo_sizes(array('photo_id'=>$pic['id']));
 				$photo = flickr_photo($pic['id'], $sizes);
 				$medium = $photo['Square'];
-				if($photo['Large']) $large = $photo['Large'];
-				elseif($photo['Original']) $large = $photo['Original'];
+				if($photo['Medium']) $large = $photo['Medium'];
+				elseif($photo['Large']) $large = $photo['Large'];
 				else $large = $photo['Medium'];
 				?>
 				<div class="gallery_item">
 					<h3 class="gallery"><?=$pic['title']?></h3>
-					<a href="<?=$large?>" class="thickbox" rel="gallery-image" title="<?=$pic['title']?>"><img src="<?=$medium?>" alt="<?=$pic['title']?>" title="<?=$pic['title']?>" /></a>
+					<a href="<?=$large?>" class="thumb" rel="gallery-image" title="<?=$pic['title']?>"><img src="<?=$medium?>" alt="<?=$pic['title']?>" title="<?=$pic['title']?>" /></a>
 				</div>
 				<?if(fmod($count+1,$flickr_fmod)==0):?>
 				<div class="clearfix"></div>

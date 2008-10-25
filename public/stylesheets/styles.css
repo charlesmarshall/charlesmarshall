@@ -178,6 +178,7 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 #flickr_latest .gallery_item{
 	float:left;
 	width:49%;
+	margin-top:0;
 }
 	#flickr_latest .gallery_item img{border:2px solid white;}
 	#flickr_latest span.flick{color:#3b9de9;}
@@ -241,3 +242,38 @@ body.gallery .gallery_item{
 	h2.gallery{margin-top:30px;}
 
 #content ul.pagination li{list-style-type:none !important;}
+
+/****** Modal popup styling ********/
+
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+	
+#modal_content {
+    display: none;
+    position: fixed;
+    top: 18%;
+    left: 23%;
+    padding: 12px;
+    -webkit-box-shadow: 0px 0px 8px #111;
+    background:#FFF;
+}
+
+#modal_overlay { background-color: #000; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.overlay {position:absolute;top:0;left:0;z-index:-1;
+	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html #modal_content {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
