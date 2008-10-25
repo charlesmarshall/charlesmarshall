@@ -20,15 +20,17 @@ development:
   username: root
 
 test:
-  db:
+  db: 
     dbtype: mysql
     host: localhost
-    database: app_test
-    username: root
-    password: secret
+    database: charlesmarshall
+    username: charlesmarshall
+    password: n3w11techno
 
 production: 
   db: 
+    dbtype: mysql
+    host: localhost
     database: charlesmarshall
     username: charlesmarshall
     password: n3w11techno

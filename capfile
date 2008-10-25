@@ -23,7 +23,7 @@ set :password,    'n3w11techno'
 # OPTIONAL VARIABLES
 # =============================================================================
 default_run_options[:pty] = true
-set :repository,  "git@github.com:charlesmarshall/#{application}.git"
+set :repository,  "git@github.com:charlesmarshall/charlesmarshall.git"
 set :branch,      "master"
 set :deploy_to,   "."
 
