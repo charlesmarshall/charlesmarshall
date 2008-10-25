@@ -63,7 +63,7 @@ $all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->l
 <div class="article_list">
 	<h3 class="title"><a href="/work" title="Latest Work" rel="work">Latest Work</a></h3>
 	<div class="featured_work <?=$featured->section->url?>">	
-		<h3><a href="<?=$featured->permalink?>" title="view '<?=$featured->title?>' in full" rel="article"><?=$featured->title?> - <small><?=short_date($related->published)?></small></a></h3>
+		<h3><a href="<?=$featured->permalink?>" title="view '<?=$featured->title?>' in full" rel="article"><?=$featured->title?> - <small><?=short_date($featured->published)?></small></a></h3>
 		<?=word_truncation($featured->content, 90)?>
 	</div>
 </div>
