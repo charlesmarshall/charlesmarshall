@@ -14,6 +14,7 @@ class GalleryController extends ApplicationController {
 		$this->body_id = parent::get_body_id();
 		$this->body_class = parent::get_body_class();
 		$this->flickr = new Flickr($this->flickr_secret_key,true);	
+		$this->section_stack[0] = "gallery";
 	}
   
 	

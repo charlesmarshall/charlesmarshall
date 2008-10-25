@@ -35,36 +35,42 @@ class SiteHelper extends WXHelpers {
     return $rss;
   }
 	
-	public function flickr_photo($pic_id, $sizes, $no_image_path="/images/no-pic.gif", $sync=true){
+	public function flickr_photo($pic_id, $sizes, $no_image_path="/images/no-pic.gif", $sync=false){
 			if(!is_array($sizes)) return "";
 			$data = array();
 			$files = array();
 			foreach($sizes as $size){
 				$index = $size['label'][0];
 				$files[$index] = $size['source'][0];
-			}											
-			if(!is_dir(PUBLIC_DIR . "files/flickr/")) mkdir(PUBLIC_DIR . "files/flickr/");
-			$dir = PUBLIC_DIR . "files/flickr/".$pic_id."/";
-			$web_dir = "/files/flickr/".$pic_id."/";
-			if(!is_dir($dir)) mkdir($dir);
+			}	
 			
-			foreach($files as $k => $file_to_get){
-				$save_to = $pic_id.substr($file_to_get, -6);
+			
+			if($sync){										
+				if(!is_dir(PUBLIC_DIR . "files/flickr/")) mkdir(PUBLIC_DIR . "files/flickr/");
+				$dir = PUBLIC_DIR . "files/flickr/".$pic_id."/";
+				$web_dir = "/files/flickr/".$pic_id."/";
+				if(!is_dir($dir)) mkdir($dir);
+			
+				foreach($files as $k => $file_to_get){
+					$save_to = $pic_id.substr($file_to_get, -6);
 				
-				if(is_readable($dir.$save_to)) $data[$k] = $web_dir.$save_to;
-				else{
-					$result = self::get_remote_file($file_to_get);
-					if($result){
-						file_put_contents($dir.$save_to, $result);
-						$data[$k] =  $web_dir.$save_to;
-					}else $data[$k] = $no_image_path;
+					if(is_readable($dir.$save_to)) $data[$k] = $web_dir.$save_to;
+					else{
+						$result = self::get_remote_file($file_to_get);
+						if($result){
+							file_put_contents($dir.$save_to, $result);
+							$data[$k] =  $web_dir.$save_to;
+						}else $data[$k] = $no_image_path;
+					}
 				}
-			}
-			system('chmod -Rf 0777 '.$dir);
-			if($sync){
-				$fs = new CmsFilesystem;
-	      $rel = $web_dir;
-	      $fs->databaseSync($dir, $rel);
+				system('chmod -Rf 0777 '.$dir);
+				if($sync){
+					$fs = new CmsFilesystem;
+		      $rel = $web_dir;
+		      $fs->databaseSync($dir, $rel);
+				}
+			}else{
+				$data = $files;
 			}
 			
 			return $data;		
