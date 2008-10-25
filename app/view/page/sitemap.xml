@@ -7,6 +7,7 @@
 
 <?$sect = new CmsSection;$sections = $sect->all();?>
 <?$page = new CmsContent("published"); $pages = $page->all()?>
+<?$cat = new CmsCategory;$categories = $cat->all();?>
 		
 		<url>
 			<loc><?=$server?></loc>
@@ -29,6 +30,14 @@
 			<loc><?=$server?><?=$page->permalink?></loc>
 			<lastmod><?=date("Y-m-d", strtotime($page->published) )?></lastmod>
 			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+		</url>
+		<?endforeach?>
+		<?foreach($categories as $page):?>
+		<url>
+			<loc><?=$server?>category/<?=$page->url?></loc>
+			<lastmod><?=date("Y-m-d")?></lastmod>
+			<changefreq>weekly</changefreq>
 			<priority>0.5</priority>
 		</url>
 		<?endforeach?>
