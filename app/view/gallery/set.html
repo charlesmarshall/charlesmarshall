@@ -1,0 +1,64 @@
+<div class="restricted">
+
+	<h2><a href="/gallery" title="Gallery" rel="gallery main page" class="highlight">Gallery</a> - <?=$info['title']?> <span>(<?=$info['@attributes']['photos']?> photos)</span></h2>
+	<?if(is_string($info['description'])):?>
+	<p><?=$info['description']?></p>
+	<?endif?>
+	<div class="full clearfix">
+		<?if(count($pics)):?>
+			<?foreach($pics as $count => $picinfo):?>
+				<?
+				$pic = $picinfo['photo']['@attributes'];
+				$sizes = $flickr->get_photo_sizes(array('photo_id'=>$pic['id']));
+				$photo = flickr_photo($pic['id'], $sizes);
+				$medium = $photo['Small'];
+				if($photo['Large']) $large = $photo['Large'];
+				elseif($photo['Original']) $large = $photo['Original'];
+				else $large = $photo['Medium'];
+				?>
+				<div class="gallery_item<?if(fmod($count+1,$flickr_fmod)==0):?> right_side<?endif?>">
+					<h3><?=$pic['title']?></h3>
+					<a href="<?=$large?>" class="thickbox" rel="gallery-image" title="<?=$pic['title']?>"><img src="<?=$medium?>" alt="<?=$pic['title']?>" title="<?=$pic['title']?>" /></a>
+				</div>
+				<?if(fmod($count+1,$flickr_fmod)==0):?>
+				<div class="clearfix"></div>
+				<?endif?>
+			<?endforeach?>
+		<?endif?>
+	</div>
+
+	<div class="full pagination_links clearfix">
+	<?if($info['@attributes']['photos'] > $flickr_per_page):?>
+		<?
+		$total_pages = ceil($info['@attributes']['photos'] / $flickr_per_page);
+		?>
+		<ul class="pagination">
+			<li class="pagination_link">
+				<?if($flickr_page > 1):?>
+				<a href="/gallery/set/<?=$set_id?>/?page=<?=($flickr_page-1)?>">&laquo;</a>
+				<?else:?>
+				<span class="disabled">&laquo;</span>
+				<?endif?>
+			</li>
+			<?for($i=1; $i <= $total_pages; $i++):?>
+			<li class="pagination_link">
+				<?if($i == $flickr_page):?>
+				<span class="disabled current"><?=$i?></span>
+				<?else:?>
+				<a href="/gallery/set/<?=$set_id?>/?page=<?=$i?>"><?=$i?></a>
+				<?endif?>
+			</li>
+			<?endfor?>
+			<li class="pagination_link">
+				<?if($flickr_page < $total_pages):?>
+				<a href="/gallery/set/<?=$set_id?>/?page=<?=($flickr_page+1)?>">&raquo;</a>
+				<?else:?>
+				<span class="disabled">&raquo;</span>
+				<?endif?>
+			</li>
+		</ul>
+	<?endif?>
+	</div>
+	
+	
+</div>

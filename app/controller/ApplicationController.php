@@ -19,7 +19,7 @@ class ApplicationController extends CMSApplicationController{
 	public function get_body_class(){
 		if($this->cms_content->id) return "page";
 		elseif($this->cms_section->id) return "list";
-		else return "view";
+		else return "view ".$this->controller;
 	}
 
 	

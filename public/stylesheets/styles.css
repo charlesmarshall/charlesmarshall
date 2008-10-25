@@ -104,6 +104,7 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 
 #related{
 	padding:45px 0 10px 0;
+	height:250px;
 }
 #related .article, #related .article_list .front{
 	width:43%;
@@ -157,6 +158,7 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 	margin:0 0 0 2%;
 	float:left;
 }
+
 	#extras{padding-top:130px;}
 		#index #extras{padding-top:100px;}
 	#extras h4{font-size:146.5%;}
@@ -221,3 +223,23 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 			text-align:right;
 		}
 		#people ul li span{color:#ff0042;}
+		
+		
+/** gallery **/
+body.gallery .gallery_item{
+	width:25%;
+	float:left;
+	margin-top:30px;
+	text-align:center;
+}	
+	body.gallery .gallery_item h3, body.gallery .gallery_item h4{margin-bottom:3px;text-align:center;}	
+	body.gallery .gallery_item h3{text-transform:capitalize;}
+		body.gallery .gallery_item h3 a{
+			font-family:georgia;
+			font-size:108%;
+			color:white;
+		}
+	body.gallery .gallery_item img{
+		border:2px solid white;
+	}	
+	
