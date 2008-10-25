@@ -39,7 +39,7 @@ $(document).ready(function(){
 		href = $(this).attr('href');
 		$('#related').addClass('loader');
 		$('#related *').addClass('display_none');
-		$.post('/related', {'page_number':href, 'category':'<?=$category->url?>', 'category_id':<?=$category->id?>}, function(response){
+		$.post('/related-category', {'page_number':href, 'category':'<?=$category->url?>', 'category_id':<?=$category->id?>}, function(response){
 			$('#related').html(response);
 			$('#related').removeClass('loader');
 			$('#related *').removeClass('display_none');
