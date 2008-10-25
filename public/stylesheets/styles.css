@@ -103,9 +103,9 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 
 #related{
 	background:url('/images/plants.png') repeat-x top left;
-	padding-top:30px;
+	padding:45px 0 10px 0;
 }
-#related .article{
+#related .article, #related .article_list .front{
 	width:43%;
 	margin-left:2%;
 	float:left;
@@ -113,9 +113,19 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 	background:url('/images/article.png') no-repeat top left;
 	margin-bottom:10px;
 }
-	#related .article h3{margin:0;}
-	#related .article h3 small{font-size:85%;}
-	#related .article p{margin:0 0 8px 0;}
+#related .article_list{
+	width:50%;
+	float:left;
+}
+#related .article_list .front{
+	width:86%;
+	margin-left:4%;
+	padding-left:6%;
+}
+	#related .featured_work{width:92%;}
+	#related .article h3,#related .article_list .front h3{margin:0;}
+	#related .article h3 small,#related .article_list .front h3 small{font-size:85%;}
+	#related .article p, #related .article_list .front p{margin:0 0 8px 0;}
 	#related a, #related h5{color:#ff9700;}
 	#related a:hover{color:#FFBD00;}
 	#related .pagination_container{
@@ -127,3 +137,13 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 			float:left;
 			margin:0 10px 0 0;
 		}
+	#related h3.blog{margin:0 0 20px 2%;}
+		#index #related h3.blog{margin:0 0 20px 4%;}
+	#related .article_list h3.title{margin:0 0 20px 0;}
+		#related h3.title a, #related h3.title a:hover, #related h3.blog a, #related h3.blog a:hover{
+			color:white;
+			font-size:146.5%;
+		}
+	#related .featured_work h3{font-size:123.1%;}
+		#related .featured_work h3 a{color:#ff3700;}
+		#related .featured_work h3 a:hover{color:#FF522B;}		

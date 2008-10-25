@@ -1,10 +1,10 @@
 <?if($cms_content->id):?>
 <?
 $model = new CmsContent("published");
-$all_content = $model->filter(array('cms_section_id'=>$cms_section->id))->filter('id <> '.$cms_content->id)->order('published DESC')->page($this_page,$per_page-2);
+$all_content = $model->filter('id <> '.$cms_content->id)->order('published DESC')->limit($per_page-2)->all();
 $hide = 0;
 ?>
-<?elseif($cms_content[0]->id):?>
+<?elseif($cms_content[0]->id && $action != "index"):?>
 <?
 $all_content = $cms_content;
 $hide = 2;
@@ -13,7 +13,11 @@ $hide = 2;
 
 <?if($all_content):?>
 <div class="articles full">
-<h3>Other Articles in <?=$cms_section->title?></h3>
+	<?if($cms_content->id):?>
+	<h3 class="blog"><a href="#" title="more from this section" rel="random">Other Recent Posts</a></h3>
+	<?elseif($cms_content[0]->id):?>
+	<h3 class="blog"><a href="#" title="more from this section" rel="more">More Posts From '<?=$cms_section->title?>'</a></h3>
+	<?endif?>
 	<?$i=1;?>
 	<?foreach($all_content as $related):?>
 		<?if($i>$hide):?>
@@ -29,13 +33,40 @@ $hide = 2;
 		<?endif?>
 		<?$i++?>
 	<?endforeach?>
+	<?if($cms_content->total_pages > 1):?>
 	<div class="pagination_container">
-		<h5>Pages:</h5>
+		<h5>Page:</h5>
 	<?=paginate_links($all_content, 2)?>
 	</div>
+	<?endif?>
 </div>
 <?else:?>
-
+<?
+$model = new CmsContent("published");
+$all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->limit(4)->offset(1)->all();
+?>
+<div class="article_list">
+	<h3 class="blog"><a href="/blogs" title="blogs" rel="blog">Recent Blogs</a></h3>
+	<?$i=0?>
+	<?foreach($all_content as $related):?>
+		<div class="front <?=$related->section->url?>">	
+			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?> - <small><?=short_date($related->published)?></small><?if($i>1):?> &raquo;<?endif?></a></h3>
+			<?if($i<1):?>
+			<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
+			<?endif?>
+		</div>
+		<div class="clearfix"></div>
+		<?$i++?>
+	<?endforeach?>
+</div>
+<?$featured = $model->clear()->scope("published")->filter(array('cms_section_id'=>3))->order('published DESC')->first()?>
+<div class="article_list">
+	<h3 class="title"><a href="/work" title="Latest Work" rel="work">Latest Work</a></h3>
+	<div class="featured_work <?=$featured->section->url?>">	
+		<h3><a href="<?=$featured->permalink?>" title="view '<?=$featured->title?>' in full" rel="article"><?=$featured->title?> - <small><?=short_date($related->published)?></small></a></h3>
+		<?=word_truncation($featured->content, 60)?>
+	</div>
+</div>
 
 <?endif?>
 
