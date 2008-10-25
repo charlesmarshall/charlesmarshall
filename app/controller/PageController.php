@@ -14,9 +14,10 @@ class PageController extends ApplicationController {
   
   public function index() {
     $model = new CmsContent("published");
-		$this->cms_content[0] = $model->filter(array('cms_section_id'=>3))->order('published DESC')->first();
+		$this->cms_content[0] = $model->filter(array('cms_section_id'=>4))->order('published DESC')->first();
   }
   
+
 
 	public function related(){
 		$this->use_layout = false;

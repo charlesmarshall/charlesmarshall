@@ -130,9 +130,9 @@ class Flickr{
 			$age = $now-$made_on;
 			if($age > (60*60*24) ) unlink($cache);
 		}		
-		if(is_readable($cache) && $this->use_cache) return simplexml_load_file($cache, "SimpleXMLElement", LIBXML_NOCDATA);		
+		if(is_readable($cache) && $this->use_cache) return simplexml_load_file($cache, "SimpleXMLElement", LIBXML_NOCDATA|LIBXML_NOERROR );		
 		else{
-			$xmldoc = simplexml_load_file($url, "SimpleXMLElement", LIBXML_NOCDATA);
+			$xmldoc = simplexml_load_file($url, "SimpleXMLElement", LIBXML_NOCDATA|LIBXML_NOERROR);
 			if($this->use_cache) @file_put_contents(WAX_ROOT."tmp/cache/".$file, $xmldoc->asXML());
 			return $xmldoc;
 		}

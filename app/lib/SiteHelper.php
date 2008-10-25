@@ -24,7 +24,7 @@ class SiteHelper extends WXHelpers {
   }
 
 	public function improved_parse_rss($url, $items) {
-    $simple = @simplexml_load_file($url, "SimpleXMLElement", LIBXML_NOCDATA);
+    $simple = @simplexml_load_file($url, "SimpleXMLElement", LIBXML_NOCDATA|LIBXML_NOERROR);
     for($i=0; $i<$items; $i+=1) {
       $title = (array) $simple->channel->item[$i]->title;
       $desc = (array) $simple->channel->item[$i]->description;

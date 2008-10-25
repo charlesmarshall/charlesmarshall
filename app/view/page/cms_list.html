@@ -15,7 +15,7 @@
 			<ul class="detail clearfix">
 				<li>Found in:</li>
 				<?foreach($content->categories as $category):?>
-				<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
+				<li><?=$category->name?></li>
 				<li>|</li>
 				<?endforeach?>
 				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>More &raquo;</strong></a></li>
@@ -43,7 +43,7 @@
 			<ul class="detail clearfix">
 				<li>Found in:</li>
 				<?foreach($content->categories as $category):?>
-				<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
+				<li><?=$category->name?></li>
 				<li>|</li>
 				<?endforeach?>
 				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>More &raquo;</strong></a></li>
