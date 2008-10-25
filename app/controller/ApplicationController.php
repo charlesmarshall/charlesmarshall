@@ -2,7 +2,13 @@
 
 class ApplicationController extends CMSApplicationController{
 	
-	public $style = false; //either day or night
+	public $flickr_per_page = 4;
+	public $flickr_page = 1;
+	public $flickr_size = "m";
+	public $flickr_fmod = 2;
+	public $flickr_show_title = true;
+	public $flickr_user = "81461873@N00";
+	public $flickr_secret_key = "c376479878c604c3a4a0b9af31930313";
 	
 	
 	public function get_body_id(){
@@ -15,12 +21,7 @@ class ApplicationController extends CMSApplicationController{
 		elseif($this->cms_section->id) return "list";
 		else return "view";
 	}
-	public function get_url(){
-		if($this->cms_content->id) return $this->cms_content->permalink();
-		elseif($this->cms_section->id) return $this->cms_section->permalink();
-		elseif($this->controller != "page") return "/".$controller."/".$action;
-		else return $action;
-	}
+
 	
 }
 

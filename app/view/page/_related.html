@@ -1,7 +1,7 @@
 <?if($cms_content->id):?>
 <?
 $model = new CmsContent("published");
-$all_content = $model->filter('id <> '.$cms_content->id)->order('published DESC')->limit($per_page-2)->all();
+$all_content = $model->filter('id <> '.$cms_content->id)->order('RAND()')->limit($per_page)->all();
 $hide = 0;
 ?>
 <?elseif($cms_content[0]->id && $action != "index"):?>
@@ -14,7 +14,7 @@ $hide = 2;
 <?if($all_content):?>
 <div class="articles full">
 	<?if($cms_content->id):?>
-	<h3 class="blog"><a href="#" title="more from this section" rel="random">Other Recent Posts</a></h3>
+	<h3 class="blog"><a href="#" title="more from this section" rel="random">Random Posts</a></h3>
 	<?elseif($cms_content[0]->id):?>
 	<h3 class="blog"><a href="#" title="more from this section" rel="more">More Posts From '<?=$cms_section->title?>'</a></h3>
 	<?endif?>
@@ -22,7 +22,7 @@ $hide = 2;
 	<?foreach($all_content as $related):?>
 		<?if($i>$hide):?>
 			<div class="article <?=$related->section->url?>">	
-				<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?> - <small><?=short_date($related->published)?></small><?if($i>1):?> &raquo;<?endif?></a></h3>
+				<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <small>(<?=short_date($related->published)?>)</small><?if($i>1):?> &raquo;<?endif?></a></h3>
 				<?if(($i-$hide) <= 2):?>
 				<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
 				<?endif?>
@@ -43,7 +43,7 @@ $hide = 2;
 <?else:?>
 <?
 $model = new CmsContent("published");
-$all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->limit(4)->offset(1)->all();
+$all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->limit(6)->offset(1)->all();
 ?>
 <div class="article_list">
 	<h3 class="blog"><a href="/blogs" title="blogs" rel="blog">Recent Blogs</a></h3>
@@ -64,7 +64,7 @@ $all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->l
 	<h3 class="title"><a href="/work" title="Latest Work" rel="work">Latest Work</a></h3>
 	<div class="featured_work <?=$featured->section->url?>">	
 		<h3><a href="<?=$featured->permalink?>" title="view '<?=$featured->title?>' in full" rel="article"><?=$featured->title?> - <small><?=short_date($related->published)?></small></a></h3>
-		<?=word_truncation($featured->content, 60)?>
+		<?=word_truncation($featured->content, 90)?>
 	</div>
 </div>
 
@@ -87,5 +87,3 @@ $(document).ready(function(){
 
 });
 </script>
-
-<div id="plants">&nbsp;</div>

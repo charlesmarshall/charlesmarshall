@@ -30,7 +30,7 @@ p,li{color:#fefeff;}
 
 
 /*layout*/
-html{background:#00b2ee url('/images/background.png') repeat-x top left;}
+html{background:#171d16 url('/images/background.png') repeat-x top left;}
 	
 #page{background:url('/images/tree.png') no-repeat bottom left;}
 
@@ -48,7 +48,7 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 			color:#fefeff;
 			background:url('/images/vertical-dash.gif') no-repeat center right;
 		}
-		#navigation li a.contact{background-image:none;}
+		#navigation li a.work{background-image:none;}
 		#navigation li a, #navigation li a:hover{text-decoration:none;}
 		#navigation li#selected a, #navigation li#selected a:hover{color:#fa3a00;}
 		
@@ -148,8 +148,76 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 		#related .featured_work h3 a{color:#ff3700;}
 		#related .featured_work h3 a:hover{color:#FF522B;}		
 		
-#footer{
-	background:url('/images/footer.png') repeat-x top left;
-}
+#footer{background:url('/images/footer.png') repeat-x top left;}
 .loader{background:url('/images/loader.png') no-repeat center center;}
 .display_none{opacity:0.1;}
+
+#footer .quarter{
+	width:22%;
+	margin:0 0 0 2%;
+	float:left;
+}
+	#extras{padding-top:130px;}
+		#index #extras{padding-top:100px;}
+	#extras h4{font-size:146.5%;}
+		#extras h4, #extras h4 a, #extras h4 a:hover{color:white;}
+	#extras h5{
+		margin-bottom:20px;
+		font-size:100%;
+		line-height:1.4em;
+	}
+		#extras h5 a{
+			padding-left:20px;
+			background:url('/images/rss-small.png') no-repeat center left;
+			color:#ff8a1f;
+		}
+			#extras h5 a:hover{color:#FFA319;}
+/*flickr*/
+#flickr_latest .gallery_item{
+	float:left;
+	width:50%;
+}
+	#flickr_latest .gallery_item img{
+		border:2px solid white;
+	}
+	#flickr_latest span.flick{color:#3b9de9;}
+	#flickr_latest span.flickr{color:#ff00d9;}	
+	
+#lastfm ol, #twitter ul, #oneblackbear ol{
+	margin-left:25px;
+	width:80%;
+}
+#twitter ul{margin-left:15px;}
+	#lastfm ol li, #twitter ul li, #oneblackbear ol li{
+		list-style-type:decimal;
+		margin-bottom:4px;
+		padding-left:4px;
+	}	
+	#twitter ul li{list-style-type:square;}
+		#lastfm ol li	a, #twitter ul li a, #oneblackbear ol li a{color:white;}
+		#twitter ul li span, #lastfm ol li span, #oneblackbear ol li span{color:#95d5ff;}
+		
+#twitter h4 a{
+	padding-left:20px;
+	background:url('/images/twitter.png') no-repeat center left;
+}		
+#oneblackbear{background:url('/images/obb.png') no-repeat top right;}
+
+#associated{margin-top:30px;}
+	#people{
+		float:right;
+		width:25%;
+		margin-right:4%;
+	}
+		#people h4{
+			font-size:116%;
+			color:#ff861c;
+		}
+		#people ul{margin-left:0px;}
+		#people ul li{
+			list-style-type:none;
+			margin-bottom:4px;
+			font-size:85%;
+			text-align:right;
+		}
+		#people ul li span{color:#ff0042;}

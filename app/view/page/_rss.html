@@ -1,0 +1,8 @@
+<div id="rss" class="quarter">
+	<?if($cms_section->id):?>
+	<a href="<?=$server?><?=$cms_section->url?>.xml" title="RSS for <?=$cms_section->title?>" rel="RSS">
+	<?else:?>
+	<a href="<?=$server?>index.xml" title="RSS for <?=$server?>" rel="RSS">
+	<?endif?>
+	<img src="/images/rss.png" alt="RSS logo" title="RSS" /></a>
+</div>

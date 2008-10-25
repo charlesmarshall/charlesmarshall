@@ -1,0 +1,12 @@
+<div id="twitter" class="clearfix quarter">
+	
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#twitter').addClass('loader');
+	$.get('/twitter', function(response){
+		$('#twitter').html(response);
+		$('#twitter').removeClass('loader');
+	});
+});
+</script>

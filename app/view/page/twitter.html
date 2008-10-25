@@ -1,0 +1,9 @@
+<?if(cache_start("twitter/charlesmarshall")):?>
+<h4><a href="http://twitter.com/charlesmarshall" title="my tweets" rel="twitter">twitter</a></h4>
+<h5><a href="http://twitter.com/charlesmarshall" title="my twitter page">twitter.com/charlesmarshall</a></h5>
+<ul>
+<?foreach($twitter as $tweet):?>
+  <li><span><?=$tweet->text?></span> - <?=short_date($tweet->created_at)?></li>
+<?endforeach?>
+</ul>
+<?endif; cache_end()?>

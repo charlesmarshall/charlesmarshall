@@ -1,0 +1,12 @@
+<div id="oneblackbear" class="clearfix quarter">
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#oneblackbear').addClass('loader');
+	$.get('/oneblackbear', function(response){
+		$('#oneblackbear').html(response);
+		$('#oneblackbear').removeClass('loader');
+	});
+});
+</script>

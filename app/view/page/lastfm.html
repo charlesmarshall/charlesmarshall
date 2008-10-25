@@ -1,0 +1,14 @@
+<?if(cache_start("lastfm/charlesmarshall")):?>
+<h4><a href="http://www.last.fm/user/cmmarshall" title="my last.fm" rel="last.fm"><img src='/images/last-fm.png' alt="lastfm logo" /></a></h4>
+<h5><a href="http://www.last.fm/user/cmmarshall" title="my last.fm page">last.fm/user/cmmarshall</a></h5>
+<ol>
+<?foreach($lastfm as $track):?>
+	<?
+	$info = explode("~", $track['title']);
+	$artist = trim($info[0]);
+	$trackname = trim($info[1]);
+	?>
+  <li><a href="<?=$track['link']?>"><span><?=$artist?></span> - <?=$trackname?></a></li>
+<?endforeach?>
+</ol>
+<?endif; cache_end()?>

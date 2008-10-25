@@ -33,9 +33,8 @@
 				<ul>
 	        <?=smart_nav("/", "home", $section_stack[0], "selected", array('accesskey'=>"H", 'class'=>'home') )?>                
 	        <?=smart_nav("/blog", "blog", $section_stack[0], "selected", array('accesskey'=>"B", 'class'=>'blog') )?>        
-	        <?=smart_nav("/gallery", "photos", $section_stack[0], "selected", array('accesskey'=>"G", 'class'=>'hobbies') )?>
-	        <?=smart_nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W", 'class'=>'hobbies') )?>		
-	        <?=smart_nav("/contact-me", "contact", $section_stack[0], "selected", array('accesskey'=>"C", 'class'=>'contact') )?>
+	        <?=smart_nav("/gallery", "photos", $section_stack[0], "selected", array('accesskey'=>"G", 'class'=>'gallery') )?>
+	        <?=smart_nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W", 'class'=>'work') )?>		
 				</ul>
 			</div>
 			<!-- logo -->
@@ -53,12 +52,17 @@
 		<div id="related" class="full clearfix">
 			<?=partial("page/_related", $this)?>
 		</div>
-		<div id="extras">
+		<div id="extras" class="full clearfix">
 			<?=partial("page/_flickr")?>
 			<?=partial("page/_lastfm")?>
-			<?=partial("page/_reddit")?>
+			<?=partial("page/_twitter")?>
 			<?=partial("page/_oneblackbear")?>
 		</div>
+		<div id="associated" class="full clearfix">
+			<?=partial("page/_people")?>
+			<?=partial("page/_rss")?>
+		</div>
+		
 	</div>
 	
 </body>
