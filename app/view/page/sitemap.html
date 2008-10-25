@@ -1,0 +1,23 @@
+<?$sect = new CmsSection;$sections = $sect->all();?>
+<div id="page_content" class="restricted sitemap cms_container">
+<div class="story">
+<ul>
+	<?foreach($sections as $section):?>
+	<li><a href="<?=$section->permalink?>" title="<?=str_replace('"', '',$section->title)?>" rel="section"><?=$section->title?></a>
+		<?
+		$model = new CmsContent("available");
+		$pages = $model->filter(array('cms_section_id'=>$section->id))->all();
+		?>
+		<?if(count($pages)):?>
+		<ul>
+		<?foreach($pages as $page):?>
+		<li><a href="<?=$page->permalink?>" title="<?=str_replace('"', '',$page->title)?>" rel="internal page"><?=$page->title?></a></li>
+		<?endforeach?>
+		</ul>
+		<?endif?>
+	</li>
+	<?endforeach?>
+	
+</ul>
+</div>
+</div>

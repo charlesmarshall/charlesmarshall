@@ -1,0 +1,35 @@
+<?echo'<?xml version="1.0" encoding="UTF-8"?>';?>
+  <urlset xmlns='http://www.google.com/schemas/sitemap/0.84'
+					  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+					  xsi:schemaLocation='http://www.google.com/schemas/sitemap/0.84
+					                      http://www.google.com/schemas/sitemap/0.84/sitemap.xsd'>
+		
+
+<?$sect = new CmsSection;$sections = $sect->all();?>
+<?$page = new CmsContent("published"); $pages = $page->all()?>
+		
+		<url>
+			<loc><?=$server?></loc>
+			<lastmod><?=date("Y-m-d")?></lastmod>
+			<changefreq>daily</changefreq>
+			<priority>1</priority>
+		</url>			
+		<?foreach($sections as $section):?>
+			<?if($section->title != "home"):?>
+		<url>
+			<loc><?=$server?><?=$section->permalink?></loc>
+			<lastmod><?=date("Y-m-d")?></lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+			<?endif?>
+		<?endforeach?>
+		<?foreach($pages as $page):?>
+		<url>
+			<loc><?=$server?><?=$page->permalink?></loc>
+			<lastmod><?=date("Y-m-d", strtotime($page->published) )?></lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.5</priority>
+		</url>
+		<?endforeach?>
+	</urlset>
