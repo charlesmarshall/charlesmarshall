@@ -17,11 +17,23 @@ class PageController extends ApplicationController {
 		$this->cms_content[0] = $model->filter(array('cms_section_id'=>4))->order('published DESC')->first();
   }
   
+
+	public function category(){
+		$this->use_view ="cms_list";
+		if(!$this->this_page = Request::param('page')) $this->this_page = 1;
+		if(!$url = Request::param('id')) $this->redirect_to('/');
+		$cat = new CmsCategory;
+		$this->category = $cat->filter(array('url'=>$url))->first();
+		if(!$this->category->id) $this->redirect_to('/');
+		$this->cms_content = $this->category->attached_to->order('published DESC')->page($this->this_page, $this->per_page);
+		$this->section_stack[0] = "category";
+	}
+
 	public function sitemap(){}
 
 	public function related(){
 		$this->use_layout = false;
-		$this->use_view ="_related";
+		$this->use_view ="_related_list";
 		if(Request::post('page_number') && Request::post('section') ){
 			$page = parse_url(Request::post('page_number'));
 			$page = str_replace("page=","",$page['query']);
@@ -34,6 +46,22 @@ class PageController extends ApplicationController {
 					$this->cms_section_id = $this->cms_section->id;
 					$this->cms_content = $content->filter(array('cms_section_id'=>$this->cms_section_id))->order('published DESC')->page($this->this_page,$this->per_page);
 				}
+			}
+		}		
+	}
+	
+	
+	public function related_category(){
+		$this->use_layout = false;
+		$this->use_view ="_related_category";
+		if(Request::post('page_number') && Request::post('category') ){
+			$page = parse_url(Request::post('page_number'));
+			$page = str_replace("page=","",$page['query']);
+			if($page && Request::post('category_id')){
+				$this->this_page = $page;
+				$this->category = new CmsCategory(Request::post('category_id'));
+				$content = $this->category->attached_to;
+				$this->cms_content = $content->order('published DESC')->page($this->this_page, $this->per_age);
 			}
 		}		
 	}

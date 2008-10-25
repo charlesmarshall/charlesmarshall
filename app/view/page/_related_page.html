@@ -1,0 +1,26 @@
+<?if($cms_content->id):?>
+<?
+$model = new CmsContent("published");
+$all_content = $model->filter('id <> '.$cms_content->id)->order('RAND()')->limit($per_page)->all();
+$hide = 0;
+?>
+<?endif?>
+
+<?if($all_content):?>
+<div class="articles full">
+	<h3 class="blog"><a href="#" title="more from this section" rel="random">Random Posts</a></h3>
+	<?$i=1;?>
+	<?foreach($all_content as $related):?>
+		<div class="article <?=$related->section->url?>">	
+			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>2):?> &raquo;<?endif?></a></h3>
+			<?if($i<3):?>
+			<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
+			<?endif?>
+		</div>
+		<?if(fmod($i,2)==0):?>
+		<div class="clearfix"></div>
+		<?endif?>
+		<?$i++?>
+	<?endforeach?>
+</div>
+<?endif?>

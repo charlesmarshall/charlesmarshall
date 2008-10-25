@@ -62,7 +62,15 @@
 	<!--end main content container -->		
 	<div id="footer">
 		<div id="related" class="full clearfix">
+			<?if($category->id):?>
+			<?=partial("page/_related_category", $this)?>
+			<?elseif($cms_content[0]->id && $action != "index"):?>
+			<?=partial("page/_related_list", $this)?>
+			<?elseif($cms_content->id):?>
+			<?=partial("page/_related_page", $this)?>
+			<?else:?>
 			<?=partial("page/_related", $this)?>
+			<?endif?>
 		</div>
 		<div id="extras" class="full clearfix">
 			<?=partial("page/_flickr")?>

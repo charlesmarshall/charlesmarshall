@@ -1,0 +1,51 @@
+<?if($category->id):?>
+<?
+$all_content = $cms_content;
+$hide = 2;
+?>
+<?endif?>
+
+<?if($all_content):?>
+<div class="articles full">
+	<h3 class="blog"><a href="#page" title="more from this section" rel="more">More Posts From '<?=$category->name?>'</a></h3>
+	<?for($i=2; $i< count($all_content); $i++):?>
+		<?$related = $all_content[$i]?>
+		<??>
+		<?if($related->id && $related instanceOf WaxModel):?>
+		<div class="article <?=$related->section->url?>">	
+			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>3):?> &raquo;<?endif?></a></h3>
+			<?if($i<=4):?>
+			<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
+			<?endif?>
+		</div>
+		<?endif?>
+		<?if(fmod($i,2)==0):?>
+		<div class="clearfix"></div>
+		<?endif?>
+	<?endfor?>
+	<?if($cms_content->total_pages > 1):?>
+	<div class="pagination_container clearfix">
+		<?=paginate_links($all_content, 2)?>
+		<h5>Page:</h5>
+	</div>
+	<?endif?>
+</div>
+<?endif?>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#related .pagination a').click(function(){
+		href = $(this).attr('href');
+		$('#related').addClass('loader');
+		$('#related *').addClass('display_none');
+		$.post('/related', {'page_number':href, 'category':'<?=$category->url?>', 'category_id':<?=$category->id?>}, function(response){
+			$('#related').html(response);
+			$('#related').removeClass('loader');
+			$('#related *').removeClass('display_none');
+		});
+		return false;
+	});
+
+});
+</script>
