@@ -87,9 +87,7 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 	margin:0 0 12px 12px;
 }
 
-#featured_story{
-	padding-bottom:30px;
-}
+#featured_story{padding-bottom:30px;}
 
 #content ul.detail{margin:15px 0;}
 #content ul.detail li{
@@ -101,3 +99,31 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 	margin-right:8px;
 }
 #content ul.detail li a{color:#bad7e1;}
+
+
+#related{
+	background:url('/images/plants.png') repeat-x top left;
+	padding-top:30px;
+}
+#related .article{
+	width:43%;
+	margin-left:2%;
+	float:left;
+	padding-left:3%;
+	background:url('/images/article.png') no-repeat top left;
+	margin-bottom:10px;
+}
+	#related .article h3{margin:0;}
+	#related .article h3 small{font-size:85%;}
+	#related .article p{margin:0 0 8px 0;}
+	#related a, #related h5{color:#ff9700;}
+	#related a:hover{color:#FFBD00;}
+	#related .pagination_container{
+		float:right;
+		margin-right:4%;
+	}	
+		#related .pagination_container h5{line-height:2em;}
+		#related .pagination_container ul, #related .pagination_container h5{
+			float:left;
+			margin:0 10px 0 0;
+		}

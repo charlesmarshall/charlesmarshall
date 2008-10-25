@@ -1,0 +1,54 @@
+<?if($cms_content->id):?>
+<?
+$model = new CmsContent("published");
+$all_content = $model->filter(array('cms_section_id'=>$cms_section->id))->filter('id <> '.$cms_content->id)->order('published DESC')->page($this_page,$per_page-2);
+$hide = 0;
+?>
+<?elseif($cms_content[0]->id):?>
+<?
+$all_content = $cms_content;
+$hide = 2;
+?>
+<?endif?>
+
+<?if($all_content):?>
+<div class="articles full">
+<h3>Other Articles in <?=$cms_section->title?></h3>
+	<?$i=1;?>
+	<?foreach($all_content as $related):?>
+		<?if($i>$hide):?>
+			<div class="article <?=$related->section->url?>">	
+				<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?> - <small><?=short_date($related->published)?></small><?if($i>1):?> &raquo;<?endif?></a></h3>
+				<?if(($i-$hide) <= 2):?>
+				<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
+				<?endif?>
+			</div>
+			<?if(fmod($i,2)==0):?>
+			<div class="clearfix"></div>
+			<?endif?>
+		<?endif?>
+		<?$i++?>
+	<?endforeach?>
+	<div class="pagination_container">
+		<h5>Pages:</h5>
+	<?=paginate_links($all_content, 2)?>
+	</div>
+</div>
+<?else:?>
+
+
+<?endif?>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#related .pagination a').click(function(){
+		href = $(this).attr('href');
+		$.post('/related', {'page_number':href, 'section':'<?=$cms_section->url?>'}, function(response){
+			$('#related').html(response);
+		});
+		return false;
+	});
+
+});
+</script>

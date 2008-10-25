@@ -8,6 +8,9 @@
 	<link rel="icon" type="image/gif" href="/favicon.ico" />
 	<link rel="stylesheet" href="/stylesheets/core.css" type="text/css" media="screen" title="no title" charset="utf-8" />
   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<script src="/javascripts/jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+	
   <title>
 		<?if($cms_content->id || $cms_section->id):?>
 		<?=(page_title($cms_content, $cms_section, "Charles Marshall", " - "))?>
@@ -37,7 +40,7 @@
 			</div>
 			<!-- logo -->
 			<div id="logo">
-				<a href="/" title="home" rel="home" accesskey="H"><img src="/images/logo.png" title="Charles Marshall" alt="logo"/></a>
+				<a href="/" title="home" rel="home" ><img src="/images/logo.png" title="Charles Marshall" alt="logo"/></a>
 			</div>
 			
 		</div>
@@ -46,7 +49,15 @@
 		</div>
 	</div>
 	<!--end main content container -->		
-	
+	<div id="related" class="full clearfix">
+		<?=partial("page/_related", $this)?>
+	</div>
+	<div id="footer">HERE
+		<?=partial("page/_flickr")?>
+		<?=partial("page/_lastfm")?>
+		<?=partial("page/_reddit")?>
+		<?=partial("page/_oneblackbear")?>
+	</div>
 	
 </body>
 </html>

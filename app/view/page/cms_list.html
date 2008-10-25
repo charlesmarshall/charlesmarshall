@@ -1,17 +1,17 @@
 <div class="restricted">
-	
+	<?if($cms_content[0]):?>
 	<?$content = $cms_content[0]?>
 	<div class="story <?=$content->section->url?> clearfix">
 		<div class="story_content">
-			<h3><a href="<?=$content->permalink()?>" title="read '<?=$content->title?>'" rel="this page"><?=$content->title?></a></h3>
+			<h2><a href="<?=$content->permalink()?>" title="read '<?=$content->title?>'" rel="this page"><?=$content->title?></a></h2>
 			<h4><?=long_date($content->published)?></h4>
 			<?$images = $content->images?>
 			<?if($images[0]):?>
-				<a href="<?=$images[0]->url?>" title="read '<?=$content->title?>'" rel="full story"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
+				<a href="<?=$images[0]->url?>" title="read '<?=$content->title?>'" rel="article"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
 			<?endif?>
-			<?=word_truncation($content->content, 80);?>
+			<?=word_truncation($content->content, 30);?>
 			<ul class="detail clearfix">
-				<li><a href="<?=$cms_content->permalink?>" title="read more" rel="full story"><strong>Read More...</strong></a></li>
+				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>Read More...</strong></a></li>
 			</ul>
 			<?if($content->categories && $content->categories[0]):?>
 			<ul class="detail clearfix">
@@ -23,6 +23,30 @@
 			<?endif?>
 		</div>	
 	</div>
-	
-	
+	<?endif?>
+	<?if($cms_content[1]):?>
+	<?$content = $cms_content[1]?>
+	<div class="story <?=$content->section->url?> clearfix">
+		<div class="story_content">
+			<h2><a href="<?=$content->permalink()?>" title="read '<?=$content->title?>'" rel="this page"><?=$content->title?></a></h2>
+			<h4><?=long_date($content->published)?></h4>
+			<?$images = $content->images?>
+			<?if($images[0]):?>
+				<a href="<?=$images[0]->url?>" title="read '<?=$content->title?>'" rel="article"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
+			<?endif?>
+			<?=word_truncation($content->content, 30);?>
+			<ul class="detail clearfix">
+				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>Read More...</strong></a></li>
+			</ul>
+			<?if($content->categories && $content->categories[0]):?>
+			<ul class="detail clearfix">
+				<li>Found in:</li>
+				<?foreach($content->categories as $category):?>
+				<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
+				<?endforeach?>
+			</ul>
+			<?endif?>
+		</div>	
+	</div>
+	<?endif?>	
 </div>
