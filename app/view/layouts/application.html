@@ -28,6 +28,8 @@
 		<?=(page_title($cms_content, $cms_section, "Charles Marshall", " - "))?>
 		<?elseif($category->id):?>
 		<?=$category->name?> - Charles Marshall
+		<?elseif($page_title):?>
+		<?=$page_title?> - Charles Marshall
 		<?elseif($action != "index"):?>
 		<?=ucwords(str_replace("-", " ", $action))?> - Charles Marshall
 		<?else:?>Charles Marshall<?endif?>
