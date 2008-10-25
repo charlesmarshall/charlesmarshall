@@ -29,8 +29,8 @@ test:
 
 production: 
   db: 
-    database: newtechno
-    username: newtechno
+    database: charlesmarshall
+    username: charlesmarshall
     password: n3w11techno
     
 

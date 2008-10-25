@@ -13,17 +13,17 @@ load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 # correspond to. The deploy_to path must be the path on each machine that will
 # form the root of the application path.
 
-set :application, "app_name"
-role :web,        "#{application}.com"
+set :application, "charlesmarshall"
+role :web,        "#{application}.co.uk"
 set :user,        "#{application}"
-set :password,    'password'
+set :password,    'n3w11techno'
 
 
 # =============================================================================
 # OPTIONAL VARIABLES
 # =============================================================================
 default_run_options[:pty] = true
-set :repository,  "git@github.com:oneblackbear/#{application}.git"
+set :repository,  "git@github.com:charlesmarshall/#{application}.git"
 set :branch,      "master"
 set :deploy_to,   "."
 

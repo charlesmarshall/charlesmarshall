@@ -4,10 +4,21 @@
 	
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="charles marshall - design by gareth brown" />
+	<meta name="keywords" content="charles marshall,blog,<?=keywords($cms_content)?><?=keywords($cms_section)?>" />
+	<meta name="description" content="Charles Marshall. <?=description($cms_content, "content")?>.<?=description($cms_section, "introduction")?>" />
+
+	
 	
 	<link rel="icon" type="image/gif" href="/favicon.ico" />
 	<link rel="stylesheet" href="/stylesheets/core.css" type="text/css" media="screen" title="no title" charset="utf-8" />
   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+
+	<?if($cms_section->id):?>
+	<link rel="alternate" type="application/rss+xml" title="<?=$cms_section->title?>" href="<?=$server?><?=$cms_section->permalink?>.xml" />
+	<?else:?>
+	<link rel="alternate" type="application/rss+xml" title="news" href="<?=$server?>/index.xml" />
+	<?endif?>
+
 	<script src="/javascripts/jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
 	
