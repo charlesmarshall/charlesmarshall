@@ -10,15 +10,19 @@
 				<a href="<?=$images[0]->url?>" title="read '<?=$content->title?>'" rel="article"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
 			<?endif?>
 			<?=word_truncation($content->content, 30);?>
-			<ul class="detail clearfix">
-				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>Read More...</strong></a></li>
-			</ul>
+			
 			<?if($content->categories && $content->categories[0]):?>
 			<ul class="detail clearfix">
 				<li>Found in:</li>
 				<?foreach($content->categories as $category):?>
 				<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
+				<li>|</li>
 				<?endforeach?>
+				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>More &raquo;</strong></a></li>
+			</ul>
+			<?else:?>
+			<ul class="detail clearfix">
+				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>More &raquo;</strong></a></li>
 			</ul>
 			<?endif?>
 		</div>	
@@ -43,7 +47,13 @@
 				<li>Found in:</li>
 				<?foreach($content->categories as $category):?>
 				<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
+				<li>|</li>
 				<?endforeach?>
+				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>More &raquo;</strong></a></li>
+			</ul>
+			<?else:?>
+			<ul class="detail clearfix">
+				<li><a href="<?=$content->permalink?>" title="read more" rel="article"><strong>More &raquo;</strong></a></li>
 			</ul>
 			<?endif?>
 		</div>	

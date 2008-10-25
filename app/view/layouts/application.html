@@ -49,14 +49,16 @@
 		</div>
 	</div>
 	<!--end main content container -->		
-	<div id="related" class="full clearfix">
-		<?=partial("page/_related", $this)?>
-	</div>
 	<div id="footer">
-		<?=partial("page/_flickr")?>
-		<?=partial("page/_lastfm")?>
-		<?=partial("page/_reddit")?>
-		<?=partial("page/_oneblackbear")?>
+		<div id="related" class="full clearfix">
+			<?=partial("page/_related", $this)?>
+		</div>
+		<div id="extras">
+			<?=partial("page/_flickr")?>
+			<?=partial("page/_lastfm")?>
+			<?=partial("page/_reddit")?>
+			<?=partial("page/_oneblackbear")?>
+		</div>
 	</div>
 	
 </body>

@@ -89,7 +89,7 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 
 #featured_story{padding-bottom:30px;}
 
-#content ul.detail{margin:15px 0;}
+#content ul.detail{margin:5px 0;}
 #content ul.detail li{
 	list-style-type:none;
 	float:left;
@@ -97,12 +97,12 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 	position:relative;
 	color:#bad7e1;
 	margin-right:8px;
+	line-height:1.8em;
 }
 #content ul.detail li a{color:#bad7e1;}
 
 
 #related{
-	background:url('/images/plants.png') repeat-x top left;
 	padding:45px 0 10px 0;
 }
 #related .article, #related .article_list .front{
@@ -147,3 +147,9 @@ html{background:#00b2ee url('/images/background.png') repeat-x top left;}
 	#related .featured_work h3{font-size:123.1%;}
 		#related .featured_work h3 a{color:#ff3700;}
 		#related .featured_work h3 a:hover{color:#FF522B;}		
+		
+#footer{
+	background:url('/images/footer.png') repeat-x top left;
+}
+.loader{background:url('/images/loader.png') no-repeat center center;}
+.display_none{opacity:0.1;}

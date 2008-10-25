@@ -75,11 +75,17 @@ $all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->l
 $(document).ready(function(){
 	$('#related .pagination a').click(function(){
 		href = $(this).attr('href');
+		$('#related').addClass('loader');
+		$('#related *').addClass('display_none');
 		$.post('/related', {'page_number':href, 'section':'<?=$cms_section->url?>'}, function(response){
 			$('#related').html(response);
+			$('#related').removeClass('loader');
+			$('#related *').removeClass('display_none');
 		});
 		return false;
 	});
 
 });
 </script>
+
+<div id="plants">&nbsp;</div>
