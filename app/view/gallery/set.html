@@ -1,9 +1,8 @@
 <div class="restricted">
 
-	<h2><a href="/gallery" title="Gallery" rel="gallery main page" class="highlight">Gallery</a> - <?=$info['title']?> <span>(<?=$info['@attributes']['photos']?> photos)</span></h2>
-	<?if(is_string($info['description'])):?>
-	<p><?=$info['description']?></p>
-	<?endif?>
+	<h2 class="gallery"><?=$info['title']?></h3>
+	<h4 class="gallery">(<?=$info['@attributes']['photos']?> photos)</h4>
+	
 	<div class="full clearfix">
 		<?if(count($pics)):?>
 			<?foreach($pics as $count => $picinfo):?>
@@ -11,13 +10,13 @@
 				$pic = $picinfo['photo']['@attributes'];
 				$sizes = $flickr->get_photo_sizes(array('photo_id'=>$pic['id']));
 				$photo = flickr_photo($pic['id'], $sizes);
-				$medium = $photo['Small'];
+				$medium = $photo['Square'];
 				if($photo['Large']) $large = $photo['Large'];
 				elseif($photo['Original']) $large = $photo['Original'];
 				else $large = $photo['Medium'];
 				?>
-				<div class="gallery_item<?if(fmod($count+1,$flickr_fmod)==0):?> right_side<?endif?>">
-					<h3><?=$pic['title']?></h3>
+				<div class="gallery_item">
+					<h3 class="gallery"><?=$pic['title']?></h3>
 					<a href="<?=$large?>" class="thickbox" rel="gallery-image" title="<?=$pic['title']?>"><img src="<?=$medium?>" alt="<?=$pic['title']?>" title="<?=$pic['title']?>" /></a>
 				</div>
 				<?if(fmod($count+1,$flickr_fmod)==0):?>

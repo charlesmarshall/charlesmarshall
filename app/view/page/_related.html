@@ -34,9 +34,9 @@ $hide = 2;
 		<?$i++?>
 	<?endforeach?>
 	<?if($cms_content->total_pages > 1):?>
-	<div class="pagination_container">
+	<div class="pagination_container clearfix">
+		<?=paginate_links($all_content, 2)?>
 		<h5>Page:</h5>
-	<?=paginate_links($all_content, 2)?>
 	</div>
 	<?endif?>
 </div>

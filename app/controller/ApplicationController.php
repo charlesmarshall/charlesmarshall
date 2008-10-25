@@ -9,7 +9,11 @@ class ApplicationController extends CMSApplicationController{
 	public $flickr_show_title = true;
 	public $flickr_user = "81461873@N00";
 	public $flickr_secret_key = "c376479878c604c3a4a0b9af31930313";
+	public $server = false;
 	
+	public function __construct(){
+		$this->server ="http://".$_SERVER['HTTP_HOST']."/";
+	}
 	
 	public function get_body_id(){
 		if($this->cms_section->id) return str_replace("/","",$this->cms_section->permalink);

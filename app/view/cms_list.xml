@@ -1,0 +1,27 @@
+<<?='?'?>xml version="1.0"<?='?'?>>
+<?
+$model = new CmsContent("published");
+$contents = $model->filter(array('cms_section_id'=>$cms_section->id))->order('published DESC')->all();
+?>	
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title><?=$server?></title>
+<language>en-gb</language>
+<link><?=$base_url?></link>
+<description>All from <?=$cms_section->title?></description>
+<?foreach($cms_content as $article):?>
+  <item>
+    <title><![CDATA[<?=$article->title?>]]></title>
+    <link><![CDATA[<?=$server?><?=$article->permalink?>]]></link>
+    <description><![CDATA[
+      <?=strip_tags($article->format_content())?>
+      ]]>
+    </description>
+    <pubDate><?=$article->published?></pubDate>
+  </item>
+<?endforeach?>
+</channel>
+</rss>

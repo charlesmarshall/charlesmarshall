@@ -3,10 +3,8 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#lastfm').addClass('loader');
 	$.get('/lastfm', function(response){
 		$('#lastfm').html(response);
-		$('#lastfm').removeClass('loader');
 	});
 });
 </script>

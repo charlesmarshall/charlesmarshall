@@ -107,7 +107,7 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 	height:250px;
 }
 #related .article, #related .article_list .front{
-	width:43%;
+	width:40%;
 	margin-left:2%;
 	float:left;
 	padding-left:3%;
@@ -115,7 +115,7 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 	margin-bottom:10px;
 }
 #related .article_list{
-	width:50%;
+	width:49%;
 	float:left;
 }
 #related .article_list .front{
@@ -130,12 +130,12 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 	#related a, #related h5{color:#ff9700;}
 	#related a:hover{color:#FFBD00;}
 	#related .pagination_container{
-		float:right;
 		margin-right:4%;
+		width:96%;
 	}	
 		#related .pagination_container h5{line-height:2em;}
 		#related .pagination_container ul, #related .pagination_container h5{
-			float:left;
+			float:right;
 			margin:0 10px 0 0;
 		}
 	#related h3.blog{margin:0 0 20px 2%;}
@@ -177,19 +177,15 @@ html{background:#171d16 url('/images/background.png') repeat-x top left;}
 /*flickr*/
 #flickr_latest .gallery_item{
 	float:left;
-	width:50%;
+	width:49%;
 }
-	#flickr_latest .gallery_item img{
-		border:2px solid white;
-	}
+	#flickr_latest .gallery_item img{border:2px solid white;}
 	#flickr_latest span.flick{color:#3b9de9;}
 	#flickr_latest span.flickr{color:#ff00d9;}	
 	
-#lastfm ol, #twitter ul, #oneblackbear ol{
-	margin-left:25px;
-	width:80%;
-}
-#twitter ul{margin-left:15px;}
+#lastfm ol, #twitter ul, #oneblackbear ol{width:80%;}
+#twitter ul li{margin-left:15px;}
+#lastfm ol li,#oneblackbear ol li{margin-left:25px;}
 	#lastfm ol li, #twitter ul li, #oneblackbear ol li{
 		list-style-type:decimal;
 		margin-bottom:4px;
@@ -232,9 +228,9 @@ body.gallery .gallery_item{
 	margin-top:30px;
 	text-align:center;
 }	
-	body.gallery .gallery_item h3, body.gallery .gallery_item h4{margin-bottom:3px;text-align:center;}	
-	body.gallery .gallery_item h3{text-transform:capitalize;}
-		body.gallery .gallery_item h3 a{
+	body.gallery .gallery_item h3, body.gallery .gallery_item h4, h3.gallery{margin-bottom:3px;text-align:center;}	
+	body.gallery .gallery_item h3, h3.gallery{text-transform:capitalize;}
+		body.gallery .gallery_item h3 a, h3.gallery a, h3.gallery{
 			font-family:georgia;
 			font-size:108%;
 			color:white;
@@ -242,4 +238,6 @@ body.gallery .gallery_item{
 	body.gallery .gallery_item img{
 		border:2px solid white;
 	}	
-	
+	h2.gallery{margin-top:30px;}
+
+#content ul.pagination li{list-style-type:none !important;}

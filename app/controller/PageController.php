@@ -9,6 +9,7 @@ class PageController extends ApplicationController {
 		parent::cms();
 		$this->body_id = parent::get_body_id();
 		$this->body_class = parent::get_body_class();	
+		if($this->use_format == "xml") $this->use_layout = false;
 	}
   
   public function index() {
@@ -35,7 +36,6 @@ class PageController extends ApplicationController {
 			}
 		}		
 	}
-
 
 	public function oneblackbear() {
     $this->use_layout = false;
