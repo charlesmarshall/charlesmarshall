@@ -6,7 +6,7 @@ $hide = 2;
 <?endif?>
 
 <?if($all_content):?>
-<div class="articles full">
+<div class="articles full categories">
 	<h3 class="blog"><a href="#page" title="more from this section" rel="more">More Posts From '<?=$category->name?>'</a></h3>
 	<?for($i=2; $i< count($all_content); $i++):?>
 		<?$related = $all_content[$i]?>
@@ -19,7 +19,7 @@ $hide = 2;
 			<?endif?>
 		</div>
 		<?endif?>
-		<?if(fmod($i,2)==0):?>
+		<?if(fmod($i+1,2)==0):?>
 		<div class="clearfix"></div>
 		<?endif?>
 	<?endfor?>
