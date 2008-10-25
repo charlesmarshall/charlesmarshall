@@ -14,7 +14,7 @@ $hide = 2;
 		<?if($related->id && $related instanceOf WaxModel):?>
 		<div class="article <?=$related->section->url?>">	
 			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>3):?> &raquo;<?endif?></a></h3>
-			<?if($i<=4):?>
+			<?if($i<4):?>
 			<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
 			<?endif?>
 		</div>
