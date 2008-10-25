@@ -22,7 +22,7 @@ $hide = 2;
 	<?foreach($all_content as $related):?>
 		<?if($i>$hide):?>
 			<div class="article <?=$related->section->url?>">	
-				<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <small>(<?=short_date($related->published)?>)</small><?if($i>1):?> &raquo;<?endif?></a></h3>
+				<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>1):?> &raquo;<?endif?></a></h3>
 				<?if(($i-$hide) <= 2):?>
 				<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
 				<?endif?>
@@ -50,7 +50,7 @@ $all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->l
 	<?$i=0?>
 	<?foreach($all_content as $related):?>
 		<div class="front <?=$related->section->url?>">	
-			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?> - <small><?=short_date($related->published)?></small><?if($i>1):?> &raquo;<?endif?></a></h3>
+			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?><?if($i>1):?> &raquo;<?endif?></a></h3>
 			<?if($i<1):?>
 			<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
 			<?endif?>
@@ -63,7 +63,7 @@ $all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->l
 <div class="article_list">
 	<h3 class="title"><a href="/work" title="Latest Work" rel="work">Latest Work</a></h3>
 	<div class="featured_work <?=$featured->section->url?>">	
-		<h3><a href="<?=$featured->permalink?>" title="view '<?=$featured->title?>' in full" rel="article"><?=$featured->title?> - <small><?=short_date($featured->published)?></small></a></h3>
+		<h3><a href="<?=$featured->permalink?>" title="view '<?=$featured->title?>' in full" rel="article"><?=$featured->title?> </a></h3>
 		<?=word_truncation($featured->content, 90)?>
 	</div>
 </div>
