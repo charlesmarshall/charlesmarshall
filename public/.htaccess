@@ -7,9 +7,8 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond $1 !-d
 RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
-RedirectMatch 301 ^/play(.*)$ http://charlesmarshall.co.uk/blog?
-RedirectMatch 301 ^/rest(.*)$ http://charlesmarshall.co.uk/blog?
-
+RedirectMatch 301 ^/play(.*)$ http://charlesmarshall.co.uk/blog$1?
+RedirectMatch 301 ^/rest(.*)$ http://charlesmarshall.co.uk/blog$1?
 
 # 
 # Example:
