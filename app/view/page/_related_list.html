@@ -8,7 +8,7 @@ $hide = 2;
 <?if($all_content):?>
 <div class="articles full">
 	<h3 class="blog"><a href="#" title="more from this section" rel="more">More Posts From '<?=$cms_section->title?>'</a></h3>
-	<?for($i=2; $i< count($all_content); $i++):?>
+	<?for($i=$article_offset; $i< count($all_content); $i++):?>
 		<?$related = $all_content[$i]?>
 		<div class="article <?=$related->section->url?>">	
 			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>3):?> &raquo;<?endif?></a></h3>

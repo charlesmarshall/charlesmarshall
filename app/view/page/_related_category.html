@@ -8,7 +8,7 @@ $hide = 2;
 <?if($all_content):?>
 <div class="articles full categories">
 	<h3 class="blog"><a href="#page" title="more from this section" rel="more">More Posts Tagged as '<?=$category->name?>'</a></h3>
-	<?for($i=2; $i< count($all_content); $i++):?>
+	<?for($i=$article_offset; $i< count($all_content); $i++):?>
 		<?$related = $all_content[$i]?>
 		<??>
 		<?if($related->id && $related instanceOf WaxModel):?>

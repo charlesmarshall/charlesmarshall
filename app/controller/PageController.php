@@ -34,6 +34,7 @@ class PageController extends ApplicationController {
 	public function related(){
 		$this->use_layout = false;
 		$this->use_view ="_related_list";
+		$this->article_offset=0;
 		if(Request::post('page_number') && Request::post('section') ){
 			$page = parse_url(Request::post('page_number'));
 			$page = str_replace("page=","",$page['query']);
@@ -54,6 +55,7 @@ class PageController extends ApplicationController {
 	public function related_category(){
 		$this->use_layout = false;
 		$this->use_view ="_related_category";
+		$this->article_offset=0;
 		if(Request::post('page_number') && Request::post('category') ){
 			$page = parse_url(Request::post('page_number'));
 			$page = str_replace("page=","",$page['query']);
