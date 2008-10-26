@@ -1,0 +1,50 @@
+<?
+$all_content = $cms_content;
+?>
+
+<?if($all_content):?>
+<div class="articles full categories">
+	<h3 class="blog"><a href="#page" title="more from this section" rel="more">More Results for '<?=$query?>'</a></h3>
+	<?$loop=1?>
+	<?for($i=$article_offset; $i< count($all_content); $i++):?>
+		<?$related = $all_content[$i]?>
+		<?if($related->id && $related instanceOf WaxModel):?>
+		<div class="article">	
+			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title.$related->name?>' in full" rel="article"><?=$related->title.$related->name?>  <?if($i>($article_offset+2)):?> &raquo;<?endif?></a></h3>
+			<?if($i<($article_offset+2)):?>
+			<p class="details"><?=word_truncation($related->content.$related->introduction, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title.$related->name?>' in full" rel="article">&raquo;</a></p>
+			<?endif?>
+		</div>
+		<?endif?>
+		<?if(fmod($loop,2)==0):?>
+		<div class="clearfix"></div>
+		<?endif?>
+		<?$loop++?>
+	<?endfor?>
+	<div class="clearfix"></div>
+	<?if($cms_content->total_pages > 1):?>
+	<div class="pagination_container clearfix">
+		<?=paginate_links($all_content, 2)?>
+		<h5>Page:</h5>
+	</div>
+	<?endif?>
+</div>
+<?endif?>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#related .pagination a').click(function(){
+		href = $(this).attr('href');
+		$('#related').addClass('loader');
+		$('#related *').addClass('display_none');
+		$.post('/related-search', {'page_number':href, 'query':'<?=$query?>'}, function(response){
+			$('#related').html(response);
+			$('#related').removeClass('loader');
+			$('#related *').removeClass('display_none');
+		});
+		return false;
+	});
+
+});
+</script>
