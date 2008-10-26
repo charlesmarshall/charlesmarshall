@@ -5,7 +5,7 @@
 			<h4><?=long_date($cms_content->published)?></h4>
 			<?$images = $cms_content->images?>
 			<?if($images[0]):?>
-				<a href="<?=$images[0]->url?>" title="read '<?=$cms_content->title?>'" rel="article" class="thumb"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
+				<a href="<?=$images[0]->url?>" title="read '<?=$cms_content->title?>'" rel="article" class="thumb"><img src="<?=$images[0]->permalink(150)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
 			<?endif?>
 			<?=$cms_content->format_content()?>
 			<?if($cms_content->categories && $cms_content->categories[0]):?>
