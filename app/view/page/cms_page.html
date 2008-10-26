@@ -14,7 +14,7 @@
 				<?foreach($cms_content->categories as $category):?>
 				<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li><li>|</li>
 				<?endforeach?>
-				<li><a href="<?=$cms_section->permalink?>" title="Back to '<?=$cms_section->title?>'" rel="back to section"><?=$cms_section->title?></a></li>
+				<li><a href="<?=$cms_section->permalink?>" title="Back to '<?=$cms_section->title?>'" rel="back to section"><strong>Back to '<?=$cms_section->title?>'</strong></a></li>
 			</ul>
 			<?endif?>
 		</div>	
