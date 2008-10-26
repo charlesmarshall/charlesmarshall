@@ -44,8 +44,6 @@
 	<!--[if lte IE 6]>
 	<?if($warned):?>
 	<?=partial("_warning")?>
-	<?else:?>
-	<?=partial("_ie")?>
 	<?endif?>
 	<![endif]-->
 	<!-- main content container -->
@@ -95,7 +93,11 @@
 		</div>
 		
 	</div>
-	
+	<!--[if lte IE 6]>
+	<?if(!$warned):?>
+	<?=partial("_ie")?>
+	<?endif?>
+	<![endif]-->
 	<!-- google -->
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
