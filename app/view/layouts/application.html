@@ -13,7 +13,9 @@
 	<link rel="stylesheet" href="/stylesheets/core.css" type="text/css" media="screen" title="no title" charset="utf-8" />
   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 	<!--[if lte IE 6]>
+	<?if($ie):?>
 	<link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen" title="no title" charset="utf-8" />	
+	<?endif?>
 	<![endif]-->
 
 	<?if($cms_section->id):?>
@@ -42,7 +44,7 @@
 
 <body id="<?=$body_id?>" class="<?=$body_class?><?if(!$warned):?> no<?endif?>">
 	<!--[if lte IE 6]>
-	<?if($warned):?>
+	<?if($warned && $ie):?>
 	<?=partial("_warning")?>
 	<?endif?>
 	<![endif]-->
@@ -94,7 +96,7 @@
 		
 	</div>
 	<!--[if lte IE 6]>
-	<?if(!$warned):?>
+	<?if(!$warned && $ie):?>
 	<?=partial("_ie")?>
 	<?endif?>
 	<![endif]-->
