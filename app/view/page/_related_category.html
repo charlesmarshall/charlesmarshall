@@ -5,9 +5,9 @@ $all_content = $cms_content;
 <?if($all_content):?>
 <div class="articles full categories">
 	<h3 class="blog"><a href="#page" title="more from this section" rel="more">More Posts Tagged as '<?=$category->name?>'</a></h3>
+	<?$loop=1?>
 	<?for($i=$article_offset; $i< count($all_content); $i++):?>
 		<?$related = $all_content[$i]?>
-		<??>
 		<?if($related->id && $related instanceOf WaxModel):?>
 		<div class="article <?=$related->section->url?>">	
 			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>($article_offset+2)):?> &raquo;<?endif?></a></h3>
@@ -16,9 +16,10 @@ $all_content = $cms_content;
 			<?endif?>
 		</div>
 		<?endif?>
-		<?if(fmod($i,2)==0):?>
+		<?if(fmod($loop,2)==0):?>
 		<div class="clearfix"></div>
 		<?endif?>
+		<?$loop++?>
 	<?endfor?>
 	<div class="clearfix"></div>
 	<?if($cms_content->total_pages > 1):?>

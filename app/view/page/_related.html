@@ -1,6 +1,6 @@
 <?
 $model = new CmsContent("published");
-$all_content = $model->filter('cms_section_id <> 4')->order('published DESC')->limit(6)->offset(1)->all();
+$all_content = $model->filter('cms_section_id <> 3')->order('published DESC')->limit(6)->offset(1)->all();
 ?>
 <div class="article_list">
 	<h3 class="blog"><a href="/blogs" title="blogs" rel="blog">Recent Blogs</a></h3>

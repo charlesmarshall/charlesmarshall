@@ -3,7 +3,7 @@
 class PageController extends ApplicationController {
 
 	public $this_page = 1;
-	public $per_page = 10;
+	public $per_page = 9;
 	
 	public function controller_global(){
 		parent::cms();
