@@ -28,7 +28,7 @@ p,li{color:#fefeff;}
 	#content ol li{list-style-type:decimal;}
 
 
-
+#i_use_a_crap_browser{display:none;}
 /*layout*/
 body{background:#171d16 url('/images/background.png') repeat-x top left;}
 	
