@@ -15,7 +15,7 @@ class ApplicationController extends CMSApplicationController{
 	public $article_offset = 1;
 	
 	public function __construct(){
-		$this->server ="http://".$_SERVER['HTTP_HOST']."/";
+		$this->server ="http://".$_SERVER['HTTP_HOST'];
 		
 		if(Request::param('warned') || Session::get('warned')){
 			Session::set('warned', 1);

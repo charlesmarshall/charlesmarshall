@@ -35,7 +35,7 @@
 		<?endforeach?>
 		<?foreach($categories as $page):?>
 		<url>
-			<loc><?=$server?>category/<?=$page->url?></loc>
+			<loc><?=$server?>/category/<?=$page->url?></loc>
 			<lastmod><?=date("Y-m-d")?></lastmod>
 			<changefreq>weekly</changefreq>
 			<priority>0.5</priority>
