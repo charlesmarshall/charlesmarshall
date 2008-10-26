@@ -247,6 +247,7 @@ body.gallery .gallery_item{
 	float:right;
 	margin:8px;
 }
+	#search_box form fieldset{margin:0;}
 
 #cmsq_filter{
 	color:#171d15;
