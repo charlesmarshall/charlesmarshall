@@ -20,6 +20,8 @@ class ApplicationController extends CMSApplicationController{
 			Session::set('warned', 1);
 			$this->warned = true;
 		}
+		
+		if(substr_count($_SERVER['HTTP_USER_AGENT'], "MSIE")>0) $this->ie = true;
 	}
 	
 	public function get_body_id(){
