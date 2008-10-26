@@ -21,6 +21,7 @@ class GalleryController extends ApplicationController {
 	public function index(){
 		$this->sets = $this->flickr->get_photosets(array('user_id'=>$this->flickr_user) );
 		if(!$this->flickr_page = Request::get('page')) $this->flickr_page = 1;
+		$this->page_title = "Gallery";
 	}	
 	
 	public function set(){
@@ -28,7 +29,7 @@ class GalleryController extends ApplicationController {
 		if(!$this->flickr_page = Request::get('page')) $this->flickr_page = 1;
 		$this->info = $this->flickr->get_photoset_info(array('photoset_id'=>$this->set_id));
 		$this->pics = $this->flickr->get_photoset_photos(array('photoset_id'=>$this->set_id, 'per_page'=>$this->flickr_per_page, 'page'=>$this->flickr_page) );
-		$this->page_title = $this->info['title'];
+		$this->page_title = $this->info['title'] .=" - Gallery";
 	}
 	
 	
