@@ -242,6 +242,48 @@ body.gallery .gallery_item{
 
 #content ul.pagination li{list-style-type:none !important;}
 
+/* SEARCH */
+#search_box{
+	float:right;
+	margin:8px;
+}
+
+#cmsq_filter{
+	color:#171d15;
+	padding:4px 10px 4px 5px;
+	width:120px;
+	border:1px solid white;
+	background: white url('/images/question-mark.png') no-repeat center right;
+	font-size:93%;
+	line-height:22px;
+	border:1px solid #171d15;
+}
+
+#results{
+	width:135px;
+	position:absolute;
+	background:white;
+	margin-left:1px;
+}
+	#results ul{}
+	#results ul li{
+		width:100%;
+		margin:0;
+		list-style-type:square;
+		background:none;
+		color:#171d15;
+	}
+		#results ul li a, #results ul li em{
+			font-size:93%;
+			background-image:none;
+			color:#333333;
+			line-height:2em;
+			display:block;
+			padding:0 8px;
+		}
+		#results li#more_results a{border-top:1px solid #333333;}
+		#results ul li a:hover,#results ul li em:hover{background-color:#faecba;}
+		#results li#more_results a:hover{background-color:#95D5FF;}	
 /****** Modal popup styling ********/
 
 /* jqModal base Styling courtesy of;

@@ -59,11 +59,19 @@
 	        <?=smart_nav("/gallery", "photos", $section_stack[0], "selected", array('accesskey'=>"G", 'class'=>'gallery') )?>
 	        <?=smart_nav("/work", "work", $section_stack[0], "selected", array('accesskey'=>"W", 'class'=>'work') )?>		
 				</ul>
+				<!--search me -->
+				<div id="search_box">
+					<form action="/search" method="get" >
+						<input type="text" name="cmsq" id="cmsq_filter" value="search me"/>
+					</form>
+					<div id="results"></div>
+				</div>
 			</div>
 			<!-- logo -->
 			<div id="logo">
 				<a href="/" title="home" rel="home" ><img src="/images/logo.png" title="Charles Marshall" alt="logo"/></a>
 			</div>
+		
 			
 		</div>
 		<div id="content" class="clearfix">

@@ -1,23 +1,10 @@
 <div id="flickr_latest" class="clearfix quarter">
-	<h4><a href="/gallery" title="my Flickr" rel="gallery">my<span class="flick">Flick</span><span class="flickr">r</span></a></h4>
-	<h5><a href="http://flickr.com/photos/charlesmarshall" title="my flickr page">flickr.com/photos/charlesmarshall</a></h5>
-<?$flickr = new Flickr($flickr_secret_key,true);?>
-<?$pics = $flickr->get_photos(array('user_id'=>$flickr_user, 'per_page'=>$flickr_per_page, 'page'=>$flickr_page))?>
-<?if(count($pics)):?>
-		<?foreach($pics as $count => $pic):?>
-			<?if(is_numeric($count)):?>
-			<?
-			$sizes = $flickr->get_photo_sizes(array('photo_id'=>$pic['id']['0']));
-			$photo = flickr_photo($pic['id']['0'], $sizes);
-			if($photo['Large']) $large = $photo['Large'];
-			elseif($photo['Original']) $large = $photo['Original'];
-			else $large = $photo['Medium'];?>
-						
-			<div class="gallery_item<?if(fmod($count+1,$flickr_fmod)==0):?> right_side<?endif?>">
-				<a rel="gallery" title="view the gallery" href="/gallery"><img src="<?=$photo['Square']?>" alt="flickr photos" title="<?=$pic['title'][0]?>"/></a>
-			</div>
-			<?if(fmod($count+1,$flickr_fmod)==0):?><div class="clearfix">&nbsp;</div><?endif?>
-			<?endif?>
-		<?endforeach?>
-<?endif?>
+
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.get('/flickr', function(response){
+			$('#flickr_latest').html(response);
+		});
+});
+</script>

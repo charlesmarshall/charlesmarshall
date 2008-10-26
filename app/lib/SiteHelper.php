@@ -9,7 +9,7 @@ class SiteHelper extends WXHelpers {
 	}	
 	
 	public function parse_rss_string($string, $items) {
-		$simple = @simplexml_load_string($string, "SimpleXMLElement");
+		$simple = @simplexml_load_string($string, "SimpleXMLElement", LIBXML_NOCDATA|LIBXML_NOERROR);
 		$i = 0;
     foreach($simple->channel->item as $data){
 			foreach($data->children() as $field => $item){

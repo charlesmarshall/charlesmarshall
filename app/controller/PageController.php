@@ -32,15 +32,22 @@ class PageController extends ApplicationController {
 	public function sitemap(){}
 	
 	public function search() {
-		if($query = Request::param("q")){
+		if($query = Request::param("cmsq")){
 			$model = new CmsContent("published");
 			$fields = array("title"=>'1.3', 'content'=>"0.6");				
 			$search = $query;
 			$this->query = $search;
 			$this->cms_content = $model->search($search, $fields)->page($this->this_page, $this->per_page);
+
 			$this->use_view = "cms_list";
 		}else $this->redirect_to("/");		
 		
+	}
+	public function inline_search(){
+		$this->per_page = 5;
+		$this->use_layout=false;
+		$this->search();
+		$this->use_view = "inline_search";
 	}
 	
 	
@@ -80,6 +87,10 @@ class PageController extends ApplicationController {
 				$this->cms_content = $content->order('published DESC')->page($this->this_page, $this->per_page);
 			}
 		}		
+	}
+	
+	public function flickr(){
+		$this->use_layout = false;
 	}
 
 	public function oneblackbear() {

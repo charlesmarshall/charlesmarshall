@@ -1,0 +1,14 @@
+<?if(count($cms_content)>0):?>
+<ul>
+	<?foreach($cms_content as $content):?>
+	<li><a href="<?=$content->permalink?>" title="<?=$content->title?>" rel="search result"><?=$content->title?> &raquo;</a></li>
+	<?endforeach?>
+	<?if($cms_content->total_pages>1):?>
+	<li id="more_results"><a href="/search?cmsq=<?=$query?>">More results &raquo;</a></li>
+	<?endif?>
+</ul>
+<?else:?>
+<ul>
+	<li><em>No Results...</em></li>
+</ul>
+<?endif?>
