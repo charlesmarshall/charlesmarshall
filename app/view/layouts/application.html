@@ -73,7 +73,9 @@
 	<!--end main content container -->		
 	<div id="footer">
 		<div id="related" class="full clearfix">
-			<?if($category->id):?>
+			<?if($query):?>
+			<?=partial("page/_related_search", $this)?>
+			<?elseif($category->id):?>
 			<?=partial("page/_related_category", $this)?>
 			<?elseif($cms_content->total_pages > 0 && $cms_content[0]->id && $action != "index"):?>
 			<?=partial("page/_related_list", $this)?>

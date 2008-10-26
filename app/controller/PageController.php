@@ -30,6 +30,20 @@ class PageController extends ApplicationController {
 	}
 
 	public function sitemap(){}
+	
+	public function search() {
+		if($query = Request::param("q")){
+			$model = new CmsContent("published");
+			$fields = array("title"=>'1.3', 'content'=>"0.6");				
+			$search = $query;
+			$this->query = $search;
+			$this->cms_content = $model->search($search, $fields)->page($this->this_page, $this->per_page);
+			$this->use_view = "cms_list";
+		}else $this->redirect_to("/");		
+		
+	}
+	
+	
 
 	public function related(){
 		$this->use_layout = false;

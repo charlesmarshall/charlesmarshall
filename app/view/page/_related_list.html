@@ -1,9 +1,6 @@
-<?if($cms_content[0]->id):?>
 <?
 $all_content = $cms_content;
-$hide = 2;
 ?>
-<?endif?>
 
 <?if($all_content):?>
 <div class="articles full">
@@ -11,12 +8,12 @@ $hide = 2;
 	<?for($i=$article_offset; $i< count($all_content); $i++):?>
 		<?$related = $all_content[$i]?>
 		<div class="article <?=$related->section->url?>">	
-			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>3):?> &raquo;<?endif?></a></h3>
-			<?if($i< 4):?>
+			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>($article_offset+2)):?> &raquo;<?endif?></a></h3>
+			<?if($i< ($article_offset+2)):?>
 			<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
 			<?endif?>
 		</div>
-		<?if(fmod($i+1,2)==0):?>
+		<?if(fmod($i,2)==0):?>
 		<div class="clearfix"></div>
 		<?endif?>
 	<?endfor?>

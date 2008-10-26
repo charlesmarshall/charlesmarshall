@@ -1,10 +1,7 @@
-<?if($cms_content->id):?>
 <?
 $model = new CmsContent("published");
 $all_content = $model->filter('id <> '.$cms_content->id)->order('RAND()')->limit($per_page)->all();
-$hide = 0;
 ?>
-<?endif?>
 
 <?if($all_content):?>
 <div class="articles full">

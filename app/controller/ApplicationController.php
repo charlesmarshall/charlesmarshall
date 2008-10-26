@@ -12,7 +12,7 @@ class ApplicationController extends CMSApplicationController{
 	public $server = false;
 	public $warned = false;
 	public $ie = false;
-	public $article_offset = 2;
+	public $article_offset = 1;
 	
 	public function __construct(){
 		$this->server ="http://".$_SERVER['HTTP_HOST']."/";

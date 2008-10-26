@@ -1,9 +1,6 @@
-<?if($category->id):?>
 <?
 $all_content = $cms_content;
-$hide = 2;
 ?>
-<?endif?>
 
 <?if($all_content):?>
 <div class="articles full categories">
@@ -13,13 +10,13 @@ $hide = 2;
 		<??>
 		<?if($related->id && $related instanceOf WaxModel):?>
 		<div class="article <?=$related->section->url?>">	
-			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>3):?> &raquo;<?endif?></a></h3>
-			<?if($i<4):?>
+			<h3><a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article"><?=$related->title?>  <?if($i>($article_offset+2)):?> &raquo;<?endif?></a></h3>
+			<?if($i<($article_offset+2)):?>
 			<p class="details"><?=word_truncation($related->content, 30, true)?> <a href="<?=$related->permalink?>" title="view '<?=$related->title?>' in full" rel="article">&raquo;</a></p>
 			<?endif?>
 		</div>
 		<?endif?>
-		<?if(fmod($i+1,2)==0):?>
+		<?if(fmod($i,2)==0):?>
 		<div class="clearfix"></div>
 		<?endif?>
 	<?endfor?>

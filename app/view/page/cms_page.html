@@ -1,7 +1,7 @@
 <div class="restricted">
 	<div class="story <?=$cms_content->section->url?> clearfix" id="featured_story">
 		<div class="story_content">
-			<h2><a href="<?=$cms_content->permalink()?>" title="read '<?=$cms_content->title?>'" rel="this page"><?=$cms_content->title?></a></h2>
+			<h1><a href="<?=$cms_content->permalink()?>" title="read '<?=$cms_content->title?>'" rel="this page"><?=$cms_content->title?></a></h1>
 			<h4><?=long_date($cms_content->published)?></h4>
 			<?$images = $cms_content->images?>
 			<?if($images[0]):?>
