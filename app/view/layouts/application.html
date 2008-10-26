@@ -12,6 +12,9 @@
 	<link rel="icon" type="image/gif" href="/favicon.ico" />
 	<link rel="stylesheet" href="/stylesheets/core.css" type="text/css" media="screen" title="no title" charset="utf-8" />
   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen" title="no title" charset="utf-8" />	
+	<![endif]-->
 
 	<?if($cms_section->id):?>
 	<link rel="alternate" type="application/rss+xml" title="<?=$cms_section->title?>" href="<?=$server?><?=$cms_section->permalink?>.xml" />
@@ -37,9 +40,13 @@
 	
 </head>
 
-<body id="<?=$body_id?>" class="<?=$body_class?>">
+<body id="<?=$body_id?>" class="<?=$body_class?><?if(!$warned):?> no<?endif?>">
 	<!--[if lte IE 6]>
+	<?if($warned):?>
+	<?=partial("_warning")?>
+	<?else:?>
 	<?=partial("_ie")?>
+	<?endif?>
 	<![endif]-->
 	<!-- main content container -->
 	<div id="page" class="full clearfix">

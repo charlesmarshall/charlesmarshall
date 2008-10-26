@@ -1,0 +1,28 @@
+/*hide everything*/
+.no *{display:none;}
+body.no{background-image:none;background-color:white;}
+.no #i_use_a_crap_browser, .no #i_use_a_crap_browser *{
+	display:block;
+}
+
+.no #i_use_a_crap_browser{
+	width:600px;
+	height:600px;
+	margin:20px auto;
+	background:white url('/images/crap-browser.jpg') no-repeat top left;
+}
+	#ie_logo{margin:30px 0 0 250px;}
+	#ie_message{margin:30px 30px 30px 250px;}
+		#ie_message h5, #ie_message h6{color:#fefeff;}
+		#ie_message a, #ie_message span, #ie_message strong, #ie_message strong a{display:inline !important;}
+		
+#old_school{
+	width:100%;
+	background:#faecba;
+	border-bottom:2px solid white;
+}
+	#old_school p{
+		color:black;
+		margin:0;
+		padding:10px;
+	}
