@@ -9,7 +9,7 @@
 			<?if($images[0]):?>
 				<a href="<?=$images[0]->url?>" title="read '<?=$content->title?>'" rel="article"><img src="<?=$images[0]->permalink(100)?>" alt="story image" title="read '<?=$content->title?>'" class="page_image"/></a>			
 			<?endif?>
-			<?=word_truncation($content->content, 30);?>
+			<?=word_truncation($content->content, 80);?>
 			
 			<?if($content->categories && $content->categories[0]):?>
 			<ul class="detail clearfix">

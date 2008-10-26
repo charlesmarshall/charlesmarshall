@@ -62,9 +62,9 @@ body{background:#171d16 url('/images/background.png') repeat-x top left;}
 }
 
 .story{margin:30px 0 0 45px;}
-	h2{font-size:213%;}
+	h2,h1{font-size:213%;}
 	.story h3{font-size:174%;}
-		h2,h2 a, h2 a:hover, .story h3 a, .story h3 a:hover{
+		h2,h1,h2 a, h1 a,h2 a:hover,h1 a:hover, .story h3 a, .story h3 a:hover{
 			color:#fefeff;
 			text-decoration:none;
 			font-family:georgia;
