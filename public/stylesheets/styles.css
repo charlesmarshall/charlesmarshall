@@ -158,7 +158,7 @@ body{background:#171d16 url('/images/background.png') repeat-x top left;}
 	margin:0 0 0 2%;
 	float:left;
 }
-
+	#footer #twitter{width:44%;}
 	#extras{padding-top:130px;}
 		#index #extras{padding-top:100px;}
 	#extras h4{font-size:146.5%;}
