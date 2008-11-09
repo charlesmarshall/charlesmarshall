@@ -36,7 +36,7 @@ class PageController extends ApplicationController {
 			$model = new CmsContent("published");
 			$fields = array("title"=>'1.3', 'content'=>"0.6");				
 			$search = $query;
-			$this->query = $search;
+			$this->query = "+" . str_replace(" ", " +", $search);
 			$this->cms_content = $model->search($search, $fields)->page($this->this_page, $this->per_page);
 
 			$this->use_view = "cms_list";

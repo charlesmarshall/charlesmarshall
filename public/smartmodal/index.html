@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="modal.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<script src="jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.smartmodal.js" type="text/javascript" charset="utf-8"></script>
+	
+	<title>jQuery Modal Example</title>
+	
+</head>
+
+<body>
+	<div id="container">
+		<h1>jQuery Modal</h1>
+		<p>With recent projects I needed a flexible modal box. Most of the ones out there are either horribly bloated or 
+			only work for images, which really sucks when you want a form inside one.</p>
+		<p>Easy answer, make my own... Here it is. By the way, the minimised version in under 2k with a tiny 1k stylesheet.</p>
+		<p>It works for images and other containing elements. Here are the examples:</p>
+		
+		<div class="example">
+			<h2>Simple Image Modals</h2>
+			<p>Click on an image to get a pop up bigger version of it.</p>
+			<ul class="horizontal clearfix">
+				<li><a href="images/Fort-Dunlop-1.jpg" title="Fort Dunlop 1" class="modal1"><img src="images/Fort-Dunlop-small-1.jpg" /></a></li>
+				<li><a href="images/Fort-Dunlop-2.jpg" title="Fort Dunlop 2" class="modal1"><img src="images/Fort-Dunlop-small-2.jpg" /></a></li>
+			</ul>
+			<p>This is about as simple as it gets; give the anchor tag a href for the bigger version of the image and it just works.</p>
+			<p>With the a tag having a title attribute this is then used by the modal pop up as the title of the big image.</p>
+		</div>
+		
+		<div class="example">
+			<h2>Inline Anchor Modal</h2>
+			<p>Instead of clicking on an image, you click on <a href="images/Fort-Dunlop-small-2.jpg" title="Fort Dunlop 2" class="modal2">this</a>.</p>
+			<p>This example shows how you can change the styles on the modal on click, so even though the stylesheet has width of 671px you can over ride
+				it by passing in a parameter.</p>
+		</div>
+		
+		<div class="example">
+			<h2>Div Modal</h2>
+			<p>Instead of clicking on an anchor tag, click on the div below and you get a modal box containing the same html.</p>
+			<div class="modal3"><p><strong>Click Me</strong></p></div>			
+		</div>
+		
+		<div class="example">
+			<h2>Using the rel Attribute</h2>
+			<p><a href="#" rel="rel_modal_content" class="modal4">Click me</a> and instead of an image you will get 
+				the content of a hidden div with a class or id that matches the rel.</p>
+			<div id="rel_modal_content" class="hidden">
+				<p>You can put anything in me from full on forms to just a simple bit of text.</p>
+				<p><a href="#">Here is a link</a></p>
+				<ul>
+					<li>An unordered list</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div class="example">
+			<h2>Show &amp; Hide Functions</h2>
+			<p><a href="#" rel="modal_class" class="modal5">Click me</a> and you will get a modal box followed some javascript alerts on show, then on close.</p>
+			<div class="modal_class hidden">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+		
+		
+		
+	</div>
+	
+	
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a.modal1').modal(); //first example
+	$('a.modal2').modal({modal_styles: {width:"150px", "margin-left":"-75px"}}); //second example
+	$('.modal3').modal(); //third
+	$('.modal4').modal(); //fourth
+	$('.modal5').modal({show:"alert('This happens on show!');", hide:"alert('This happens on close...');"}); //fifth
+});
+</script>
+
+</body>
+</html>
