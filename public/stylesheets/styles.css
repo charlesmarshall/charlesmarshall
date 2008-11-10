@@ -104,7 +104,7 @@ ul.detail li a{color:#bad7e1;}
 
 #related{
 	padding:45px 0 10px 0;
-	height:250px;
+	height:330px;
 }
 #related .article, #related .article_list .front{
 	width:40%;
@@ -166,7 +166,7 @@ body #cat_list ul li a{
 	float:left;
 }
 	#extras{padding-top:130px;}
-		#index #extras{padding-top:100px;}
+		#index #extras{padding-top:40px;}
 	#extras h4{font-size:146.5%;}
 		#extras h4, #extras h4 a, #extras h4 a:hover{color:white;}
 	#extras h5{
