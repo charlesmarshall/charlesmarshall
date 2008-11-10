@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="zoom.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<script src="jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.zoom.js" type="text/javascript" charset="utf-8"></script>
+	
+	<title>jQuery Image Zoom Example</title>
+	
+</head>
+
+<body>
+	<div id="container">
+		<h1>jQuery Image Zoom</h1>		
+		<p>Working on a recent project I needed to be able to make a 'zoom' style effect. The easiest way I could think 
+			of to do this was a simple + and - zoom bar (just like google maps) over a background image.</p>
+		<p>This piece of jQuery inserts a nicely styled compliant ul with li's into the container specified (if it's not there already) and
+			sets some trigger events for the a tags.</p>
+		<p>Now when you click on the plus or minus the background image is switched out for a larger version (passed in to the declaration).</p>
+		<p>The more images you pass in the more bars appear in the zoom control.</p>
+		<p>To make it work you need to tell pass in the 'target_div' parameter and an array on image paths; and thats it, everything else is worked out for you.</p>
+		
+		<div class="example clearfix">
+			<h2>Simple Image Zoom</h2>
+			<p>Here is a container with 4 images, nice and simple.</p>
+			<div id="zoom" class="zoom">	
+			</div>
+			<!-- big pic at the top -->
+			<div id="main_internal" class="main_internal">			
+			</div>
+			<div class="clearfix">&nbsp;</div>
+		</div>
+		
+		
+		<div class="example clearfix">
+			<h2>Image Zoom With Custom Images</h2>
+			<p>Here is a container with only 2 images specified in the js. Note how the number of zoom levels change</p>
+			<div id="zoom_2" class="zoom">	
+			</div>
+			<!-- big pic at the top -->
+			<div id="main_internal_2" class="main_internal">			
+			</div>
+			<div class="clearfix">&nbsp;</div>
+		</div>
+
+		
+		
+		
+	</div>
+	
+	
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#zoom').zoom({target_div:"main_internal", zoom_images:new Array('images/image_1.jpg', 'images/image_2.jpg', 'images/image_3.jpg', 'images/image_4.jpg') });
+	$('#zoom_2').zoom({target_div:"main_internal_2", zoom_images:new Array('images/internal-1.jpg', 'images/internal-2.jpg')});	
+});
+</script>
+
+
+
+<!-- google -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-927511-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
