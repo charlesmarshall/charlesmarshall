@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="resizer.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<script src="jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.resizer.js" type="text/javascript" charset="utf-8"></script>
+	
+	<title>jQuery Image Resizer Example</title>
+	
+</head>
+
+<body>
+	<div id="container">
+		<h1>jQuery Resizer</h1>		
+	
+		<div class="example clearfix">
+			<h2>Simple Resizable Div</h2>
+			<p>If you click and drag inside the red box below it will grow until you let go.</p>
+			<div id="resizer">
+			</div>
+			
+		</div>
+		
+		<div class="example clearfix">
+			<h2>Resizable Div With Max Limits</h2>
+			<p>If you click and drag inside the red box below it will grow until it reaches a max width and height.</p>
+			<div id="resizer_maxed">
+			</div>
+			
+		</div>
+		
+		<div class="example clearfix">
+			<h2>Resizable Div With Max &amp; Min Limits</h2>
+			<p>If you click and drag inside the red box below it will grow until it reaches a max width and height.</p>
+			<p>It will not resize below a certain amount.</p>			
+			<div id="resizer_min_max">
+			</div>			
+		</div>
+		
+		<div class="example clearfix">
+			<h2>Resizable Div - Turning Off A Direction</h2>
+			<p>By passing in false you can turn of expansion in either direction</p>
+			<div id="resize_no_x">
+				<p>Fixed width</p>
+			</div>
+			<div id="resize_no_y">
+				<p>Fixed height</p>
+			</div>
+		</div>
+		
+		<div class="example clearfix">
+			<h2>Resizable Div - Targets</h2>
+			<p>If you use a target then the resize is based on where you drag the trigger element.</p>
+			<div id="resizer_area">
+			</div>
+			<div id="resize_bar">&lt; ^ v &gt;</div>
+		</div>	
+		
+		
+		<div class="example clearfix">
+			<h2>Other Resizable Elements</h2>
+			<p>Can be used on things other then divs...</p>
+			<p id="resize_p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<img src="images/big_image.jpg"  alt="Big Image" id="resize_image"/>
+		</div>	
+		
+	</div>
+	
+	
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#resizer').resize();
+	$('#resizer_maxed').resize({x:450, y:300});
+	$('#resizer_min_max').resize({x:450,min_width:190, y:300, min_height:90});	
+	$('#resize_no_x').resize({x:false});	
+	$('#resize_no_y').resize({y:false});		
+	$('#resize_bar').resize({target:'#resizer_area'});
+	$('#resize_p').resize();	
+	$('#resize_image').resize();		
+});
+</script>
+
+
+<!-- google -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-927511-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
