@@ -6,12 +6,12 @@ jQuery.fn.extend({
 			var start_x;
 			var start_y;	
 			var drag_div = this;
+			
 			//hide the image & add as bg image
 			bgimg = $('#'+this.id + ' img');
 			imgx = bgimg.width();
 			imgy = bgimg.height();
 			bgimg.css('display', 'none');
-			$(this).css('background', "url('"+bgimg.attr('src')+"') no-repeat center center");
 			//mouse down
 			$(this).mousedown(function(e){
 				$(this).css('cursor', 'move');
@@ -35,13 +35,14 @@ jQuery.fn.extend({
 						bg = bg.replace("px", "").replace("px", "").split(" ");
 						leftpos = parseInt(bg[0]);
 						toppos = parseInt(bg[1]);	
-					}		
+					}
 					var mouse_x = Math.round(e.pageX - $(this).eq(0).offset().left) - start_x;
 					var mouse_y = Math.round(e.pageY - $(this).eq(0).offset().top) - start_y;					
-					x = leftpos + (mouse_x);
-					y = toppos + (mouse_y);					
+					var x = leftpos + (mouse_x);
+					var y = toppos + (mouse_y);					
 					start_x = Math.round(e.pageX - $(this).eq(0).offset().left);
-					start_y = Math.round(e.pageY - $(this).eq(0).offset().top);					
+					start_y = Math.round(e.pageY - $(this).eq(0).offset().top);	
+									
 					$(drag_div).css('background-position', x+ "px " + y + "px");					
 				}
 			});			
