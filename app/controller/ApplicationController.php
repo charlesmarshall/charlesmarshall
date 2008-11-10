@@ -23,6 +23,9 @@ class ApplicationController extends CMSApplicationController{
 		}
 		
 		if(substr_count($_SERVER['HTTP_USER_AGENT'], "MSIE")>0) $this->ie = true;
+		
+		$cat = new CmsCategory;
+		$this->all_categories = $cat->all();
 	}
 	
 	public function get_body_id(){

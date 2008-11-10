@@ -94,6 +94,15 @@
 			<?else:?>
 			<?=partial("page/_related", $this)?>
 			<?endif?>
+			<div class="full clearfix">
+				<?if($all_categories && $all_categories[0]):?>
+				<ul class="detail clearfix">
+					<?foreach($all_categories as $category):?>
+					<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li><li>|</li>
+					<?endforeach?>
+				</ul>
+				<?endif?>
+			</div>
 		</div>
 		<div id="extras" class="full clearfix">
 			<?=partial("page/_flickr")?>
