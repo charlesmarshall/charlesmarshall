@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="draggable.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="zoom.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	
+	
+	<script src="jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.draggable.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.zoom.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<title>jQuery Image Drag and Zoom Example</title>
+	
+</head>
+
+<body>
+	<div id="container">
+		<h1>jQuery Image Dragging</h1>		
+	
+		<div class="example clearfix">
+			<h2>Simple Image Dragging Combined With Zoom</h2>
+			<p>Click on the div below, drag and release.</p>
+			<div id="zoom" class="zoom">
+			</div>
+			<div id="draggable" class="main_internal">
+				<img src="images/image_1.jpg" />
+			</div>
+			
+			<div class="clearfix">&nbsp;</div>
+		</div>
+		
+		
+		
+		
+	</div>
+	
+	
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#draggable').drag();
+	$('#zoom').zoom({target_div:"draggable", zoom_images:new Array('images/image_1.jpg', 'images/image_2.jpg', 'images/image_3.jpg', 'images/image_4.jpg') });
+});
+</script>
+
+
+
+<!-- google -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-927511-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
