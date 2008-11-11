@@ -47,8 +47,8 @@ $(this).mousemove(function(e){
 if(_3){
 var _e=Math.round(e.pageX-$(this).eq(0).offset().left)-_4;
 var _f=Math.round(e.pageY-$(this).eq(0).offset().top)-_5;
-var _10=$(_6).css("width").replace("px","");
-var _11=$(_6).css("height").replace("px","");
+var _10=$(_6).width();
+var _11=$(_6).height();
 var _12=parseInt(_10)+_e;
 var _13=parseInt(_11)+_f;
 if(x==1||(typeof (x)=="number"&&_12<x&&_12>_9)){

@@ -30,8 +30,8 @@ jQuery.fn.extend({
 				if(clicked){
 					var mouse_x = Math.round(e.pageX - $(this).eq(0).offset().left) - start_x;
 					var mouse_y = Math.round(e.pageY - $(this).eq(0).offset().top) - start_y;
-					var div_w = $(resize).css('width').replace('px', '');
-					var div_h = $(resize).css('height').replace('px', '');
+					var div_w = $(resize).width();
+					var div_h = $(resize).height();
 					var new_w = parseInt(div_w)+mouse_x;
 					var new_h = parseInt(div_h)+mouse_y;	
 					if(x==1 || (typeof(x) == "number" && new_w < x && new_w > min_w) ){ $(resize).css('width', new_w+"px"); }
