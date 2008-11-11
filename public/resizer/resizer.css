@@ -4,6 +4,5 @@
 	border:1px solid red;
 }
 #resize_p{border:1px solid red;}
-#resize_bar,#resize_no_y{
-	margin-top:20px;
-}
+#resize_bar,#resize_no_y,#resize_image_bar{margin-top:20px;}
+#resize_image_bar{margin-bottom:20px;}
