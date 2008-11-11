@@ -22,20 +22,25 @@ var _8=jQ(_6).length;
 var _9="";
 var _a=0;
 var _b=jQ(this).width();
+var _c=0;
 jQ(this).css("overflow","hidden");
 _9="<ul id=\""+_6.replace("#","")+"\"><li class=\"previous\"><a href=\"#\" class=\"previous_button\" rel=\"previous\" name=\"scroll_item_1\">&laquo;</a></li>";
-var _c=0;
+var _d=0;
 jQ(this).find(_5).each(function(){
 jQ(this).css("position","relative");
 jQ(this).css("left",((_a)*_b)+"px");
-if(_c>0){
-jQ(this).css("top","-"+_c+"px");
+if(_d>0){
+jQ(this).css("top","-"+_d+"px");
 }
 jQ(this).addClass("scroll_item_"+(_a+1));
 _9+="<li class=\"page\"><a href=\"#\" name=\"scroll_item_"+(_a+1)+"\" class=\"page\" rel=\"page\">"+(_a+1)+"</a></li>";
 _a++;
-_c+=jQ(this).outerHeight();
+_d+=jQ(this).outerHeight();
+if(jQ(this).outerHeight()>_c){
+_c=jQ(this).outerHeight();
+}
 });
+jQ(this).parent().css("height",((jQ(this).parent().outerHeight()-_d)+_c)+"px");
 _9+="<li class=\"next\"><a href=\"#\" class=\"next_button\" rel=\"next\" name=\"scroll_item_2\">&raquo;</a></li></ul>";
 if(!jQ(_6).length){
 jQ(this).before(_9);
@@ -49,29 +54,41 @@ jQ(_6+" .previous").addClass("disabled");
 jQ(_6+" .next a").attr("rel","next");
 jQ(_6+" .previous a").attr("rel","previous");
 jQ(_6+" a").click(function(e){
-var _e=parseInt(jQ(this).attr("name").replace("scroll_item_",""));
-if(_e>0){
-for(i=1;i<_e;i++){
-jQ(".scroll_item_"+i).animate({"left":"-"+((_e-i)*_b)+"px"},_7);
+if(_1&&typeof (_1["before"])!="undefined"){
+eval(_1["before"]);
 }
-jQ(".scroll_item_"+_e).animate({"left":"0"},_7);
-for(i=_e+1;i<=_a;i++){
-jQ(".scroll_item_"+i).animate({"left":((_e+i)*_b)+"px"},_7);
+var _f=parseInt(jQ(this).attr("name").replace("scroll_item_",""));
+if(_f>0){
+for(i=1;i<_f;i++){
+jQ(_4).find(".scroll_item_"+i).animate({"left":"-"+((_f-i)*_b)+"px"},_7);
 }
-}
-if(_e+1<=_a){
-var _f=_e+1;
+if(_1&&typeof (_1["after"])!="undefined"){
+jQ(_4).find(".scroll_item_"+_f).animate({"left":"0"},_7,function(e){
+eval(_1["after"]);
+});
 }else{
-var _f=_a;
+jQ(_4).find(".scroll_item_"+_f).animate({"left":"0"},_7);
 }
-if(_e>1){
-var _10=_e-1;
+for(i=_f+1;i<=_a;i++){
+jQ(_4).find(".scroll_item_"+i).animate({"left":((_f+i)*_b)+"px"},_7);
+}
+}
+jQ(_6+" li").removeClass("disabled");
+if(_f+1<=_a){
+var _11=_f+1;
 }else{
-var _10=1;
+var _11=_a;
+jQ(_6+" li.next").addClass("disabled");
 }
-jQ(_6+" li.previous a").attr("name",_10);
-jQ(_6+" li.next a").attr("name",_f);
-_3=_e;
+if(_f>1){
+var _12=_f-1;
+}else{
+var _12=1;
+jQ(_6+" li.previous").addClass("disabled");
+}
+jQ(_6+" li.previous a").attr("name",_12);
+jQ(_6+" li.next a").attr("name",_11);
+_3=_f;
 return false;
 });
 });

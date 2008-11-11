@@ -4,8 +4,6 @@
 .example{
 	width:100%;
 	float:left;
-	overflow:hidden;
-	height:100%;
 }
 
 ul#controls, ul#controls2{
