@@ -94,23 +94,23 @@
 			<?else:?>
 			<?=partial("page/_related", $this)?>
 			<?endif?>
-			<div class="clearfix">&nbsp;</div>
-			<div class="full clearfix" id="cat_list">
-				<?if($all_categories && $all_categories[0]):?>
-				<ul class="detail clearfix">
-					<li><a href="/category/" title="Categories">Categories</a></li>
-					<li>&raquo;</li>
-					<?foreach($all_categories as $k=>$category):?>
-					<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
-					<?if($k+1 < count($all_categories)):?>
-					<li>|</li>
-					<?endif?>
-					<?endforeach?>
-				</ul>
-				<?endif?>
-			</div>
+			<div class="clearfix">&nbsp;</div>		
 		</div>
 		<div id="extras" class="full clearfix">
+				<div class="full clearfix" id="cat_list">
+					<?if($all_categories && $all_categories[0]):?>
+					<ul class="detail clearfix">
+						<li><a href="/category/" title="Categories">Categories</a></li>
+						<li>&raquo;</li>
+						<?foreach($all_categories as $k=>$category):?>
+						<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
+						<?if($k+1 < count($all_categories)):?>
+						<li>|</li>
+						<?endif?>
+						<?endforeach?>
+					</ul>
+					<?endif?>
+				</div>
 			<?=partial("page/_flickr")?>
 			<?=partial("page/_lastfm")?>
 			<?=partial("page/_twitter")?>

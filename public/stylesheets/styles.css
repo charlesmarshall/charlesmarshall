@@ -166,7 +166,7 @@ body #cat_list ul li a{
 	float:left;
 }
 	#extras{padding-top:130px;}
-		#index #extras{padding-top:40px;}
+		#index #extras{padding-top:0;}
 	#extras h4{font-size:146.5%;}
 		#extras h4, #extras h4 a, #extras h4 a:hover{color:white;}
 	#extras h5{
