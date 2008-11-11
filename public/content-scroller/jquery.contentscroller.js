@@ -44,17 +44,17 @@
 												
 				var new_page = parseInt(jQ(this).attr('name').replace('scroll_item_',''));
 				if(new_page > 0){
-					for(i=1; i<new_page; i++){
-						jQ(container).find('.scroll_item_'+i).animate({'left':"-"+((new_page - i)*page_width) +'px'},params['trans_speed']);
-					}
-					if(params['after']){
-						jQ(container).find('.scroll_item_'+new_page).animate({'left':'0'},params['trans_speed'],function(e){eval(params['after']);});
-					}else{
-						jQ(container).find('.scroll_item_'+new_page).animate({'left':'0'},params['trans_speed']);
-					}
-					for(i=new_page+1; i<=page_count; i++){
-						jQ(container).find('.scroll_item_'+i).animate({'left':((new_page + i)*page_width) +'px'},params['trans_speed']);
-					}
+					for(i=1; i<=page_count; i++){
+						if(i<new_page){
+							jQ(container).find('.scroll_item_'+i).animate({'left':"-"+((new_page - i)*page_width) +'px'},params['trans_speed']);
+						}else if(i == new_page && params['after']){
+							jQ(container).find('.scroll_item_'+new_page).animate({'left':'0'},params['trans_speed'],function(e){eval(params['after']);});
+						}else if(i == new_page){
+							jQ(container).find('.scroll_item_'+new_page).animate({'left':'0'},params['trans_speed']);
+						}else{
+							jQ(container).find('.scroll_item_'+i).animate({'left':((new_page + i)*page_width) +'px'},params['trans_speed']);
+						}
+					}				
 				}
 				jQ(params['controller'] + ' li').removeClass('disabled');
 				if(new_page+1 <= page_count){var next_a = new_page+1;}
@@ -71,8 +71,7 @@
 				jQ(params['controller'] + ' li.next a').attr('name', next_a);
 				current_page = new_page;
 				return false;				
-			});
-			
+			});			
     });
   }
 	$.fn.contentscroller.defaults = {pages: '.page', controller: '#controls', trans_speed: 'slow', before:false, after:false};		
