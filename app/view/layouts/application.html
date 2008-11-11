@@ -103,10 +103,7 @@
 						<li><a href="/category/" title="Categories">Categories</a></li>
 						<li>&raquo;</li>
 						<?foreach($all_categories as $k=>$category):?>
-						<li><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
-						<?if($k+1 < count($all_categories)):?>
-						<li>|</li>
-						<?endif?>
+						<li<?if($k+1 < count($all_categories)):?> class='bar'<?endif?>><a href="/category/<?=$category->url?>" title="<?=$category->name?>" rel="category list"><?=$category->name?></a></li>
 						<?endforeach?>
 					</ul>
 					<?endif?>
