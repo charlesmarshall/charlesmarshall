@@ -11,6 +11,7 @@ jQuery.fn.extend({
 			bgimg = $('#'+this.id + ' img');
 			imgx = bgimg.width();
 			imgy = bgimg.height();
+			$(this).css('background', "url('"+bgimg.attr('src')+"') no-repeat center center");
 			bgimg.css('display', 'none');
 			//mouse down
 			$(this).mousedown(function(e){

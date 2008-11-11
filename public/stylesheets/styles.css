@@ -152,10 +152,10 @@ ul.detail li a{color:#bad7e1;}
 #cat_list{
 	margin:20px 2%;
 	width:96%;
-}	
-body #cat_list ul li a{
-	color:white;
 }
+body #cat_list ul li.bar{
+}	
+body #cat_list ul li a{color:white;}
 #footer{background:url('/images/footer.png') repeat-x top left;}
 .loader{background:url('/images/loader.png') no-repeat center center;}
 .display_none{opacity:0.1;}

@@ -8,6 +8,7 @@ var _6=this;
 bgimg=$("#"+this.id+" img");
 imgx=bgimg.width();
 imgy=bgimg.height();
+$(this).css("background","url('"+bgimg.attr("src")+"') no-repeat center center");
 bgimg.css("display","none");
 $(this).mousedown(function(e){
 $(this).css("cursor","move");
