@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="scroller.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<script src="jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.scroller.js" type="text/javascript" charset="utf-8"></script>
+	
+	<title>jQuery Content Slider Example</title>
+	
+</head>
+
+<body>
+<div id="example1">
+<h1>Example Scrollers</h1>
+	<div id="gallery">
+		<ul id="controls">
+			<li class='previous'><a href='#item_1' >previous</a></li>
+			<li class='next'><a href='#item_2' >next</a></li>			
+		</ul>
+		<ul id="gallery_list" class="clearfix">
+			<li class='image'><img src="1.jpg" alt="1" /></li>
+			<li class='image'><img src="2.jpg" alt="2" /></li>
+			<li class='image'><img src="3.jpg" alt="3" /></li>
+			<li class='image'><img src="4.jpg" alt="4" /></li>
+			<li class='image'><img src="5.jpg" alt="5" /></li>							
+		</ul>
+	</div>
+</div>	
+	
+
+	
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#gallery').scroller({speed:'fast', item:'.image', container:'#gallery_list', visible:2,scroll:2});
+});
+</script>
+
+
+</body>
+</html>

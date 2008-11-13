@@ -1,72 +1,104 @@
-jQuery.fn.extend({
-  modal: function(params){
-    var jQ = jQuery;
-		var params=params;
-    return this.each(function(){
-      jQ(this).click(function(){
-        var trig = $(this);
-        ie6=jQ.browser.msie&&(jQ.browser.version == "6.0")
-				if(!jQ('#modal_overlay').length){ //only add the div if its not there already
-        	jQ("body").append('<div id="modal_overlay"></div>');
-				}
-        jQ("#modal_overlay").css({height:'100%',width:'100%',position:'fixed',left:0,top:0,'z-index':1000,opacity:50/100});
-				if(!jQ('#modal_content').length){ //only add the div if its not there already
-        	jQ("body").append('<div id="modal_content"></div>');
-				}
-				c = "<div class='modal_close'><p>x</p></div>";
-				if(trig.attr("rel")){ //if rel exists
-					div_id = $('#'+trig.attr('rel'));
-					div_class = $('.'+trig.attr('rel'));	
-					if(div_id.length){
-						c = c + div_id.html();
-					}else if(div_class.length){
-						c = c + div_class.html();
-					}
-				}else if(trig.attr('href')){ //if it has a href but no rel then insert the href as image src
-					if(trig.attr('title')){ //if it has a title tag, use it
-						title = trig.attr('title');
-						c = c +"<h3 class='modal_title'>"+title+"</h3><img src='"+trig.attr('href')+"' alt='"+title+"' />"; //make the content
-					}else{
-						c = c+"<img src='"+trig.attr('href')+"' alt='modal' />"; //no title tag
-					}
-				}else{ //if no rel or no href then use the content inside the trigger
-					c = c + trig.html();
-				}
-				//if style info has been passed in then apply that as well as defaults
-				if(params && params['modal_styles']){
-					styling = params['modal_styles'];
-					jQ("#modal_content").html(c).css(styling).css({display:"block", zIndex:1001});
-				}
-				jQ("#modal_content").html(c).css({display:"block", zIndex:1001});	
-				//on load stuff			
-        jQ("#modal_content").load(function() {
-          o = jQ("#modal_overlay");
-          w = jQ("#modal_content");
-          w.css({width:$(this).css("width"), height:$(this).css("height") });
-          if(ie6) {
-            $('html,body').css({height:'100%',width:'100%'});
-            i=$('<iframe src="javascript:false;document.write(\'\');" class="overlay"></iframe>').css({opacity:0});
-            o.html('<p style="width:100%;height:100%"/>').prepend(i)
-            o = o.css({position:'absolute'})[0];
-            for(var y in {Top:1,Left:1}) o.style.setExpression(y.toLowerCase(),"(_=(document.documentElement.scroll"+y+" || document.body.scroll"+y+"))+'px'");
-          }					
-        });
-				//if show param is been passed then eval it
-				if(params && params['show']){
-					eval(params['show']);
-				}	
-				//close modals			
-        jQ("#modal_overlay, .modal_close").click(function(){
-          jQ("#modal_content").remove();
-					jQ("#modal_overlay").remove();
-					if(params && params['hide']){ //hide param
-						eval(params['hide']);
-					}
-        });
-        return false;
+(function($) {
+	//base function to call and setup everything
+	$.fn.modal=function(options){
+		return this.each(function(){			
+			if(this._modal) return; //if already a modal return
+			if(typeof(options) != "undefined")	var params = $.extend({}, $.fn.modal.defaults, options); //if some options are passed in merge them
+			else var params = $.fn.modal.defaults;
+			if(typeof(modal_count) == "undefined") modal_count=0; //set the counter to 0
+			modal_count++;
+			this._modal=modal_count; //set what modal number this is
+			H[modal_count] = {config:params,target_modal:this}; //add to hash var
+			$(this).modal_add_show(this); //add show & hide triggers
+		});
+	}	
+	$.fn.modal_add_show=function(ele){ return $.modal.show(ele); }	
+	//extra function so show & hide can be called
+	$.fn.modal_show=function(){
+		return this.each(function(){
+			$.modal.open(this);
+		});		
+	}
+	$.fn.modal_hide=function(){
+		return this.each(function(){
+			$.modal.hide(this);
+		});		
+	}
+	//the default config vars
+	$.fn.modal.defaults = {show:false, hide:false, modal_styles:false };
+	//the over riden stuff
+	$.modal = {
+		hash:{}, //the hash used to store all the configs & targets
+		show:function(ele){
+			var pos = ele._modal;
+			var jQ = jQuery;			
+			var h = H[pos];
+			jQ(h.target_modal).click(function(){
+				$.modal.open(ele);
+				return false;
+			});
+			return false;
+		},
+		
+		hide:function(ele){
+			var jQ = jQuery;			
+			jQ("#modal_overlay, .modal_close").click(function(){
+        jQ("#modal_content").remove();
+				jQ("#modal_overlay").remove();
+				var pos = ele._modal;
+				var h = H[pos];				
+				if(h.config.hide)	eval(h.config.hide);
+				return false;
       });
-    });
-  }
-});
-
-
+		},
+		open:function(ele){
+			var jQ = jQuery;
+			var pos = ele._modal;
+			var h = H[pos];
+			
+			$.modal.insert_overlay();
+			$.modal.insert_content_container();
+			var content = $.modal.get_content($(h.target_modal));
+			jQ("#modal_content").html(content);
+			if(h.config.modal_styles) jQ("#modal_content").css(h.config.modal_styles);
+			jQ("#modal_content").css({display:"block", zIndex:1001});      
+      $.modal.for_ie(jQ("#modal_overlay"));	
+			if(h.config.show) eval(h.config.show);
+			$.modal.hide(ele); //add hiding
+		},
+		insert_overlay:function(){
+			var jQ = jQuery;
+			if(!jQ('#modal_overlay').length) jQ("body").append('<div id="modal_overlay"></div>');
+      jQ("#modal_overlay").css({height:'100%',width:'100%',position:'fixed',left:0,top:0,'z-index':1000,opacity:50/100});
+		},
+		insert_content_container:function(){
+			var jQ = jQuery;
+			if(!jQ('#modal_content').length) jQ("body").append('<div id="modal_content"></div>');
+		},
+		get_content:function(trig){
+			var jQ = jQuery;
+			c = "<div class='modal_close'><p>x</p></div>";
+			if(trig.attr("rel")){ //if rel exists
+				div_id = jQ('#'+trig.attr('rel'));
+				div_class = jQ('.'+trig.attr('rel'));	
+				if(div_id.length){ c += div_id.html(); }
+				else if(div_class.length){ c += div_class.html();	}
+			}else if(trig.attr('href')){ //if it has a href but no rel then insert the href as image src
+				if(trig.attr('title')){ c +="<h3 class='modal_title'>"+trig.attr('title')+"</h3><img src='"+trig.attr('href')+"' alt='"+trig.attr('title')+"' />"; 	}
+				else{ c += "<img src='"+trig.attr('href')+"' alt='modal' />";	}
+			}else{ c = c + trig.html(); }
+			return c;
+		},
+		for_ie:function(o){
+			if(ie6&&$('html,body').css({height:'100%',width:'100%'})&&o){
+				$('html,body').css({height:'100%',width:'100%'});
+        i=$('<iframe src="javascript:false;document.write(\'\');" class="overlay"></iframe>').css({opacity:0});
+        o.html('<p style="width:100%;height:100%"/>').prepend(i)
+        o = o.css({position:'absolute'})[0];
+        for(var y in {Top:1,Left:1}) o.style.setExpression(y.toLowerCase(),"(_=(document.documentElement.scroll"+y+" || document.body.scroll"+y+"))+'px'");
+			}
+		}
+	}
+	var H=$.modal.hash,
+			ie6=$.browser.msie&&($.browser.version == "6.0");
+})(jQuery);

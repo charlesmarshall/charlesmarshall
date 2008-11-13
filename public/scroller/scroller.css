@@ -1,0 +1,13 @@
+#gallery_list{
+	margin:0 auto;
+	border:1px solid red;
+}
+li.image{
+	padding:0 2px;
+	margin:0;
+	width:75px;
+	height:75px;
+	display:block;
+	position:relative;
+	text-align:center;
+}
