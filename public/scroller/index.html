@@ -31,6 +31,16 @@
 			<li class='image'><img src="4.jpg" alt="4" /></li>
 			<li class='image'><img src="5.jpg" alt="5" /></li>							
 		</ul>
+		
+		<ul id="controls2">
+			<li class='previous'><a href='#item_1' >previous</a></li>
+			<li><a href='#item_1'>1</a></li>
+			<li><a href='#item_2'>2</a></li>
+			<li><a href='#item_3'>3</a></li>
+			<li><a href='#item_4'>4</a></li>
+			<li><a href='#item_5'>5</a></li>									
+			<li class='next'><a href='#item_2' >next</a></li>			
+		</ul>
 	</div>
 </div>	
 	
@@ -38,7 +48,7 @@
 	
 <script type="text/javascript">
 $(document).ready(function() {
-	$('#gallery').scroller({speed:'fast', item:'.image', container:'#gallery_list', visible:2, after:"alert('after');"});
+	$('#gallery').scroller({speed:'fast', item:'.image', controller:"#controls,#controls2",container:'#gallery_list', visible:3});
 });
 </script>
 
