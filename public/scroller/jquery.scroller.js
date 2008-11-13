@@ -39,12 +39,13 @@
 		hash:{},
 		moveto:function(item_number){
 			var sp = H[item_number];
+			if(sp.params['before']) eval(sp.params['before']);
 			for(i in H){
 				var h = H[i];
 				if(h.pos < item_number){
 					jQ(h.item).animate({'left': "-"+(av_width*(item_number-h.pos))+'px'},h.params['speed']); 
 				}else if(h.pos == item_number){
-					jQ(h.item).animate({'left': '0px'},h.params['speed']);
+					jQ(h.item).animate({'left': '0px'},h.params['speed'], function(){eval(h.params['after']);});
 					H[i].active=true; 
 				}else{
 					jQ(h.item).animate({'left': (av_width*(h.pos-item_number))+'px'},h.params['speed']);
@@ -58,7 +59,7 @@
 		}//end move to
 		
 	};
-	$.fn.scroller.defaults = {start:1, speed:'slow', visible:1,container:'#container', controller:'#controls', item:'.item'};
+	$.fn.scroller.defaults = {start:1, speed:'slow', visible:1,container:'#container', controller:'#controls', item:'.item', before:false, after:false};
 	
 	var jQ=jQuery,av_width=0,av_height=0,max_h=0,counter=0,H=$.scroller.hash,ie6=$.browser.msie&&($.browser.version == "6.0");
 	
