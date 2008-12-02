@@ -34,7 +34,7 @@
 		<div id="item_1" class="item current">
 			<h2>Item one</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#">more &raquo;</a></p>
 		</div>
 		<div id="item_2" class="item hidden">	
 			<h2>Item two</h2>
@@ -52,7 +52,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#example').diagonalslider();
+	$('#example').diagonalslider({closer:'body,#triggers', speed:'1200'});
 });
 </script>
 
