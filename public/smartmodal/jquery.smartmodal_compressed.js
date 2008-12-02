@@ -31,47 +31,48 @@ return this.each(function(){
 $.modal.hide(this);
 });
 };
-$.fn.modal.defaults={show:false,hide:false,modal_styles:false};
+$.fn.modal.defaults={show:false,hide:false,modal_styles:false,resize:false};
 $.modal={hash:{},show:function(_6){
 var _7=_6._modal;
-var jQ=jQuery;
 var h=H[_7];
 jQ(h.target_modal).click(function(){
 $.modal.open(_6);
 return false;
 });
 return false;
-},hide:function(_a){
-var jQ=jQuery;
+},hide:function(_9){
 jQ("#modal_overlay, .modal_close").click(function(){
 jQ("#modal_content").remove();
 jQ("#modal_overlay").remove();
-var _c=_a._modal;
-var h=H[_c];
+var _b=_9._modal;
+var h=H[_b];
 if(h.config.hide){
 eval(h.config.hide);
 }
 return false;
 });
-},open:function(_e){
-var jQ=jQuery;
-var pos=_e._modal;
-var h=H[pos];
+},open:function(_d){
+var _e=_d._modal;
+var h=H[_e];
 $.modal.insert_overlay();
 $.modal.insert_content_container();
-var _12=$.modal.get_content($(h.target_modal));
-jQ("#modal_content").html(_12);
+var _10=$.modal.get_content($(h.target_modal));
+jQ("#modal_content").html(_10);
 if(h.config.modal_styles){
 jQ("#modal_content").css(h.config.modal_styles);
 }
 jQ("#modal_content").css({display:"block",zIndex:1001});
+if(h.config.resize){
+jQ("#modal_content img").load(function(){
+$.modal.resize();
+});
+}
 $.modal.for_ie(jQ("#modal_overlay"));
 if(h.config.show){
 eval(h.config.show);
 }
-$.modal.hide(_e);
+$.modal.hide(_d);
 },insert_overlay:function(){
-var jQ=jQuery;
 if(!jQ("#modal_overlay").length){
 jQ("body").append("<div id=\"modal_overlay\"></div>");
 }
@@ -81,12 +82,22 @@ var jQ=jQuery;
 if(!jQ("#modal_content").length){
 jQ("body").append("<div id=\"modal_content\"></div>");
 }
-},get_content:function(_15){
-var jQ=jQuery;
+},resize:function(){
+var dw=0,dh=0;
+jQ("#modal_content").children().each(function(){
+if(jQ(this).outerWidth()>dw){
+dw=jQ(this).outerWidth();
+}
+if(jQ(this).outerHeight()>dh){
+dh=jQ(this).outerHeight();
+}
+});
+jQ("#modal_content").css("width",dw+"px").css("margin-left","-"+(dw/2)+"px");
+},get_content:function(_14){
 c="<div class='modal_close'><p>x</p></div>";
-if(_15.attr("rel")){
-div_id=jQ("#"+_15.attr("rel"));
-div_class=jQ("."+_15.attr("rel"));
+if(_14.attr("rel")){
+div_id=jQ("#"+_14.attr("rel"));
+div_class=jQ("."+_14.attr("rel"));
 if(div_id.length){
 c+=div_id.html();
 }else{
@@ -95,14 +106,14 @@ c+=div_class.html();
 }
 }
 }else{
-if(_15.attr("href")){
-if(_15.attr("title")){
-c+="<h3 class='modal_title'>"+_15.attr("title")+"</h3><img src='"+_15.attr("href")+"' alt='"+_15.attr("title")+"' />";
+if(_14.attr("href")){
+if(_14.attr("title")){
+c+="<h3 class='modal_title'>"+_14.attr("title")+"</h3><img src='"+_14.attr("href")+"' alt='"+_14.attr("title")+"' />";
 }else{
-c+="<img src='"+_15.attr("href")+"' alt='modal' />";
+c+="<img src='"+_14.attr("href")+"' alt='modal' />";
 }
 }else{
-c=c+_15.html();
+c=c+_14.html();
 }
 }
 return c;
@@ -117,6 +128,6 @@ o.style.setExpression(y.toLowerCase(),"(_=(document.documentElement.scroll"+y+" 
 }
 }
 }};
-var H=$.modal.hash,ie6=$.browser.msie&&($.browser.version=="6.0");
+var jQ=jQuery,H=$.modal.hash,ie6=$.browser.msie&&($.browser.version=="6.0");
 })(jQuery);
 

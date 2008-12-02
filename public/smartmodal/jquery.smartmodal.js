@@ -25,13 +25,12 @@
 		});		
 	}
 	//the default config vars
-	$.fn.modal.defaults = {show:false, hide:false, modal_styles:false };
+	$.fn.modal.defaults = {show:false, hide:false, modal_styles:false,resize:false};
 	//the over riden stuff
 	$.modal = {
 		hash:{}, //the hash used to store all the configs & targets
 		show:function(ele){
 			var pos = ele._modal;
-			var jQ = jQuery;			
 			var h = H[pos];
 			jQ(h.target_modal).click(function(){
 				$.modal.open(ele);
@@ -41,7 +40,6 @@
 		},
 		
 		hide:function(ele){
-			var jQ = jQuery;			
 			jQ("#modal_overlay, .modal_close").click(function(){
         jQ("#modal_content").remove();
 				jQ("#modal_overlay").remove();
@@ -52,7 +50,6 @@
       });
 		},
 		open:function(ele){
-			var jQ = jQuery;
 			var pos = ele._modal;
 			var h = H[pos];
 			
@@ -61,13 +58,13 @@
 			var content = $.modal.get_content($(h.target_modal));
 			jQ("#modal_content").html(content);
 			if(h.config.modal_styles) jQ("#modal_content").css(h.config.modal_styles);
-			jQ("#modal_content").css({display:"block", zIndex:1001});      
+			jQ("#modal_content").css({display:"block", zIndex:1001});			
+			if(h.config.resize) jQ("#modal_content img").load(function(){$.modal.resize();});
       $.modal.for_ie(jQ("#modal_overlay"));	
 			if(h.config.show) eval(h.config.show);
 			$.modal.hide(ele); //add hiding
 		},
 		insert_overlay:function(){
-			var jQ = jQuery;
 			if(!jQ('#modal_overlay').length) jQ("body").append('<div id="modal_overlay"></div>');
       jQ("#modal_overlay").css({height:'100%',width:'100%',position:'fixed',left:0,top:0,'z-index':1000,opacity:50/100});
 		},
@@ -75,17 +72,25 @@
 			var jQ = jQuery;
 			if(!jQ('#modal_content').length) jQ("body").append('<div id="modal_content"></div>');
 		},
+		resize:function(){
+			var dw =0, dh=0;
+			jQ("#modal_content").children().each(function(){
+				if(jQ(this).outerWidth() > dw) dw = jQ(this).outerWidth();
+				if(jQ(this).outerHeight() > dh) dh = jQ(this).outerHeight();
+			});
+			jQ('#modal_content').css('width', dw+'px').css('margin-left', "-"+(dw/2)+'px');
+		},
 		get_content:function(trig){
-			var jQ = jQuery;
 			c = "<div class='modal_close'><p>x</p></div>";
 			if(trig.attr("rel")){ //if rel exists
 				div_id = jQ('#'+trig.attr('rel'));
 				div_class = jQ('.'+trig.attr('rel'));	
-				if(div_id.length){ c += div_id.html(); }
-				else if(div_class.length){ c += div_class.html();	}
+				if(div_id.length){ c += div_id.html();}
+				else if(div_class.length){ c += div_class.html();}
 			}else if(trig.attr('href')){ //if it has a href but no rel then insert the href as image src
-				if(trig.attr('title')){ c +="<h3 class='modal_title'>"+trig.attr('title')+"</h3><img src='"+trig.attr('href')+"' alt='"+trig.attr('title')+"' />"; 	}
-				else{ c += "<img src='"+trig.attr('href')+"' alt='modal' />";	}
+				if(trig.attr('title')){ 
+					c +="<h3 class='modal_title'>"+trig.attr('title')+"</h3><img src='"+trig.attr('href')+"' alt='"+trig.attr('title')+"' />"; 	
+				}else{ c += "<img src='"+trig.attr('href')+"' alt='modal' />";	}
 			}else{ c = c + trig.html(); }
 			return c;
 		},
@@ -99,6 +104,5 @@
 			}
 		}
 	}
-	var H=$.modal.hash,
-			ie6=$.browser.msie&&($.browser.version == "6.0");
+	var jQ = jQuery,H=$.modal.hash,	ie6=$.browser.msie&&($.browser.version == "6.0");
 })(jQuery);

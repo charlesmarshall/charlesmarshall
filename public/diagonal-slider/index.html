@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="slider.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<script src="jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.diagonal-slider.js" type="text/javascript" charset="utf-8"></script>
+	
+	<title>jQuery Diagonal Slider Example</title>
+	
+</head>
+
+<body>
+
+<div id="example">
+	<div id="diagonal_overlay_1"></div>
+	<div id="diagonal_overlay_2"></div>
+
+	<div id="triggers">
+		<ul>
+			<li class='item_1 current'><a href="#item_1">item 1</a></li>
+			<li class="item_2"><a href="#item_2">item 2</a></li>
+			<li class="item_3"><a href="#item_2">item 2</a></li>
+		</ul>
+	</div>
+	
+	<div id="contents">
+		<div id="item_1" class="item current">
+			<h2>Item one</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		<div id="item_2" class="item hidden">	
+			<h2>Item two</h2>
+			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+		<div id="item_3" class="item hidden">	
+			<h2>Item two</h2>
+			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#example').diagonalslider();
+});
+</script>
+
+
+</body>
+</html>

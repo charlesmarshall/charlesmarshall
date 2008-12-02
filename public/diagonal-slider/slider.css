@@ -1,0 +1,52 @@
+/*setup the width of the items*/
+body,html{
+	overflow:hidden;
+}
+#triggers, #contents{
+	float:left; /*float left*/
+	margin-right:10px; /*visual effect*/
+}
+.item, #contents{height:300px;} /*fix the height of each item & its container*/
+#contents{overflow-y:hidden;} /*hide the overflow of the container so only the current item shows*/
+#triggers{width:250px;} /*smaller as the nav has no need to be that big */
+
+#triggers li.item_1{ /*each trigger move the margin over - makes it look diagonal*/
+	margin-left:10px;
+}
+#triggers li.item_2{
+	margin-left:30px;
+}
+#triggers li.item_3{
+	margin-left:50px;
+}
+#example{
+	margin-top:20px;
+}
+.item{
+	width:430px;
+	z-index:-1;
+}
+
+.hover_target{
+	border:1px solid red;
+	z-index:20;
+}
+.hover_status{
+	border:1px solid green;
+	z-index:20;
+}
+.hidden{display:none;}
+/*overlays*/
+#diagonal_overlay_1, #diagonal_overlay_2{
+	position:absolute;
+	height:375px; /*more than the height - to hide it properly*/
+	width:558px; /*3/4 the width*/
+	background:url('overlay.gif') no-repeat top left;
+	z-index:10;
+}
+#diagonal_overlay_1{
+	left:125px; /*half of the nav - as its a 45 degree cut*/
+}
+#diagonal_overlay_2{
+	left:490px; 
+}
