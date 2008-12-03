@@ -1,0 +1,24 @@
+html,body, #example1{
+	overflow-x:hidden;
+}
+.accordion{
+	border:1px dotted black;
+	width:580px;/*little bit bigger*/
+	margin:5px 0;
+}
+#example1{
+	margin-left:50px;
+}
+
+.bar_1{background:url('bar-1.gif') no-repeat top left;}
+.bar_2{background:url('bar-2.gif') no-repeat top left;}
+.bar_3{background:url('bar-3.gif') no-repeat top left;}
+.bar_4{background:url('bar-4.gif') no-repeat top left;}
+.bar_5{background:url('bar-5.gif') no-repeat top left;}
+
+
+.hover_target{border:1px solid red;}
+div.target_2{border-color:green;}
+div.target_3{border-color:yellow;}
+div.target_4{border-color:black;}
+div.target_5{border-color:white;}

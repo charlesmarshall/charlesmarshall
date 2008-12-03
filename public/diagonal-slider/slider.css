@@ -39,8 +39,8 @@ body,html{
 /*overlays*/
 #diagonal_overlay_1, #diagonal_overlay_2{
 	position:absolute;
-	height:375px; /*more than the height - to hide it properly*/
-	width:558px; /*3/4 the width*/
+	height:375px; /*more than the height - to hide the content properly*/
+	width:558px; /*width of the overlay*/
 	background:url('overlay.gif') no-repeat top left;
 	z-index:10;
 }

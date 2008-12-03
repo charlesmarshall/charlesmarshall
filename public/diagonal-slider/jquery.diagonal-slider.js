@@ -26,19 +26,32 @@
 				jQ(target).prepend("<div class='hover_status' style='position:absolute;top:"+((i*size)+offseth)+"px;left:"+(((i*size)+offsetx)+size)+"px;height:"+size+"px;width:"+(size)+"px;'>&nbsp;</div>"); //main block
 			}
 		},
+		slideout:function(target, moveable, items, w, speed){
+			jQ(moveable).each(function(){						
+				jQ(this).animate({'left':(w+this._dsoleft)+'px'}, speed);
+				jQ(target).find(items).css('padding-left', (w/3)+'px');
+				jQ(target).find(items).children('p,h1,h2,h3,h4,h5,h6,li').each(function(){
+					var t= jQ(this).eq(0).offset().top;
+					jQ(this).css('padding-left', (t)+'px');
+				});
+			});
+		},
+		slidein:function(target, moveable,items,speed){
+			jQ(moveable).each(function(){
+				jQ(this).animate({'left':(this._dsoleft)+'px'}, speed);	
+				jQ(target).find(items).css('padding-left', '0px');
+				jQ(target).find(items).children('p,h1,h2,h3,h4,h5,h6,li').each(function(){
+					var t= jQ(this).eq(0).offset().top;
+					jQ(this).css('padding-left', '0px');
+				});					
+			});
+		},
 		hoveraction:function(target, items, angle,overlays, closer, size, speed){
-			var moveable = overlays['moving'], w=(jQ(target).outerWidth()*0.75),multi=(angle/90);
+			var moveable = overlays['moving'], w=(jQ(target).outerWidth()*0.75);
 			//setup the hover motion, so on hover it expands
 			jQ(target).find('.hover_target').hover(
 				function(){
-					jQ(moveable).each(function(){						
-						jQ(this).animate({'left':(w+this._dsoleft)+'px'}, speed);
-						jQ(target).find(items).css('padding-left', (w/3)+'px');
-						jQ(target).find(items).children('p,h1,h2,h3,h4,h5,h6,li').each(function(){
-							var t= jQ(this).eq(0).offset().top;
-							jQ(this).css('padding-left', (t)+'px');
-						});
-					});
+					$.diagonalslider.slideout(target, moveable, items, w, speed);
 				}, 
 				function(){}
 			);	
@@ -47,14 +60,7 @@
 			//on hover close it
 			jQ(closer).hover(				 
 				function(){
-					jQ(moveable).each(function(){
-						jQ(this).animate({'left':(this._dsoleft)+'px'}, speed);	
-						jQ(target).find(items).css('padding-left', '0px');
-						jQ(target).find(items).children('p,h1,h2,h3,h4,h5,h6,li').each(function(){
-							var t= jQ(this).eq(0).offset().top;
-							jQ(this).css('padding-left', '0px');
-						});					
-					});
+					$.diagonalslider.slidein(target, moveable, items, speed);
 				},
 				function(){}
 			);
