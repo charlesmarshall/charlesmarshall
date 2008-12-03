@@ -59,15 +59,22 @@
 			if(!h.open){	//not open, so open it
 				for(i=newbar+1; i<=ac_count;i++) jQ(container).find('.target_'+i+', .bar_'+i).animate({left:'+='+awidth+'px'},h.speed);
 			}else if(newbar > h.open){
-				for(i=newbar; i>h.open;i--) jQ(container).find('.target_'+i+', .bar_'+i).animate({left:'-='+awidth+'px'},h.speed);			
+				for(i=newbar; i>h.open;i--) jQ(container).find('.target_'+i+', .bar_'+i).animate({left:'-='+awidth+'px'},h.speed);
 			}else if(newbar < h.open){
-				for(i=h.open; i>newbar;i--) jQ(container).find('.target_'+i+', .bar_'+i).animate({left:'+='+awidth+'px'},h.speed);																		
+				for(i=h.open; i>newbar;i--) jQ(container).find('.target_'+i+', .bar_'+i).animate({left:'+='+awidth+'px'},h.speed);
 			}
 			//padding to make text staggered
 			jQ(container).children(params.accordion).css('display', 'none');
+			//switch zindexes
+			jQ(container).find('.target_'+h.open).each(function(){
+				jQ(this).css('z-index', jQ(this).css('z-index').replace('-',''));
+			});
+			jQ(container).find('.target_'+newbar+', .acc_bar').each(function(){
+				jQ(this).css('z-index', '-'+jQ(this).css('z-index'));
+			});
 			jQ(container).children('.accordion_item_'+newbar).css('display', 'block').children('p,h1,h2,h3,h4,h5,h6,li').each(function(){
 				var t= jQ(this).eq(0).offset().top;
-				jQ(this).css('padding-left', (t+(newbar*params.bar_size)+30)+'px');
+				jQ(this).css('padding-left', (t+(newbar*params.bar_size)+(params.bar_size*2))+'px').css('z-index',200);
 			});
 			
 			h.open = accbar;			
