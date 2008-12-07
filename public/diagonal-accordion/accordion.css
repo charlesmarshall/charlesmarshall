@@ -3,7 +3,7 @@ html,body, #example1{
 }
 .accordion{
 	border:1px dotted black;
-	width:580px;/*little bit bigger*/
+	width:500px;/*little bit bigger*/
 	margin:5px 0;
 }
 #example1{

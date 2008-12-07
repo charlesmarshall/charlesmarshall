@@ -41,7 +41,7 @@
 			jQ(container).prepend("<div class='acc_bar bar_"+barnum+"' style='position:absolute;width:"+params.acc_width+"px;height:"+params.acc_height+"px;top:"+offsety+"px;left:"+offsetx+"px;z-index:"+(barnum+10)+";'>&nbsp;</div>"); //create divs
 		},
 		addtargets:function(elenum, bar){ //make the target divs..
-			var h = H[elenum], params=h.params, container=h.container,barnum = bar._digbar, zindex=(1000-barnum), size=params.bar_size; //local vars
+			var h = H[elenum], params=h.params, container=h.container,barnum = bar._digbar, zindex=(900+barnum), size=params.bar_size; //local vars
 			var offsetx = jQ(container).eq(0).offset().left+(params.bar_size*(barnum-1)); //position to start at
 			var offsety = h.toppos;
 			var numtargets = Math.round((h.cheight/size)*params.coverage); //the coverage param used to manipulate how many targets to use
@@ -64,17 +64,11 @@
 				for(i=h.open; i>newbar;i--) jQ(container).find('.target_'+i+', .bar_'+i).animate({left:'+='+awidth+'px'},h.speed);
 			}
 			jQ(container).children(params.accordion).css('display', 'none'); //hide all the accordions
-			jQ(container).find('.target_'+h.open).each(function(){ //change the z indexes - to positive
-				jQ(this).css('z-index', jQ(this).css('z-index').toString().replace('-',''));
-			});
-			jQ(container).find('.target_'+newbar+', .acc_bar').each(function(){ //so text & links etc are clickable/selectable
-				var nz = parseInt(jQ(this).css('z-index')); //ie work around, for some reason it doesnt like strings..
-				jQ(this).css('z-index', nz-(nz*2));
-			});			
+			
 			jQ(container).children('.accordion_item_'+newbar).css('display', 'block').css('margin-left', newbar*params.bar_size+'px'); //move the accordion over to right place
 			var ci=1; //counter
 			jQ(container).children('.accordion_item_'+newbar).css('display', 'block').children('p,h1,h2,h3,h4,h5,h6,li').each(function(){ //add padding to child block elements
-				jQ(this).css('padding-left', ((ci*2)*(params.bar_size/2)+params.bar_size)+'px').css('padding-right', ((ci*2)*(params.bar_size/2)+params.bar_size)+'px').css('z-index',200);
+				jQ(this).css('padding-left', ((ci*2)*(params.bar_size/2)+params.bar_size)+'px').css('padding-right', ((ci*2)*(params.bar_size/2)+params.bar_size)+'px').css('z-index',500).css('position','relative');
 				ci++;
 			});
 			h.open = newbar; //copy over to h.open			
