@@ -46,9 +46,8 @@
 			var offsety = h.toppos;
 			var numtargets = Math.round((h.cheight/size)*params.coverage); //the coverage param used to manipulate how many targets to use
 			for(i=0;i<numtargets;i++){ //loop around
-				var tp = ((i*size/params.coverage)+offsety); //work out y
-				var lp = ((i*(size/params.coverage))+offsetx+(size/2)); //and x
-				jQ(container).prepend("<div class='hover_target target_"+barnum+"' rel='"+barnum+"' style='z-index:"+zindex+";position:absolute;top:"+tp+"px;left:"+lp+"px;height:"+(size/2)+"px;width:"+(size/2)+"px;'>&nbsp;</div>"); //main block
+				var tp = ((i*size/params.coverage)+offsety),lp = ((i*(size/params.coverage))+offsetx+(size/params.coverage)); //work out y & x
+				jQ(container).prepend("<div class='hover_target target_"+barnum+"' rel='"+barnum+"' style='z-index:"+zindex+";position:absolute;top:"+tp+"px;left:"+lp+"px;height:"+(size/params.coverage)+"px;width:"+(size*0.75)+"px;'>&nbsp;</div>"); //main block
 			}
 		},
 		onhover:function(elenum, target){
@@ -82,7 +81,7 @@
 		}
 	};
 	
-	$.fn.diagonalaccordion.defaults = {start:false,acc_width:500, acc_height:300,bar_size:45, speed:'slow', accordion:'.accordion', coverage:2}; //the coverage var improves the amount of targets overlaying the bar - but effects performance
+	$.fn.diagonalaccordion.defaults = {start:false,acc_width:500, acc_height:300,bar_size:45, speed:'slow', accordion:'.accordion', coverage:3}; //the coverage var improves the amount of targets overlaying the bar - but effects performance
 	var jQ = jQuery, params, elecount=0,H=$.diagonalaccordion.hash;
 	
 })(jQuery);
