@@ -43,9 +43,12 @@
 			var h = H[elenum], params=h.params, container=h.container,barnum = bar._digbar, zindex=(1000-barnum), size=params.bar_size;
 			var offsetx = jQ(container).eq(0).offset().left+(params.bar_size*(barnum-1));
 			var offsety = h.toppos;
-			var numtargets = Math.ceil(h.cheight/size);
+			var numtargets = Math.ceil(h.cheight/size)*params.overhead;
+			console.log(h.cheight);
 			for(i=0;i<numtargets;i++){
-				jQ(container).prepend("<div class='hover_target target_"+barnum+"' rel='"+barnum+"' style='z-index:"+zindex+";position:absolute;top:"+((i*size/2)+offsety)+"px;left:"+((i*(size/2))+offsetx+(size/2))+"px;height:"+(size/2)+"px;width:"+(size/2)+"px;'>&nbsp;</div>"); //main block
+				var tp = ((i*size/params.overhead)+offsety);
+				var lp = ((i*(size/params.overhead))+offsetx+(size/2));
+				jQ(container).prepend("<div class='hover_target target_"+barnum+"' rel='"+barnum+"' style='z-index:"+zindex+";position:absolute;top:"+tp+"px;left:"+lp+"px;height:"+(size/2)+"px;width:"+(size/2)+"px;'>&nbsp;</div>"); //main block
 			}
 		},
 		onhover:function(elenum, target){
@@ -74,15 +77,18 @@
 				jQ(this).css('z-index', nz-(nz*2));
 			});
 			
+			jQ(container).children('.accordion_item_'+newbar).css('display', 'block').css('margin-left', newbar*params.bar_size+'px');
+			var ci=1;
 			jQ(container).children('.accordion_item_'+newbar).css('display', 'block').children('p,h1,h2,h3,h4,h5,h6,li').each(function(){
-				var t= jQ(this).eq(0).offset().top;
-				jQ(this).css('padding-left', (t+(newbar*params.bar_size)+(params.bar_size*2))+'px').css('padding-right', params.bar_size+'px').css('z-index',200);
-			});			
+				jQ(this).css('padding-left', ((ci*2)*(params.bar_size/2)+params.bar_size)+'px').css('padding-right', ((ci*2)*(params.bar_size/2)+params.bar_size)+'px').css('z-index',200);
+				ci++;
+			});
 			h.open = newbar;			
+			
 		}
 	};
 	
-	$.fn.diagonalaccordion.defaults = {start:false,acc_width:500, acc_height:300,bar_size:45, speed:'slow', accordion:'.accordion'};
+	$.fn.diagonalaccordion.defaults = {start:false,acc_width:500, acc_height:300,bar_size:45, speed:'slow', accordion:'.accordion', overhead:4};
 	var jQ = jQuery, params, elecount=0,H=$.diagonalaccordion.hash,	ie6=$.browser.msie&&($.browser.version == "6.0");;
 	
 })(jQuery);

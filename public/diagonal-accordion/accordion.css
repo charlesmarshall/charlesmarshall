@@ -9,6 +9,7 @@ html,body, #example1{
 #example1{
 	margin-top:20px;
 	margin-left:50px;
+	height:300px;
 }
 
 .bar_1{background:url('bar-1.gif') no-repeat top left;}
