@@ -75,7 +75,7 @@
 		}
 	};
 	
-	$.fn.diagonalaccordion.defaults = {start:false,acc_width:500, acc_height:300,bar_size:45, speed:'slow', accordion:'.accordion', coverage:3}; //the coverage var improves the amount of targets overlaying the bar - but effects performance
+	$.fn.diagonalaccordion.defaults = {start:false,acc_width:500, acc_height:300,bar_size:45, speed:'slow', accordion:'.accordion', coverage:4}; //the coverage var improves the amount of targets overlaying the bar - but effects performance
 	var jQ = jQuery, params, elecount=0,H=$.diagonalaccordion.hash;
 	
 })(jQuery);
