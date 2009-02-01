@@ -5,7 +5,7 @@ class SiteHelper extends WXHelpers {
 		return date("jS M y", strtotime($date));
 	}
 	public function long_date($date){
-		return date("nS F Y", strtotime($date));
+		return date("jS F Y", strtotime($date));
 	}	
 	
 	public function parse_rss_string($string, $items) {
