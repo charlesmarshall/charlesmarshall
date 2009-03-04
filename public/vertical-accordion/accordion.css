@@ -1,0 +1,7 @@
+#example1{
+	width:560px;
+	margin:10px auto;
+	padding:10px 100px;
+}		
+/* accordion bars */
+div.vertical-accordion-bar{background:url('generic.gif') repeat-y top left;}
