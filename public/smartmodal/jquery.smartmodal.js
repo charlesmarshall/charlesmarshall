@@ -113,7 +113,6 @@ modal_count => sm_count
         i=$('<iframe src="javascript:false;document.write(\'\');" class="overlay"></iframe>').css({opacity:0});
         o.html('<p style="width:100%;height:100%"/>').prepend(i);
         o = o.css({position:'absolute'})[0];
-
 			}
 		}
 	};
