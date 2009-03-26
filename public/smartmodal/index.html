@@ -86,12 +86,12 @@
 		<div class='example'>
 			<h2>Custom Close Links</h2>
 			<p><a href='#' class='modal5' rel='modal_hidden_1'>Click me</a> and you will get a bunch of text.</p>
-			<p>The extra close link inside the modal will also close the box. This done by simply giving it a class of 'modal_close' as the plugin looks for
-				clicks on .modal_close inside the overlay to close it.</p>
+			<p>The extra close link inside the modal will also close the box. This done by simply giving it a class of 'sm_close' as the plugin looks for
+				clicks on .smart_modal_close inside the overlay to close it.</p>
 			<div class="modal_hidden_1 hidden">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<p><a href='#' class='modal_close'>This Will close the box as well</a>.</p>				
+				<p><a href='#' class='sm_close'>This Will close the box as well</a>.</p>				
 			</div>
 		</div>
 		
@@ -120,8 +120,8 @@
 		
 		
 		<p>If you take a look at the code you will notice that smart modal has totally changed; hopefully for the better.</p>
-		<p>For those of an adventurous nature there are now two new functions you can call manually - .modal_hide() &amp; .modal_show(). 
-			Once you have instantiated the link using .modal() you can call either of those to show or hide it.</p>
+		<p>For those of an adventurous nature there are now two new functions you can call manually - .smart_modal_hide() &amp; .smart_modal_show(). 
+			Once you have instantiated the link using .smart_modal() you can call either of those to show or hide it.</p>
 
 	</div>
 	
@@ -132,21 +132,21 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$('a.on_load_modal').modal();
-	$('a.on_load_modal').modal_show();
-	$('a.modal1').modal();
-	$('.modal2').modal(); 
-	$('.modal3').modal(); 
-	$('.modal4').modal({show:function(){alert('This happens on show!');}, hide:function(){alert('On Hide!');} });
-	$('.modal5').modal();
-	$('.modal6').modal({show:function(){
+	$('a.on_load_modal').smart_modal();
+	$('a.on_load_modal').smart_modal_show();
+	$('a.modal1').smart_modal();
+	$('.modal2').smart_modal(); 
+	$('.modal3').smart_modal(); 
+	$('.modal4').smart_modal({show:function(){alert('This happens on show!');}, hide:function(){alert('On Hide!');} });
+	$('.modal5').smart_modal();
+	$('.modal6').smart_modal({show:function(){
 			$('a.custom_modal_close').click(function(){
 				alert('You clicked a custom close link!');
-				$('.modal6').modal_hide();
+				$('.modal6').smart_modal_hide();
 				return false;
 			});
 	}});	
-	$('.modal7').modal({hide_on_overlay_click:false});	
+	$('.modal7').smart_modal({hide_on_overlay_click:false});	
 	
 });
 </script>
