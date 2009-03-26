@@ -16,7 +16,7 @@ modal_count => sm_count
 			if(typeof(sm_count) == "undefined") sm_count=0; //set the counter to 0
 			sm_count++;
 			this._sm=sm_count; //set what modal number this is
-			H[sm_count] = {config:params,target_modal:this}; //add to hash var
+			H[sm_count] = {config:params,target_sm:this}; //add to hash var
 			$(this).smart_modal_add_show(this); //add show & hide triggers
 		});
 	};
@@ -39,7 +39,7 @@ modal_count => sm_count
 		hash:{}, //the hash used to store all the configs & targets
 		show:function(ele){
 			var pos = ele._sm, h = H[pos];
-			jQ(h.target_modal).click(function(){
+			jQ(h.target_sm).click(function(){
 				$.smart_modal.open(ele);
 				return false;
 			});
@@ -67,8 +67,8 @@ modal_count => sm_count
 			var h = H[pos];			
 			$.smart_modal.insert_overlay();
 			$.smart_modal.insert_content_container();
-			var content = $.smart_modal.get_content($(h.target_modal));
-			jQ("#sm_content").html(content);			
+			var smcontent = $.smart_modal.get_content($(h.target_sm));
+			jQ("#sm_content").html(smcontent);			
 			if(h.config.modal_styles) jQ("#sm_content").css(h.config.modal_styles);
 			if(h.config.resize) $.smart_modal.resize_container();
       $.smart_modal.for_ie(jQ("#sm_olay"));	
