@@ -113,7 +113,7 @@ modal_count => sm_count
         i=$('<iframe src="javascript:false;document.write(\'\');" class="overlay"></iframe>').css({opacity:0});
         o.html('<p style="width:100%;height:100%"/>').prepend(i);
         o = o.css({position:'absolute'})[0];
-        for(var y in {Top:1,Left:1}) o.style.setExpression(y.toLowerCase(),"(_=(document.documentElement.scroll"+y+" || document.body.scroll"+y+"))+px");
+        for(var y in {Top:1,Left:1}) o.style.setExpression(y.toLowerCase(),"(_=(document.documentElement.scroll"+y+" || document.body.scroll"+y+")) px");
 			}
 		}
 	};
