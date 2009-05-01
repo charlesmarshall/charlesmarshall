@@ -33,13 +33,13 @@ modal_count => sm_count
 		});		
 	};
 	//the default config vars
-	$.fn.smart_modal.defaults = {show:false, hide:false, modal_styles:{display:"block", zIndex:1001}, resize:true, hide_on_overlay_click:true };
+	$.fn.smart_modal.defaults = {show:false, hide:false, modal_styles:{display:"block", zIndex:1001}, resize:true, hide_on_overlay_click:true, before_show:false, before_hide:false };
 	//the over riden stuff
 	$.smart_modal = {
 		hash:{}, //the hash used to store all the configs & targets
 		show:function(ele){
 			var pos = ele._sm, h = H[pos];
-			jQ(h.target_sm).click(function(){
+			jQ(h.target_sm).click(function(){				
 				$.smart_modal.open(ele);
 				return false;
 			});
@@ -47,7 +47,8 @@ modal_count => sm_count
 		},
 		
 		hide:function(ele, force){
-			var pos = ele._sm, h = H[pos];			
+			var pos = ele._sm, h = H[pos];
+			if(h.config.before_hide) h.config.before_hide();	
 			if(h.config.hide_on_overlay_click) var idstr = "#sm_olay, .sm_close";
 			else var idstr = ".sm_close";
 			if(force) $.smart_modal.remove(ele);
@@ -64,7 +65,8 @@ modal_count => sm_count
 		},
 		open:function(ele){
 			var pos = ele._sm;
-			var h = H[pos];			
+			var h = H[pos];
+			if(h.config.before_show) h.config.before_show();	
 			$.smart_modal.insert_overlay();
 			$.smart_modal.insert_content_container();
 			var smcontent = $.smart_modal.get_content($(h.target_sm));
