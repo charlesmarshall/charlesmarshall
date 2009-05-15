@@ -1,0 +1,110 @@
+*{
+	text-align:left;
+}
+
+#map_section{
+	width:900px;
+	margin:10px auto;
+}
+#gmap{
+	width:560px;
+	height:450px;
+	margin:0px auto 10px auto;
+	margin-right:20px;
+	float:left;
+}
+#obb_map_side_bar{
+	width:320px;
+	float:left;
+}
+
+#map_section h4.toggler a{
+	color:white;
+	text-decoration:none;
+	display:block;
+	padding:3px 6px;
+	background:#2F2F2F;
+	margin:2px 0;
+}
+
+#map_section h4.toggler a.obb_hide{
+	color:#2F2F2F;
+	background:#F5F5F5;
+}
+
+
+
+#map_section #obb_map_filter_options{
+	width:320px;
+	margin:5px 0 15px 0;
+}
+	#map_section #obb_map_filter_options ol li{
+		width:90px;
+		margin-right:3px;
+		float:left;
+	}
+	#obb_map_filters{padding-top:5px;}
+ 	#obb_map_filters ul label, #obb_map_filters ul input{margin:0px 8px 8px 0;}
+	#obb_map_filters ol label{margin-left:8px;}
+	#obb_map_filters #obb_map_search_box{width:205px;}
+
+#map_section #obb_map_side_bar, #map_section #directions_sidebar{
+	width:320px;
+	height:310px;
+	overflow:auto;
+}
+#map_section #directions_sidebar{
+	height:380px;
+	width:308px;
+}
+.obb_map_dealer_icon{
+	float:left;
+	margin:0 8px 30px 0;
+}
+li.obb_map_dealer_side{
+	margin:4px 0;
+	height:74px;
+	display:block;
+	overflow:hidden;
+}
+li.obb_map_dealer_side{font-size:93%;}
+p.obb_map_distance strong{font-weight:bold;}
+/* Nasty clearfix hacks */
+.clearfix {display:inline-block;} 
+/* Hide from IE Mac \*/ 
+.clearfix {display:block;} 
+/* End hide from IE Mac */ 
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+div.gmnoprint, #iw_kml{text-align:left;}
+div.gmnoprint p, div.gmnoprint li, #iw_kml p, #iw_kml li{
+	font-size:85%;
+	margin:5px 0;
+}
+#iw_kml img, div.gmnoprint img{
+	float:left;
+	margin:5px 10px 40px 0px;
+}
+div.gmnoprint ul, #iw_kml ul{margin:5px 5px 5px 0px;}
+div.gmnoprint li, #iw_kml li{list-style-type:none !important;}
+div.gmnoprint li strong, #iw_kml li strong,
+div.gmnoprint li span, #iw_kml li span{display:inline-block;}
+div.gmnoprint li strong, #iw_kml li strong{width:70px;}
+div.gmnoprint li span, #iw_kml li span{width:110px;}
+
+div.gmnoprint form{
+	margin-top:10px;
+}
+div.gmnoprint form label, 
+div.gmnoprint form strong{
+	width:50px;
+	display:inline-block;
+	margin-bottom:3px;
+}
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="core.css" type="text/css" media="screen" charset="utf-8" />		
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<script src='http://www.google.co.uk/jsapi?key=ABQIAAAAQ_MbVb_KdIi7Z-3agFFibxTr40-U6rKi3H1zIkD0TDNPyGQE8BRJbeg0G5ZalFKDmIo4Mlkk2y9uyw'  type='text/javascript'></script>	
+	<script type='text/javascript'>                      
+	google.load('jquery', '1.3');
+	google.load("maps", "2");
+	</script>
+	
+	
+	<title>Google Maps</title>
+	
+</head>
+
+<body>
+	<div id="map_section" class='clearfix'>
+		<h1>Example</h1>
+		<p>During a recent project I created several google map javascript classes to my life simpler ranging from a basic map 
+			which just shows the location to a full on monster with searching, directions and filters.</p>
+		<p>Here I'm using the search version which has everything.</p>
+		<p>I also created 99 numbered map markers for anyone thats interested they are <a href='map-markers.zip'>here</a>.</p>
+		<p>If you have any questions or want to download everything you can find this project over on git hub.</p>
+		
+		<ul>
+			<li><a href="map-markers.zip">Marker icons</a></li>
+			<li><a href="obb-map.js">Basic map class</a></li>
+			<li><a href="obb-filter-map.js">Filter map class</a> - certain layers can be turned on or off - uses kml (should really write an example for this)</li>
+			<li><a href="obb-directions-map.js">Directions map class</a> - extends the above - has tabbed bubbles and this time runs off a <a href="example.json">json file</a></li>
+			<li><a href="obb-search-map.js">Search map class</a> - extends the above - allows inline searching with smart map repositioning</li>			
+			<li><a href="all-map-classes.js">All map class</a> - All in one file</li>			
+			<li><a href="all-map-classes.min.js">All map class</a> - All in one file - minimised</li>			
+		</ul>
+		
+		<div id="gmap"></div>
+		<div id="obb_map_side_bar" class='clearfix'></div>
+	
+
+
+<script src="all-map-classes.js" type="text/javascript" charset="utf-8"></script>	
+<script type="text/javascript">
+var my_map = new ObbSearchMap();
+
+$(document).ready(function(){	
+	my_map.marker_url = "example.json";
+	my_map.start_longitude = "52.073376"; 
+	my_map.start_latitude = "-4.151503";
+	my_map.search_marker_icon = "selected.png";
+	my_map.map_name = "";
+	my_map.mouse_wheel_scroll = true;
+	my_map.earth = true;		
+	my_map.start_zoom = 5;
+	my_map.init();
+});
+
+$(window).unload(function(){
+	GUnload();
+});
+</script>
+
+
+
+<!-- google -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-927511-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
