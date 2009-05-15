@@ -45,18 +45,19 @@
 
 <script src="all-map-classes.js" type="text/javascript" charset="utf-8"></script>	
 <script type="text/javascript">
-var my_map = new ObbSearchMap();
+var my_gmap = new ObbSearchMap();
 
 $(document).ready(function(){	
-	my_map.marker_url = "http://charlesmarshall.co.uk/maps/example.json";
-	my_map.start_longitude = "52.073376"; 
-	my_map.start_latitude = "-4.151503";
-	my_map.search_marker_icon = "selected.png";
-	my_map.map_name = "";
-	my_map.mouse_wheel_scroll = true;
-	my_map.earth = true;		
-	my_map.start_zoom = 5;
-	my_map.init();
+	my_gmap.map_name = "gmap";
+	my_gmap.marker_url = "http://charlesmarshall.co.uk/maps/example.json";
+	my_gmap.start_longitude = "52.073376"; 
+	my_gmap.start_latitude = "-4.151503";
+	my_gmap.search_marker_icon = "selected.png";
+	my_gmap.map_variable_name = "my_gmap";
+	my_gmap.mouse_wheel_scroll = true;
+	my_gmap.earth = true;		
+	my_gmap.start_zoom = 5;
+	my_gmap.init();
 });
 
 $(window).unload(function(){
