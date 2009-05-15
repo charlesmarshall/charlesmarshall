@@ -7,11 +7,11 @@
 			"latitude": "-4.151503", 
 			"desc": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Davies </strong></h6><img src='http://imwww.imgroup.co.uk/IMGGB/WWW/DealerPhoto.nsf/DaiPhotoLookupMapKey/45803~Full/$file/davies-external-pic4-(web-s.jpg' class='obb_map_bubble_image' width='95' border='0'/><ul class='obb_map_bubble_list'><li>Old Foundry</li><li>Llanybydder</li><li>Dyfed</li><li>SA40 9XP</li></ul><p>T: 01570 480058</p><p>F: 01570 480496</p></div>",
 			"opening_hours": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Opening Hours</strong></h6><ul><li><strong>Monday:</strong><span>8:30:00 - 18:00:00</span></li><li><strong>Tuesday:</strong><span>8:30:00 - 18:00:00</span></li><li><strong>Wednesday:</strong><span>8:30:00 - 18:00:00</span></li><li><strong>Thursday:</strong><span>8:30:00 - 18:00:00</span></li><li><strong>Friday:</strong><span>8:30:00 - 18:00:00</span></li><li><strong>Saturday:</strong><span>10:00:00 - 16:00:00</span></li><li><strong>Sunday:</strong><span>13:00:00 - 16:00:00</span></li></ul></div>",
-			"summary": "<div class='dealer_side_0'><a href='#dealer_1' class='obb_map_move_to'><img src='http://maps.oneblackbear.com/images/map-markers/marker1.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker1'/></a><h4><a href='#dealer_1' class='obb_map_move_to'>Davies </a></h4><ul class='obb_map_bubble_list'><li>Llanybydder, Dyfed, SA40 9XP</li><li>T: 01570 480058</li><li>F: 01570 480496</li></ul></div>",
+			"summary": "<div class='dealer_side_0'><a href='#dealer_1' class='obb_map_move_to'><img src='marker1.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker1'/></a><h4><a href='#dealer_1' class='obb_map_move_to'>Davies </a></h4><ul class='obb_map_bubble_list'><li>Llanybydder, Dyfed, SA40 9XP</li><li>T: 01570 480058</li><li>F: 01570 480496</li></ul></div>",
 			"directions": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Directions</strong></h6><form action='' method='post' rel='obb_map_directions'><fieldset><input type='hidden' name='obb_map_layer' value='dealer_1' /><input type='hidden' name='obb_map_from' value='52.073376,-4.151503' /><label for='obb_map_dir_1'><strong>From:</strong></label><input type='text' name='obb_map_to' id='obb_map_dir_1' value='' /><br /><strong>To:</strong> <em>Davies </em><br /><br /><input type='submit' name='submit' value='Go' /></fieldset></form></div>",
 			"icons": {
-				"normal":"http://maps.oneblackbear.com/images/map-markers/marker1.png",
-				"selected": "http://maps.oneblackbear.com/images/map-markers/selected.png"
+				"normal":"marker1.png",
+				"selected": "selected.png"
 				},
 			"facilities": {
 				"Sales": "1",
@@ -31,11 +31,11 @@
 			"latitude": "-0.114689", 
 			"desc": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Chandlers (Horncastle)</strong></h6><img src='http://imwww.imgroup.co.uk/IMGGB/WWW/DealerPhoto.nsf/DaiPhotoLookupMapKey/03230~Full/$file/BLANK_SIGNAGE_125x88.jpg' class='obb_map_bubble_image' width='95' border='0'/><ul class='obb_map_bubble_list'><li>Boston Road</li><li>Horncastle</li><li>Lincolnshire</li><li>LN9 6JN</li></ul><p>T: 01507 527211</p><p>F: 01507 524498</p></div>",
 			"opening_hours": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Opening Hours</strong></h6><ul><li><strong>Monday:</strong><span>8:30:00 - 17:30:00</span></li><li><strong>Tuesday:</strong><span>8:30:00 - 17:30:00</span></li><li><strong>Wednesday:</strong><span>8:30:00 - 17:30:00</span></li><li><strong>Thursday:</strong><span>8:30:00 - 17:30:00</span></li><li><strong>Friday:</strong><span>8:30:00 - 17:30:00</span></li><li><strong>Saturday:</strong><span>8:30:00 - 16:00:00</span></li><li><strong>Sunday:</strong><span>Closed </span></li></ul></div>",
-			"summary": "<div class='dealer_side_1'><a href='#dealer_2' class='obb_map_move_to'><img src='http://maps.oneblackbear.com/images/map-markers/marker2.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker2'/></a><h4><a href='#dealer_2' class='obb_map_move_to'>Chandlers (Horncastle)</a></h4><ul class='obb_map_bubble_list'><li>Horncastle, Lincolnshire, LN9 6JN</li><li>T: 01507 527211</li><li>F: 01507 524498</li></ul></div>",
+			"summary": "<div class='dealer_side_1'><a href='#dealer_2' class='obb_map_move_to'><img src='marker2.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker2'/></a><h4><a href='#dealer_2' class='obb_map_move_to'>Chandlers (Horncastle)</a></h4><ul class='obb_map_bubble_list'><li>Horncastle, Lincolnshire, LN9 6JN</li><li>T: 01507 527211</li><li>F: 01507 524498</li></ul></div>",
 			"directions": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Directions</strong></h6><form action='' method='post' rel='obb_map_directions'><fieldset><input type='hidden' name='obb_map_layer' value='dealer_2' /><input type='hidden' name='obb_map_from' value='53.208069,-0.114689' /><label for='obb_map_dir_2'><strong>From:</strong></label><input type='text' name='obb_map_to' id='obb_map_dir_2' value='' /><br /><strong>To:</strong> <em>Chandlers (Horncastle)</em><br /><br /><input type='submit' name='submit' value='Go' /></fieldset></form></div>",
 			"icons": {
-				"normal":"http://maps.oneblackbear.com/images/map-markers/marker2.png",
-				"selected": "http://maps.oneblackbear.com/images/map-markers/selected.png"
+				"normal":"marker2.png",
+				"selected": "selected.png"
 				},
 			"facilities": {
 				"Sales": "1",
@@ -55,11 +55,11 @@
 			"latitude": "-4.574356", 
 			"desc": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>C H Bull & Sons Ltd</strong></h6><img src='http://imwww.imgroup.co.uk/IMGGB/WWW/DealerPhoto.nsf/DaiPhotoLookupMapKey/45866~Full/$file/CHBull.jpg' class='obb_map_bubble_image' width='95' border='0'/><ul class='obb_map_bubble_list'><li>Kilmacolm Road</li><li>Bridge of Weir</li><li>Renfrewshire</li><li>PA11 3PH</li></ul><p>T: 01505 612174</p><p>F: 01505 614914</p></div>",
 			"opening_hours": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Opening Hours</strong></h6><ul><li><strong>Monday:</strong><span>9:00:00 - 18:00:00</span></li><li><strong>Tuesday:</strong><span>9:00:00 - 18:00:00</span></li><li><strong>Wednesday:</strong><span>9:00:00 - 18:00:00</span></li><li><strong>Thursday:</strong><span>9:00:00 - 18:00:00</span></li><li><strong>Friday:</strong><span>9:00:00 - 17:00:00</span></li><li><strong>Saturday:</strong><span>9:00:00 - 17:00:00</span></li><li><strong>Sunday:</strong><span>12:00:00 - 17:00:00</span></li></ul></div>",
-			"summary": "<div class='dealer_side_2'><a href='#dealer_3' class='obb_map_move_to'><img src='http://maps.oneblackbear.com/images/map-markers/marker3.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker3'/></a><h4><a href='#dealer_3' class='obb_map_move_to'>C H Bull & Sons Ltd</a></h4><ul class='obb_map_bubble_list'><li>Bridge of Weir, Renfrewshire, PA11 3PH</li><li>T: 01505 612174</li><li>F: 01505 614914</li></ul></div>",
+			"summary": "<div class='dealer_side_2'><a href='#dealer_3' class='obb_map_move_to'><img src='marker3.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker3'/></a><h4><a href='#dealer_3' class='obb_map_move_to'>C H Bull & Sons Ltd</a></h4><ul class='obb_map_bubble_list'><li>Bridge of Weir, Renfrewshire, PA11 3PH</li><li>T: 01505 612174</li><li>F: 01505 614914</li></ul></div>",
 			"directions": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Directions</strong></h6><form action='' method='post' rel='obb_map_directions'><fieldset><input type='hidden' name='obb_map_layer' value='dealer_3' /><input type='hidden' name='obb_map_from' value='55.857266,-4.574356' /><label for='obb_map_dir_3'><strong>From:</strong></label><input type='text' name='obb_map_to' id='obb_map_dir_3' value='' /><br /><strong>To:</strong> <em>C H Bull & Sons Ltd</em><br /><br /><input type='submit' name='submit' value='Go' /></fieldset></form></div>",
 			"icons": {
-				"normal":"http://maps.oneblackbear.com/images/map-markers/marker3.png",
-				"selected": "http://maps.oneblackbear.com/images/map-markers/selected.png"
+				"normal":"marker3.png",
+				"selected": "selected.png"
 				},
 			"facilities": {
 				"Sales": "1",
@@ -79,11 +79,11 @@
 			"latitude": "-7.155230", 
 			"desc": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Eakin Brothers Ltd</strong></h6><img src='http://imwww.imgroup.co.uk/IMGGB/WWW/DealerPhoto.nsf/DaiPhotoLookupMapKey/45850~Full/$file/BLANK_SIGNAGE_125x88.jpg' class='obb_map_bubble_image' width='95' border='0'/><ul class='obb_map_bubble_list'><li>48 Main Street</li><li>Claudy</li><li>County Londonderry</li><li>BT47 4HR</li></ul><p>T: 02871 338641</p><p>F: 02871 338890</p></div>",
 			"opening_hours": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Opening Hours</strong></h6><ul><li><strong>Monday:</strong><span>9:00:00 - 17:30:00</span></li><li><strong>Tuesday:</strong><span>9:00:00 - 17:30:00</span></li><li><strong>Wednesday:</strong><span>9:00:00 - 17:30:00</span></li><li><strong>Thursday:</strong><span>9:00:00 - 17:30:00</span></li><li><strong>Friday:</strong><span>9:00:00 - 17:30:00</span></li><li><strong>Saturday:</strong><span>9:00:00 - 12:30:00</span></li><li><strong>Sunday:</strong><span>Closed </span></li></ul></div>",
-			"summary": "<div class='dealer_side_3'><a href='#dealer_4' class='obb_map_move_to'><img src='http://maps.oneblackbear.com/images/map-markers/marker4.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker4'/></a><h4><a href='#dealer_4' class='obb_map_move_to'>Eakin Brothers Ltd</a></h4><ul class='obb_map_bubble_list'><li>Claudy, County Londonderry, BT47 4HR</li><li>T: 02871 338641</li><li>F: 02871 338890</li></ul></div>",
+			"summary": "<div class='dealer_side_3'><a href='#dealer_4' class='obb_map_move_to'><img src='marker4.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker4'/></a><h4><a href='#dealer_4' class='obb_map_move_to'>Eakin Brothers Ltd</a></h4><ul class='obb_map_bubble_list'><li>Claudy, County Londonderry, BT47 4HR</li><li>T: 02871 338641</li><li>F: 02871 338890</li></ul></div>",
 			"directions": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Directions</strong></h6><form action='' method='post' rel='obb_map_directions'><fieldset><input type='hidden' name='obb_map_layer' value='dealer_4' /><input type='hidden' name='obb_map_from' value='54.910864,-7.155230' /><label for='obb_map_dir_4'><strong>From:</strong></label><input type='text' name='obb_map_to' id='obb_map_dir_4' value='' /><br /><strong>To:</strong> <em>Eakin Brothers Ltd</em><br /><br /><input type='submit' name='submit' value='Go' /></fieldset></form></div>",
 			"icons": {
-				"normal":"http://maps.oneblackbear.com/images/map-markers/marker4.png",
-				"selected": "http://maps.oneblackbear.com/images/map-markers/selected.png"
+				"normal":"marker4.png",
+				"selected": "selected.png"
 				},
 			"facilities": {
 				"Sales": "0",
@@ -103,11 +103,11 @@
 			"latitude": "-5.703109", 
 			"desc": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Downeys </strong></h6><img src='http://imwww.imgroup.co.uk/IMGGB/WWW/DealerPhoto.nsf/DaiPhotoLookupMapKey/02185~Full/$file/BLANK SIGNAGE.jpg' class='obb_map_bubble_image' width='95' border='0'/><ul class='obb_map_bubble_list'><li>39 Portaferry Road</li><li>Newtownards</li><li>County Down</li><li>BT23 8NN</li></ul><p>T: 02891 812525</p><p>F: 02891 813990</p></div>",
 			"opening_hours": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Opening Hours</strong></h6><ul><li><strong>Monday:</strong><span>8:30:00 - 18:00:00</span></li><li><strong>Tuesday:</strong><span>8:30:00 - 20:00:00</span></li><li><strong>Wednesday:</strong><span>8:30:00 - 18:00:00</span></li><li><strong>Thursday:</strong><span>8:30:00 - 20:00:00</span></li><li><strong>Friday:</strong><span>8:30:00 - 17:30:00</span></li><li><strong>Saturday:</strong><span>9:00:00 - 13:00:00</span></li><li><strong>Sunday:</strong><span>Closed </span></li></ul></div>",
-			"summary": "<div class='dealer_side_4'><a href='#dealer_5' class='obb_map_move_to'><img src='http://maps.oneblackbear.com/images/map-markers/marker5.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker5'/></a><h4><a href='#dealer_5' class='obb_map_move_to'>Downeys </a></h4><ul class='obb_map_bubble_list'><li>Newtownards, County Down, BT23 8NN</li><li>T: 02891 812525</li><li>F: 02891 813990</li></ul></div>",
+			"summary": "<div class='dealer_side_4'><a href='#dealer_5' class='obb_map_move_to'><img src='marker5.png' alt='click to view dealer' class='obb_map_dealer_icon' rel='marker5'/></a><h4><a href='#dealer_5' class='obb_map_move_to'>Downeys </a></h4><ul class='obb_map_bubble_list'><li>Newtownards, County Down, BT23 8NN</li><li>T: 02891 812525</li><li>F: 02891 813990</li></ul></div>",
 			"directions": "<div style='width:280px;height:180px;'><h6><strong style='font-weight:bold'>Directions</strong></h6><form action='' method='post' rel='obb_map_directions'><fieldset><input type='hidden' name='obb_map_layer' value='dealer_5' /><input type='hidden' name='obb_map_from' value='54.595016,-5.703109' /><label for='obb_map_dir_5'><strong>From:</strong></label><input type='text' name='obb_map_to' id='obb_map_dir_5' value='' /><br /><strong>To:</strong> <em>Downeys </em><br /><br /><input type='submit' name='submit' value='Go' /></fieldset></form></div>",
 			"icons": {
-				"normal":"http://maps.oneblackbear.com/images/map-markers/marker5.png",
-				"selected": "http://maps.oneblackbear.com/images/map-markers/selected.png"
+				"normal":"marker5.png",
+				"selected": "selected.png"
 				},
 			"facilities": {
 				"Sales": "0",
