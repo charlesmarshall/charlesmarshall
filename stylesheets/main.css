@@ -30,6 +30,7 @@ body{
   font-family:helvetica;
 }
 /** **/
+
 h1, p#logo{
   font-size:167%;
   font-family:georgia;
@@ -39,6 +40,7 @@ h1, p#logo{
 }
 p#logo a{text-decoration:none;color:#003a79;letter-spacing:1px;}
 
+h1,h2,h3,h4,h5,p,ul,ol{margin-bottom:15px;}
 
 /** MAIN LAYOUT **/
 body{padding:30px 0;}
