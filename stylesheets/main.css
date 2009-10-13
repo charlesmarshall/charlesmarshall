@@ -30,9 +30,11 @@ body{text-align:center;}
   text-align:left;
 }
 body{
-  background:url("images/main.jpg") no-repeat top center;
+  background:url("../images/main.jpg") no-repeat top center;
 }
 #webpage{
   width:600px;
   padding:15px;
+  margin:30px auto;
+  background:white;
 }
