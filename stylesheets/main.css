@@ -34,7 +34,9 @@ h1, p#logo{
   font-size:167%;
   font-family:georgia;
   font-style:italic;
+  color:#003a79;
 }
+p#logo a{text-decoration:none;}
 
 
 /** MAIN LAYOUT **/
