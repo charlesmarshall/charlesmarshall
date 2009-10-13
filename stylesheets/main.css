@@ -35,7 +35,7 @@ h1, p#logo{
   font-family:georgia;
   font-style:italic;
   color:#003a79;
-  text-shadow:1px 1px 2px #009ad6;
+  text-shadow:1px 1px 2px grey;
 }
 p#logo a{text-decoration:none;color:#003a79;letter-spacing:1px;}
 
