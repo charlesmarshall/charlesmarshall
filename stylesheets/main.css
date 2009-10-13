@@ -40,5 +40,7 @@ body{padding:30px 0;}
   background:white;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
+  -moz-border-colors:  #006eaf #4fa3d3;
+  
   min-height:610px;
 }
