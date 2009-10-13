@@ -38,6 +38,7 @@ body{padding:30px 0;}
   padding:15px;
   margin:0 auto;
   background:white;
+  border:4px solid #4fa3d3;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-top-colors:  #006eaf #4fa3d3;
