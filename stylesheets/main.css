@@ -24,14 +24,20 @@ select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}
 table{font-size:inherit;font:100%;}
 pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 body{text-align:center;}
-
-/** MAIN LAYOUT **/
+/** **/
 *{
   text-align:left;
+  font-family:helvetica;
 }
-html{
-  
+/** **/
+h1, p#logo{
+  font-size:167%;
+  font-family:georgia;
+  font-style:italic;
 }
+
+
+/** MAIN LAYOUT **/
 body{padding:30px 0;}
 #webpage{
   width:600px;
