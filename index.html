@@ -9,3 +9,10 @@ title: Web Developer
   <p>Occasionally I talk about stuff and build some things (you know, websites, applications, jQuery plugins and the like) and this is where I try to write about them.</p>
   <p>I work as a web developer for One Black Bear in Birmingham, UK</p>
 </div>
+
+{% assign first_post = site.posts.first %}
+<div id="first_post" class="row {{ first_post.category }}">
+  <h2><a href="{{ first_post.url }}" title="{{ first_post.title }}">{{ first_post.title}}</a></h2>
+  <h5>{{ first_post.date | date_to_string }}</h5>
+  {{ first_post.content | truncate: 450 }}
+</div>
