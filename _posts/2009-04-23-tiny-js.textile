@@ -6,6 +6,6 @@ category: work
 
 !/images/work/tinyjs.png!
 
-Some months back I created a very handy little site called "(external)tiny js("tiny js")":http:tinyjs.com ; it's all about small but powerful javascript plugins for libraries such as jQuery. I only just noticed that I didn't blog about it on here, very bad of me!
+Some months back I created a very handy little site called "(external)tiny js("tiny js")":http://tinyjs.com ; it's all about small but powerful javascript plugins for libraries such as jQuery. I only just noticed that I didn't blog about it on here, very bad of me!
 
 Last weekend I did a nice update so all projects utilise version control and are based over at github.
