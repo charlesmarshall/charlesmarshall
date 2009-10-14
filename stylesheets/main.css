@@ -25,7 +25,7 @@ table{font-size:inherit;font:100%;}
 pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 body{text-align:center;}
 /** **/
-body{
+*{
   text-align:left;
   font-family:helvetica;
   color:black;  
