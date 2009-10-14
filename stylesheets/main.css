@@ -31,32 +31,38 @@ body{
 }
 /** **/
 
-h1, p#logo{
+h1,h2,h3,p#logo{
   font-size:167%;
   font-family:georgia;
   font-style:italic;
   color:black;
   text-shadow:1px 1px 2px grey;
 }
-p#logo a{text-decoration:none;color:#003a79;letter-spacing:1px;}
-
+p#logo a{text-decoration:none;color:black;letter-spacing:1px;}
+h2{font-size:146.5%;}
+h3{font-size:123.1%;font-family:helvetica;font-style:normal;}
 h1,h2,h3,h4,h5,p,ul,ol{margin-bottom:15px;}
 
 /** MAIN LAYOUT **/
 body{padding:30px 0;}
 #webpage{
-  width:54%;
+  width:44%;
   padding:3%;  
   margin:0 2% 0 4%;
   background:white;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-box-shadow:-10px 1px 5px grey;
-  -webkit-box-shadow:-10px 1px 5px grey;  
+
 }
 #splash{
-  width:30%;
+  width:38%;
   position:absolute;
   bottom:2%;
   right:2%;
 }
+
+/** category colours **/
+.jquery{color:#1fc1e7 !important;border-color:#1fc1e7 !important;}
+.motorsport{color:#0c3a27 !important;border-color:#0c3a27 !important;}
+.portfolio{color:#5446a0 !important;border-color:#5446a0 !important;}
+.web_stuff{color:#ff254d !important;border-color:#ff254d !important;}
+.general{color:#3f3e40 !important;border-color:#3f3e40 !important;}
+.rant{color:#8fd532 !important;border-color:#8fd532 !important;}
