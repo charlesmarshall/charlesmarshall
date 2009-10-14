@@ -36,7 +36,6 @@ h1,h2,h3,p#logo{
   font-size:167%;
   font-family:georgia;
   font-style:italic;
-
   text-shadow:1px 1px 2px grey;
 }
 p#logo a{text-decoration:none;color:black;letter-spacing:1px;}
