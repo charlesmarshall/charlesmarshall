@@ -3,7 +3,7 @@ layout: default
 title: Abstract Healthcare
 category: work
 ---
-"(external)Abstract("Abstract Healthcare")":http://abstracthealthcare.co.uk are a integrated healthcare service; which basically means they own and run some NHS facilities. The new site (work done on behalf of TBL Marketing) has large header images to show off the quality of their work and an interesting navigation. At first glance it looks the same, but it really isn't.
+"Abstract":http://abstracthealthcare.co.uk are a integrated healthcare service; which basically means they own and run some NHS facilities. The new site (work done on behalf of TBL Marketing) has large header images to show off the quality of their work and an interesting navigation. At first glance it looks the same, but it really isn't.
 
 Instead of the primary section links loading in a new page the webpage simply slides to the left or right. This effect is done with a container hiding all the pages and some clever javascript to show the correct chunk. The plugin I created for this page was inspired by the original jQuery.ScrollTo, but instead of having to pass in pixal values etc my plugin takes the strain of the math and you just need to tell it what chunk number to go to.
 
