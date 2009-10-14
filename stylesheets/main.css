@@ -50,7 +50,6 @@ body{padding:30px 0;}
   padding:3%;  
   margin:0 2% 0 4%;
   background:white;
-
 }
 #splash{
   width:28%;
@@ -63,6 +62,6 @@ body{padding:30px 0;}
 .jquery{color:#1fc1e7 !important;border-color:#1fc1e7 !important;}
 .motorsport{color:#0c3a27 !important;border-color:#0c3a27 !important;}
 .portfolio{color:#5446a0 !important;border-color:#5446a0 !important;}
-.web_stuff{color:#ff254d !important;border-color:#ff254d !important;}
+.web{color:#ff254d !important;border-color:#ff254d !important;}
 .general{color:#3f3e40 !important;border-color:#3f3e40 !important;}
 .rant{color:#8fd532 !important;border-color:#8fd532 !important;}
