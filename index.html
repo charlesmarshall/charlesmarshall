@@ -11,7 +11,7 @@ title: Web Developer
 </div>
 
 {% for post in site.posts limit: 3 %}
-<div class="post row {{ post.category }}">
+<div class="post row {{ post.category }} clearfix">
   <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
   <h5 class='date'>{{ post.date | date_to_string }}</h5>
   {{ post.content }}
