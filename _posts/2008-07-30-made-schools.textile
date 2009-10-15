@@ -1,0 +1,9 @@
+---
+layout: post
+title: MADE Schools
+category: work
+---
+
+"MADE":"http://made-schools.org" is the new name for NAMDS and is a group of 9 schools within the UK that stand for excellence in music and dance (in fact thats what MADE stands for - Music And Dance Excellence). They commissioned "One Black Bear":"http://oneblackbear.com" to build them a new site, and that's what we did! 
+
+One of the nicest designs I've worked on recently, take a look at "made-schools.org":"http://made-schools.org" and see what you think.

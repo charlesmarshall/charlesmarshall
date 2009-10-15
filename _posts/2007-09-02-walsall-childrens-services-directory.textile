@@ -1,0 +1,9 @@
+---
+layout: post
+title: Walsall Children's Services Directory
+category: work
+---
+
+A very "unique website custom built for Walsall Council":"http://walsallchildrensservices.com". From a content point of view it has over 900 services online at the moment and more coming and users being able to submit new services to the administration team for approval.
+
+When you also factor in the number of outbound links and themed sections then you can imagine just how big this site is. In order for the client to keep all of this under control the entire site is ran via an early version of the Wildfire CMS.

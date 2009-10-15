@@ -1,0 +1,11 @@
+---
+layout: post
+title: Anthony Collins Extranet
+category: work
+---
+
+For Anthony Collins we created a fully functional extranet to allow them to create a completely unique website for each client. The site is a fairly simple affair with a javascript tree based on a ul with some nice touches like an accordion to show pages with in the section and so on.
+
+In order to make the site customised for each client the entire site content is filtered by which client is logged in. In order to speed up making client ares I developed a templating system with creates a basic set of pages and documents on client creation.
+
+When making the client simply select what type of client it is (local government, housing associations etc) from the template list and the appropriate set of web pages are created for the new client.

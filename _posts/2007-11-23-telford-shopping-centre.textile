@@ -1,0 +1,17 @@
+---
+layout: post
+title: Telford Shopping Centre (No Longer with WAA) 
+category: work
+---
+
+One of the larger sites I made for work was a new version of the "Telford Shopping Centre website":"http://telfordshopping.co.uk". It contains many useful tools such as a store directory and an interactive map.
+
+The site contains several AJAX enabled sections to improve the website flow and ease of use. For the most part the site uses the Moo Tools library with certain aspects such as the gallery (now disabled) using the YUI library instead.
+
+The site also has multiple skins which are currently pink for spring, orange for autumn and blue for winter.
+
+As always the site has a google sitemap, dynamic meta tags (utilising some constant values along with chunks of the page copy) and is valid xhtml strict (unless some of the dynamic content breaks it!).
+
+EDIT (Jun 11 2009): It seems the previous incarnation of the site has now also been turned off; along with pretty much all webxpress.com domains.  
+
+EDIT (Sept 03 2008): My previous employer ("WAA":"http://www.waa.co.uk") recently lost the account for Telford Shopping Centre and the site has been completely redesigned - I'm not impressed; compare it to "our version":"http://telford.webxpress.com" and see what you think.

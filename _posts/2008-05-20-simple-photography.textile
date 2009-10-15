@@ -1,0 +1,7 @@
+---
+layout: post
+title: Simple Photography (Lucas North)
+category: work
+---
+
+"A simple site to show off all of Lucas North's photography":http://lucasnorth.com with a simple contact form. The individual galleries utilise a jQuery plugin to allow smooth image transitions and thumbnailing.

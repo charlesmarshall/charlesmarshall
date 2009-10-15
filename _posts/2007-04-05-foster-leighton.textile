@@ -1,0 +1,7 @@
+---
+layout: post
+title: Foster Leighton
+category: work
+---
+
+As part of the Willis Commercial Network we have created many broker websites and this is "another one":"http://www.fosterleighton.com". The site is a simple Wildfire CMS website with a contact form and google map. On the index page the section marked as Cherry Picked News is a parsed RSS feed from the main Cherry Picked Site.

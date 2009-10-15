@@ -1,0 +1,23 @@
+---
+layout: post
+title: Style Birmingham
+category: work
+---
+
+A recent project for work was a total redesign and rebuild of the "Style Birmingham website":"http://stylebirmingham.co.uk". The main goal of the style is to show case Birmingham as a stylish venue on par with London and other major cities.
+
+Along with an extensive list of shops inside the Birmingham city centre the site also has a large news section journaling relevant events and blog like features. The blog section (called Style Guru) contains posts from local style icons about the latest trends in the fashion world.
+
+The Shops section breaks down all of the shops into primary categories such as Menswear, Womenswear, etc. From this section you can then view a list of shops.
+
+When viewing the actual shop you get a decent level of information including a google map of where the shop is, some basic copy about the shop, details like phone numbers, websites and opening hours are also included along with what Brands the shop stocks.
+
+Alternatively you can use The Brands section to find the brand your looking for and then view the shops that stock that brand.
+
+The site has a competitions section on the front end and within the CMS. The CMS module allows the admin to create a new competition, specifying questions, start date, end dates and introduction text. As an extra feature the admin can hide the competition feed from the front page and view all entrants.
+
+The gallery section (now renamed events) uses the same slideshow technology as the latest articles on the home page to display the most recent 9 photos. This initial page also shows some descriptive text which is controlled via the CMS. The main gallery page shows all images, paginated with an on click jqmodal box.
+
+The site uses modern web standards together with cutting edge AJAX technics to keep the site smooth and simple.
+
+EDIT (Aug 01 2009): The site has now been redesigned by 383 project, so all of that stuff above no longer exists!

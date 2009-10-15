@@ -1,0 +1,9 @@
+---
+layout: post
+title: LP Creative Crafts
+category: work
+---
+
+My first venture into the world of e-commerce with RoR. An on going project that regularly changes designs and offers with all of the products and sections controlled via a bespoke admin area.
+
+EDIT (Jan 20 2008): Unfortunately the company that ran this site suffered a tragedy leading to closure and sale; this meant the website was also shut down so I have removed the links.  

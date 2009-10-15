@@ -1,0 +1,19 @@
+---
+layout: post
+title: Mensgroom
+category: work
+---
+
+!/images/work/mensgroom.gif!
+
+Having trouble with spots? Dry, flaky skin and an aversion to sunlight? You're in luck!
+
+We've just let loose a top notch "ecommerce site":"http://mensgroom.co.uk" for all your male grooming needs! Not only does it stock hundreds of products but it offers a great advice section & video guides.
+
+We decided to try out something new with Mensgroom's payment system. In our experience most checkout process tend to become clunky and arkward when it comes to address details; adding several new steps and more pages for you to wade though, not very friendly at all!
+
+EIDT (August 25 2009): The number of people actually going to view a product has dropped significantly while bounces on the welcome/splash page has risen to a new high... No shock there then.
+
+EDIT (June 30 2009): So far the people getting though to the real home page from the splash page is less than 50%, not good...
+
+EDIT (March 20 2009): At the clients request the is now a splash page as the first thing on the website; so it no longer looks like a shop... Wait and see how that works out.
