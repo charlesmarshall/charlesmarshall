@@ -14,6 +14,6 @@ title: Web Developer
 <div class="post row {{ post.category }}">
   <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
   <h5 class='date'>{{ post.date | date_to_string }}</h5>
-  {{ post.content | truncate: 350 }}
+  {{ post.content | truncate: 200 }}
 </div>
 {% endfor %}
