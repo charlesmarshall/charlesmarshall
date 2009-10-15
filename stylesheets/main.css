@@ -58,11 +58,14 @@ body{padding:30px 0;}
   top:3%;
   left:2%;
 }
+/** post list **/
 .post{
   border-left:4px solid black;
-  padding:0 0 10px 10px;
+  padding:0 0 0px 10px;
   margin-bottom:20px;
 }
+.post .read_more{margin-bottom:0;}
+
 /** category colours **/
 .jquery{color:#1fc1e7 !important;border-color:#1fc1e7 !important;}
 .motorsport{color:#0c3a27 !important;border-color:#0c3a27 !important;}
