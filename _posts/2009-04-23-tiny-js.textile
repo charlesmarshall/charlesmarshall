@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: post
 title: Tiny JS
 category: work
 ---
 
-!/images/work/tinyjs.png!
+!/images/work/tinyjs.png!:http://tinyjs.com
 
 Some months back I created a very handy little site called "tiny js":http://tinyjs.com ; it's all about small but powerful javascript plugins for libraries such as jQuery. I only just noticed that I didn't blog about it on here, very bad of me!
 
