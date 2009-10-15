@@ -10,10 +10,10 @@ title: Web Developer
   <p>I work as a web developer for One Black Bear in Birmingham, UK</p>
 </div>
 
-{% for post in site.posts limit: 7 %}
+{% for post in site.posts limit: 3 %}
 <div class="post row {{ post.category }}">
   <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
   <h5 class='date'>{{ post.date | date_to_string }}</h5>
-  {{ post.content | truncate: 200 }}
+  {{ post.content }}
 </div>
 {% endfor %}
