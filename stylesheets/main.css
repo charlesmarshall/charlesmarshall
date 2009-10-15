@@ -73,6 +73,7 @@ body{padding:30px 0;}
   margin-bottom:20px;
 }
 .post .read_more{margin-bottom:0;}
+.post .read_more a{text-decoration:none; font-weight:bold;}
 
 /** category colours **/
 .jquery{color:#1fc1e7 !important;border-color:#1fc1e7 !important;}
