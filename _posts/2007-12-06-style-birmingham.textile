@@ -4,7 +4,7 @@ title: Style Birmingham
 category: work
 ---
 
-A recent project for work was a total redesign and rebuild of the "Style Birmingham website":"http://stylebirmingham.co.uk". The main goal of the style is to show case Birmingham as a stylish venue on par with London and other major cities.
+A recent project for work was a total redesign and rebuild of the "Style Birmingham website":http://stylebirmingham.co.uk. The main goal of the style is to show case Birmingham as a stylish venue on par with London and other major cities.
 
 Along with an extensive list of shops inside the Birmingham city centre the site also has a large news section journaling relevant events and blog like features. The blog section (called Style Guru) contains posts from local style icons about the latest trends in the fashion world.
 

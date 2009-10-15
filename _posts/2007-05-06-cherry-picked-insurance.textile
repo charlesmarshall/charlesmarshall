@@ -4,12 +4,12 @@ title: Cherry Picked Insurance
 category: work
 ---
 
-The new "flagship website for the Willis Commercial Network":"http://www.cherrypickedinsurance.com/" for the UK. This site has news, services and a comprehensive list of all of its members.
+The new "flagship website for the Willis Commercial Network":http://www.cherrypickedinsurance.com/ for the UK. This site has news, services and a comprehensive list of all of its members.
 
 In the development of this website the first postcode search for the PHP-WAX framework was created and used so people can simply enter in their postcode and be shown the six nearest brokers. This functionality was converted into a plug-in for future use.
 
 This site was also the first site to use a member subscription system for notifications and has the prototype models for this which since then has been generalised and integrated into the Wildfire CMS.
 
-I worked on the initial design and phase one with my colleagues Ross Riley and "Joe Turner":"http://mentalreality.co.uk" where phase two (the integration of a quoting engine API) is being worked on by "John Walker":"http://www.coffeerings.co.uk".
+I worked on the initial design and phase one with my colleagues Ross Riley and "Joe Turner":http://mentalreality.co.uk where phase two (the integration of a quoting engine API) is being worked on by "John Walker":http://www.coffeerings.co.uk.
 
 EDIT (Sept 10 2009): From what I've heard phase two is now actually live! :-o

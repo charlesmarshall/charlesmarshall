@@ -6,9 +6,9 @@ category: work
 
 !/images/work/miss-jones.gif!:http://nataliefayejones.co.uk
 
-This was previously "Free to Freelance":"http://freetofreelance.co.uk" but has now undergone some design changes and new content.
+This was previously "Free to Freelance":http://freetofreelance.co.uk but has now undergone some design changes and new content.
 
-The new name and font are obvious but there is now a "testimonials section":"http://nataliefayejones.co.uk/testimonials" along with a more detailed "information page":"http://nataliefayesjones.co.uk/information".
+The new name and font are obvious but there is now a "testimonials section":http://nataliefayejones.co.uk/testimonials along with a more detailed "information page":http://nataliefayesjones.co.uk/information.
 
 Switching to italic georgia for headings has given the site that little bit extra visual appeal and looks much closer to the new branding.
 

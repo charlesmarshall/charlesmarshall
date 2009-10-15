@@ -7,6 +7,6 @@ category: work
 
 Large images (800 x 600) dominate the website with a cool little jQuery image switcher. Based on PHP-WAX and Wildfire CMS its smart & simple to use.
 
-EDIT (Oct 14 2009): The site has now had a visual update; in return for some carrot cake, see "Miss Jones":"/work/2009/10/14/miss-jones.html" for more info.
+EDIT (Oct 14 2009): The site has now had a visual update; in return for some carrot cake, see "Miss Jones":/work/2009/10/14/miss-jones.html for more info.
 
-EDIT (May 20 2009): Bit of a rebrand, the sites primary domain is now "nataliefayejones.co.uk":"http://nataliefayejones.co.uk"
+EDIT (May 20 2009): Bit of a rebrand, the sites primary domain is now "nataliefayejones.co.uk":http://nataliefayejones.co.uk

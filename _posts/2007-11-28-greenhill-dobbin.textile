@@ -4,6 +4,6 @@ title: Greenhill Dobbin
 category: work
 ---
 
-!/images/work/greenhill-dobin.gif!
+!/images/work/greenhill-dobin.gif!:http://greenhilldobbin.com
 
-Another "insurance broker website":"http://greenhilldobbin.com" based on one of the more recent iterations on the Wildfire CMS. Fairly standard with the a contact us form and google map.
+Another "insurance broker website":http://greenhilldobbin.com based on one of the more recent iterations on the Wildfire CMS. Fairly standard with the a contact us form and google map.

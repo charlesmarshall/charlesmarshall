@@ -4,4 +4,4 @@ title: Clarke Dove
 category: work
 ---
 
-Another Willis Commercial Network broker. A straight forward "CMS site":"http://clarkedove.co.uk" with a contact us page (including a google map).
+Another Willis Commercial Network broker. A straight forward "CMS site":http://clarkedove.co.uk with a contact us page (including a google map).

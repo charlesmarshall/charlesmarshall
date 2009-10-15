@@ -4,4 +4,4 @@ title: EIC
 category: work
 ---
 
-We just "launched EICs new website":"http://www.eic.co.uk", just in time for the big Energy Event over at the Motorcycle Museum. At the even they also showed off the new branding created by unsuitable ("you can see details on this here":"http://weareunsuitable.com/news/eic-show-off-new-branding").
+We just "launched EICs new website":http://www.eic.co.uk, just in time for the big Energy Event over at the Motorcycle Museum. At the even they also showed off the new branding created by unsuitable ("you can see details on this here":http://weareunsuitable.com/news/eic-show-off-new-branding).

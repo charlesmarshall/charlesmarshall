@@ -4,12 +4,12 @@ title: The Shave Doctor
 category: work
 ---
 
-!/images/work/shavedoctor.jpg!:"http://shavedoctor.co.uk"
+!/images/work/shavedoctor.jpg!:http://shavedoctor.co.uk
 
-"One Black Bear":"http://oneblackbear.com" have created a new site aimed at wannabe sweeney todds everywhere.
+"One Black Bear":http://oneblackbear.com have created a new site aimed at wannabe sweeney todds everywhere.
 
-"The Shave Doctor (aka Mark Sproston)":"http://shavedoctor.co.uk" is a site offering courses via his shave school and also a host of associated shaving products.
+"The Shave Doctor (aka Mark Sproston)":http://shavedoctor.co.uk is a site offering courses via his shave school and also a host of associated shaving products.
 
 Interested shaving experts in waiting can check availability of course dates and learn the silky smooth skills that have made The Shave Doctor the renowned expert he is today. More and more men are opting for a traditional, cut-throat shave with the warm towels and super close finish you only get with a proper barber shop shave.
 
-Make a sharp beeline for "shavedoctor.co.uk":"http://shavedoctor.co.uk" and learn the art of a traditional shave.
+Make a sharp beeline for "shavedoctor.co.uk":http://shavedoctor.co.uk and learn the art of a traditional shave.

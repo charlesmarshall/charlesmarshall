@@ -4,11 +4,11 @@ title: Mensgroom
 category: work
 ---
 
-!/images/work/mensgroom.gif!
+!/images/work/mensgroom.gif!:http://mensgroom.co.uk
 
 Having trouble with spots? Dry, flaky skin and an aversion to sunlight? You're in luck!
 
-We've just let loose a top notch "ecommerce site":"http://mensgroom.co.uk" for all your male grooming needs! Not only does it stock hundreds of products but it offers a great advice section & video guides.
+We've just let loose a top notch "ecommerce site":http://mensgroom.co.uk for all your male grooming needs! Not only does it stock hundreds of products but it offers a great advice section & video guides.
 
 We decided to try out something new with Mensgroom's payment system. In our experience most checkout process tend to become clunky and arkward when it comes to address details; adding several new steps and more pages for you to wade though, not very friendly at all!
 

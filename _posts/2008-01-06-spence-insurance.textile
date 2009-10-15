@@ -10,8 +10,8 @@ I only seem to have the original and current designs at hand; not sure where the
 
 As this was built and populated ages ago this is running an older version of the Wildfire CMS but is a relatively straight forward site, nothing to complicated. 
 
-"Go have a look at their live site":"http://spenceinsurance.co.uk/".
+"Go have a look at their live site":http://spenceinsurance.co.uk/.
 
-(This site was also worked on by Ross Riley, "John Walker":"http://www.coffeerings.co.uk/" and Sheldon Els)
+(This site was also worked on by Ross Riley, "John Walker":http://www.coffeerings.co.uk/ and Sheldon Els)
 
 EDIT (Oct 10 2009): Wow, I'm shocked that it hasn't been changed again!

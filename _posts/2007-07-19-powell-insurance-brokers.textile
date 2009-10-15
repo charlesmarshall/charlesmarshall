@@ -4,7 +4,7 @@ title: Powell Insurance Brokers
 category: work
 ---
 
-"Another broker":"http://www.pibl.co.uk" from the Willis Commercial Network. Fairly standard Wildfire CMS site with a few extras. In this case the quotes shown on the right hand side of the website are randomised and they now have a special events module within the CMS.
+"Another broker":http://www.pibl.co.uk from the Willis Commercial Network. Fairly standard Wildfire CMS site with a few extras. In this case the quotes shown on the right hand side of the website are randomised and they now have a special events module within the CMS.
 
 On an event page the person can submit their details to confirm that they are coming. All people that have submitted their details are viewable within the CMS and can be exported in the form of a csv.
 
