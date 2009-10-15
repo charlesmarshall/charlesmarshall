@@ -4,7 +4,7 @@ title: Miss Jones
 category: work
 ---
 
-!/images/work/miss-jones.gif!:"http://nataliefayejones.co.uk"
+!/images/work/miss-jones.gif!:http://nataliefayejones.co.uk
 
 This was previously "Free to Freelance":"http://freetofreelance.co.uk" but has now undergone some design changes and new content.
 
