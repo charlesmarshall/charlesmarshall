@@ -32,22 +32,22 @@ As we haven't built anything from source this time we no longer need to tell apa
 
 For ease you can use a vhost declaration like:
 
-@<VirtualHost *:80>
+@&lt;VirtualHost *:80&gt;
     VirtualDocumentRoot /path/to/websites/%1/public
-    <Directory "/path/to/websites/%1/public">
+    &lt;Directory "/path/to/websites/%1/public"&gt;
       Options FollowSymLinks
           AllowOverride None
-    </Directory>
-</VirtualHost>@
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;@
 
 This way you no longer need to make a vhost per site. If only you could this with /etc/hosts file!
 
 If you are getting 403 errors then make sure your directory declaration is correct and looks something like:
 
-@<Directory />
+@&lt;Directory /&gt;
     Options FollowSymLinks
     AllowOverride All
-</Directory>@
+&lt;/Directory&gt;@
 
 h3. GiT
 
@@ -69,33 +69,33 @@ h3. ImageMagick
 
 If you need ImageMagick for your php framework this section's for you. They now have a ImageMagick "binary install for OS X Leopard":http://www.imagemagick.org/download/binaries/ImageMagick-universal-apple-darwin9.7.0.tar.gz available. Download this and extract it to /usr/local. To allow your php scripts to execute ImageMagick you'll need to set some environment variables for the apache process. To do this edit the file /System/Library/LaunchDaemons/org.apache.httpd.plist to add something like the following (additions highlighted):
 
-@<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>org.apache.httpd</string>
-    <key>OnDemand</key>
-    <false/>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/usr/sbin/httpd</string>
-        <string>-D</string>
-        <string>FOREGROUND</string>
-    </array>
-    <key>SHAuthorizationRight</key>
-    <string>system.preferences</string>
-    <key>EnvironmentVariables</key>
-    <dict>
-        <key>DYLD_LIBRARY_PATH</key>
-        <string>/usr/local/ImageMagick-6.5.3/lib</string>
-        <key>MAGICK_HOME</key>
-        <string>/usr/local/ImageMagick-6.5.3</string>
-        <key>PATH</key>
-        <string>/usr/local/ImageMagick-6.5.3/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-    </dict>
-</dict>
-</plist>@
+@&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;org.apache.httpd&lt;/string&gt;
+    &lt;key&gt;OnDemand&lt;/key&gt;
+    &lt;false/&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/sbin/httpd&lt;/string&gt;
+        &lt;string&gt;-D&lt;/string&gt;
+        &lt;string&gt;FOREGROUND&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;SHAuthorizationRight&lt;/key&gt;
+    &lt;string&gt;system.preferences&lt;/string&gt;
+    &lt;key&gt;EnvironmentVariables&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;DYLD_LIBRARY_PATH&lt;/key&gt;
+        &lt;string&gt;/usr/local/ImageMagick-6.5.3/lib&lt;/string&gt;
+        &lt;key&gt;MAGICK_HOME&lt;/key&gt;
+        &lt;string&gt;/usr/local/ImageMagick-6.5.3&lt;/string&gt;
+        &lt;key&gt;PATH&lt;/key&gt;
+        &lt;string&gt;/usr/local/ImageMagick-6.5.3/bin:/usr/bin:/bin:/usr/sbin:/sbin&lt;/string&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;@
 
 h3. The Big Bonus!
 
