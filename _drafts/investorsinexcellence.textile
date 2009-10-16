@@ -1,0 +1,9 @@
+---
+layout: post
+title: Investors in Excellence
+category: work
+---
+
+!/images/work/investors-in-excellence.gif!
+
+Recently launched the new version on this site; with everything from client logins, google maps, payment systems there are plenty of features making this site quite extensive.
