@@ -40,14 +40,14 @@ body{text-align:center;}
 }
 /** **/
 
-h1,h2,h3,p#logo{
+h1,h2,h3,#logo{
   font-size:167%;
   font-family:georgia;
   font-style:italic;
   text-shadow:1px 1px 1px grey;
 }
-p#logo{padding-left:3%;}
-p#logo a{text-decoration:none;color:black;letter-spacing:1px;}
+#logo{padding-left:3%;}
+#logo a{text-decoration:none;color:black;letter-spacing:1px;}
 h2{font-size:146.5%;}
 h3{font-size:123.1%;font-family:georgia;font-style:normal;}
 h2 a, h3 a{font-family:georgia;}
