@@ -91,6 +91,7 @@ body{padding:30px 0;}
   color:white;
 }
 #category_list li a{color:black;}
+#category_list ul li a{border-bottom:1px solid white;}
 
 #welcome_message{margin:1% 3% 3% 3%;}
 /** post list **/
@@ -109,6 +110,8 @@ body{padding:30px 0;}
 /** category colours **/
 .jquery{color:#1fc1e7 !important;border-color:#1fc1e7 !important;}
 h3.jquery a{background:#1fc1e7;}
+#category_list ul.work{background:#91DEFC;}
+#category_list ul.work li a{border-bottom:1px solid whit;}
 
 .motorsport{color:#0c3a27 !important;border-color:#0c3a27 !important;}
 h3.motorsport a{background:#0c3a27;}
