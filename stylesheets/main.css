@@ -47,6 +47,7 @@ h1,h2,h3,#logo{
   text-shadow:1px 1px 1px grey;
 }
 #logo{padding-left:3%;}
+.post_page #logo{padding-left:0;}
 #logo a{text-decoration:none;color:black;letter-spacing:1px;}
 h2{font-size:146.5%;}
 h3{font-size:123.1%;font-family:georgia;font-style:normal;}
