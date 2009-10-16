@@ -1,6 +1,20 @@
 ---
 layout: post
 title: My Mac and I
-category: technology
+category: general
 ---
-Until recently I'd barely even looked at a Mac. I used to be underthe common miss-conception that they were only any good for design andlooking pretty.p. Plying my trade using mostly Linux, Windows and the odd Unix systemI was always a fan of the stability and security of the 'Nix way. Onthe other side the compatibility and of course the plethora of gamesavailable on Windows is a draw.p. With OS X being based on FreeBSD there is a happy third alternative.I know this is a bit behind the times, but I've never quite got roundto writing this before but this time I was spurred into writing this bymy recent purchase. A Mac Mini!p. I couldn't help it, its small, perfectly formed and more powerfulthen my tower PC! With top class software, great compatibility and someamazing games I cant think of a reason not to own a Mac any more.Especially now you can have two buttons on your mouse!p. The fact is I've now completely converted, even to the extent where I use an iMac at work and an old PowerBook for a laptop.p. Since owning my Mac I've really been enjoying using text mate. Atruly wonderful piece of editing software, it comes with syntaxhighlighting and help files for virtually every single commonly usedprogramming language. It even includes utilities for svn!p. I know there are some down sides to using a Mac, but they are getting fewer all the time. I am now officially a Mac Fan!p. Now where did I put my ipod.... ;)						
+Until recently I'd barely even looked at a Mac. I used to be under the common miss-conception that they were only any good for design and looking pretty.
+
+Plying my trade using mostly Linux, Windows and the odd Unix systemI was always a fan of the stability and security of the 'Nix way. On the other side the compatibility and of course the plethora of games available on Windows is a draw.
+
+With OS X being based on FreeBSD there is a happy third alternative. I know this is a bit behind the times, but I've never quite got round to writing this before but this time I was spurred into writing this by my recent purchase. A Mac Mini!
+
+I couldn't help it, its small, perfectly formed and more powerful then my tower PC! With top class software, great compatibility and some amazing games I cant think of a reason not to own a Mac any more. Especially now you can have two buttons on your mouse!
+
+The fact is I've now completely converted, even to the extent where I use an iMac at work and an old PowerBook for a laptop.
+
+Since owning my Mac I've really been enjoying using text mate. A truly wonderful piece of editing software, it comes with syntax highlighting and help files for virtually every single commonly used programming language. It even includes utilities for svn!
+
+I know there are some down sides to using a Mac, but they are getting fewer all the time. I am now officially a Mac Fan!
+
+Now where did I put my ipod.... ;)						

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Flickr's Desktop Wallpaper Pool
-category: random
+category: general
 ---
-Thousands of&nbsp;Flickr users have posted their favorite wallpaper photos. Some great ones on there that I use on my own machines!p. Take a look "here":http://www.flickr.com/groups/wallpapers/pool/.						
+Thousands of Flickr users have posted their favourite wallpaper photos. Some great ones on there that I use on my own machines!
+
+Take a look "here":http://www.flickr.com/groups/wallpapers/pool/.						

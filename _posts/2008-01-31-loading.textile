@@ -3,4 +3,8 @@ layout: post
 title: Loading...
 category: web
 ---
-Like many web developers I find myself creating more interactive pages with ajax elements and lots of imagery. When these images come from things such as flickr pools or rss feeds the load time can be dramaticaly increased leaving big blank sections on your page. p. The best way to still load all your remote content in and inform the user of what is going is to use a loading image. I can never find a a decent one when I need it most, so this site I came across is great! You can select a suitable style, background colour and foreground colour and the site creates a gif for you!p. "Try it out yourself here":http://www.ajaxload.info/.						
+Like many web developers I find myself creating more interactive pages with ajax elements and lots of imagery. When these images come from things such as flickr pools or rss feeds the load time can be dramatically increased leaving big blank sections on your page. 
+
+The best way to still load all your remote content in and inform the user of what is going is to use a loading image. I can never find a a decent one when I need it most, so this site I came across is great! You can select a suitable style, background colour and foreground colour and the site creates a gif for you!
+
+"Try it out yourself here":http://www.ajaxload.info/.						
