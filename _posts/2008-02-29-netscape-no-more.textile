@@ -1,8 +1,6 @@
 ---
 layout: post
-title: Netsca
-
-No More
+title: Netscape No More
 category: web
 ---
 As of the 1st of March 2008 Netscape is officially dead and buried. That date is the last day parent company AOL will support the browser. 
