@@ -112,6 +112,7 @@ h3 span.category{
   padding:3px 4px;
   font-size:93%;
   color:white !important;
+  float:right;
 }
 /** category colours **/
 .jquery{color:#1fc1e7 !important;border-color:#1fc1e7 !important;}
