@@ -1,0 +1,8 @@
+---
+layout: post
+title: jQuery Resizer
+category: jquery
+---
+Inside our current cms we utilise a jQuery resize tool for stretching out our content entry area. However, it is a bit clunky and and the large size (9k) doesn't help matters. 
+
+Time to make a new one. If you've happy with it or having issues drop me a message on either the jQuery project page.						

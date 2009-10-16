@@ -1,0 +1,8 @@
+---
+layout: post
+title: jQuery Draggable
+category: jquery
+---
+One of more interactive projects of late required an image to be moved around as if the user was dragging it. There was also a good chance that it would need to be combined with some other effects such as a zoom feature an image switcher. p. Currently, most draggable image plugins use an inline image with absolute positioning and a surrounding clipping area, which in most cases is fine, but in this case it would be a real issue as the zoom plugin uses an absolute positioned container. To get around this I decided to convert the image inside the container to the background image.p. For all those people who don't have javascript turned on you just see a clipped image, but those with javascript can move the background image around as if they are dragging it.
+
+As ever all of these jQuery gubbins can be found over at the jQuery plugin site.						

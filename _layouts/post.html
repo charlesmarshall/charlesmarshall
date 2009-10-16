@@ -12,11 +12,44 @@
    
    <title>{{ page.title }} - Charles Marshall</title>
 </head>
-<body>
+<body id="{{ page.category }}">
+  <img src="/images/splash.jpg" alt="Feature image to break up the whiteness... modified version of http://www.pinkmoustache.net/free-vectors-colorful-backgrounds/" id="splash"/>
+  <div id="category_list">
+    <ul class='work nav'>
+    {% for post in site.categories.work %}
+    <li class='work post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <ul class='jquery nav'>
+    {% for post in site.categories.jquery %}
+    <li class='jquery post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <ul class='web nav'>
+    {% for post in site.categories.web %}
+    <li class='web post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <ul class='motorsport nav'>
+    {% for post in site.categories.motorsport %}
+    <li class='motorsport post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <ul class='rant nav'>
+    {% for post in site.categories.rant %}
+    <li class='rant post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <ul class='general nav'>
+    {% for post in site.categories.general %}
+    <li class='general post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
   <div id="webpage">
     <p id="logo"><a href="/" title="home">Charles Marshall</a></p>
     {{ content }}
   </div>
-  <img src="/images/splash.jpg" alt="Feature image to break up the whiteness... modified version of http://www.pinkmoustache.net/free-vectors-colorful-backgrounds/" id="splash"/>
+  
 </body>
 </html>

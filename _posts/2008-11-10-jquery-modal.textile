@@ -1,0 +1,6 @@
+---
+layout: post
+title: jQuery Modal
+category: jquery
+---
+With recent projects I needed a flexible modal box. Most of the ones out there are either horribly bloated or only work for images, which really sucks when you want a form inside one. I decided the best route would be to write a quick one myself.The example page is "here":/smartmodal/index.htmlThe minimised js is "here":/smartmodal/jquery.smartmodal_minimized.jsThe big daddy zip with images is "here":/smartmodal/smartmodal.zipp. Have a look and see what you think. You can leave feed back etc via the jQuery doc page (which is "here":http://plugins.jquery.com/project/SmartModal).						

@@ -1,0 +1,6 @@
+---
+layout: post
+title: MS vi?
+category: web
+---
+See how things might have been if Microsoft had done vi! See "here":http://blogs.sun.com/marigan/entry/how_the_vi_editor_would.						

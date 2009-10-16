@@ -1,0 +1,13 @@
+---
+layout: post
+title: Clarke and Strong
+category: work
+---
+
+I see dead people? No, just the Clarke and Strong website (although after all the product entry I'm not far off). 
+
+Clarke and Strong are a family run supplier of funeral goods and have been in the business for over 100 years! 
+
+The site itself was a rather morbid project to work, but some nice functionality. Body bags on a roll ... really? "Apparently so":http://clarkeandstrong.com/product/ancillary/body-bags-on-a-roll
+
+I particularly like live filtering on the product "listing pages":http://clarkeandstrong.com/product/gowns and of course there are a couple of hidden easter eggs ;)

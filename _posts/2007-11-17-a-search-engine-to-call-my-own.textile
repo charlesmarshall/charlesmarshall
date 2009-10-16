@@ -1,0 +1,6 @@
+---
+layout: post
+title: A Search Engine to Call my Own
+category: web
+---
+Recently I had an unusal but intriguing question posed by a work collegue. Could I create some sort of bot to scan sites relevant to some keywords and market area specified by a client so the client could keep an eye on current events in their field. On first look I almost dismissed it, then i thought about it for a while...p. How about a facility inside their "CMS":http://wildfirecms.com which would let them list these keywords and then some how from these keywords pull back a list of appropriate websites. Then from this list (and of course allowing users to add some more of their own) &nbsp;search for pages containing another set of keywords and then using some statics track the rise and fall of these keywords over a set duration.p. Not a bad idea i thought, so i looked into implementing it and came across another great utlity provided by yahoo. Yes it's another api, but this one is usefull. The web search REST service allows anyone to query yahoo's search engine, specifying all sorts of parameters and retrieve the results in multiple formats including serialised php and xml.p. Great! Now all I need is the client to agree to it and I'll be making a meta search engine.						

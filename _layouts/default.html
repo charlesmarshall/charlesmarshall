@@ -10,10 +10,55 @@
    
    <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" media="all" />
    
+   <script src='http://www.google.com/jsapi'  type='text/javascript'></script>	
+   <script type='text/javascript'>                      
+   google.load('jquery', '1.3');
+ 	 google.load('jqueryui', '1.7');
+   </script>
+   <script src="/javascripts/main.js" type="text/javascript" charset="utf-8"></script>
+   
    <title>{{ page.title }} - Charles Marshall</title>
 </head>
 <body>
   <img src="/images/splash.jpg" alt="Feature image to break up the whiteness... modified version of http://www.pinkmoustache.net/free-vectors-colorful-backgrounds/" id="splash"/>
+  <div id="category_list">
+    <h3 class='work'><a href="#work_list">Work</a></h3>
+    <ul class='work nav' id="work_list">
+    {% for post in site.categories.work %}
+    <li class='work post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <h3 class='jquery'><a href="#jquery_list">jQuery</a></h3>
+    <ul class='jquery nav' id="jquery_list">
+    {% for post in site.categories.jquery %}
+    <li class='jquery post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <h3 class='web'><a href="#web_list">Web</a></h3>
+    <ul class='web nav' id="web_list">
+    {% for post in site.categories.web %}
+    <li class='web post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <h3 class='motorsport'><a href="#motorsport_list">Motorsport</a></h3>
+    <ul class='motorsport nav' id="motorsport_list">
+    {% for post in site.categories.motorsport %}
+    <li class='motorsport post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <h3 class='rant'><a href="#rant_list">Rants</a></h3>
+    <ul class='rant nav' id="rant_list">
+    {% for post in site.categories.rant %}
+    <li class='rant post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <h3 class='general'><a href="#general_list">General</a></h3>
+    <ul class='general nav' id="general_list">
+    {% for post in site.categories.general %}
+    <li class='general post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
   <div id="webpage">
     <p id="logo"><a href="/" title="home">Charles Marshall</a></p>
     {{ content }}

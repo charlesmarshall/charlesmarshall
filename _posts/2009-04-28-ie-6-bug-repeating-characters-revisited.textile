@@ -1,0 +1,6 @@
+---
+layout: post
+title: IE 6 Bug - Repeating Characters (Revisited)
+category: web
+---
+Ok, so I've just discovered another wonderful way to trigger this bug. Apparently putting html comments inbetween floated containers makes the last character repeat! The joys of IE.... 						

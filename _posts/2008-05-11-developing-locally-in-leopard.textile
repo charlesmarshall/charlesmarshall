@@ -1,0 +1,20 @@
+---
+layout: post
+title: Developing Locally in Leopard
+category: web
+---
+Your mac is set up and ready to go, but how exactly do you go about setting Apache up in OS X Leopard these days? Well it's it a bit more like linux now with the demise of Network Manager (I think thats what it was called, been a while since I used tiger), but its not too hard, honest!p. Firstly decide what suffix your going to use for your local machine, be sensible and use something meaningful like .local or .dev. Dig out your apache vhost file (httpd-vhosts.conf) and set up the file.p. You will need a line such as "NameVirtualHost *:80" to make sure any web connections are picked up. Now create you first virtual host a bit like this:p. &lt;VirtualHost *:80&gt;
+&nbsp;&nbsp;&nbsp; DocumentRoot /Users/_username_/Sites/_sitename_/_docroot_
+&nbsp;&nbsp;&nbsp; ServerName mysite.local
+&nbsp;&nbsp;&nbsp; &lt;Directory "/Users/_username_/Sites/_sitename_/_docroot_"&gt;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AllowOverride All
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Options All
+&nbsp;&nbsp;&nbsp; &lt;/Directory&gt;
+&lt;/VirtualHost&gt;p. Once you have saved this file (root/admin privilleges are required) you will need to restart Apache so it reloads you config files. You can do this by starting up terminal and typing "sudo apachectl graceful" and entering the root/admin password.p. Now&nbsp;type mysite.local in to your browser of choice and see what happens.... Nothing is the answer. At this point Apache knows it should be looking for a request a site called mysite.local but your machine has no idea what .local means.p. To fix this you have to edit you /etc/hosts file (again root/admin needed) and tell it what mysite.local means. Crack open the file and add this line:p. 127.0.0.1 mysite.localp. Save the file and refresh your browser. Bingo, its working (asuming the directory your pointing at exists of course).&nbsp;p. If your like me and your containing folder is called the same thing as the server name and you have lots and lots of sites you can save yourself some effort and make use of Apache's VirtualDocumentRoot (bearing in mind you will have to ensure mod_vhost_alias is enabled) and set your config file to have something like this:p. &lt;VirtualHost *:80&gt;
+&nbsp;&nbsp;&nbsp; VirtualDocumentRoot /Users/_username_/Sites/%0/_docroot_
+&nbsp;&nbsp;&nbsp; ServerName %0.local
+&nbsp;&nbsp;&nbsp; &lt;Directory "/Users/_username_/Sites/%0/_docroot_"&gt;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AllowOverride All
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Options All
+&nbsp;&nbsp;&nbsp; &lt;/Directory&gt;
+&lt;/VirtualHost&gt;						

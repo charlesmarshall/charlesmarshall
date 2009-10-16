@@ -1,0 +1,6 @@
+---
+layout: post
+title: Real Programmers
+category: web
+---
+"xkcd.com with another cracking piece of nerd comedy":http://xkcd.com/378/!						
