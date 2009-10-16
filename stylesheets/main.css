@@ -87,7 +87,7 @@ body{padding:30px 0;}
 #category_list a{
   display:block;
   text-decoration:none;
-  padding:3px 8px;
+  padding:3px 1px 3px 8px;
   color:white;
 }
 #category_list li a{color:black;}
