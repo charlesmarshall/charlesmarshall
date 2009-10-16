@@ -3,9 +3,12 @@ layout: post
 title: So many OS', not enough machines..
 category: web
 ---
-If like me you have to test your work for the mass market (that means windows) and cater for the majority (yes, that means IE6 %(=amp)&amp;% 7) but you are of more discerning tastes and don't enjoy viruses, malware and endless updates (in other words, you don't use windows) then you probably use a Mac (yes I do!).So how do you get around the problem? Simple answer, virtualisation.&nbsp;
-Basically this means that you can install a piece of software of your machine that lets you emulate another operating system. Most of the established solutions&nbsp;cost money, not much (around &pound;40), but still more than nothing.
+If like me you have to test your work for the mass market (that means windows) and cater for the majority (yes, that means IE6 and 7) but you are of more discerning tastes and don't enjoy viruses, malware and endless updates (in other words, you don't use windows) then you probably use a Mac (yes I do!). So how do you get around the problem? Simple answer, virtualisation.
+
+Basically this means that you can install a piece of software of your machine that lets you emulate another operating system. Most of the established solutions cost money, not much (around &pound;40), but still more than nothing.
+
 After trying both VMware and parallels found them to be very very useful, but at the same time memory and processor hungry. For example, say I have the infamous double margin IE display bug and I'm trying to find the right container to add the display attribute to. I Have textmate open, photoshop (as I'm still working on the design), firefox, safari and VMware; switching to and from applications becomes sluggish.. There is a better way..
+
 "VirtualBox":http://www.virtualbox.org/, developed by Sun, is faster and smoother than the others I have used and has an OpenSource version! Goodbye VMware!
-The only draw back is that the free download doesn't have support for wireless cards on macs, but otherwise it's brilliant. Supports lots of operating systems (almost every flavour of linux I can think of) and is very fast. Great example of this, full reboot of plain windows xp (with service pack 2) in under 1 minute...&nbsp;
-Further news on this as I use it more.						
+
+The only draw back is that the free download doesn't have support for wireless cards on macs, but otherwise it's brilliant. Supports lots of operating systems (almost every flavour of linux I can think of) and is very fast. Great example of this, full reboot of plain windows xp (with service pack 2) in under 1 minute...

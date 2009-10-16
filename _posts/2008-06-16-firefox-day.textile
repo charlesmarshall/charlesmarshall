@@ -1,6 +1,6 @@
 ---
 layout: post
 title: Firefox Day!
-category: applications
+category: web
 ---
 Firefox, the developers best friend, is due to get a big update tomorrow... A shiny new version will be let lose on the world. Yes I do know about the release candidates, betas and alphas but they don't really count; when was the last time your mother downloaded something like that?p. Anyway, to mark the release they are planning to break the world record for most downloads of a single piece of software in one day. Good luck, I for one will be downloading it, lets just hope their servers can cope!p. Take a look at "Spread Firefox":http://www.spreadfirefox.com/ website for more details.						

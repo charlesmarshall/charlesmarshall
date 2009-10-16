@@ -3,4 +3,6 @@ layout: post
 title: Retro Gaming...
 category: web
 ---
-Inside every geek/nerd lies the heart of a gamer; whether its a fast paced FPS or an all encompassing RPG sprites and polygons make our strained eyes twinkle. Harking back to the good old days is becoming more popular as the simplicity is appealing. p. While indulging a bit of nostalgia I came across a great site which has converted the legendary Arkanoid to a web game made from javascript! "Have a play here":http://www.schillmania.com/arkanoid/arkanoid.html.						
+Inside every geek/nerd lies the heart of a gamer; whether its a fast paced FPS or an all encompassing RPG sprites and polygons make our strained eyes twinkle. Harking back to the good old days is becoming more popular as the simplicity is appealing. 
+
+While indulging a bit of nostalgia I came across a great site which has converted the legendary Arkanoid to a web game made from javascript! "Have a play here":http://www.schillmania.com/arkanoid/arkanoid.html.						
