@@ -7,7 +7,7 @@ This story really wound me up. ISPs attitude to its responsibilities has been a 
 
 First lets go over what an ISP should do. When it sells you a 4mb line, you get a 4mb connection to the internet almost all the time; I can accept network outages and local hub upgrades etc. Their advertising should reflect the reality of the situation, so when it says &pound;20 per month gets you a 4mb line then thats what you should get. This is not what happens..
 
-When selling you a 4mb line, you dont get a 4mb line. What you actually get is a 4mb limited connection to a bigger line, say 100mb. When this line is quiet thats fine, you get 4mb. However, when you sell 100 4mb connections all connecting to that same 100mb pipe then you will get issues. 
+When selling you a 4mb line, you don't get a 4mb line. What you actually get is a 4mb limited connection to a bigger line, say 100mb. When this line is quiet thats fine, you get 4mb. However, when you sell 100 4mb connections all connecting to that same 100mb pipe then you will get issues. 
 
 Lets say that out of those 100 people a quarter of them start to download large files; linux distros and albumns off iTunes for example, this creates a huge demand on the main 100mb line. Lets say those 25 people max out their limited connections, 25 x 4 = 100... What are the other 75 people meant to do for network connections? 
 
