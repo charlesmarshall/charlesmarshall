@@ -102,7 +102,7 @@ body{padding:30px 0;}
 }
 .post .read_more{margin-bottom:0;}
 .post .read_more a{text-decoration:none; font-weight:bold;}
-.post img{
+.post img, .post_page #webpage img{
   float:right;
   margin:0 8px 10px 0;
   clear:both;
