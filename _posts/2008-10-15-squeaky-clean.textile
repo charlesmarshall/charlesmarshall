@@ -4,6 +4,6 @@ title: Squeaky Clean (Supreme Hygiene)
 category: work
 ---
 
-Just "launched a brand spanking new site":http://supremehygiene.co.uk for all your industrial cleaning needs. An advanced site with some clever jiggery pokery in reagrds to multi level categories and product tagging. Again, run on PHP-WAX and Wildfire CMS so even if the backend is complex the front is kept nice and simple.
+Just "launched a brand spanking new site":http://supremehygiene.co.uk for all your industrial cleaning needs. An advanced site with some clever jiggery pokery in regards to multi level categories and product tagging. Again, run on PHP-WAX and Wildfire CMS so even if the backend is complex the front is kept nice and simple.
 
 A really nice jQuery switcher on the home page to flick between featured articles and a jQuery based estimation enquiry form ensures this site stands out from its rivals while offering improved usability.
