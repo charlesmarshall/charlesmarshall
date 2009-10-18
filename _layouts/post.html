@@ -21,38 +21,40 @@
 </head>
 <body id="{{ page.category }}" class="post_page">
   <div><a href="/" title="home page"><img src="/images/splash.jpg" alt="Feature image to break up the whiteness... modified version of http://www.pinkmoustache.net/free-vectors-colorful-backgrounds/" id="splash"/></a></div>
+  
   <div id="category_list">
-    <h3 class='work'><a href="#work_list">Work</a></h3>
+    <h3 class="home"><a href="/" title="home">Home</a></h3>
+    <h3 class='work'><a href="#work_list" title="work">Work</a></h3>
     <ul class='work nav' id="work_list">
     {% for post in site.categories.work %}
     <li class='work post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
-    <h3 class='jquery'><a href="#jquery_list">jQuery</a></h3>
+    <h3 class='jquery'><a href="#jquery_list" title="jQuery">jQuery</a></h3>
     <ul class='jquery nav' id="jquery_list">
     {% for post in site.categories.jquery %}
     <li class='jquery post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
-    <h3 class='web'><a href="#web_list">Web</a></h3>
+    <h3 class='web'><a href="#web_list" title="web">Web</a></h3>
     <ul class='web nav' id="web_list">
     {% for post in site.categories.web %}
     <li class='web post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
-    <h3 class='motorsport'><a href="#motorsport_list">Motorsport</a></h3>
+    <h3 class='motorsport'><a href="#motorsport_list" title="motorsport">Motorsport</a></h3>
     <ul class='motorsport nav' id="motorsport_list">
     {% for post in site.categories.motorsport %}
     <li class='motorsport post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
-    <h3 class='rant'><a href="#rant_list">Rants</a></h3>
+    <h3 class='rant'><a href="#rant_list" title="rants">Rants</a></h3>
     <ul class='rant nav' id="rant_list">
     {% for post in site.categories.rant %}
     <li class='rant post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
-    <h3 class='general'><a href="#general_list">General</a></h3>
+    <h3 class='general'><a href="#general_list" title="general">General</a></h3>
     <ul class='general nav' id="general_list">
     {% for post in site.categories.general %}
     <li class='general post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
@@ -64,6 +66,14 @@
     <h2 class="posted_on">{{ page.date | date_to_string }}</h2>
     {{ content }}
   </div>
-  
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-927511-5");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
 </body>
 </html>
