@@ -115,6 +115,13 @@ h3 span.category{
   color:white !important;
   float:right;
 }
+h3#home{
+  position:fixed;
+  right:0;
+  top:6%;
+  width:20%;
+}
+h3#home a{padding:3px 1px 3px 8px;}
 .home{color:white !important;background:black !important;}
 h3.home a, span.home{color:white !important;background:black !important;}
 /** category colours **/
