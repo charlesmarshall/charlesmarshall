@@ -3,4 +3,10 @@ layout: post
 title: IE 6 Bug - Repeating Characters
 category: web
 ---
-After coming across this really annoying bug many times I thought it was about time I made a note of it somewhere. p. When you starting mixing floated containers with non floated containers the IE 6 only parameter hasLayout triggers to -1 causing all sorts of chaos in your layout; most notabley tail characters repeating themselves. This is a big pain in the ass and is a little devil to fix.p. To get your layout working again you have to get hasLayout back to 1. This can be done in several ways but the most successful seems to be by adding display:inline into the containers (and sometimes the items inside) style declartions and crossing as many body parts as you can (for luck).p. Other methods for fixing this is to set margin-right:-3px or to change which parts are floated (if your layout allows).						
+After coming across this really annoying bug many times I thought it was about time I made a note of it somewhere.
+
+When you starting mixing floated containers with non floated containers the IE 6 only parameter hasLayout triggers to -1 causing all sorts of chaos in your layout; most notably tail characters repeating themselves. This is a big pain in the ass and is a little devil to fix.
+
+To get your layout working again you have to get hasLayout back to 1. This can be done in several ways but the most successful seems to be by adding display:inline onto the containers (and sometimes the items inside) style declarations and crossing as many body parts as you can (for luck).
+
+Other methods for fixing this is to set margin-right:-3px or to change which parts are floated (if your layout allows).						
