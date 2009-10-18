@@ -3,4 +3,20 @@ layout: post
 title: Far Too Normal
 category: rant
 ---
-Recently I seem to keep stumbling across articles about the wonders of data normalisation; and they all suck. Yes thats right, I think the authors of most of these articles are idiots.p. They keep preaching about avioding data repetition and storing things once. These 5th normal form lovers have clearly only read text books and never worked on any kind of application that has to be fast. Yes, 5th normal form means you only store the data once, but to get to it you have to go through numerious joins, from 3 upwards. Being a pratical kind of person lets use the typical example of a customer and order in both 3rd and 5th normal form to show my point.h4. Fetching Customer Name and Order Date From Order Reference:p. *5th Normal*p. Find order reference &gt; go to join table and find order id &gt; go to order table &gt; store date &gt; go to order customer join table &gt; go to customer table &gt; store customer namep. *3rd Normal*p. Find order reference &gt; store date &gt; go to order customer join &gt; go to customer table &gt; store customer namep. Even in a simple example of something that any ecommerce site would do hundreds of times a day, using 5th normal form introduces several extra steps (and in that example I'm being kind, 5th normalisation could easy add a join between customers and names).&nbsp; p. In the current world of computers data in the same table can be handled with great speed and effiecency providing you do the standard optimizations like adding indexes and keys on the columns; however table joins are still slow in comparision.p. In this example you would end up with an extreme amount of left joins (assuming mysql here - sorry M$ lovers but MSSQL is not worth the money or hassle), causing a whole bunch of extra table scanning and locking so not only slowing down this query but every other one on the same server.p. Nice idea, but in practice 5th normalised form is a wasted effort. Instead of spending hours doing that any decent programmer should be busy playing "Sauerbraten":http://www.sauerbraten.org/ ;)						
+Recently I seem to keep stumbling across articles about the wonders of data normalisation; and they all suck. Yes thats right, I think the authors of most of these articles are idiots
+
+They keep preaching about avoiding data repetition and storing things once. These 5th normal form lovers have clearly only read text books and never worked on any kind of application that has to be fast. Yes, 5th normal form means you only store the data once, but to get to it you have to go through numerous joins, from 3 upwards. Being a practical kind of person lets use the typical example of a customer and order in both 3rd and 5th normal form to show my point.
+
+h4. Fetching Customer Name and Order Date From Order Reference:
+
+*5th Normal* Find order reference &gt; go to join table and find order id &gt; go to order table &gt; store date &gt; go to order customer join table &gt; go to customer table &gt; store customer name. 
+
+*3rd Normal* Find order reference &gt; store date &gt; go to order customer join &gt; go to customer table &gt; store customer name
+
+Even in a simple example of something that any ecommerce site would do hundreds of times a day, using 5th normal form introduces several extra steps (and in that example I'm being kind, 5th normalisation could easy add a join between customers and names).
+
+In the current world of computers data in the same table can be handled with great speed and efficiency providing you do the standard optimisations like adding indexes and keys on the columns; however table joins are still slow in comparison
+
+In this example you would end up with an extreme amount of left joins (assuming mysql here - sorry M$ lovers but MSSQL is not worth the money or hassle), causing a whole bunch of extra table scanning and locking so not only slowing down this query but every other one on the same server
+
+Nice idea, but in practice 5th normalised form is a wasted effort. Instead of spending hours doing that any decent programmer should be busy playing "Sauerbraten":http://www.sauerbraten.org/ ;)						
