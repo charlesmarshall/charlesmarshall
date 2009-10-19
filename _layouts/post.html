@@ -65,7 +65,7 @@
     <h2 class="posted_on">{{ page.date | date_to_string }}</h2>
     {{ content }}
     
-    <p class='comments'><a href="{{ post.url }}#disqus_thread" title="number of comments">Comments</a></p>
+    <p class='comments' id="disqus"><a href="{{ post.url }}#disqus_thread" title="number of comments">Comments</a></p>
     <!-- DISQUS JS -->
     <div id="disqus_thread"></div>
     <script type="text/javascript" src="http://disqus.com/forums/charlesmarshall/embed.js"></script>
