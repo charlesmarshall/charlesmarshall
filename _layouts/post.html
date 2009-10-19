@@ -62,15 +62,12 @@
   </div>
   <div id="webpage">
     <h1 id="logo"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-    <h2 class="posted_on">{{ page.date | date_to_string }}</h2>
+    <h2 class="posted_on">{{ page.date | date_to_string }} (<a href="{{ post.url }}#disqus_thread" title="number of comments">Comments</a>)</h2>
     {{ content }}
     
-    <p class='comments' id="disqus"><a href="{{ post.url }}#disqus_thread" title="number of comments">Comments</a></p>
+    
     <!-- DISQUS JS -->
-    <div id="disqus_thread"></div>
-    <script type="text/javascript" src="http://disqus.com/forums/charlesmarshall/embed.js"></script>
-    <noscript><a href="http://disqus.com/forums/charlesmarshall/?url=ref">View the discussion thread.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/charlesmarshall/embed.js"></script><noscript><a href="http://disqus.com/forums/charlesmarshall/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     <!-- END DISQUS JS -->
     
   </div>

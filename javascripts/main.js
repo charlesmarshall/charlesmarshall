@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
   page_init();
-  if(jQuery('body').hasClass('post_page') || jQuery('#disqus').length) comment_count();
+  if(jQuery('body').hasClass('post_page') || jQuery('#disqus_thread').length) comment_count();
 });
 function page_init(){
   cat_list_accordion();
