@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
   page_init();
-  comment_count();
+  //comment_count();
 });
 function page_init(){
   cat_list_accordion();
