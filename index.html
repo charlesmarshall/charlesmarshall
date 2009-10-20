@@ -13,7 +13,7 @@ title: Web Developer
 {% for post in site.posts limit: 5 %}
 <div class="post row {{ post.category }} clearfix">
   <h3 class='clearfix'><span class='category {{ post.category }}'>{{ post.category }}</span><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-  <h5 class='date'>{{ post.date | date_to_string }}</h5>
+  <h5 class='date'>{{ post.date | date_to_string }} | <a href='{{ post.url }}#disqus_thread' title='number of comments'></a></h5>
   {{ post.content }}
   <p class='read_more'><a href="{{ post.url }}" title="{{ post.title }}">View post &raquo;</a></p>
 </div>
