@@ -1,6 +1,6 @@
 ---
 layout: post
-title: B-Hive - Creative & Marketing Placements
+title: B-Hive - Creative &amp; Marketing Placements
 category: work
 ---
 
