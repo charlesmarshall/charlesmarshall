@@ -1,0 +1,17 @@
+---
+layout: post
+title: Laminate Your Website! Any Website! 
+category: work
+---
+
+As it is April Fools day we've been working on something special... "And here it is":http://laminatr.com 
+
+Yes, you to can own a laminated copy of any website you want! Simply fill in the address box and click 'laminate'. If you want us to print it out and send you over a copy then we can do that for you, at a small cost.
+
+If you're just being nosey then you can see what other sites have been laminated by going to the "portfolio section":http://laminatr.com/sites
+
+If the site is being slow, we're very sorry, it turns out the site has been feature on "tech crunch":http://www.techcrunch.com/2009/04/01/april-fools-youtube-flails-amazon-cloud-computing-in-a-blimp-3d-chrome-browsing-google-master-ai/, "the new york times":http://gadgetwise.blogs.nytimes.com/2009/04/01/new-products-for-april-1st-kinda/ and several others.
+
+Just too add fuel to the fire for today only both my personal site, "Tiny JS":http://tinyjs.com and "One Black Bear":http://oneblackbear.com are sending all the traffic to "Laminatr":http://laminatr.com
+
+Now, what shall I do next year?
