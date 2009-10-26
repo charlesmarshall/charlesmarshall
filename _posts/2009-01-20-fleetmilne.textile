@@ -1,0 +1,15 @@
+---
+layout: post
+title: Fleetmilne - Residential Property Experts
+category: work
+---
+
+At the end of last year we took over the "Fleet Milne":http://fleetmilne.co.uk/ website. 
+
+Although there was no visual change the underpinnings were completely re-written onto the phpwax framework & wildfire cms. While we were at it we also re ddi all the html, tidying it up and making it standards compliant. 
+
+As part of installing the CMS we developed an import module that utilises the exported data from their internal system. Unfortunately, their internal system only does an FTP export, so the import relies on a successful dump onto our server. From this point we read the csv file and match all records against the photos and move everything over in to our file system. After checking for errors the process finishes and then the new properties are ready to be sent out in emails.
+
+When we took over the site we added an improved newsletter signup, using Campaign Monitor, we segment the data by what they are looking for and send out relevant properties.
+
+EDIT (2009 Jul 20): The site has now had a complete redesign... have a look and see what you think...
