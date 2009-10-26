@@ -1,0 +1,11 @@
+---
+layout: post
+title: Interchangeable Belt 
+category: work
+---
+
+Fancy a fashionable belt that you can change on how you feel, what your wearing or the mood your in? Well now you can have one... 
+
+I built a simple single page website with lots of imagery and even a how to video filmed by the creator herself.
+
+The site itself uses a little bit of jQuery to do some nice transition effects.
