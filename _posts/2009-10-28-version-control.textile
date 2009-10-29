@@ -1,0 +1,42 @@
+---
+layout: post
+title: Version Control
+category: general
+---
+
+Version control is important... VERY IMPORTANT! I have yet to come across a single university / college course for programmers that even mentions it, never mind teaching it in detail.
+
+No matter what element of computer work you're in (web, c++, java etc) you need to be using version control of some form. You do one update, say change a logo or adjust the number of centroids for your k-means algorithm, what do you if 3 days later you find out it was the wrong decision? If you're not using version control its going to be painful experience and heavy reliance on your memory; after 3 days you might remember it, but what if it was 3 weeks, or months or even years? There is no way you will remember that far back!
+
+This where good version control steps in. In the old old days you had "CVS":http://en.wikipedia.org/wiki/Concurrent_Versions_System ; please forgot this existed (even though it did pave the way). In 2000 the "Subversion":http://en.wikipedia.org/wiki/Subversion_(software) open source project was born.
+
+h3. Subversion
+
+It was fast and handled binary files very well; which is why it is the base for such things as "Dropbox":http://getdropbox.com. However, it does have draw backs. It's branching and tagging truly are a nightmare to use and it relies on a central point for a repository.
+
+What this means is that you will need to be online in order to make commits; this is not ideal, how do you do work on a train or plane? You can't.
+
+Subversions biggest weakness (in my opinion) is its problems with renaming things. Instead of marking your rename as a rename it adds the file again under its new name and deletes the old one... Leaving lots of opportunity to lose changes. Say I made some changes in the a random project file, renamed it, and then checked it in. Those changes would show in the new file, but not the old one....
+
+Reverting back to a previous commit isn't exactly a barrel of laughs. However the difficulty you have to endure when working on the same project as someone else is the straw that broke this programmers back.
+
+Lets say Bob is editing a large library file on Project X, say one that handles all file operations and makes several amends, but at the same time Jon made a whole bunch of amends to the same file. Checking those changes in is going to be interesting.
+
+At best you will have to resolve conflicts with a merging utility and hope you got it right. At worst, they will have changed the same areas of the file and who knows what will get checked in. 
+
+A better solution was needed... Just like buses you spend ages waiting for then 3 turn up at once!
+
+h3. Distribution FTW
+
+Instead of a centralised, upstream only repository you have a local repository to call your own. You can make your changes, commit them locally, revise your commits if you want and then push to whatever other repository you fancy. Working with version control offline is now possible!
+
+Distributed version control systems come in many flavours, but the current favourites are:
+
+* GiT
+* Bazaar
+* Mercurial
+
+GiT is my DVCS of choice. The main reason for originally selecting GiT was its backwards compatibility with Subversion; @git svn@ basically allows your upstream origin to be a Subversion repository but keeping your local repository running on GiT!
+
+h3. Working With GiT
+
