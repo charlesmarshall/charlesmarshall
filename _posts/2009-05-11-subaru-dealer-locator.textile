@@ -1,0 +1,36 @@
+---
+layout: post
+title: Dealer Locator
+category: work
+---
+!/images/work/dealer-locator-1.jpg!:"http://maps.oneblackbear.com/subaru"
+
+Having recently completed an upgrade of the Subaru and Isuzu national website Dealer locator I thought I'd tell you a bit about it. 
+
+The locators, originally run off Multimap, now use the Google maps system. The project required a fast turnaround and was completed for both brands within two weeks of receiving the brief.
+
+By using Google maps IM Group (Subaru UK and Isuzu UK's parent company) has saved over &pound;20,000 and improved their service to site visitors. 
+
+The new system is faster, allowing for live information, filtering of sales, servicing & parts dealers and the re-designed interface makes finding a dealer even simpler.
+
+h3.Looking at the tech....
+
+As mentioned above this new dealer locator is faster and smoother than before. Speed kills; if a page is slow to load then people are going to give up and assume it's not working. 
+
+With a map system of this nature, large amounts of data are flying around the place doing everything possible to make the site slow. To keep the speed in check we use many things from boring old compression to new fangeled ajax loads, but there has to be a balance.
+
+We load the primary map components and wait until the page has loaded before going and fetching all the dealer data. As a nice little visual cue an obligatory loading box appears.
+
+Now all the data is in, we're good to go! The searching is kept nice and accurate using the google search API on top of their map API to ensure a greater level accuracy. Couple this with some clever bounding calculations and an appropriate coordinate and zoom level is found to show the user some dealers and a marker of the search point.
+
+To help you choose the right dealer, the list is reordered according to proximity, so your nearest dealer is on top. You can get some directions, view their used car range or read more about them right on this page.
+
+The directions are pretty close to exact, with it taking you to the stored co-ordinates of the dealer you selected and with google's system there is now a print option, so no way to get lost on the way (hopefully)!
+
+If you don't fancy a drive, the used car stock is just a click away; the same loading box appears to let you know we are checking their website, if we can get it, we then show you their details right there. This should mean that comparing what your local dealers have in stock just got a whole bunch easier.
+
+When you find a dealer you like the look of you can have a quick read about them by clicking the more details.
+
+This new version of the dealer locator should help users of both websites; with more features to come.
+
+EDIT (Aug 02 2009): Due to an increasing number of dealers the map is starting to chug a little bit in older javascript engines (yes, I'm looking at you IE). I will re-write the javascript to make it smarter and have a lower memory footprint, speeding up its performance.
