@@ -24,7 +24,7 @@ Lets say Bob is editing a large library file on Project X, say one that handles 
 
 At best you will have to resolve conflicts with a merging utility and hope you got it right. At worst, they will have changed the same areas of the file and who knows what will get checked in. 
 
-A better solution was needed... Just like buses you spend ages waiting for then 3 turn up at once!
+A better solution was needed... Just like buses you spend ages waiting for one then 3 turn up at once!
 
 h3. Distribution FTW
 
