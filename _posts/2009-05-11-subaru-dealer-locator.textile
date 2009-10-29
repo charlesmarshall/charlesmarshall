@@ -14,7 +14,7 @@ By using Google maps IM Group (Subaru UK and Isuzu UK's parent company) has save
 
 The new system is faster, allowing for live information, filtering of sales, servicing & parts dealers and the re-designed interface makes finding a dealer even simpler.
 
-h3.Looking at the tech....
+h3. Looking at the tech....
 
 As mentioned above this new dealer locator is faster and smoother than before. Speed kills; if a page is slow to load then people are going to give up and assume it's not working. 
 
