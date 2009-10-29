@@ -46,7 +46,7 @@ First off, installing GiT is super simple:
 * Linux is easy, as GiT was made by Linus, so in most distros its a single command to install
 * OS X is based on FreeBSD and there is now a dmg install image
 
-That should take you about 5 minutes. Once your done you need to get used to the command set. Many people (Mercurial & Bazaar uses, wonder why?) always complain about the number of commands Git has, but lets be honest here, in daily usage you use 6 commands:
+That should take you about 5 minutes. Once you're done you need to get used to the command set. Many people (Mercurial & Bazaar uses, wonder why?) always complain about the number of commands Git has, but lets be honest here, in daily usage you use 6 commands:
 
 * @git init@
 * @git checkout@
