@@ -33,13 +33,13 @@ As we haven't built anything from source this time we no longer need to tell apa
 For ease you can use a vhost declaration like:
 
 <pre>
-  <VirtualHost *:80>
-      VirtualDocumentRoot /path/to/websites/%1/public
-      <Directory "/path/to/websites/%1/public">
-        Options FollowSymLinks
-            AllowOverride None
-      </Directory>
-  </VirtualHost>
+<VirtualHost *:80>
+    VirtualDocumentRoot /path/to/websites/%1/public
+    <Directory "/path/to/websites/%1/public">
+      Options FollowSymLinks
+          AllowOverride None
+    </Directory>
+</VirtualHost>
 </pre>
 
 This way you no longer need to make a vhost per site. If only you could this with /etc/hosts file!
