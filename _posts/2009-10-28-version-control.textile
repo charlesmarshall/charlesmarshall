@@ -40,7 +40,7 @@ GiT is my DVCS of choice. The main reason for originally selecting GiT was its b
 
 h3. Working With GiT
 
-First off, install GiT is super simple:
+First off, installing GiT is super simple:
 
 * Windows has the ever wonderful Tortoise (TortoiseGiT)
 * Linux is easy, as GiT was made by Linus, so in most distros its a single command to install
