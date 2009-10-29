@@ -40,3 +40,32 @@ GiT is my DVCS of choice. The main reason for originally selecting GiT was its b
 
 h3. Working With GiT
 
+First off, install GiT is super simple:
+
+* Windows has the ever wonderful Tortoise (TortoiseGiT)
+* Linux is easy, as GiT was made by Linus, so in most distros its a single command to install
+* OS X is based on FreeBSD and there is now a dmg install image
+
+That should take you about 5 minutes. Once your done you need to get used to the command set. Many people (Mercurial & Bazaar uses, wonder why?) always complain about the number of commands Git has, but lets be honest here, in daily usage you use 6 commands:
+
+* @git init@
+* @git checkout@
+* @git add@
+* @git commit@
+* @git pull@
+* @git push@
+
+How hard is that? GiT is simple to use for ever day tasks and wins hands down when it comes to smart merging of conflicts etc. You can learn all 100+ commands, or you can be sensible and google for them when you need to use them!
+
+h3. Simplicity
+
+Although I am a programmer and treat the command line like a second home, GUIs such as GitX makes some of those complicated things much easier. For example the latest build of GitX allows you to commit changes on specific lines, line at a time! Doing a command line alternative to this would be horrific.
+
+All they need to do is add a button to do a push command ...
+
+Couple that with the very handy @Capistrano@ and deploying becomes easier.
+
+h3. Negatives...
+
+GiT is not perfect... Just google and I'm sure you'll find dozens of people slagging it off (documentation is for wimps :P ).
+
