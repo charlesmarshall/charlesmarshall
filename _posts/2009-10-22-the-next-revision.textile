@@ -1,0 +1,15 @@
+---
+layout: post
+title: The Next Revision...
+category: web
+---
+
+I got bored with my site design a few months back, finding it to fiddly and image heavy; so time for a change. Something simple this time, clean, plain, and a scatter in a few bright colours for contrast.
+
+After searching around for a while I found the rather cool abstract vector image (sitting on the left ) over at "pink moustache":http://www.pinkmoustache.net/free-vectors-colorful-backgrounds - strange name, cool image.
+
+Mainly just something to break the whiteness and introduce the colour scheme used to signify categories.
+
+I think this is about the 5th iteration of my site, switching platforms and designs along the way. My site is now sitting over on "github":http://github.com - just need to add an external comments system ...
+
+ 
