@@ -3,7 +3,8 @@ layout: post
 title: Dealer Locator
 category: work
 ---
-!/images/work/dealer-locator-1.jpg!:"http://maps.oneblackbear.com/subaru"
+
+!/images/work/dealer-locator-1.jpg!:http://maps.oneblackbear.com/subaru
 
 Having recently completed an upgrade of the Subaru and Isuzu national website Dealer locator I thought I'd tell you a bit about it. 
 
