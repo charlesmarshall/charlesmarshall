@@ -154,3 +154,5 @@ h3.general a, span.general{background:#3f3e40;}
 h3.rant a, span.rant{background:#8fd532;}
 #category_list ul.rant{background:#E2FB94;}
 #category_list ul.rant li a{border-bottom:1px solid white;}
+
+pre{margin-bottom:15px;}
