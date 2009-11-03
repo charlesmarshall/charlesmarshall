@@ -51,6 +51,7 @@ h1,h2,h3,#logo{
 #logo a{text-decoration:none;color:black;letter-spacing:1px;}
 h2{font-size:146.5%;}
 h3{font-size:123.1%;font-family:georgia;font-style:normal;}
+h4{font-family:georgia;font-weight:bold;}
 h2 a, h3 a{font-family:georgia;}
 h1,h2,h3,h4,h5,p,ul,ol{margin-bottom:15px;}
 h1 a,h2 a,h3 a,h4 a,h5 a{text-decoration:none;}
