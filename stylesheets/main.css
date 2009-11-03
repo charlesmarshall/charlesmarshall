@@ -46,6 +46,7 @@ h1,h2,h3,#logo{
   font-style:italic;
   text-shadow:1px 1px 1px grey;
 }
+#logo a{font-family:georgia;}
 #logo{padding-left:3%;}
 .post_page #logo{padding-left:0;}
 #logo a{text-decoration:none;color:black;letter-spacing:1px;}
