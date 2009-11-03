@@ -8,7 +8,7 @@ When One Black Bear took over the Subaru (and later Isuzu) account we went over 
 
 IM Group asked us to take a look at the dealer websites and see what kind of package we can put together to replace the Portfolio rubbish they use now. 
 
-It's Not as glamourous as the main site, but a good, stable client base and an opportunity to show what can be done. I've covered the dealer sites themselves in a "separate post":/work/2009/09/29/dealer-sites.html this one is more techy and is focused on the technology that they use; the *IM Group API*
+It's not as glamourous as the main site, but a good, stable client base and an opportunity to show what can be done. I've covered the dealer sites themselves in a "separate post":/work/2009/09/29/dealer-sites.html this one is more techy and is focused on the technology that they use; the *IM Group API*
 
 h3. Goals
 

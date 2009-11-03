@@ -4,3 +4,42 @@ title: Dealer Websites
 category: work
 ---
 
+When One Black Bear took over the Subaru account it was clear that their web presence was sub standard at best. The main site was a mess, and still is.
+
+Most of their content was in @iframes@ being pulled from somewhere else and every other bad practice that you can think of was pretty much in regular use.
+
+While those issues have not been addressed yet, we now have the opportunity to sort out the dealers websites. Their current package (via Portfolio) is just as bad the main site.
+
+h3. Design
+
+First thing, getting a design done & approved. 
+
+The design was done by "Jon Roobottom":http://roobottom.com/ and is spot on. Clean, simple and modern. Approval was rapid, the new design was a winner.
+
+A few minor changes were brought up during a focus group with leading dealers from around the country.
+
+h3. Focus for Success
+
+To make sure what we had in mind was what the dealers wanted Subaru put us in touch with some dealers and arranged a meeting.
+
+We presented the new site designs, layout and ours ideas for the site. With a few minors amends, such as more offers on the home page it was warmly received.
+
+h3. Build
+
+Build it and they will come. So I did, and so did they. You can have a look at the first dealer, Crossroads, to go live "here":http://subaruvehicles.co.uk/
+
+The site is doing well, with a couple of hundred hits per day. The great domain name does help!
+
+The Crossroads site differs from the standard, such as "Slip End Garages":http://slipendsubaru.co.uk/ but customisation is simple due to lovely GiT.
+
+h4. GiT in Action
+
+I started with a single branch, for the base level work. Keeping everything nice and tidy with some "good old version control":/general/2009/10/28/version-control.html for all the designs ann common code. 
+
+Once that first branch was ready all other Subaru dealers get a branch for themselves. Any amends are done on their own branch, so changes to layouts images etc only effect them.
+
+h3. Deployment
+
+Deployment of the site is easy, checkout the right branch of the project, run the automated installer and your done. Of course that excludes all the google account gubbins and DNS setup, but on the whole, install from nothing is fast; sub hour for out of the box site.
+
+The dealer sites would be a lot more work if it wasn't for the "API they run on":/work/2009/09/29/dealer-sites.html (I wrote that too!).
