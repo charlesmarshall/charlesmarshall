@@ -4,6 +4,8 @@ title: Google Closure Javascript Library
 category: web
 ---
 
+!http://closureoptimizer.com/images/google-closure-logo.jpg!:http://closureoptimizer.com
+
 Google have released their "internal javascript library":http://code.google.com/closure/ (no, this isn't about GWT, that is something different) and called it Closure. Odd name and one that is already heavily in use
 
 * Closure - the "first-class function":http://en.wikipedia.org/wiki/Closure_%28computer_science%29
