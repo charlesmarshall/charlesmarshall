@@ -16,7 +16,8 @@
                                  "grid_items": 'item',
                                  "grid_space": 10,
                                  "grind_zindex":3,
-                                 "expand_by":2
+                                 "expand_by":2,
+                                 "timeout":200
                                };
   
   
@@ -101,7 +102,7 @@
         function(){
           clearTimeout(D[position].timeout);
           var obj = this, func = function(){ $.expandinggrid.expand(position, obj,dimensions,P[position].expand_by);};
-          D[position].timeout = setTimeout(func, 200);
+          D[position].timeout = setTimeout(func, P[position].timeout);
         }, 
         function(){
           clearTimeout(D[position].timeout);
