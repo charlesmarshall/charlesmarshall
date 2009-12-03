@@ -92,11 +92,15 @@
       jQuery(item).removeClass("eg_expanded").css(cssinfo);
     },
     hovers:function(position, items, dimensions){
+      D[position].timeout = false;
       jQuery(items).hover(
         function(){
-          $.expandinggrid.expand(position, this,dimensions,2.04);
+          clearTimeout(D[position].timeout);
+          var func = function(){ $.expandinggrid.expand(position, this,dimensions,2.04);};
+          D[position].timeout = setTimeout(func, 800);
         }, 
         function(){
+          clearTimeout(D[position].timeout);
           $.expandinggrid.contract(position, this,dimensions);
         }
       );
