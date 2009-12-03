@@ -15,7 +15,8 @@
                                  "columns": 3,
                                  "grid_items": 'item',
                                  "grid_space": 10,
-                                 "grind_zindex":3
+                                 "grind_zindex":3,
+                                 "expand_by":2
                                };
   
   
@@ -99,7 +100,7 @@
       jQuery(items).hover(
         function(){
           clearTimeout(D[position].timeout);
-          var obj = this, func = function(){ $.expandinggrid.expand(position, obj,dimensions,2.04);};
+          var obj = this, func = function(){ $.expandinggrid.expand(position, obj,dimensions,P[position].expand_by);};
           D[position].timeout = setTimeout(func, 200);
         }, 
         function(){
