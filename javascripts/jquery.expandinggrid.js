@@ -97,7 +97,7 @@
         function(){
           clearTimeout(D[position].timeout);
           var obj = this, func = function(){ $.expandinggrid.expand(position, obj,dimensions,2.04);};
-          D[position].timeout = setTimeout(func, 800);
+          D[position].timeout = setTimeout(func, 200);
         }, 
         function(){
           clearTimeout(D[position].timeout);
