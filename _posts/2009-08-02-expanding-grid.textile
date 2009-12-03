@@ -28,6 +28,6 @@ Piece of jQuery to create a grid system from some class items that then expand o
 <script src="/javascripts/jquery.expandinggrid.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
 jQuery(document).ready(function(){
-  jQuery('#jquery_example_container').expandinggrid({"grid_items":"jqitem", "expand_by":4});
+  jQuery('#jquery_example_container').expandinggrid({"grid_items":"jqitem", "expand_by":2.09});
 });
 </script>
