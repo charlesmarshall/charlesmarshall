@@ -91,7 +91,7 @@
       jQuery(item).addClass("eg_expanded").css({"top":ntop+"px", "z-index":10,"left":nleft+"px","width":new_width+"px", "height":new_height+"px"});
 
     },
-    contract:function(position, item, dimensions){
+    contract:function(position, item){
       var eleinfo =jQuery(item).data('eleinfo'),
           cssinfo = {"width":eleinfo.width+"px", "height":eleinfo.height+"px", "position":eleinfo.position, "left":eleinfo.left+"px", "top":eleinfo.top+"px", "z-index":eleinfo.zindex};
       jQuery(item).removeClass("eg_expanded").css(cssinfo);
@@ -107,9 +107,15 @@
         function(){
           clearTimeout(D[position].timeout);
           jQuery(this).removeClass('active');
-          $.expandinggrid.contract(position, this,dimensions);
+          $.expandinggrid.contract(position, this);
         }
       );
+    },
+    resize: function(position, items){
+      jQuery(window).resize(function(){
+        var new_dimensions = $.expandinggrid.closed_dimensions(position);        
+        $.expandinggrid.apply_dimensions(position, items, new_dimensions);        
+      });
     },
     setup: function(position){
       D[position].totals = {rows:0, columns:P[position].columns};
@@ -120,6 +126,7 @@
       //apply the dimensions to each item
       $.expandinggrid.apply_dimensions(position, D[position].items, D[position].closed_dimensions);
       $.expandinggrid.hovers(position, D[position].items, D[position].closed_dimensions);
+      $.expandinggrid.resize(position, D[position].items);
     }
   };
   
