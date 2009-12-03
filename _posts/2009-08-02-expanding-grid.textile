@@ -4,6 +4,9 @@ title: Expanding Grid
 category: jquery
 ---
 
+Piece of jQuery to create a grid system from some class items that then expand on hover and contract on hover off.
+ 
+
 <div id="jquery_example_container">
   
   <div class='jqitem clearfix'></div>
@@ -25,6 +28,6 @@ category: jquery
 <script src="/javascripts/jquery.expandinggrid.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
 jQuery(document).ready(function(){
-  jQuery('#list_container').expandinggrid({"grid_items":"jqitem"});
+  jQuery('#jquery_example_container').expandinggrid({"grid_items":"jqitem"});
 });
 </script>
