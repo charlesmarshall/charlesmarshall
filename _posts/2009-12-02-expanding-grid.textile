@@ -1,0 +1,30 @@
+---
+layout: post
+title: Expanding Grid
+category: jquery
+---
+
+<div id="jquery_example_container">
+  
+  <div class='item clearfix'></div>
+  <div class='item clearfix'></div>
+  <div class='item clearfix'></div>
+  
+  <div class='item clearfix'></div>
+  <div class='item clearfix'></div>
+  <div class='item clearfix'></div>
+  
+  <div class='item clearfix'></div>
+  <div class='item clearfix'></div>
+  <div class='item clearfix'></div>
+  
+  <div class='item clearfix'></div>
+  
+</div>
+
+<script src="/javascripts/jquery.expandinggrid.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function(){
+  jQuery('#list_container').expandinggrid()
+});
+</script>
