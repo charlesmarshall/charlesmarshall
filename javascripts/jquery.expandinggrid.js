@@ -96,7 +96,7 @@
       jQuery(items).hover(
         function(){
           clearTimeout(D[position].timeout);
-          var func = function(){ $.expandinggrid.expand(position, this,dimensions,2.04);};
+          var obj = this, func = function(){ $.expandinggrid.expand(position, obj,dimensions,2.04);};
           D[position].timeout = setTimeout(func, 800);
         }, 
         function(){
