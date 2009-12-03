@@ -32,7 +32,10 @@
       return {"width":dwidth, "height":dheight};
     },
     apply_dimensions:function(position, items, dimensions){
-      var loop=0;
+      var loop=0, 
+          container_left = jQuery(P[position].container).eq(0).offset().left,
+          container_top = jQuery(P[position].container).eq(0).offset().top;
+      
       items.each(function(){
         var margin = P[position].grid_space,
             div = jQuery(P[position].container).eq(0),
@@ -42,8 +45,8 @@
             dwidth = dimensions.width-P[position].grid_space,
             dheight = dimensions.height-P[position].grid_space;
         
-        var pleft = jQuery(this).eq(0).offset().left+(col*dimensions.width),
-            ptop = jQuery(this).eq(0).offset().top+(row*dimensions.height);
+        var pleft = container_left +(col*dimensions.width),
+            ptop = container_top +(row*dimensions.height);
             eleinfo = {"width":dwidth, 
                        "height":dheight, 
                        "position":"absolute", 
