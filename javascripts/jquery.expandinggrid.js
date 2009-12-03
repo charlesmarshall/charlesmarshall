@@ -68,7 +68,7 @@
     },
     expand:function(position, item, dimensions, modifier){
       if(jQuery(item).hasClass('eg_expanded')) return;
-      
+      jQuery(item).addClass('active');
       var info = jQuery(item).data('eleinfo');
           current_height = info.height,
           current_width = info.width,
@@ -106,6 +106,7 @@
         }, 
         function(){
           clearTimeout(D[position].timeout);
+          jQuery(this).removeClass('active');
           $.expandinggrid.contract(position, this,dimensions);
         }
       );
