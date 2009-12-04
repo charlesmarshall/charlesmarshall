@@ -57,7 +57,7 @@
                        "position":"absolute", 
                        "left":pleft,
                        "top":ptop,
-                       "zindex":P[position].grind_zindex,
+                       "zindex":(P[position].grind_zindex-5),
                        "row":row,
                        "col":col
                        },
@@ -91,8 +91,9 @@
       if(col==(D[position].totals.columns-1)) nleft = nleft - width_diff;
       else if(col > 0) nleft = nleft - (width_diff/2);
 
-      jQuery(item).addClass("eg_expanded").css({"top":ntop+"px", "z-index":10,"left":nleft+"px","width":new_width+"px", "height":new_height+"px"});
-      jQuery('.ui-widget-overlay').css({"height":jQuery(window).height(), "width":jQuery(window).width(), "z-index":(P[position].grind_zindex/2)}).show().fadeTo('fast', 0.5);
+      jQuery(item).addClass("eg_expanded").css({"top":ntop+"px", "z-index":10,"left":nleft+"px","width":new_width+"px", "height":new_height+"px", "z-index":(info.zindex*2)});
+      
+      jQuery('.ui-widget-overlay').css({"height":jQuery(window).height(), "width":jQuery(window).width(), "z-index":(P[position].grind_zindex)}).show().fadeTo('fast', 0.5);
     },
     contract:function(position, item){
       var eleinfo =jQuery(item).data('eleinfo'),
