@@ -15,7 +15,7 @@
                                  "columns": 3,
                                  "grid_items": 'item',
                                  "grid_space": 10,
-                                 "grind_zindex":3,
+                                 "grind_zindex":300,
                                  "expand_by":2,
                                  "timeout":350
                                };
@@ -92,12 +92,13 @@
       else if(col > 0) nleft = nleft - (width_diff/2);
 
       jQuery(item).addClass("eg_expanded").css({"top":ntop+"px", "z-index":10,"left":nleft+"px","width":new_width+"px", "height":new_height+"px"});
-
+      jQuery('.ui-widget-overlay').css({"height":jQuery(window).height(), "width":jQuery(window).width(), "z-index":(P[position].grind_zindex/2)}).show().fadeTo('fast', 0.5);
     },
     contract:function(position, item){
       var eleinfo =jQuery(item).data('eleinfo'),
           cssinfo = {"width":eleinfo.width+"px", "height":eleinfo.height+"px", "position":eleinfo.position, "left":eleinfo.left+"px", "top":eleinfo.top+"px", "z-index":eleinfo.zindex};
       jQuery(item).removeClass("eg_expanded").css(cssinfo);
+      jQuery('.ui-widget-overlay').hide();
     },
     hovers:function(position, items, dimensions){
       D[position].timeout = false;
@@ -118,6 +119,7 @@
       jQuery(window).resize(function(){
         var new_dimensions = $.expandinggrid.closed_dimensions(position);        
         $.expandinggrid.apply_dimensions(position, items, new_dimensions);        
+        jQuery('.ui-widget-overlay:visible').css({"height":jQuery(window).height(), "width":jQuery(window).width()});
       });
     },
     setup: function(position){
