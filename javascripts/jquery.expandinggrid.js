@@ -27,6 +27,9 @@
     fetchitems:function(position){
       return jQuery(P[position].container).children("."+P[position].grid_items);
     },
+    insert_overlay:function(){
+      if(!jQuery('.ui-widget-overlay').length) jQuery('body').prepend('<div class="ui-widget-overlay" style="display:none"></div>');
+    },
     closed_dimensions:function(position){
       var div = jQuery(P[position].container).eq(0),
           dwidth = div.outerWidth()/P[position].columns,
@@ -123,6 +126,7 @@
       D[position].items = $.expandinggrid.fetchitems(position);
       //figure out the dimensions
       D[position].closed_dimensions = $.expandinggrid.closed_dimensions(position);
+      $.expandinggrid.insert_overlay();
       //apply the dimensions to each item
       $.expandinggrid.apply_dimensions(position, D[position].items, D[position].closed_dimensions);
       $.expandinggrid.hovers(position, D[position].items, D[position].closed_dimensions);
