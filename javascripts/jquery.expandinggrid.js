@@ -17,7 +17,7 @@
                                  "grid_space": 10,
                                  "grind_zindex":3,
                                  "expand_by":2,
-                                 "timeout":200
+                                 "timeout":350
                                };
   
   
