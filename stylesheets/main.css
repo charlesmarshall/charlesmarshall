@@ -160,7 +160,7 @@ h3.rant a, span.rant{background:#8fd532;}
 pre{margin-bottom:15px;}
 
 
-
+/** JQUERY EXAMPLE CSS **/
 #jquery_example_container{
   width:60%;
   height:400px;
@@ -171,4 +171,11 @@ pre{margin-bottom:15px;}
   height:100px;
   width:100px;
   background:white;
+}
+.ui-widget-overlay {
+  height:100%;
+  left:0;
+  position:absolute;
+  top:0;
+  width:100%;
 }
