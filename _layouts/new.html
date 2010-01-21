@@ -28,7 +28,7 @@
       <h3><a href='#{{ catname | handleize }}_list' >{{ catname | upcase }}</a></h3>
       <ul>
         {% for post in site.posts %}
-          {% if post.category == catname %}<li>{{ post.title }}</li>{% endif %}
+          {% if post.category == catname %}<li><a href='{{ post.url }}' title='{{ post.title }}'>{{ post.title }}</a></li>{% endif %}
         {% endfor %}
       </ul>
       {% endfor %}
