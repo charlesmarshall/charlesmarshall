@@ -27,8 +27,8 @@
         {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
       <h3><a href='#{{ catname | handleize }}_list' >{{ catname | upcase }}</a></h3>
       <ul>
-        {% for post in site.categories.catname %}
-        <li>{{ post.title }}</li>
+        {% for post in site.categories.{{ catname }} %}
+        <li>{{ post }}</li>
         {% endfor %}
       </ul>
       {% endfor %}
