@@ -26,8 +26,7 @@
       <h2><a href='/' title='home'>Home</a></h2>
       {% endif %}
       {% for post in site.categories %} 
-        {% assign cat = post | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.' %}
-      <h3><a href='{{ cat | handleize }}' >{{ cat | upcase }}</a></h3>
+      <h3><a href='{{ post | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.' | handleize }}' >{{ post | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.' | upcase }}</a></h3>
       
       {% endfor %}
     </div>
