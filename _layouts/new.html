@@ -26,7 +26,7 @@
       <h2><a href='/' title='home'>Home</a></h2>
       {% endif %}
       {% for post in site.categories %}      
-      <h3>{{ post | strip_html | truncatewords:1 }}</h3>
+      <h3>{{ post | replace_first:'<p>',' ' | strip_html | truncatewords:1 }}</h3>
       {% endfor %}
     </div>
     
