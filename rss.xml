@@ -1,0 +1,19 @@
+---
+layout: rss
+title: RSS Feed
+---
+{% assign siteaddress = "http://charlesmarshall.co.uk" %}  				                      
+<title>charles marshall rss feed</title>
+<language>en-gb</language>
+<link>{{ siteaddress }}</link>
+<description>rss feed</description>
+{% for page in site.posts %}
+  <item>
+    <title><![CDATA[{{ page.title }}]]></title>
+    <link><![CDATA[{{ siteaddress }}{{ page.url }}]]></link>
+    <description><![CDATA[{{ page.content }}]]></description>
+    <pubDate>{{ page.date | date: "%Y-%m-%d" }}</pubDate>		
+  </item>
+<?endforeach?>
+</channel>
+</rss>
