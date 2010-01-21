@@ -24,8 +24,8 @@
     <div id="navigation">
       <h2><a href='/' title='home'>HOME</a></h2>
       {% for post in site.categories %} 
-      {% assign ttyp = post %}
-      <h3><a href='#{{ ttyp | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.' | handleize }}_list' >{{ post | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.' | upcase }}</a></h3>      
+        {% capture catname %}{{ post | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
+      <h3><a href='#{{ catname | handleize }}_list' >{{ catname | upcase }}</a></h3>      
       {% endfor %}
     </div>
     
