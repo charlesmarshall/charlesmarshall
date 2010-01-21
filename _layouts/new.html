@@ -26,7 +26,7 @@
       <h2><a href='/' title='home'>Home</a></h2>
       {% endif %}
       {% for cat in site.categories %}
-      <h3><a href='#{{ forloop.index }}_list'>{{ cat }}</a></h3>
+      <h3><a href='#{{ forloop.index }}_list'>{{ cat.name }}</a></h3>
       {% endfor %}
     </div>
     
