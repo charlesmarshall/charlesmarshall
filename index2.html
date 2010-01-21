@@ -1,0 +1,20 @@
+---
+layout: new
+title: Web Developer
+---
+
+
+<div id="welcome_message" class="row clearfix">
+  <h1>Welcome...</h1>
+  <p>Occasionally I talk about stuff and build some things (you know, websites, applications, jQuery plugins and the like) and this is where I try to write about them.</p>
+  <p>I work as a web developer for One Black Bear in Birmingham, UK</p>
+</div>
+
+{% for post in site.posts limit: 5 %}
+<div class="post row {{ post.category }} clearfix">
+  <h3 class='clearfix'><span class='category {{ post.category }}'>{{ post.category }}</span><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+  <h5 class='date'>{{ post.date | date_to_string }}</h5>
+  {{ post.content }}
+  <p class='read_more'><a href="{{ post.url }}" title="{{ post.title }}">View post &raquo;</a></p>
+</div>
+{% endfor %}

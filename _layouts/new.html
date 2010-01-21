@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <meta name="author" content="Charles Marshall" />
+   <meta name="keywords" content="charles marshall{{ page.keywords }}" />
+   <meta name="description" content="{{ page.description }}Charles Marshall" />
+   <meta name="google-site-verification" content="zT2eibYXZrHazVyvyX98snlIzV1QzmBjtBMy8PzR_6k" />
+   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="all" />   
+   
+   <title>{{ page.title }} - Charles Marshall</title>
+</head>
+<body>
+  
+  <div class='row clearfix' id="header">
+    
+  </div>
+  
+  <div class='row clearfix' id="content">    
+    <h1>{{ page.title }}</h1>
+    
+    <div id="navigation">
+      {% if page.home != true %}
+      <h2><a href='/' title='home'>Home</a></h2>
+      {% endif %}
+      {% for cat in site.categories %}
+      <h3><a href='#{{ forloop.index }}_list'>{{ forloop.index }}</a></h3>
+      {% endfor %}
+    </div>
+    
+    {% if page.introduction %}
+    <div class='featured'id="introduction">
+      {{ page.introduction }}
+    </div>
+    {% endif %}
+    
+    {{ content }}
+    
+    
+  </div>
+  
+  <div class='row clearfix' id="content">
+    
+  </div>
+  
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-927511-5");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+</body>
+</html>
