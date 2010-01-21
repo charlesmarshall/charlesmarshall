@@ -14,6 +14,4 @@ title: RSS Feed
     <description><![CDATA[{{ page.content }}]]></description>
     <pubDate>{{ page.date | date: "%Y-%m-%d" }}</pubDate>		
   </item>
-<?endforeach?>
-</channel>
-</rss>
+{% endfor %}
