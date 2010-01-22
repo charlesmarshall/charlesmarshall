@@ -39,6 +39,10 @@ body{text-align:center;}
   color:black;  
 }
 
+a{
+  text-decoration:none;
+}
+
 li{position:relative;}
 
 ul.inline li, ol.inline li{float:left;}
@@ -53,12 +57,13 @@ ul.inline li, ol.inline li{float:left;}
 /*navigation*/
 #header{
   padding:10px 10%;
-  background:#393027;
-  border-bottom:6px solid #9C7B77;
+  background:#392927;
+  border-bottom:6px solid #7CAAD0;
 }
 ul.navigation{float:right;}
   ul.navigation li.category{float:right;}
   ul.navigation a.category{
     display:block;
     padding:4px 6px;
+    background:#4c3f32;
   }
