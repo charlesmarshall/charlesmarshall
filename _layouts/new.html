@@ -19,12 +19,7 @@
         {% for cat in site.categories %}
           {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
           <li{% if page.category == catname %} id='active'{% endif %} class='category'>
-            <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category'>{{ catname | upcase }}</a>
-            <ul class='navigation subnavigation'>
-            {% for post in site.posts %}
-              {% if post.category == catname %}<li><a href='{{ post.url }}' title='{{ post.title }}'>{{ post.title }}</a></li>{% endif %}
-            {% endfor %}  
-            </ul>          
+            <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category'>{{ catname | upcase }}</a>           
           </li>
         {% endfor %}
         <li class='first category'><a href='/' title='Home' class='category home'>HOME</a></li>
