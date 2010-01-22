@@ -5,8 +5,8 @@
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <meta name="author" content="Charles Marshall" />
-   <meta name="keywords" content="charles marshall{{ page.keywords }}" />
-   <meta name="description" content="{{ page.description }}Charles Marshall" />
+   <meta name="keywords" content="{{ page.keywords }}" />
+   <meta name="description" content="{{ page.description }}" />
    <meta name="google-site-verification" content="zT2eibYXZrHazVyvyX98snlIzV1QzmBjtBMy8PzR_6k" />
    <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="all" />   
    
@@ -17,12 +17,12 @@
   <div class='full clearfix' id="header">
     <ul class='navigation clearfix inline'>
       <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy'>RSS</a></li>
-      {% cat_list = ['work', 'jquery', 'web', 'rant', 'general', 'motorsport'] %}
-      {% for cat in cat_list %}        
-        <li{% if page.category == catname || page.catname == catname %} id='active'{% endif %} class='category'>
-          <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category curvy'>{{ catname | downcase }}</a>           
-        </li>
-      {% endfor %}
+      <li{% if page.category == 'motorsport' || page.catname == 'motorsport' %} id='active'{% endif %} class='category'><a href='/motorsport.html' title='motorsport' class='category curvy'>motorsport</a></li>      
+      <li{% if page.category == 'general' || page.catname == 'general' %} id='active'{% endif %} class='category'><a href='/general.html' title='general' class='category curvy'>general</a></li>
+      <li{% if page.category == 'rant' || page.catname == 'rant' %} id='active'{% endif %} class='category'><a href='/rant.html' title='rant' class='category curvy'>rant</a></li>    
+      <li{% if page.category == 'web' || page.catname == 'web' %} id='active'{% endif %} class='category'><a href='/web.html' title='web' class='category curvy'>web</a></li>      
+      <li{% if page.category == 'jquery' || page.catname == 'jquery' %} id='active'{% endif %} class='category'><a href='/jquery.html' title='jquery' class='category curvy'>jquery</a></li>      
+      <li{% if page.category == 'work' || page.catname == 'work' %} id='active'{% endif %} class='category'><a href='/work.html' title='work' class='category curvy'>work</a></li>      
       <li class='first category'{% if page.home %} id="active"{% endif %}><a href='/' title='Home' class='category home curvy'>home</a></li>
     </ul>
     
