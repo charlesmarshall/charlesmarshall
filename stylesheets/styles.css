@@ -72,7 +72,8 @@ ul.navigation{float:right;}
     background:#4c3f32;
     color:white;
     letter-spacing:0.5px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
   }
-    ul.navigation a.category:hover{
-      background:#7CAAD0;
-    }
+    ul.navigation a.category:hover{background:#7CAAD0;}
+    ul.navigation li#active a.category{background:#2E3884;}
