@@ -62,6 +62,18 @@ a{text-decoration:none;}
 li{position:relative;}
 
 ul.inline li, ol.inline li{float:left;}
+#content li{
+  font-size:108%;
+  margin-bottom:8px;
+}
+  #content ul li{
+    list-style-type:disc;
+    margin-left:15px;
+  }
+  #content ol li{
+    list-style-type:decimal;
+    margin-left:25px;
+  }
 
 .full{
   width:80%;
