@@ -86,10 +86,10 @@ ul.navigation{float:right;}
     margin-left:10px;
   }
     ul.navigation li.rss a{
-      padding-right:20px;
-      background:#4c3f32 url('/images/rss-normal.gif') no-repeat center right;
+      padding-right:26px;
+      background:#4c3f32 url('/images/rss-normal.gif') no-repeat 38px center;
     }
-      ul.navigation li.rss a:hover{background:#7CAAD0 url('/images/rss-hover.gif') no-repeat center right;}
+      ul.navigation li.rss a:hover{background:#7CAAD0 url('/images/rss-hover.gif') no-repeat 38px center;}
   a.category{
     display:block;
     padding:6px;
