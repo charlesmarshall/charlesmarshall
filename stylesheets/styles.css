@@ -57,7 +57,7 @@ p{
 }
 
 a{text-decoration:none;}
-  p a{color:#4c3f32;}
+  #content a{color:#392927;}
 
 li{position:relative;}
 
@@ -127,7 +127,7 @@ ul.navigation{float:right;}
   }
   .post, .introduction{margin-bottom:12px;}
   
-div.post{border-bottom:1px solid #EBE8D8;}  
+div.post{border-bottom:1px solid #392927;}  
   div.web{}
   div.work{}
   div.jquery{}
