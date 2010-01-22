@@ -51,7 +51,7 @@ li{position:relative;}
 ul.inline li, ol.inline li{float:left;}
 
 
-.row{
+.full{
   width:80%;
   margin:0 auto;
 }
