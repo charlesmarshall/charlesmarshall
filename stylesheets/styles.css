@@ -156,3 +156,10 @@ div.post{border-bottom:1px solid #392927;}
     float:right;
     margin:0 0 8px 8px;
   }
+  h5.date{
+    width:80px;
+    padding:4px;
+    float:left;
+    background:#4C3F32;
+    color:white;
+  }
