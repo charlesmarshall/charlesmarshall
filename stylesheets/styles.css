@@ -67,7 +67,6 @@ ul.navigation{float:right;}
   ul.navigation li{
     float:right;
     margin-left:10px;
-    font-size:85%;
   }
   ul.navigation a.category{
     display:block;
