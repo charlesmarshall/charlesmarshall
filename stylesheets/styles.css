@@ -52,6 +52,7 @@ h1,h2,h3,h4{margin-bottom:12px;}
 p{
   font-size:108%;
   line-height:1.5em;
+  margin-bottom:10px;
 }
 
 a{text-decoration:none;}
