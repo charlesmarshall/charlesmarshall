@@ -60,8 +60,8 @@ ul.inline li, ol.inline li{float:left;}
   -webkit-border-radius: 6px;
 }
 .box_shadow{
-  -webkit-box-shadow:5px 5px 5px #666;
-  -moz-box-shadow:5px 5px 5px #666;
+  -webkit-box-shadow:1px 1px 6px #251E0D;
+  -moz-box-shadow:1px 1px 6px #251E0D;
 }
 
 
