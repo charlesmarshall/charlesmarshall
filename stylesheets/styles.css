@@ -38,3 +38,19 @@ body{text-align:center;}
   font-family:helvetica;
   color:black;  
 }
+
+li{position:relative;}
+
+ul.inline li, ol.inline li{float:left;}
+
+
+.row{
+  width:80%;
+  margin:0 auto;
+}
+
+
+/*navigation*/
+ul.navigation .subnavigation{
+  display:none;
+}
