@@ -62,7 +62,6 @@ li{position:relative;}
 
 ul.inline li, ol.inline li{float:left;}
 
-
 .full{
   width:80%;
   margin:0 auto;
@@ -121,3 +120,6 @@ ul.navigation{float:right;}
   -moz-box-shadow:0 8px 20px #392927;
   -webkit-box-shadow:0 8px 20px #392927;
 }
+  .introduction{
+    background:#4c3f32;
+  }
