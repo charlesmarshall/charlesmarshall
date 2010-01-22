@@ -126,3 +126,11 @@ ul.navigation{float:right;}
     padding:8px;
   }
   .post, .introduction{margin-bottom:12px;}
+  
+div.post{padding-left:8px;border-bottom:1px solid #EBE8D8;}  
+  div.web{}
+  div.work{}
+  div.jquery{}
+  div.general{}
+  div.rant{}
+  div.motorsport{}  
