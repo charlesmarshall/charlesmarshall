@@ -8,63 +8,45 @@
    <meta name="keywords" content="charles marshall{{ page.keywords }}" />
    <meta name="description" content="{{ page.description }}Charles Marshall" />
    <meta name="google-site-verification" content="zT2eibYXZrHazVyvyX98snlIzV1QzmBjtBMy8PzR_6k" />
-   <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" media="all" />
-   <!--[if lte IE 6]><link rel="stylesheet" href="/stylesheets/ie6.css" type="text/css" media="all" /><![endif]-->
-   <!--[if lte IE 7]><link rel="stylesheet" href="/stylesheets/ie7.css" type="text/css" media="all" /><![endif]-->
-   
-   <script src='http://www.google.com/jsapi'  type='text/javascript'></script>	
-   <script type='text/javascript'>                      
-   google.load('jquery', '1.3');
- 	 google.load('jqueryui', '1.7');
-   </script>
-   <script src="/javascripts/main.js" type="text/javascript" charset="utf-8"></script>
+   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="all" />   
    
    <title>{{ page.title }} - Charles Marshall</title>
 </head>
 <body>
-  <div><a href="/"><img src="/images/splash.jpg" alt="Feature image to break up the whiteness... modified version of http://www.pinkmoustache.net/free-vectors-colorful-backgrounds/" id="splash"/></a></div>
-  <div id="category_list">
-    <h3 class='work'><a href="#work_list">Work</a></h3>
-    <ul class='work nav' id="work_list">
-    {% for post in site.categories.work %}
-    <li class='work post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
-    {% endfor %}
+  
+  <div class='full clearfix' id="header">
+    <ul class='navigation clearfix inline'>
+      <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy'>RSS</a></li>
+      {% for cat in site.categories %}
+        {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
+        <li{% if page.category == catname %} id='active'{% endif %} class='category'>
+          <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category curvy'>{{ catname | downcase }}</a>           
+        </li>
+      {% endfor %}
+      <li class='first category'{% if page.home %} id="active"{% endif %}><a href='/' title='Home' class='category home curvy'>home</a></li>
     </ul>
-    <h3 class='jquery'><a href="#jquery_list">jQuery</a></h3>
-    <ul class='jquery nav' id="jquery_list">
-    {% for post in site.categories.jquery %}
-    <li class='jquery post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <h3 class='web'><a href="#web_list">Web</a></h3>
-    <ul class='web nav' id="web_list">
-    {% for post in site.categories.web %}
-    <li class='web post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <h3 class='motorsport'><a href="#motorsport_list">Motorsport</a></h3>
-    <ul class='motorsport nav' id="motorsport_list">
-    {% for post in site.categories.motorsport %}
-    <li class='motorsport post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <h3 class='rant'><a href="#rant_list">Rants</a></h3>
-    <ul class='rant nav' id="rant_list">
-    {% for post in site.categories.rant %}
-    <li class='rant post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <h3 class='general'><a href="#general_list">General</a></h3>
-    <ul class='general nav' id="general_list">
-    {% for post in site.categories.general %}
-    <li class='general post'><a href="{{ post.url }}" title="{{ post.title }} - {{ post.date | date_to_string }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
+    
+    <samp><a href='/' title='charles marshall' class='curvy category box_shadow'>charles marshall</a></samp>
   </div>
-  <div id="webpage">
-    <h1 id="logo"><a href="/" title="home">Charles Marshall</a></h1>
+  
+  
+  <div class='full clearfix' id="content">
+    <h1>{{ page.title }}</h1>
+    {% if page.introduction %}
+    <div class='introduction curvy clearfix'>{{ page.introduction }}</div>
+    {% endif %}
     {{ content }}
   </div>
+    
+
+    
+
+  <script src='http://www.google.com/jsapi'  type='text/javascript'></script>	
+  <script type='text/javascript'>                      
+  google.load('jquery', '1.3');
+  google.load('jqueryui', '1.7');
+  </script>
+  <script src="/javascripts/main.js" type="text/javascript" charset="utf-8"></script>
   
   <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
