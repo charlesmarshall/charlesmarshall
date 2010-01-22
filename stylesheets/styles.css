@@ -139,7 +139,7 @@ ul.navigation{float:right;}
   -webkit-box-shadow:0 8px 20px #392927;
 }
   .introduction{
-    background:#EBE8D8;
+    background:#9C9177;
     padding:8px;
   }
   .post, .introduction{margin-bottom:12px;}
@@ -156,10 +156,15 @@ div.post{border-bottom:1px solid #392927;}
     float:right;
     margin:0 0 8px 8px;
   }
-  h5.date{
-    width:80px;
+  .summary h5.date{
+    width:43px;
     padding:4px;
     float:left;
-    background:#4C3F32;
+    background:#9C9177;
     color:white;
+    text-align:center;
+    margin-right:8px;
+  }
+  .summary h6{
+    
   }
