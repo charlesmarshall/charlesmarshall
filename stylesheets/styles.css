@@ -61,12 +61,17 @@ ul.inline li, ol.inline li{float:left;}
   border-bottom:6px solid #7CAAD0;
 }
 ul.navigation{float:right;}
-  ul.navigation li{float:right;margin-left:10px;}
+  ul.navigation li{
+    float:right;
+    margin-left:10px;
+    font-size:85%;
+  }
   ul.navigation a.category{
     display:block;
     padding:6px;
     background:#4c3f32;
     color:white;
+    letter-spacing:0.5px;
   }
     ul.navigation a.category:hover{
       background:#7CAAD0;

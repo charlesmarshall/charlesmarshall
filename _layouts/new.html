@@ -22,7 +22,7 @@
             <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category'>{{ catname | upcase }}</a>           
           </li>
         {% endfor %}
-        <li class='first category'><a href='/' title='Home' class='category home'>HOME</a></li>
+        <li class='first category'{% if page.home %} id="active"{% endif %}><a href='/' title='Home' class='category home'>HOME</a></li>
       </ul>
     </div>
   
