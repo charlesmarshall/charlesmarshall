@@ -7,7 +7,10 @@ introduction: "<p>Occasionally I talk about stuff and build some things (you kno
 {% for post in site.posts limit: 5 %}
 <div class="post row {{ post.category }} clearfix">
   <h3 class='clearfix'><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-  <h5 class='date'>{{ post.date | date_to_string }}</h5>
+  <div class='clearfix'>
+    <h5 class='date'>{{ post.date | date_to_string }}</h5>
+    <h6>{{ post.category | downcase }}</h6>
+  </div>
   {{ post.content }}
   <p class='read_more'><a href="{{ post.url }}" title="{{ post.title }}">View post &raquo;</a></p>
 </div>
