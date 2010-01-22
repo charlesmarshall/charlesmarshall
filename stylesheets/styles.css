@@ -55,6 +55,10 @@ ul.inline li, ol.inline li{float:left;}
   width:80%;
   margin:0 auto;
 }
+.curvy{
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
 
 
 /*navigation*/
@@ -66,22 +70,19 @@ ul.inline li, ol.inline li{float:left;}
   #header samp{
     font-weight:bold;
     display:block;
-    padding:6px;
-    background:#4c3f32;
+    float:left;
   }
 ul.navigation{float:right;}
   ul.navigation li{
     float:right;
     margin-left:10px;
   }
-  ul.navigation a.category{
+  a.category{
     display:block;
     padding:6px;
     background:#4c3f32;
     color:white;
-    letter-spacing:0.5px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
+    letter-spacing:0.5px;    
   }
     ul.navigation a.category:hover{background:#7CAAD0;}
     ul.navigation li#active a.category{background:#2E3884;}
