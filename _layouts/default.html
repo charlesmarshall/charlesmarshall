@@ -17,7 +17,7 @@
   <div class='full clearfix' id="header">
     <ul class='navigation clearfix inline'>
       <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy'>RSS</a></li>
-      {% assign cat_list = ['work', 'jquery', 'web', 'rant', 'general', 'motorsport'] %}
+      {% cat_list = ['work', 'jquery', 'web', 'rant', 'general', 'motorsport'] %}
       {% for cat in cat_list %}        
         <li{% if page.category == catname || page.catname == catname %} id='active'{% endif %} class='category'>
           <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category curvy'>{{ catname | downcase }}</a>           
