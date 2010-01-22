@@ -47,15 +47,15 @@ ul.inline li, ol.inline li{float:left;}
 .row{
   width:80%;
   margin:0 auto;
+  padding:0 10%;
 }
 
 
 /*navigation*/
 #header{
-  width:100%;
   padding:10px 10%;
   background:#393027;
-  border-bottom:6px solid #9C8977;
+  border-bottom:6px solid #9C7B77;
 }
 ul.navigation{float:right;}
   ul.navigation li.category{float:right;}
