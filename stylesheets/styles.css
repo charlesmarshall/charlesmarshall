@@ -70,12 +70,11 @@ ul.inline li, ol.inline li{float:left;}
   #header samp{
     display:block;
     float:left;
-    font-size:116%;
-    font-family:GraublauWeb;
+    font-size:116%;    
   }
     #header samp a{
-      background:none;
-      padding:0;
+      background:white;
+      color:#4c3f32;
     }
 ul.navigation{float:right;}
   ul.navigation li{
