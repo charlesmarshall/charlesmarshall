@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Tiny JS Featured in Smashing Magazine!
 category: web
 ---

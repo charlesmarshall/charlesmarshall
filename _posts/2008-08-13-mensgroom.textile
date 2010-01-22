@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Mensgroom
 category: work
 ---

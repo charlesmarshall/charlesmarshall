@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Geek in the Park 2008!
 category: web
 ---

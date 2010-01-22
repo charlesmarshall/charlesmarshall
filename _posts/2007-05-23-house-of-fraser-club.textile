@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: House of Fraser Club
 category: work
 ---

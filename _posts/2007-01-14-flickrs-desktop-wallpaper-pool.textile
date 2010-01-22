@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Flickr's Desktop Wallpaper Pool
 category: general
 ---

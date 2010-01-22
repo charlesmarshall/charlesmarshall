@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Walsall Children's Services Directory
 category: work
 ---

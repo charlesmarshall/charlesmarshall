@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: IE 6 Bug - Repeating Characters
 category: web
 ---

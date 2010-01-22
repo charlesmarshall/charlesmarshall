@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Powell Insurance Brokers
 category: work
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: XKCD - 1337
 category: web
 ---

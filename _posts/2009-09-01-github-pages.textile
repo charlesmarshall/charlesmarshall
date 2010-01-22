@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Git Hub Pages...
 category: web
 ---

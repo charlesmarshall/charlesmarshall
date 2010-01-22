@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Laminate Your Website! Any Website! 
 category: work
 ---

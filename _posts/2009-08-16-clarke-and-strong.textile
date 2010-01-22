@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Clarke and Strong
 category: work
 ---

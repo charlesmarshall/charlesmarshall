@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Public Transport - The Future?
 category: rant
 ---

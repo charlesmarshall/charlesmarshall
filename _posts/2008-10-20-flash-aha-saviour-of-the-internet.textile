@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Flash - aha - Saviour of the Internet?
 category: web
 ---

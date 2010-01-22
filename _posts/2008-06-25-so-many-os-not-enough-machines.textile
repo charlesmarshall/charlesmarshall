@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: So many OS', not enough machines..
 category: web
 ---

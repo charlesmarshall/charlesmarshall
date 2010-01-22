@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: MS vi?
 category: web
 ---

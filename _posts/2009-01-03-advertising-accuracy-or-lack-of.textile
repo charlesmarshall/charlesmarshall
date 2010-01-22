@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: Advertising Accuracy.. or Lack of..
 category: rant
 ---

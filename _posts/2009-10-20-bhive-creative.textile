@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: B-Hive - Creative &amp; Marketing Placements
 category: work
 ---

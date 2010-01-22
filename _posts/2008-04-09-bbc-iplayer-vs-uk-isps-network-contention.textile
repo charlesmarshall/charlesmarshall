@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defauly
 title: BBC iPlayer vs UK ISPs - Network Contention
 category: rant
 ---
