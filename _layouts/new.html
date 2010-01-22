@@ -14,21 +14,28 @@
 </head>
 <body>
   
-    <div class='row clearfix' id="header">
-      <ul class='navigation clearfix inline'>
-        <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy'>RSS</a></li>
-        {% for cat in site.categories %}
-          {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
-          <li{% if page.category == catname %} id='active'{% endif %} class='category'>
-            <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category curvy'>{{ catname | downcase }}</a>           
-          </li>
-        {% endfor %}
-        <li class='first category'{% if page.home %} id="active"{% endif %}><a href='/' title='Home' class='category home curvy'>home</a></li>
-      </ul>
-      
-      <samp><a href='/' title='charles marshall' class='curvy category box_shadow'>charles marshall</a></samp>
-    </div>
+  <div class='row clearfix' id="header">
+    <ul class='navigation clearfix inline'>
+      <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy'>RSS</a></li>
+      {% for cat in site.categories %}
+        {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
+        <li{% if page.category == catname %} id='active'{% endif %} class='category'>
+          <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category curvy'>{{ catname | downcase }}</a>           
+        </li>
+      {% endfor %}
+      <li class='first category'{% if page.home %} id="active"{% endif %}><a href='/' title='Home' class='category home curvy'>home</a></li>
+    </ul>
+    
+    <samp><a href='/' title='charles marshall' class='curvy category box_shadow'>charles marshall</a></samp>
+  </div>
   
+  
+  <div class='row clearfix' id="content">
+    <h1>{{ page.title }}</h1>
+    {% if page.introduction %}
+    <div class='introduction'>{{ page.introduction | textilize }}</div>
+    {% endif %}
+  </div>
     
 
     
