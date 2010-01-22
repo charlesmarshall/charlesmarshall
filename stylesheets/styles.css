@@ -85,6 +85,11 @@ ul.navigation{float:right;}
     float:right;
     margin-left:10px;
   }
+    ul.navigation li.rss a{
+      padding-right:20px;
+      background:url('/images/rss-normal.gif') no-repeat center right;
+    }
+      ul.navigation li.rss a:hover{background-image:url('/images/rss-hover.gif');}
   a.category{
     display:block;
     padding:6px;
@@ -94,3 +99,4 @@ ul.navigation{float:right;}
   }
     ul.navigation a.category:hover{background:#7CAAD0;}
     ul.navigation li#active a.category{background:#2E3884;}
+  
