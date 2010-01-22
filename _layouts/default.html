@@ -17,8 +17,8 @@
   <div class='full clearfix' id="header">
     <ul class='navigation clearfix inline'>
       <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy'>RSS</a></li>
-      {% for cat in site.categories %}
-        {% capture catname %}{{ cat | replace_first:'<',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
+      {% assign cats = ['work', 'jquery', 'web', 'rant', 'general', 'motorsport']%}
+      {% for cat in cats %}        
         <li{% if page.category == catname || page.catname == catname %} id='active'{% endif %} class='category'>
           <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category curvy'>{{ catname | downcase }}</a>           
         </li>
