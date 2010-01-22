@@ -14,40 +14,27 @@
 </head>
 <body>
   
-  <div class='row clearfix' id="header">
-    
-  </div>
-  
-  <div class='row clearfix' id="content">    
-    <h1>{{ page.title }}</h1>
-    
-    <div id="navigation">
-      <h2><a href='/' title='home'>HOME</a></h2>
-      {% for cat in site.categories %} 
-        {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
-      <h3><a href='#{{ catname | handleize }}_list' >{{ catname | upcase }}</a></h3>
-      <ul>
-        {% for post in site.posts %}
-          {% if post.category == catname %}<li><a href='{{ post.url }}' title='{{ post.title }}'>{{ post.title }}</a></li>{% endif %}
+    <div class='row clearfix' id="header">
+      <ul class='navigation clearfix inline'>
+        {% for cat in site.categories %}
+          {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
+          <li{% if page.category == catname %} id='active'{% endif %}>
+            <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}'>{{ catname | upcase }}</a>
+            <ul class='navigation subnavigation'>
+            {% for post in site.posts %}
+              {% if post.category == catname %}<li><a href='{{ post.url }}' title='{{ post.title }}'>{{ post.title }}</a></li>{% endif %}
+            {% endfor %}  
+            </ul>          
+          </li>
         {% endfor %}
+        <li class='first'><a href='/' title='Home'>HOME</a></li>
       </ul>
-      {% endfor %}
     </div>
-    
-    {% if page.introduction %}
-    <div class='featured'id="introduction">
-      {{ page.introduction }}
-    </div>
-    {% endif %}
-    
-    {{ content }}
-    
-    
-  </div>
   
-  <div class='row clearfix' id="content">
     
-  </div>
+
+    
+
   
   <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
