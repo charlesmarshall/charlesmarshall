@@ -19,7 +19,7 @@
       <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy'>RSS</a></li>
       {% for cat in site.categories %}
         {% capture catname %}{{ cat | replace_first:'<p>',' ' | strip_html | truncatewords:1 | remove:'.'}}{% endcapture %}
-        <li{% if page.category == catname %} id='active'{% endif %} class='category'>
+        <li{% if page.category == catname || page.catname == catname %} id='active'{% endif %} class='category'>
           <a href='/{{ catname | handleize }}.html' title='{{ catname | upcase }}' class='category curvy'>{{ catname | downcase }}</a>           
         </li>
       {% endfor %}
