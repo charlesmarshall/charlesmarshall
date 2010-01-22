@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: The Way of The Wii
 category: general
 ---

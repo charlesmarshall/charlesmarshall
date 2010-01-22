@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Geek in the Park 2008!
 category: web
 ---

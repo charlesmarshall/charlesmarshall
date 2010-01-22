@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: F1 - Monte Carlo 2007
 category: motorsport
 ---

@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Linus Torvalds officially a Hero
 category: general
 ---

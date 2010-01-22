@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Squeaky Clean (Supreme Hygiene)
 category: work
 ---

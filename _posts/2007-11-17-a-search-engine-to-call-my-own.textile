@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: A Search Engine to Call my Own
 category: web
 ---

@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Anthony Collins Extranet
 category: work
 ---

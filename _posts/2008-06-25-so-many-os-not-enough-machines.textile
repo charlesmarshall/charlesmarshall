@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: So many OS', not enough machines..
 category: web
 ---

@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: XKCD - 1337
 category: web
 ---

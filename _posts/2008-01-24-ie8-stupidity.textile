@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: IE8 Stupidity
 category: web
 ---

@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: iPhone UK Launch
 category: general
 ---

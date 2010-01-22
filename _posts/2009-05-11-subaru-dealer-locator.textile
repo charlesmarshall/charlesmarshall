@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Dealer Locator
 category: work
 ---

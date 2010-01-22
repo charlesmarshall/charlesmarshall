@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Flash - aha - Saviour of the Internet?
 category: web
 ---

@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Telford Shopping Centre (No Longer with WAA) 
 category: work
 ---

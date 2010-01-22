@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: F1 - Canada 2007 (Hamilton's First Win!)
 category: motorsport
 ---

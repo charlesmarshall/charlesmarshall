@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Dont Look Down!
 category: general
 ---

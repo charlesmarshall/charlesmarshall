@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: Fleetmilne - Residential Property Experts
 category: work
 ---

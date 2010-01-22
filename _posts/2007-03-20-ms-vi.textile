@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: MS vi?
 category: web
 ---

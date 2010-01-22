@@ -1,5 +1,5 @@
 ---
-layout: defauly
+layout: default
 title: WAA - Where Web Agencies go to Die..
 category: rant
 ---
