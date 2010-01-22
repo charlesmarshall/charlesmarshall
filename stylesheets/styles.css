@@ -87,9 +87,9 @@ ul.navigation{float:right;}
   }
     ul.navigation li.rss a{
       padding-right:20px;
-      background:url('/images/rss-normal.gif') no-repeat center right;
+      background:#4c3f32 url('/images/rss-normal.gif') no-repeat center right;
     }
-      ul.navigation li.rss a:hover{background:url('/images/rss-hover.gif') no-repeat center right;}
+      ul.navigation li.rss a:hover{background:#7CAAD0 url('/images/rss-hover.gif') no-repeat center right;}
   a.category{
     display:block;
     padding:6px;
