@@ -51,6 +51,10 @@ ul.inline li, ol.inline li{float:left;}
 
 
 /*navigation*/
-ul.navigation .subnavigation{
-  display:none;
-}
+ul.navigation{float:right;}
+  ul.navigation li.category{float:right;}
+  ul.navigation a.category{
+    display:block;
+    padding:4px 6px;
+  }
+  ul.navigation .subnavigation{display:none;}
