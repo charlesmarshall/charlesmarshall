@@ -156,15 +156,13 @@ div.post{border-bottom:1px solid #392927;}
     float:right;
     margin:0 0 8px 8px;
   }
-  .summary h5.date{
-    width:43px;
+  .summary h5.date, .summary h6{
     padding:4px;
     float:left;
     background:#9C9177;
     color:white;
     text-align:center;
     margin-right:8px;
-  }
-  .summary h6{
-    
+    font-size:85%;
+    line-height:1em;
   }
