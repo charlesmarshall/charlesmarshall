@@ -46,7 +46,7 @@ h1{font-size:167%;}
 h2{font-size:131%;}
 h3,h4{font-size:123.1%;}
 h1,h2{color:#7CAAD0;}
-h3,h4{color:#392927;}
+h3,h4{color:#7CAAD0;}
 strong,b,h3{font-weight:bold;}
 h1,h2,h5{margin-bottom:12px;}
 h3,h4{margin-bottom:4px;}
@@ -58,8 +58,8 @@ p{
 }
 
 a{text-decoration:none;}
-  #content a{color:#392927;}
-
+  #content a{color:#9C7B77;}
+  #content h3 a, #content h2 a{color:#7CAAD0;}
 li{position:relative;}
 
 ul.inline li, ol.inline li{float:left;}
