@@ -66,4 +66,8 @@ ul.navigation{float:right;}
     display:block;
     padding:6px;
     background:#4c3f32;
+    color:white;
   }
+    ul.navigation a.category:hover{
+      background:#7CAAD0;
+    }
