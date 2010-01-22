@@ -63,6 +63,12 @@ ul.inline li, ol.inline li{float:left;}
   background:#392927;
   border-bottom:6px solid #7CAAD0;
 }
+  #header samp{
+    font-weight:bold;
+    display:block;
+    padding:6px;
+    background:#4c3f32;
+  }
 ul.navigation{float:right;}
   ul.navigation li{
     float:right;
