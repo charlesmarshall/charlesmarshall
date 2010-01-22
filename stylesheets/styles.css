@@ -33,6 +33,9 @@ body{text-align:center;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 
 /** **/
+html{
+  background:#EBE8D8;
+}
 *{
   text-align:left;
   font-family:helvetica;
