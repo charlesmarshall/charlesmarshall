@@ -89,7 +89,7 @@ ul.navigation{float:right;}
       padding-right:20px;
       background:url('/images/rss-normal.gif') no-repeat center right;
     }
-      ul.navigation li.rss a:hover{background-image:url('/images/rss-hover.gif');}
+      ul.navigation li.rss a:hover{background:url('/images/rss-hover.gif') no-repeat center right;}
   a.category{
     display:block;
     padding:6px;
