@@ -17,7 +17,7 @@ keywords:
 - Marshall
 - Birmingham
 - WAA
-description:"Another Willis Commercial Network broker"
+description: "Another Willis Commercial Network broker"
 ---
 
 Another Willis Commercial Network broker. A straight forward "CMS site":http://clarkedove.co.uk with a contact us page (including a google map).
