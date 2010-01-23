@@ -2,6 +2,17 @@
 layout: default
 title: So many OS', not enough machines..
 category: web
+keywords:
+- work
+- web development
+- virtualisation
+- VMWare
+- VirtualBox
+- emulation
+- charles marshall
+- Open Source
+- free
+description: "If like me you have to test your work for the mass market (that means windows) and cater for the majority (yes, that means IE6 and 7) but you are of more discerning tastes and don't enjoy viruses, malware and endless updates (in other words, you don't use windows) then you probably use a Mac (yes I do!). So how do you get around the problem? Simple answer, virtualisation."
 ---
 If like me you have to test your work for the mass market (that means windows) and cater for the majority (yes, that means IE6 and 7) but you are of more discerning tastes and don't enjoy viruses, malware and endless updates (in other words, you don't use windows) then you probably use a Mac (yes I do!). So how do you get around the problem? Simple answer, virtualisation.
 
