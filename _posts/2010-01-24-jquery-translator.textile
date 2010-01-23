@@ -38,7 +38,7 @@ Came across googles ever handy Ajax translator API and I thought I'd write a qui
 <script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
 <script type='text/javascript'>
 jQuery(document).ready(function(){
-  jQuery('#translation_form').translate({
+  jQuery('#translation_form').translator({
     "origin": '#translate',
     "origin_language": '',
     "result": '#result',
