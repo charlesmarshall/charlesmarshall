@@ -2,6 +2,22 @@
 layout: default
 title: Bulldog Broadband
 category: rant
+keywords:
+- rant
+- bulldog broadband
+- bulldog
+- internet
+- connection
+- address
+- database
+- property
+- charles marshall
+- charles
+- marshall
+- web developer
+- birmingham UK
+- birmingham
+description:"Having endured many months of problems getting things connected and accounts activated (take a look at my earlier rant about utilities) I had become accustomed to pathetic customer services. However, Bulldog beat them all"
 ---
 Having endured many months of problems getting things connected and accounts activated (take a look at my earlier rant about utilities) I had become accustomed to pathetic customer services. However, Bulldog beat them all
 

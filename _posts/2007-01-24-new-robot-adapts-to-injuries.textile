@@ -2,6 +2,12 @@
 layout: default
 title: New Robot Adapts to Injuries
 category: general
+keywords:
+- general
+- robot
+- adaptive robot
+- injuries
+description:"A newly designed robot can sense and recover from unexpected damages, an ability that is sure to prove handy in dangerous terrain, researchers announced today."
 ---
 A newly designed robot can sense and recover from unexpected damages, an ability that is sure to prove handy in dangerous terrain, researchers announced today.
 

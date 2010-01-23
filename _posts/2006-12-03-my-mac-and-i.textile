@@ -2,6 +2,22 @@
 layout: default
 title: My Mac and I
 category: general
+keywords:
+- general
+- Apple
+- Macintosh
+- Mac Mini
+- Unix
+- Linux
+- OS X
+- FreeBSD
+- charles marshall
+- charles
+- marshall
+- web developer
+- birmingham UK
+- birmingham
+description:
 ---
 Until recently I'd barely even looked at a Mac. I used to be under the common miss-conception that they were only any good for design and looking pretty.
 
