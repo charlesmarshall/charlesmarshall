@@ -4,7 +4,7 @@ title: Powered by Useless Utilities
 category: rant
 keywords:
 - rant
-- e-on
+- "e-on"
 - water
 - gas
 - connection
@@ -17,7 +17,7 @@ keywords:
 - web developer
 - birmingham UK
 - birmingham
-description: "You'd think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away."
+description:"You'd think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away."
 ---
 You'd think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away.
 
