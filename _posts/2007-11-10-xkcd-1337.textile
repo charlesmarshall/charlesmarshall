@@ -2,5 +2,14 @@
 layout: default
 title: XKCD - 1337
 category: web
+keywords:
+- web
+- humour
+- nerd comedy
+- xkcd 1337
+- dilbert
+- web comic
+- comic
+description: "Awesome multipart comic strip!"
 ---
 One of my regular online reads along with the long standing "Dilbert":http://www.dilbert.com is a web comic called "xkcd":http://xkcd.com. It's very geeky, but lots of fun. Recently they have just produced some of the funniest issues ever in the shape of a 5 part monster about the way of the hacker.p. Anyway, the links are:"Part 1":http://xkcd.com/341/"Part 2":http://xkcd.com/342/"Part 3":http://xkcd.com/343/"Part 4":http://xkcd.com/344/"Part 5":http://xkcd.com/345/
