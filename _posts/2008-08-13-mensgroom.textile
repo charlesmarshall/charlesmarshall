@@ -2,6 +2,14 @@
 layout: default
 title: Mensgroom
 category: work
+keywords:
+- website
+- work
+- male grooming
+- mensgroom
+- ecommerce
+- shop
+description: "We've just let loose a top notch http://mensgroom.co.uk for all your male grooming needs! Not only does it stock hundreds of products but it offers a great advice section & video guides."
 ---
 
 !/images/work/mensgroom.gif!:http://mensgroom.co.uk
@@ -12,7 +20,7 @@ We've just let loose a top notch "ecommerce site":http://mensgroom.co.uk for all
 
 We decided to try out something new with Mensgroom's payment system. In our experience most checkout process tend to become clunky and arkward when it comes to address details; adding several new steps and more pages for you to wade though, not very friendly at all!
 
-EIDT (August 25 2009): The number of people actually going to view a product has dropped significantly while bounces on the welcome/splash page has risen to a new high... No shock there then.
+EDIT (August 25 2009): The number of people actually going to view a product has dropped significantly while bounces on the welcome/splash page has risen to a new high... No shock there then.
 
 EDIT (June 30 2009): So far the people getting though to the real home page from the splash page is less than 50%, not good...
 
