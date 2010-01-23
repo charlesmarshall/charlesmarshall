@@ -15,4 +15,4 @@ Anyway, where was I... The comments module is a custom module inserted into the 
 
 That is one of the great features of php-wax, the fact you can run one simple command and do lots of great things. This ranges from installing plugins to deploying the website onto a live server. Anyway, thats enough talk about the technology of the site and time to move onto its purpose
 
-As with every web developer I'm only as good as my last site, so I'll be adding a portfolio section to showcase what I've been working on along with the usual sport and hobbies.						
+As with every web developer I'm only as good as my last site, so I'll be adding a portfolio section to showcase what I've been working on along with the usual sport and hobbies.

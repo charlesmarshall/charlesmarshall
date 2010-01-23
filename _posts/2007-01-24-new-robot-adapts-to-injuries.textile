@@ -11,4 +11,4 @@ description: "A newly designed robot can sense and recover from unexpected damag
 ---
 A newly designed robot can sense and recover from unexpected damages, an ability that is sure to prove handy in dangerous terrain, researchers announced today.
 
-Take a look at the full story "here":http://www.livescience.com/technology/061116_resillient_robot.html.						
+Take a look at the full story "here":http://www.livescience.com/technology/061116_resillient_robot.html.

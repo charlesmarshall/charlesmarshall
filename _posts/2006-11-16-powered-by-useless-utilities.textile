@@ -17,7 +17,7 @@ keywords:
 - web developer
 - birmingham UK
 - birmingham
-description:"You'd think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away."
+description: "You'd think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away."
 ---
 You'd think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away.
 
@@ -35,4 +35,4 @@ It seems that these large, national companies simply weren't updating their info
 
 With an ever increasing demanding for new housing this seems a worrying trend. Does this mean that every new house or block of flats won't appear on the books of basic utility provides for over a year?
 
-Maybe it was just my flat; maybe I moved in in-between them updating their databases; maybe I'm just unlucky. If not, they really need re-evaluate their business practices and update! Well, that is my rant over for this week!						
+Maybe it was just my flat; maybe I moved in in-between them updating their databases; maybe I'm just unlucky. If not, they really need re-evaluate their business practices and update! Well, that is my rant over for this week!
