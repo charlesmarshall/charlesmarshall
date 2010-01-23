@@ -11,6 +11,9 @@ keywords:
 - Schumacher
 - Massa
 - Kimi Raikkonen
+- test
+- test
+- test 3
 description: "Felipe Massa finally kick-started his 2007 title challenge with victory in the Bahrain Grand Prix, while Lewis Hamilton continued the dream start to his Formula 1 career with another accomplished runner-up finish."
 ---
 Felipe Massa finally kick-started his 2007 title challenge with victory in the Bahrain Grand Prix, while Lewis Hamilton continued the dream start to his Formula 1 career with another accomplished runner-up finish.
