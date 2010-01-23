@@ -152,7 +152,7 @@ div.post{border-bottom:1px solid #392927;}
   div.rant{}
   div.motorsport{}  
 
-  .post img{
+  .post img, p img{
     float:right;
     margin:0 0 8px 8px;
   }
