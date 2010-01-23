@@ -16,11 +16,6 @@ keywords:
 - css
 - Birmingham
 - WAA
-- test
-- test
-- test
-- test
-- test 5
 description: "The new membership site for House of Fraser was mostly made by my colleague John Walker, I helped with the original layout and css."
 ---
 

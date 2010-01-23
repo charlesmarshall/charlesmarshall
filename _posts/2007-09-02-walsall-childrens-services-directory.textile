@@ -16,14 +16,6 @@ keywords:
 - Marshall
 - Birmingham
 - WAA
-- test
-- test
-- test
-- test
-- test
-- test
-- test
-- test 8
 description: "A very unique website custom built for Walsall Council. From a content point of view it has over 900 services online at the moment and more coming and users being able to submit new services to the administration team for approval."
 ---
 

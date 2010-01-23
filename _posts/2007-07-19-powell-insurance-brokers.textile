@@ -15,12 +15,6 @@ keywords:
 - Marshall
 - Birmingham
 - WAA
-- test
-- test
-- test
-- test
-- test
-- test 6
 description: "Another broker from the Willis Commercial Network. Fairly standard Wildfire CMS site with a few extras. In this case the quotes shown on the right hand side of the website are randomised and they now have a special events module within the CMS."
 ---
 
