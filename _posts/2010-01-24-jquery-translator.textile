@@ -4,6 +4,8 @@ title: jQuery Translator
 category: jquery
 ---
 
+WORK IN PROGRESS
+
 Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it.
 
 <form action='' method='get' id='translation_form'>

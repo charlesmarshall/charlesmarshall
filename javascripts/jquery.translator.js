@@ -25,18 +25,30 @@
     
     setup:function(usecount){
       jQuery(P[usecount].origin).each(function(){
-        
+                
         jQuery(this).keyup(function(e){
-          if(e.keyCode == 13 || e.keyCode == 32) jQuery.translator.translate(usecount, this);
+          if((e.keyCode == 13 || e.keyCode == 32) && jQuery(this).value().length) jQuery.translator.translate(usecount, this);
         });
+        
         jQuery(this).parents('form').submit(function(e){
           jQuery.translator.translate(usecount, this);
+          return false;
         });
         
       });     
     },
     translate:function(usecount, ele){
-      console.log(ele);
+      var trans = "", original_lang = "";
+      
+      if(jQuery(ele).value()) trans = jQuery(ele).value();
+      else if(jQuery(ele).text()) trans = jQuery(ele).text();
+      
+      if(P[usecount].origin_language.length && jQuery(P[usecount].origin_language).length){
+        if(jQuery(P[usecount].origin_language).value()) original_lang = jQuery(P[usecount].origin_language).value();
+        else if(jQuery(P[usecount].origin_language).text()) original_lang = jQuery(P[usecount].origin_language).text();
+      }else original_lang = P[usecount].origin_language;
+      
+      
     }
   };
   
