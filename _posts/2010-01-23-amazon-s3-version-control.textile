@@ -2,9 +2,17 @@
 layout: default
 title: Amazon S3 Does Version Control
 category: web
+keywords:
+- amazon s3
+- version control
+- s3
+- amazon
+- diff
+- dropbox
+description: "Amazon have set up version control on their S3 system; it is currently in Beta (isn't everything?) but looks like it could be very handy."
 ---
 
-Amazon have set up version control on their S3 system; it is currently in Beta (isn't everything?) but looks like it could be very handy.
+Amazon have set up "version control on their S3 system":http://doc.s3.amazonaws.com/betadesign/Versioning.html ; it is currently in Beta (isn't everything?) but looks like it could be very handy.
 
 Having a scan over it the main problem I see is that instead of storing diffs between the versions of file they are storing the entire file again as a new object. As storage on s3 is insanely cheap anyway, you wouldn't think its that big a deal, but think about it for a second.
 
