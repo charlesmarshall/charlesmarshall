@@ -2,6 +2,15 @@
 layout: default
 title: Simple Photography (Lucas North)
 category: work
+keywords:
+- work
+- photography
+- lucas north
+- one black bear
+- charles marshall
+- website
+- web developer
+- Birmingham
 ---
 
 "A simple site to show off all of Lucas North's photography":http://lucasnorth.com with a simple contact form. The individual galleries utilise a jQuery plugin to allow smooth image transitions and thumbnailing.
