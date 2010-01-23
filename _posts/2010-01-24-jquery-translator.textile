@@ -1,0 +1,38 @@
+---
+layout: default
+title: jQuery Translator
+category: jquery
+---
+
+Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it.
+
+<form action='' method='get' id='translation_form'>
+  <fieldset>
+    <legend>From</legend>
+    
+    <label for='translate'>Translate:</label>
+    <input type='text' name='translate' id='translate' value=''/>
+    
+    
+  </fieldset>
+  
+  <fieldset>
+    <legend>To</legend>
+  
+    <label for='to_lang'>To</label>
+    <select id='to_lang' name='to_lang'>
+      <option value='en'>
+    </select>
+  
+    <label for='result'>Result:</label>
+    <input type='text' name='result' id='result' value=''/>
+  
+  </fieldset>
+  
+</form>
+
+
+<script type='text/javascript'>                      
+  google.load("language", "1");
+</script>
+<script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
