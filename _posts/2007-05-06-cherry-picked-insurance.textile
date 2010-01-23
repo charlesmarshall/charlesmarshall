@@ -20,7 +20,7 @@ keywords:
 - test
 - test
 - test 4
-description:"The new flagship website for the Willis Commercial Network for the UK. This site has news, services and a comprehensive list of all of its members."
+description: "The new flagship website for the Willis Commercial Network for the UK. This site has news, services and a comprehensive list of all of its members."
 ---
 
 The new "flagship website for the Willis Commercial Network":http://www.cherrypickedinsurance.com/ for the UK. This site has news, services and a comprehensive list of all of its members.
