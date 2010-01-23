@@ -6,7 +6,7 @@ keywords:
 - Flickr
 - wallpapers
 - desktop backgrounds
-description:"Thousands of Flickr users have posted their favourite wallpaper photos. Some great ones on there that I use on my own machines!"
+description: "Thousands of Flickr users have posted their favourite wallpaper photos. Some great ones on there that I use on my own machines!"
 ---
 Thousands of Flickr users have posted their favourite wallpaper photos. Some great ones on there that I use on my own machines!
 

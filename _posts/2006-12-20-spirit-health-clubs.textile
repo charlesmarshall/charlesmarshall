@@ -17,7 +17,7 @@ keywords:
 - web developer
 - birmingham UK
 - birmingham
-description:"After a rush to get it all sorted the new Spirit Health Club website went live. This is running on a highly customised early version of the Wildfire CMS and PHP-WAX framework. The majority of the customisation relates to each club having separate admin logins with the ability to create unique pages, offers and news for their club."
+description: "After a rush to get it all sorted the new Spirit Health Club website went live. This is running on a highly customised early version of the Wildfire CMS and PHP-WAX framework. The majority of the customisation relates to each club having separate admin logins with the ability to create unique pages, offers and news for their club."
 ---
 
 !/images/work/spirit-logo.gif!
