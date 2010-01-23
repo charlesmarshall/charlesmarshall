@@ -1,0 +1,27 @@
+---
+layout: default
+title: Johnny Cash Planner
+category: work
+keywords:
+- johnny cash planner
+- cash planner
+- money management
+- charles marshall
+- web developer
+- birmingham UK
+- birmingham
+- web
+- jquery
+- css
+- javascript
+- bash
+- waa
+- google
+description: "Unsuitable and One Black Bear have got involved in setting up and launching a company to help people better manage their money and educate school kids on money matters, so we hopefully don't see the financial meltdown again that we're just going through."
+---
+
+Unsuitable and One Black Bear have got involved in setting up and launching a company to help people better manage their money and educate school kids on money matters, so we hopefully don't see the financial meltdown again that we're just going through.
+
+"A new website is on the way":http://johnnycashplanner.com but in the meantime we're trying to build up a social side to it.
+
+If you'd like to get involved as a Beta tester once the site goes live, "you can sign up here":http://johnnycashplanner.com
