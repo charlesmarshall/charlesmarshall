@@ -2,6 +2,23 @@
 layout: default
 title: It Lives!
 category: web
+keywords:
+- new website
+- my website
+- website
+- phpwax
+- PHP-WAX
+- Wildfire CMS
+- flickr
+- wordpress
+- API
+- 2007
+- Charles Marshall
+- charles
+- marshall
+- Birmingham
+- Birmingham UK
+description: "After many months of putting it off and getting distracted (dam WoW!) I have finally put some time in and got my new site sorted... Well, mostly"
 ---
 After many months of putting it off and getting distracted (dam WoW!) I have finally put some time in and got my new site sorted... Well, mostly
 
