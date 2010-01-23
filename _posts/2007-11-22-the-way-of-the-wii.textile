@@ -2,6 +2,17 @@
 layout: default
 title: The Way of The Wii
 category: general
+keywords:
+- general
+- Wii
+- playability
+- interface
+- Nintendo
+- Sony
+- Microsoft
+- xbox
+- playstation
+description: "Good old fashioned playabilty finally strikes back. After many years of graphical improvements, interface development and soaring price tags Nintendo decided enough was enough. Instead of playing the next generation game they took a step back and realised something... Gaming should be fun"
 ---
 Good old fashioned playabilty finally strikes back. After many years of graphical improvements, interface development and soaring price tags Nintendo decided enough was enough. Instead of playing the next generation game they took a step back and realised something... Gaming should be fun
 
