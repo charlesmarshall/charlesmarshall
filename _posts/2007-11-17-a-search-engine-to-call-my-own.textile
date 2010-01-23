@@ -2,6 +2,17 @@
 layout: default
 title: A Search Engine to Call my Own
 category: web
+keywords:
+- web
+- work
+- custom search
+- Wildfire CMS
+- php wax
+- Yahoo
+- API
+- RESTful
+- meta search engine
+description: "Recently I had an unusual but intriguing question posed by a work colleague. Could I create some sort of bot to scan sites relevant to some keywords and market area specified by a client so the client could keep an eye on current events in their field. On first look I almost dismissed it, then i thought about it for a while..."
 ---
 Recently I had an unusual but intriguing question posed by a work colleague. Could I create some sort of bot to scan sites relevant to some keywords and market area specified by a client so the client could keep an eye on current events in their field. On first look I almost dismissed it, then i thought about it for a while...
 
@@ -9,4 +20,4 @@ How about a facility inside their "CMS":http://wildfirecms.com which would let t
 
 Not a bad idea i thought, so i looked into implementing it and came across another great utility provided by yahoo. Yes it's another api, but this one is useful. The web search REST service allows anyone to query yahoo's search engine, specifying all sorts of parameters and retrieve the results in multiple formats including serialised php and xml.
 
-Great! Now all I need is the client to agree to it and I'll be making a meta search engine.						
+Great! Now all I need is the client to agree to it and I'll be making a meta search engine.
