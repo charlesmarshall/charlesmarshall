@@ -16,7 +16,6 @@ keywords:
 - web developer
 - birmingham UK
 - birmingham
-- test 1
 description: "You would think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away."
 ---
 You'd think that in this modern age of computers, the internet,inter-connectivity and nationalised databases that finding information about a property would be merely a few mouse clicks away.

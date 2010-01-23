@@ -17,10 +17,6 @@ keywords:
 - web developer
 - birmingham UK
 - birmingham
-- test 1
-- test 2
-- test 3
-- test 4
 description: "Until recently I'd barely even looked at a Mac. I used to be under the common miss-conception that they were only any good for design and looking pretty."
 ---
 Until recently I'd barely even looked at a Mac. I used to be under the common miss-conception that they were only any good for design and looking pretty.
