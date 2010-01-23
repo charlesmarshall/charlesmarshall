@@ -103,13 +103,14 @@ ul.inline li, ol.inline li{float:left;}
   #header samp{
     display:block;
     float:left;
-    font-size:116%;    
+    font-size:116%;
+    width:122px;    
   }
     #header samp a{
       background:#EBE8D8;
       color:#392927;           
     }
-ul.navigation{float:right;}
+ul.navigation{float:right;width:470px;}
   ul.navigation li{
     float:right;
     margin-left:10px;
