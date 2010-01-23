@@ -2,6 +2,21 @@
 layout: default
 title: House of Fraser Club
 category: work
+keywords:
+- work
+- House of Fraser
+- membership site
+- Charles Marshall
+- web
+- website
+- Charles
+- Marshall
+- John Walker
+- layout
+- css
+- Birmingham
+- WAA
+description:"The new membership site for House of Fraser was mostly made by my colleague John Walker, I helped with the original layout and css."
 ---
 
 The new "membership site":http://houseoffraserclub.co.uk for House of Fraser was mostly made by my colleague "John Walker":http://www.coffeerings.co.uk, I helped with the original layout and css.

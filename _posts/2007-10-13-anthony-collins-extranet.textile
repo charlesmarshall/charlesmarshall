@@ -2,6 +2,21 @@
 layout: default
 title: Anthony Collins Extranet
 category: work
+keywords:
+- work
+- Anthony Collins Extranet
+- Solicitor
+- extranet
+- Charles Marshall
+- Wildfire CMS
+- PHP-WAX
+- website
+- php wax
+- Charles
+- Marshall
+- Birmingham
+- WAA
+description: "For Anthony Collins we created a fully functional extranet to allow them to create a completely unique website for each client. The site is a fairly simple affair with a javascript tree based on a ul with some nice touches like an accordion to show pages with in the section and so on."
 ---
 
 For Anthony Collins we created a fully functional extranet to allow them to create a completely unique website for each client. The site is a fairly simple affair with a javascript tree based on a ul with some nice touches like an accordion to show pages with in the section and so on.

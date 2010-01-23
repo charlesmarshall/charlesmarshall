@@ -2,6 +2,20 @@
 layout: default
 title: Powell Insurance Brokers
 category: work
+keywords:
+- work
+- Powell Insurance Brokers
+- Willis Commercial Network
+- Charles Marshall
+- Wildfire CMS
+- PHP-WAX
+- website
+- php wax
+- Charles
+- Marshall
+- Birmingham
+- WAA
+description:"Another broker from the Willis Commercial Network. Fairly standard Wildfire CMS site with a few extras. In this case the quotes shown on the right hand side of the website are randomised and they now have a special events module within the CMS."
 ---
 
 "Another broker":http://www.pibl.co.uk from the Willis Commercial Network. Fairly standard Wildfire CMS site with a few extras. In this case the quotes shown on the right hand side of the website are randomised and they now have a special events module within the CMS.

@@ -2,6 +2,21 @@
 layout: default
 title: Walsall Children's Services Directory
 category: work
+keywords:
+- work
+- Walsall Childrens Services Directory
+- Walsall
+- directory listing
+- Charles Marshall
+- Wildfire CMS
+- PHP-WAX
+- website
+- php wax
+- Charles
+- Marshall
+- Birmingham
+- WAA
+description: "A very unique website custom built for Walsall Council. From a content point of view it has over 900 services online at the moment and more coming and users being able to submit new services to the administration team for approval."
 ---
 
 A very "unique website custom built for Walsall Council":http://walsallchildrensservices.com. From a content point of view it has over 900 services online at the moment and more coming and users being able to submit new services to the administration team for approval.

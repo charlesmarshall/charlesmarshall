@@ -2,6 +2,21 @@
 layout: default
 title: Cherry Picked Insurance
 category: work
+keywords:
+- work
+- Cherry Picked Insurance
+- Willis Commercial Network
+- insurance
+- Wildfire CMS
+- PHP-WAX
+- php wax
+- Charles Marshall
+- Charles
+- Marshall
+- Joe Turner
+- Ross Riley
+- John Walker
+description:"The new flagship website for the Willis Commercial Network for the UK. This site has news, services and a comprehensive list of all of its members."
 ---
 
 The new "flagship website for the Willis Commercial Network":http://www.cherrypickedinsurance.com/ for the UK. This site has news, services and a comprehensive list of all of its members.
