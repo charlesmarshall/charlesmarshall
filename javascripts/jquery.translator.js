@@ -24,7 +24,7 @@
     params:[],
     
     setup:function(usecount){
-      jQuery(P['origin']).each(function(){
+      jQuery(P[usecount].origin).each(function(){
         
         jQuery(this).keyup(function(e){
           if(e.keyCode == 13 || e.keyCode == 32) jQuery.translator.translate(usecount, this);
