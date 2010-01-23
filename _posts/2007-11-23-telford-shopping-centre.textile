@@ -1,7 +1,18 @@
 ---
 layout: default
-title: Telford Shopping Centre (No Longer with WAA) 
+title: Telford Shopping Centre (No Longer with WAA)
 category: work
+keywords:
+- Telford
+- Telford Shopping Centre
+- WAA
+- website
+- work
+- webxpress
+- xhtml
+- skins
+- site has a hidden easter egg
+description: "One of the larger sites I made for work was a new version of the Telford Shopping Centre website. It contains many useful tools such as a store directory and an interactive map."
 ---
 
 One of the larger sites I made for work was a new version of the "Telford Shopping Centre website":http://telfordshopping.co.uk. It contains many useful tools such as a store directory and an interactive map.
@@ -12,6 +23,6 @@ The site also has multiple skins which are currently pink for spring, orange for
 
 As always the site has a google sitemap, dynamic meta tags (utilising some constant values along with chunks of the page copy) and is valid xhtml strict (unless some of the dynamic content breaks it!).
 
-EDIT (Jun 11 2009): It seems the previous incarnation of the site has now also been turned off; along with pretty much all webxpress.com domains.  
+EDIT (Jun 11 2009): It seems the previous incarnation of the site has now also been turned off; along with pretty much all webxpress.com domains.
 
 EDIT (Sept 03 2008): My previous employer ("WAA":http://www.waa.co.uk) recently lost the account for Telford Shopping Centre and the site has been completely redesigned - I'm not impressed; compare it to "our version":http://telford.webxpress.com and see what you think.
