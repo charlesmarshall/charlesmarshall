@@ -17,6 +17,8 @@ keywords:
 - web developer
 - birmingham UK
 - birmingham
+- test 1
+- test 2
 description: "Living in my new flat I am in the precarious position of being near to many forms of public transport. With bus stops as far as the eye can see and just beyond that is the train station."
 ---
 Living in my new flat I'm in the precarious position of being near to many forms of public transport. With bus stops as far as the eye can see and just beyond that is the train station.

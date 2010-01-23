@@ -17,6 +17,11 @@ keywords:
 - web developer
 - birmingham UK
 - birmingham
+- test 1
+- test 2
+- test 3
+- test 4
+- test 5
 description: "Having endured many months of problems getting things connected and accounts activated (take a look at my earlier rant about utilities) I had become accustomed to pathetic customer services. However, Bulldog beat them all"
 ---
 Having endured many months of problems getting things connected and accounts activated (take a look at my earlier rant about utilities) I had become accustomed to pathetic customer services. However, Bulldog beat them all
