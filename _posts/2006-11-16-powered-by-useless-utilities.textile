@@ -4,7 +4,6 @@ title: Powered by Useless Utilities
 category: rant
 keywords:
 - rant
-- "e-on"
 - water
 - gas
 - connection
