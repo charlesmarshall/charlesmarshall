@@ -3,7 +3,9 @@ layout: default
 title: Geek in the Park 2008!
 category: web
 ---
-The time is almost here for the Multipacks semi regular (hopefully will be regular, this will be the 2nd time) summer time extravaganza; "Geek in the Park":http://geekinthepark.co.uk!p. As previously the event is aimed at geeks and their families with the day being split in to two; the afternoon picnic and the evening talk
+The time is almost here for the Multipacks semi regular (hopefully will be regular, this will be the 2nd time) summer time extravaganza; "Geek in the Park":http://geekinthepark.co.uk!
+
+<!-- As previously the event is aimed at geeks and their families with the day being split in to two; the afternoon picnic and the evening talk -->
 
 The afternoon picnic last time was a resounding success with lots of people from all over the country coming down to point and laugh at us trying to play football... The only downside being a lost Frisbee and an almost lost ball (this time we'll try not to play by the river, honest!). Thanks again to the rowers for rescuing the ball
 
