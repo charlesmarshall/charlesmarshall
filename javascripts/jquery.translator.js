@@ -15,7 +15,7 @@
                                  "origin": '#translate',
                                  "origin_language": '#original_language',
                                  "result": '#result',
-                                 "result_language": '#result_language',
+                                 "result_language": '#result_language'
                                };
   
   
