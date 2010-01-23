@@ -2,13 +2,25 @@
 layout: default
 title: Spence Insurance
 category: work
+keywords:
+- work
+- website
+- Spence Insurance
+- insurance
+- WAA
+- Willis Commercial Network
+- broker
+- redesign
+- Sheldon Els
+- John Walker
+description: "Another insurance broker that we started way back when (approx. April 2007). This site has been though at least 3 re-designs with each one being signed off, approved, built and then client changing their minds at the last stage!"
 ---
 
 Another insurance broker that we started way back when (approx. April 2007). This site has been though at least 3 re-designs with each one being signed off, approved, built and then client changing their minds at the last stage!
 
-I only seem to have the original and current designs at hand; not sure where the second version went to but it is some what similar to the current iteration, minus the top navigation bar. 
+I only seem to have the original and current designs at hand; not sure where the second version went to but it is some what similar to the current iteration, minus the top navigation bar.
 
-As this was built and populated ages ago this is running an older version of the Wildfire CMS but is a relatively straight forward site, nothing to complicated. 
+As this was built and populated ages ago this is running an older version of the Wildfire CMS but is a relatively straight forward site, nothing to complicated.
 
 "Go have a look at their live site":http://spenceinsurance.co.uk/.
 
