@@ -24,11 +24,20 @@
     params:[],
     
     setup:function(usecount){
-      
-      
-      
+      jQuery(P['origin']).each(function(){
+        
+        jQuery(this).keyup(function(e){
+          if(e.keyCode == 13 || e.keyCode == 32) jQuery.translator.translate(usecount, this);
+        });
+        jQuery(this).parents('form').submit(function(e){
+          jQuery.translator.translate(usecount, this);
+        });
+        
+      });     
+    },
+    translate:function(usecount, ele){
+      console.log(ele);
     }
-    
   };
   
   var D=jQuery.translator.data,
