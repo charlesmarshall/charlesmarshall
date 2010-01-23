@@ -2,6 +2,19 @@
 layout: default
 title: Style Birmingham
 category: work
+keywords:
+- Style Birmingham
+- website
+- work
+- WAA
+- Charles Marshall
+- Birmingham
+- Birmingham UK
+- Shopping
+- Brands
+- Ajax
+- 383 Project
+description: "A recent project for work was a total redesign and rebuild of the Style Birmingham website. The main goal of the style is to show case Birmingham as a stylish venue on par with London and other major cities."
 ---
 
 A recent project for work was a total redesign and rebuild of the "Style Birmingham website":http://stylebirmingham.co.uk. The main goal of the style is to show case Birmingham as a stylish venue on par with London and other major cities.
