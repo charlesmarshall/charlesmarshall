@@ -20,7 +20,7 @@ description: "As a web developer I spend far too much time surfing the net and p
 introduction: "<p>As a web developer I spend far too much time surfing the net and playing with websites; so when I find something really good (or bad) I write about it here.</p>"
 ---
 
-{% for post in site.categories.web %}
+{% for post in site.categories.web limit 10000 %}
 <div class="post row {{ post.category }} clearfix">
   <h2 class='title'><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
   <div class='clearfix summary'>
