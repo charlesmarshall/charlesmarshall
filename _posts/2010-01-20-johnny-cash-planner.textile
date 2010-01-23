@@ -20,6 +20,8 @@ keywords:
 description: "Unsuitable and One Black Bear have got involved in setting up and launching a company to help people better manage their money and educate school kids on money matters, so we hopefully don't see the financial meltdown again that we're just going through."
 ---
 
+!/images/work/jcp.jpg!:http://johnnycashplanner.com
+
 Unsuitable and One Black Bear have got involved in setting up and launching a company to help people better manage their money and educate school kids on money matters, so we hopefully don't see the financial meltdown again that we're just going through.
 
 "A new website is on the way":http://johnnycashplanner.com but in the meantime we're trying to build up a social side to it.
