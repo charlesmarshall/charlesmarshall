@@ -21,7 +21,8 @@ h3. Working Example
     <label for='to_lang'>To</label>
     <select id='to_lang' name='to_lang'>
       <option value='en'>English</option>
-      <option value='es'>Spanish</option>
+      <option value='es' selected="selected">Spanish</option>
+      <option value='fr'>French</option>
     </select>
   
     <label for='result'>Result:</label>
