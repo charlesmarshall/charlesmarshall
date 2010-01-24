@@ -101,7 +101,26 @@ As part of the google API you can leave the origin language blank and it will tr
   
 </form>
 
+To do this, you just need to modify the call to translator to have an empty origin_langauge parameter:
+
+<pre>
+  jQuery('#auto_translation_form').translator({
+    "origin": '#translate_from',
+    "origin_language": '',
+    "result": '#auto_result',
+    "result_language": '#dest_lang'
+  });
+</pre>
+
 The only issue that does sometimes come up is with using UTF-8 characters and how they are displayed in text areas and the like.
+
+h3. Translating Page Content
+
+If you want to translate a static segment or an entire page, this plugin can do that also. Again, all you need to do is modify the call to translator plugin. Here is an example:
+
+<p id='my_english_version' class='example'>Hello, my name is Charles. How are you today?</p>
+<p id='my_french_result' class='example'></p>
+
 
 h3. Download
 
@@ -127,5 +146,11 @@ jQuery(document).ready(function(){
     "result": '#auto_result',
     "result_language": '#dest_lang'
   });  
+  jQuery('body').translator({
+    "origin": '#my_english_version',
+    "origin_language": 'en',
+    "result": '#my_french_result',
+    "result_language": 'fr'
+  });
 });
 </script>

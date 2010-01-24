@@ -51,7 +51,7 @@ strong,b,h3{font-weight:bold;}
 h1,h2,h5{margin-bottom:12px;}
 h3,h4{margin-bottom:4px;}
 
-pre{
+pre, .example{
   margin:12px 0;
   background:#EEE;
   padding:8px;
