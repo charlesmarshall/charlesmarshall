@@ -121,6 +121,16 @@ If you want to translate a static segment or an entire page, this plugin can do 
 <p id='my_english_version' class='example'>Hello, my name is Charles. How are you today?</p>
 <p id='my_french_result' class='example'></p>
 
+Here I change the selectors and manually pass in the language codes to translate between as such:
+
+<pre>
+  jQuery(document).translator({
+    "origin": '#my_english_version',
+    "origin_language": 'en',
+    "result": '#my_french_result',
+    "result_language": 'fr'
+  });
+</pre>
 
 h3. Download
 
