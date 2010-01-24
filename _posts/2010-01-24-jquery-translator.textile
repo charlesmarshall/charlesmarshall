@@ -14,6 +14,14 @@ h3. Working Example
     <label for='translate'>Translate:</label>
     <input type='text' name='translate' id='translate' value='' class='text_field'/>  
     
+    <label for='from_lang'>From</label>
+    <select id='from_lang' name='from_lang'>
+      <option value='en' selected="selected">English</option>
+      <option value='es'>Spanish</option>
+      <option value='fr'>French</option>
+    </select>
+    
+    
   </fieldset>
   
   <fieldset class='half'>
@@ -33,6 +41,65 @@ h3. Working Example
 </form>
 
 
+h3. Details
+
+Using the plugin is straight forward enough. Once you have a form, like the one above, you need to load in the google language API, this plugin and on document ready call the translator plugin.
+
+You should end up with something a bit like this:
+
+<pre>
+  <script type='text/javascript'>                      
+    google.load("language", "1");
+  </script>
+  <script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
+  <script type='text/javascript'>
+  jQuery(document).ready(function(){
+    jQuery('#translation_form').translator({
+      "origin": '#translate',
+      "origin_language": '#from_lang',
+      "result": '#result',
+      "result_language": '#to_lang'
+    });
+  });
+  </script>  
+</pre>
+
+The plugin should be called on the parent form as it captures the form submit event and runs the translate. It also runs the a translation call on the following events:
+
+* Form submit
+* Pressing space or enter within the origin field
+* Changing either the source or result language (these should both be drop downs)
+
+h3. Language Sniffing
+
+As part of the google API you can leave the origin language blank and it will try and figure it for itself. It's very simple to do with this plugin, just don't make a selector for it!
+
+
+<form action='' method='get' id='auto_translation_form' class='inlineform'>
+  <fieldset class='half'>
+  
+    <label for='translate'>Translate:</label>
+    <input type='text' name='translate' id='translate_from' value='' class='text_field'/>  
+    
+    
+  </fieldset>
+  
+  <fieldset class='half'>
+  
+    <label for='dest_lang'>To</label>
+    <select id='dest_lang' name='dest_lang'>
+      <option value='en'>English</option>
+      <option value='es' selected="selected">Spanish</option>
+      <option value='fr'>French</option>
+    </select>
+  
+    <label for='auto_result'>Result:</label>
+    <input type='text' name='auto_result' id='auto_result' value='' class='text_field'/>
+  
+  </fieldset>
+  
+</form>
+
 <script type='text/javascript'>                      
   google.load("language", "1");
 </script>
@@ -41,9 +108,15 @@ h3. Working Example
 jQuery(document).ready(function(){
   jQuery('#translation_form').translator({
     "origin": '#translate',
-    "origin_language": '',
+    "origin_language": '#from_lang',
     "result": '#result',
     "result_language": '#to_lang'
   });
+  jQuery('#auto_translation_form').translator({
+    "origin": '#translate_from',
+    "origin_language": '',
+    "result": '#auto_result',
+    "result_language": '#dest_lang'
+  });  
 });
 </script>
