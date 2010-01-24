@@ -1,5 +1,4 @@
 jQuery.fn.tag = function() {
-  console.log(this);
   return String(this.get(0).tagName).toLowerCase();
 };
 
@@ -66,9 +65,9 @@ jQuery.fn.tag = function() {
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') translate = trans.val();
         else translate = trans.text();
       }
-      console.log('translate:'+translate);
       
       if(origin_lang){
+        console.log(origin_lang);
         tagname = origin_lang.tag();
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') original_language = origin_lang.val();
         else original_language = origin_lang.text();        
