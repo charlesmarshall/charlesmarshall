@@ -40,7 +40,7 @@ jQuery.fn.tag = function() {
       });     
     },
     translate:function(usecount, ele){
-      var trans = (jQuery(ele).length) ? jQuery(ele).length : false,          
+      var trans = (jQuery(ele).length) ? jQuery(ele) : false,          
           origin_lang = (P[usecount].origin_language.length > 1) ? jQuery(P[usecount].origin_language) : '',          
           dest_lang = (P[usecount].result_language.length > 1) ? jQuery(P[usecount].result_language) : '',          
           dest = (P[usecount].result.length > 1 && jQuery(P[usecount].result).length) ? jQuery(P[usecount].result) : false,
