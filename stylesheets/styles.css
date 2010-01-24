@@ -170,14 +170,11 @@ div.post{border-bottom:1px solid #392927;}
   
   .details{
     padding:5px 0;
-    border-top:1px solid #EBE8D8;
-    border-bottom:1px solid #EBE8D8;    
+    float:right;
+    width:150px;
   }
-  .details h5.date, .details h6, .details a.tag{
-    margin-bottom:0;
-  }
-
-
+  .details h5.date, .details h6, .details a.tag{margin-bottom:0;float:right;}
+  
 /** JQUERY EXAMPLE CSS **/
 #example_container {
   height: 400px;
