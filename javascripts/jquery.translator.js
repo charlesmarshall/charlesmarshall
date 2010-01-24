@@ -43,32 +43,44 @@ jQuery.fn.tagName = function() {
       });     
     },
     translate:function(usecount, ele){
-      var trans = "", original_lang = "", result_lang = "";
+      var trans = jQuery(ele),
+          trans_tag = trans.tagName(),
+          
+          origin_lang = jQuery(P[usecount].origin_language),
+          origin_lang_tag = origin_lang.tagName(),
+          
+          dest_lang = jQuery(P[usecount].result_language),
+          dest_lang_tag = dest_lang.tagName(),
+          
+          dest = jQuery(P[usecount].result),
+          dest_tag = dest.tagName();
+          ;
+      if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
+      else translate = trans.text();
       
-      if(jQuery(ele).val()) trans = jQuery(ele).val();
-      else if(jQuery(ele).text()) trans = jQuery(ele).text();
+      if(original_lang.length){        
+        if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
+        else original_language = origin_lang.text();        
+      }else original_language = P[usecount].origin_language;
       
-      if(jQuery(P[usecount].origin_language).length){
-        if(jQuery(P[usecount].origin_language).val()) original_lang = jQuery(P[usecount].origin_language).val();
-        else original_lang = jQuery(P[usecount].origin_language).text();
-      }else original_lang = P[usecount].origin_language;
+      if(dest_lang.length){        
+        if(dest_lang_tag == 'input' || dest_lang_tag == 'select' || dest_lang_tag == 'textarea') dest_language = dest_lang.val();
+        else dest_language = dest_lang.text();        
+      }else dest_language = P[usecount].result_language;
       
-      if(jQuery(P[usecount].result_language).length){
-        if(jQuery(P[usecount].result_language).val()) result_lang = jQuery(P[usecount].result_language).val();
-        else result_lang = jQuery(P[usecount].result_language).text();
-      }else result_lang = P[usecount].result_language;
+      console.log('translate:'+translate+"<<");
+      console.log("original_lang:"+original_language+"<<");
+      console.log("result_lang:"+dest_language+"<<");
       
-      console.log('translate:'+trans);
-      console.log("original_lang:"+original_lang);
-      console.log("result_lang:"+result_lang);
-      google.language.translate(trans, original_lang, result_lang, function(result) {
-        console.log("here...");
-        if (!result.error) {
-          var tagname = jQuery(P[usecount].result).tagName();
-          if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
-          else jQuery(P[usecount].result).text(result.translation);
-        }
-      });
+      
+      // google.language.translate(trans, original_lang, result_lang, function(result) {
+      //         console.log("here...");
+      //         if (!result.error) {
+      //           var tagname = jQuery(P[usecount].result).tagName();
+      //           if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
+      //           else jQuery(P[usecount].result).text(result.translation);
+      //         }
+      //       });
     }
   };
   
