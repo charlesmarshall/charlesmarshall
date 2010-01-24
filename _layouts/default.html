@@ -57,6 +57,22 @@
     <div class='introduction curvy clearfix'>{{ page.introduction }}</div>
     {% endif %}
     {{ content }}
+    
+    {% if site.related_posts and page.category %}
+    <div class='realted_posts clearfix'>
+      <ul class='half first'>
+      {% for related in site.related_posts limit:5 %}
+      <li><a href='{{ realted.url }}' title='{{ related.title }}'>{{ related.title }}</li>
+      {% endfor %}
+      </ul>
+      <ul class='half last'>
+      {% for related in site.related_posts limit:5 offset:5 %}
+      <li><a href='{{ realted.url }}' title='{{ related.title }}'>{{ related.title }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    
   </div>    
 
    
