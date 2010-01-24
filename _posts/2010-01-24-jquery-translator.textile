@@ -48,21 +48,21 @@ Using the plugin is straight forward enough. Once you have a form, like the one 
 You should end up with something a bit like this:
 
 <pre>
-  <script src='http://www.google.com/jsapi'  type='text/javascript'></script>	
-  <script type='text/javascript'>                      
-    google.load("language", "1");
-  </script>
-  <script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
-  <script type='text/javascript'>
-  jQuery(document).ready(function(){
-    jQuery('#translation_form').translator({
-      "origin": '#translate',
-      "origin_language": '#from_lang',
-      "result": '#result',
-      "result_language": '#to_lang'
-    });
+<script src='http://www.google.com/jsapi'  type='text/javascript'></script>	
+<script type='text/javascript'>                      
+  google.load("language", "1");
+</script>
+<script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(){
+  jQuery('#translation_form').translator({
+    "origin": '#translate',
+    "origin_language": '#from_lang',
+    "result": '#result',
+    "result_language": '#to_lang'
   });
-  </script>  
+});
+</script>  
 </pre>
 
 The plugin should be called on the parent form as it captures the form submit event and runs the translate. It also runs the a translation call on the following events:
@@ -104,12 +104,12 @@ As part of the google API you can leave the origin language blank and it will tr
 To do this, you just need to modify the call to translator to have an empty origin_langauge parameter:
 
 <pre>
-  jQuery('#auto_translation_form').translator({
-    "origin": '#translate_from',
-    "origin_language": '',
-    "result": '#auto_result',
-    "result_language": '#dest_lang'
-  });
+jQuery('#auto_translation_form').translator({
+  "origin": '#translate_from',
+  "origin_language": '',
+  "result": '#auto_result',
+  "result_language": '#dest_lang'
+});
 </pre>
 
 The only issue that does sometimes come up is with using UTF-8 characters and how they are displayed in text areas and the like.
@@ -124,12 +124,12 @@ If you want to translate a static segment or an entire page, this plugin can do 
 Here I change the selectors and manually pass in the language codes to translate between as such:
 
 <pre>
-  jQuery(document).translator({
-    "origin": '#my_english_version',
-    "origin_language": 'en',
-    "result": '#my_french_result',
-    "result_language": 'fr'
-  });
+jQuery(document).translator({
+  "origin": '#my_english_version',
+  "origin_language": 'en',
+  "result": '#my_french_result',
+  "result_language": 'fr'
+});
 </pre>
 
 h3. Translating Page Content With a Selectable Language
