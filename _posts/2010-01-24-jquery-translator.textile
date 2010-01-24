@@ -131,7 +131,7 @@ h3(#fixed-content-fixed-language). Translating Page Content With a Fixed Languag
 
 If you want to translate a static segment or an entire page, this plugin can do that also. Again, all you need to do is modify the call to translator plugin. Here is an example:
 
-<p id='my_english_version' class='example'>Hello, my name is Charles. How are you today?</p>
+<p id='my_english_version' class='example'>Hello, my name is Charles.</p>
 <p id='my_french_result' class='example'></p>
 
 Here I change the selectors and manually pass in the language codes to translate between as such:
