@@ -137,6 +137,7 @@ ul.navigation{float:right;}
   width:70%;
   padding:20px 5%;
   background:white;
+  margin-bottom:10px;
   -moz-box-shadow:0 8px 20px #392927;
   -webkit-box-shadow:0 8px 20px #392927;
 }
