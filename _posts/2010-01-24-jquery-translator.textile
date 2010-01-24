@@ -8,7 +8,7 @@ Came across googles ever handy Ajax translator API and I thought I'd write a qui
 
 h2. Summary
 
-<div class='introduction'>
+<div class='introduction curvy'>
   
 * The plugin should be run on a form (for dynamic switching) or the document for static content
 * "Automatic language detection":#language-sniffing (by leaving origin_language empty)
@@ -22,7 +22,7 @@ h2. Summary
 
 h3(#working-example). Working Example
 
-<form action='' method='get' id='translation_form' class='inlineform'>
+<form action='' method='get' id='translation_form' class='inlineform curvy'>
   <fieldset class='half'>
   
     <label for='translate'>Translate:</label>
@@ -89,7 +89,7 @@ h3(#language-sniffing). Language Sniffing
 As part of the google API you can leave the origin language blank and it will try and figure it for itself. It's very simple to do with this plugin, just don't make a selector for it!
 
 
-<form action='' method='get' id='auto_translation_form' class='inlineform'>
+<form action='' method='get' id='auto_translation_form' class='inlineform curvy'>
   <fieldset class='half'>
   
     <label for='translate'>Translate:</label>
@@ -149,7 +149,7 @@ h3(#fixed-content-dynamic-language). Translating Page Content With a Selectable 
 
 You can also mix and match the two methods, having static content but swapping between languages like below:
 
-<form action='' method='get' id='static_content_translation_form' class='inlineform'>
+<form action='' method='get' id='static_content_translation_form' class='inlineform curvy'>
   <fieldset class='half'>
     <label for='trans_to'>Translate to</label>
     <select id='trans_to' name='trans_to'>
