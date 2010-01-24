@@ -75,7 +75,7 @@ You should end up with something a bit like this:
 <script type='text/javascript'>                      
   google.load("language", "1");
 </script>
-<script src="/javascripts/jquery.translator.compressed.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
 <script type='text/javascript'>
 jQuery(document).ready(function(){
   jQuery('#translation_form').translator({
@@ -205,14 +205,14 @@ Both the original text and the translated text is passed in to the function.
 
 h3(#download-the-plugin). Download
 
-"Grab the original plugin here":/javascripts/jquery.translator.js or "use the compressed version":/javascripts/jquery.translator.compressed.js via "google closure complier":http://closureoptimizer.com/
+"Grab the plugin here":/javascripts/jquery.translator.js
 
 
 
 <script type='text/javascript'>                      
   google.load("language", "1");
 </script>
-<script src="/javascripts/jquery.translator.compressed.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
 <script type='text/javascript'>
 var track = function track_translate(original, result){
   _gaq.push(['_trackEvent', 'translator', original, result]);
