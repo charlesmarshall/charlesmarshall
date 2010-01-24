@@ -10,16 +10,13 @@ h3. Working Example
 
 <form action='' method='get' id='translation_form' class='inlineform'>
   <fieldset class='half'>
-    <legend>From</legend>
-    
+  
     <label for='translate'>Translate:</label>
-    <input type='text' name='translate' id='translate' value='' class='text_field'/>
-    
+    <input type='text' name='translate' id='translate' value='' class='text_field'/>  
     
   </fieldset>
   
   <fieldset class='half'>
-    <legend>To</legend>
   
     <label for='to_lang'>To</label>
     <select id='to_lang' name='to_lang'>
