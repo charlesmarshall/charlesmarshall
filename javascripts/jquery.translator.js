@@ -67,17 +67,17 @@ jQuery.fn.tag = function() {
       }
       
       if(origin_lang){
-        console.log(origin_lang);
         tagname = origin_lang.tag();
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') original_language = origin_lang.val();
         else original_language = origin_lang.text();        
-      }
+      }else original_language = jQuery(P[usecount].origin_language;
       
       if(dest_lang){
         tagname = dest_lang.tag();
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') dest_language = dest_lang.val();
         else dest_language = dest_lang.text();        
-      }
+      }else dest_language = jQuery(P[usecount].result_language;
+        
       google.language.translate(translate, original_language, dest_language, function(result) {
         if(!result.error) {
           var tagname = jQuery(P[usecount].result).tag();
