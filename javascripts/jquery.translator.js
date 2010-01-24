@@ -34,6 +34,7 @@ jQuery.fn.tag = function() {
       jQuery(P[usecount].origin).each(function(){
         var obj = this;
         jQuery(this).keyup(function(e){
+          console.log(e.keyCode);
           if((e.keyCode == 13 || e.keyCode == 32) && jQuery(this).val().length) jQuery.translator.translate(usecount, obj);
         });
       });  
