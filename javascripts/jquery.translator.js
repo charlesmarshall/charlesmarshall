@@ -43,7 +43,7 @@ jQuery.fn.tagName = function() {
       });     
     },
     translate:function(usecount, ele){
-      var trans = "", original_lang = "", result_language = "";
+      var trans = "", original_lang = "", result_lang = "";
       
       if(jQuery(ele).val()) trans = jQuery(ele).val();
       else if(jQuery(ele).text()) trans = jQuery(ele).text();
@@ -54,8 +54,8 @@ jQuery.fn.tagName = function() {
       }else original_lang = P[usecount].origin_language;
       
       if(jQuery(P[usecount].result_language).length){
-        if(jQuery(P[usecount].result_language).val()) result_language = jQuery(P[usecount].result_language).val();
-        else result_language = jQuery(P[usecount].result_language).text();
+        if(jQuery(P[usecount].result_language).val()) result_lang = jQuery(P[usecount].result_language).val();
+        else result_lang = jQuery(P[usecount].result_language).text();
       }else result_lang = P[usecount].result_language;
       
       console.log('translate:'+trans+" original_lang:"+original_lang+" result_lang:"+result_lang);
