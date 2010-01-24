@@ -226,7 +226,7 @@ div.post{border-bottom:1px solid #392927;}
 
 /** related pages **/
 .related_posts{
-  margin:10px 0;
+  margin:10px 0 0 0;
   padding:8px 0;
   border-top:1px solid #EBE8D8;
 }
