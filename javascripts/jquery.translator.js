@@ -31,7 +31,6 @@ jQuery.fn.tagName = function() {
       jQuery(P[usecount].origin).each(function(){
         var obj = this;
         jQuery(this).keyup(function(e){
-          console.log(this);
           if((e.keyCode == 13 || e.keyCode == 32) && jQuery(this).val().length) jQuery.translator.translate(usecount, obj);
         });
         
@@ -55,22 +54,23 @@ jQuery.fn.tagName = function() {
           dest = jQuery(P[usecount].result),
           dest_tag = dest.tagName();
           ;
-      if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
-      else translate = trans.text();
       
-      if(origin_lang.length){        
-        if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
-        else original_language = origin_lang.text();        
-      }else original_language = P[usecount].origin_language;
-      
-      if(dest_lang.length){        
-        if(dest_lang_tag == 'input' || dest_lang_tag == 'select' || dest_lang_tag == 'textarea') dest_language = dest_lang.val();
-        else dest_language = dest_lang.text();        
-      }else dest_language = P[usecount].result_language;
-      
-      console.log('translate:'+translate+"<<");
-      console.log("original_lang:"+original_language+"<<");
-      console.log("result_lang:"+dest_language+"<<");
+      console.log(trans);
+
+      // if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
+      //    else translate = trans.text();
+      //    
+      //    if(origin_lang.length){        
+      //      if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
+      //      else original_language = origin_lang.text();        
+      //    }else original_language = P[usecount].origin_language;
+      //    
+      //    if(dest_lang.length){        
+      //      if(dest_lang_tag == 'input' || dest_lang_tag == 'select' || dest_lang_tag == 'textarea') dest_language = dest_lang.val();
+      //      else dest_language = dest_lang.text();        
+      //    }else dest_language = P[usecount].result_language;
+      //    
+      // 
       
       
       // google.language.translate(trans, original_lang, result_lang, function(result) {
