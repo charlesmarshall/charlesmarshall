@@ -1,5 +1,5 @@
 jQuery.fn.tagName = function() {
-    return this.get(0).tagName;
+    return String(this.get(0).tagName);
 };
 
 (function(jQuery) {
@@ -43,19 +43,19 @@ jQuery.fn.tagName = function() {
     },
     translate:function(usecount, ele){
       var trans = jQuery(ele),
-          trans_tag = trans.tagName().toLowerCase(),
+          trans_tag = trans.tagName(),
           
           origin_lang = jQuery(P[usecount].origin_language),
-          origin_lang_tag = origin_lang.tagName().toLowerCase(),
+          origin_lang_tag = origin_lang.tagName(),
           
           dest_lang = jQuery(P[usecount].result_language),
-          dest_lang_tag = dest_lang.tagName().toLowerCase(),
+          dest_lang_tag = dest_lang.tagName(),
           
           dest = jQuery(P[usecount].result),
-          dest_tag = dest.tagName().toLowerCase();
+          dest_tag = dest.tagName();
           ;
       
-      console.log(trans.tagName());
+      console.log(trans_tag);
 
       // if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
       //    else translate = trans.text();
