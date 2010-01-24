@@ -195,6 +195,7 @@ div.post{border-bottom:1px solid #392927;}
 .inlineform{
   padding:10px;
   background:#EBE8D8;
+  margin:10px 0;
 }
   .inlineform input.text_field, .inlineform select{
     padding:4px 5px;
