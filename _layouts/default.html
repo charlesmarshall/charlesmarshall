@@ -51,8 +51,6 @@
       <h5 class='date tag curvy'>{{ page.date | date_to_string }}</h5>
       <h6 class='curvy'><a href='/{{ page.category | downcase }}.html' title='{{ page.category | downcase }}'>{{ page.category | downcase }}</a></h6>
       
-      <a href='/' title='home page' class='tag category curvy'>home &raquo;</a>
-      <a href='/{{ page.category }}.html' title='{{ page.category }}' class='tag category curvy'>{{ page.category }} &raquo;</a>
     </div>
     {% endif %}
     {% if page.introduction %}
