@@ -1,4 +1,5 @@
 jQuery.fn.tag = function() {
+  console.log(this);
   return String(this.get(0).tagName).toLowerCase();
 };
 
