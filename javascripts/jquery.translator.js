@@ -1,4 +1,4 @@
-jQuery.fn.tagName = function() {
+jQuery.fn.tag = function() {
   return String(this.get(0).tagName).toLowerCase();
 };
 
@@ -40,33 +40,27 @@ jQuery.fn.tagName = function() {
       });     
     },
     translate:function(usecount, ele){
-      var trans = jQuery(ele),
-          trans_tag = trans.tagName(),
-          
-          origin_lang = (P[usecount].origin_language.length > 1) ? jQuery(P[usecount].origin_language) : '',
-          origin_lang_tag = origin_lang.tagName(),
-          
-          dest_lang = (P[usecount].result_language.length > 1) ? jQuery(P[usecount].result_language) : '',
-          dest_lang_tag = dest_lang.tagName(),
-          
+      var trans = (jQuery(ele).length) ? jQuery(ele).length : false,          
+          origin_lang = (P[usecount].origin_language.length > 1) ? jQuery(P[usecount].origin_language) : '',          
+          dest_lang = (P[usecount].result_language.length > 1) ? jQuery(P[usecount].result_language) : '',          
           dest = (P[usecount].result.length > 1 && jQuery(P[usecount].result).length) ? jQuery(P[usecount].result) : false,
-          dest_tag = dest.tagName();
+          tagname = '',
+          translate = '',
+          original_language = ''
           ;
-      
 
-
-      if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
-      else translate = trans.text();
-      
-      if(origin_lang.length){
-        console.log(origin_lang);
-        if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
-        else original_language = origin_lang.text();        
-      }else{
-        console.log('here - '+P[usecount].origin_language);
-        original_language = P[usecount].origin_language;
+      if(trans){
+        tagname = trans.tag();
+        if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') translate = trans.val();
+        else translate = trans.text();
       }
       
+      if(origin_lang){
+        tagname = origin_lang.tag();
+        if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') original_language = origin_lang.val();
+        else original_language = origin_lang.text();        
+      }
+      console.log(original_language);
       //    
       //    if(dest_lang.length){        
       //      if(dest_lang_tag == 'input' || dest_lang_tag == 'select' || dest_lang_tag == 'textarea') dest_language = dest_lang.val();
