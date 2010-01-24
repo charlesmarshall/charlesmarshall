@@ -161,38 +161,40 @@ h3. Download
 </script>
 <script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
 <script type='text/javascript'>
+var track = function track_translate(result){
+  console.log(result);
+}
+
+
 jQuery(document).ready(function(){
   jQuery('#translation_form').translator({
     "origin": '#translate',
     "origin_language": '#from_lang',
     "result": '#result',
     "result_language": '#to_lang',
-    "after_translate": "track_translate"
+    "after_translate": track
   });
   jQuery('#auto_translation_form').translator({
     "origin": '#translate_from',
     "origin_language": '',
     "result": '#auto_result',
     "result_language": '#dest_lang',
-    "after_translate": "track_translate"    
+    "after_translate": track
   });  
   jQuery(document).translator({
     "origin": '#my_english_version',
     "origin_language": 'en',
     "result": '#my_french_result',
     "result_language": 'fr',
-    "after_translate": "track_translate"    
+    "after_translate": track
   });
   jQuery('#static_content_translation_form').translator({
     "origin": '#static_english_version',
     "origin_language": 'en',
     "result": '#dynamic_result',
     "result_language": '#trans_to',
-    "after_translate": "track_translate"    
+    "after_translate": track;
   });
 });
 
-function track_translate(result){
-  console.log(result);
-}
 </script>
