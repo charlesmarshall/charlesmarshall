@@ -196,7 +196,7 @@ div.post{border-bottom:1px solid #392927;}
   padding:10px;
   background:#EBE8D8;
 }
-  .inlineform input.text_field{
+  .inlineform input.text_field, .inlineform select{
     padding:4px 5px;
     font-size:108%;
     width:73%;
@@ -205,13 +205,7 @@ div.post{border-bottom:1px solid #392927;}
     float:left;
     display:block;
   }
-  .inlineform input.select{
-    width:73%;
-    margin-left:1%;
-    margin-bottom:8px;
-    float:left;
-    display:block;
-  }
+ 
   .inlineform label{
     width:20%;
     font-size:108%;
