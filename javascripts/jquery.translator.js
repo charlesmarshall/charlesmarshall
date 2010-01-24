@@ -73,7 +73,7 @@ jQuery.fn.tag = function() {
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') dest_language = dest_lang.val();
         else dest_language = dest_lang.text();        
       }
-      google.language.translate(trans, original_lang, result_lang, function(result) {
+      google.language.translate(translate, original_language, dest_language, function(result) {
         if(!result.error) {
           var tagname = jQuery(P[usecount].result).tag();
           if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
