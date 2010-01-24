@@ -101,6 +101,14 @@ As part of the google API you can leave the origin language blank and it will tr
   
 </form>
 
+The only issue that does sometimes come up is with using UTF-8 characters and how they are displayed in text areas and the like.
+
+h3. Download
+
+"Grab the file here":/javascripts/jquery.translator.js
+
+
+
 <script type='text/javascript'>                      
   google.load("language", "1");
 </script>
