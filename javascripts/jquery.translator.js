@@ -59,7 +59,7 @@ jQuery.fn.tagName = function() {
       else translate = trans.text();
       
       if(origin_lang.length){
-        console.log('here - '+origin_lang.length);
+        console.log(origin_lang);
         if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
         else original_language = origin_lang.text();        
       }else{
