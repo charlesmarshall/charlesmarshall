@@ -199,14 +199,21 @@ div.post{border-bottom:1px solid #392927;}
   .inlineform input.text_field{
     padding:4px 5px;
     font-size:108%;
-    width:90%;
+    width:73%;
+    margin-left:1%;
+    margin-bottom:8px;
+    float:left;
+    display:block;
+  }
+  .inlineform input.select{
+    width:73%;
     margin-left:1%;
     margin-bottom:8px;
     float:left;
     display:block;
   }
   .inlineform label{
-    width:7%;
+    width:20%;
     font-size:108%;
     font-weight:bold;
     clear:both;
