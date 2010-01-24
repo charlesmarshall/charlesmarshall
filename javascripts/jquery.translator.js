@@ -29,9 +29,9 @@ jQuery.fn.tagName = function() {
     
     setup:function(usecount){
       jQuery(P[usecount].origin).each(function(){
-                
+        var obj = this;
         jQuery(this).keyup(function(e){
-          if((e.keyCode == 13 || e.keyCode == 32) && jQuery(this).value().length) jQuery.translator.translate(usecount, this);
+          if((e.keyCode == 13 || e.keyCode == 32) && jQuery(obj).value().length) jQuery.translator.translate(usecount, obj);
         });
         
         jQuery(this).parents('form').submit(function(e){
