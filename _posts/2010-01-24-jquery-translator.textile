@@ -9,11 +9,12 @@ Came across googles ever handy Ajax translator API and I thought I'd write a qui
 h2. Summary
 
 * The plugin should be run on a form (for dynamic switching) or the document for static content
-* You can mix static content with dynamic, so you can translate page content or form values, by simply switching the selector
-* Automatic language detection (by leaving origin_language empty)
+* "Automatic language detection":#language-sniffing (by leaving origin_language empty)
+* You can mix "static content":#fixed-content-fixed-language with "dynamic":#fixed-content-dynamic-language, so you can translate page content or form values, by simply switching the selector
 * Supports all "languages available from google":http://code.google.com/apis/ajaxlanguage/documentation/#Details
 * When passing in languages they should use the standard 2 character short code.
-* After translation hooks
+* "After translation hooks":#after-translation-hooks
+* "Download":#download-the-plugin
 
 h3(#working-example). Working Example
 
@@ -49,9 +50,6 @@ h3(#working-example). Working Example
   
 </form>
 
-
-h3. Details
-
 Using the plugin is straight forward enough. Once you have a form, like the one above, you need to load in the google language API, this plugin and on document ready call the translator plugin.
 
 You should end up with something a bit like this:
@@ -74,13 +72,15 @@ jQuery(document).ready(function(){
 </script>  
 </pre>
 
+h3(#events-and-triggers). Plugin Events and Triggers
+
 The plugin should be called on the parent form as it captures the form submit event and runs the translate. It also runs the a translation call on the following events:
 
 * Form submit
 * Pressing space or enter within the origin field
 * Changing either the source or result language (these should both be drop downs)
 
-h3. Language Sniffing
+h3(#language-sniffing). Language Sniffing
 
 As part of the google API you can leave the origin language blank and it will try and figure it for itself. It's very simple to do with this plugin, just don't make a selector for it!
 
@@ -123,7 +123,7 @@ jQuery('#auto_translation_form').translator({
 
 The only issue that does sometimes come up is with using UTF-8 characters and how they are displayed in text areas and the like.
 
-h3. Translating Page Content With a Fixed Language
+h3(#fixed-content-fixed-language). Translating Page Content With a Fixed Language
 
 If you want to translate a static segment or an entire page, this plugin can do that also. Again, all you need to do is modify the call to translator plugin. Here is an example:
 
@@ -141,7 +141,7 @@ jQuery(document).translator({
 });
 </pre>
 
-h3. Translating Page Content With a Selectable Language
+h3(#fixed-content-dynamic-language). Translating Page Content With a Selectable Language
 
 You can also mix and match the two methods, having static content but swapping between languages like below:
 
@@ -169,7 +169,7 @@ jQuery('#static_content_translation_form').translator({
 });  
 </pre>
 
-h3. Hooks
+h3(#after-translation-hooks). Hooks
 
 The plugin gives the ability to add a post hook on a successful translation. On this site for example I track (via google analytics page events) what is translated from each query.
 
@@ -187,7 +187,7 @@ jQuery('#static_content_translation_form').translator({
 
 Both the original text and the translated text is passed in to the function.
 
-h3. Download
+h3(#download-the-plugin). Download
 
 "Grab the file here":/javascripts/jquery.translator.js
 
