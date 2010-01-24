@@ -57,13 +57,13 @@ jQuery.fn.tagName = function() {
 
       if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
       else translate = trans.text();
-      console.log(translate);
       
-      //    
-      //    if(origin_lang.length){        
-      //      if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
-      //      else original_language = origin_lang.text();        
-      //    }else original_language = P[usecount].origin_language;
+      if(origin_lang.length){        
+        if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
+        else original_language = origin_lang.text();        
+      }else original_language = P[usecount].origin_language;
+      
+      console.log(original_language);
       //    
       //    if(dest_lang.length){        
       //      if(dest_lang_tag == 'input' || dest_lang_tag == 'select' || dest_lang_tag == 'textarea') dest_language = dest_lang.val();
