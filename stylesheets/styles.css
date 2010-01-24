@@ -230,16 +230,16 @@ div.post{border-bottom:1px solid #392927;}
   padding:8px 0;
   border-top:1px solid #EBE8D8;
 }
-  .related_posts ul.half{
+  #content .related_posts ul.half{
     float:left;
     width:45%;
     padding-right:2%;
   }
-  .related_posts ul.first{
+  #content .related_posts ul.first{
     float:right;
     padding:0;
   }
-    .related_posts ul li{
+    #content .related_posts ul li{
       font-size:95%;
       margin-left:0;
       list-style-type:none;
