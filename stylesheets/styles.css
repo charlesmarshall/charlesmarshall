@@ -62,7 +62,7 @@ p{
   line-height:1.5em;
   margin-bottom:10px;
 }
-  p.read_more{float:left;}
+  #content p.read_more{float:left;font-size:93%;line-height:1em;}
 
 a{text-decoration:none;}
   #content a{color:#9C7B77;}
@@ -131,9 +131,12 @@ ul.navigation{float:right;}
   }
     ul.navigation a.category:hover{background:#7CAAD0;}
     ul.navigation li#active a.category{background:#2E3884;}
-    #content p.read_more a.category{
-      color:white;
-    }
+    
+      #content p.read_more a.category{
+        color:white;
+        background:#EBE8D8;
+        padding:4px;
+      }
  
 /*content area*/
 #content{
