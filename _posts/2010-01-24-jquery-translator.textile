@@ -15,7 +15,7 @@ h2. Summary
 * When passing in languages they should use the standard 2 character short code.
 * After translation hooks
 
-(#working-example)h3. Working Example
+h3(#working-example). Working Example
 
 <form action='' method='get' id='translation_form' class='inlineform'>
   <fieldset class='half'>
