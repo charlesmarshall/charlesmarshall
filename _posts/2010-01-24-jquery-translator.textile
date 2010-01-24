@@ -23,7 +23,8 @@ Came across googles ever handy Ajax translator API and I thought I'd write a qui
   
     <label for='to_lang'>To</label>
     <select id='to_lang' name='to_lang'>
-      <option value='en'>
+      <option value='en'>English</option>
+      <option value='es'>Spanish</option>
     </select>
   
     <label for='result'>Result:</label>
