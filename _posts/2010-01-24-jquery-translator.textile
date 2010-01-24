@@ -48,6 +48,7 @@ Using the plugin is straight forward enough. Once you have a form, like the one 
 You should end up with something a bit like this:
 
 <pre>
+  <script src='http://www.google.com/jsapi'  type='text/javascript'></script>	
   <script type='text/javascript'>                      
     google.load("language", "1");
   </script>
