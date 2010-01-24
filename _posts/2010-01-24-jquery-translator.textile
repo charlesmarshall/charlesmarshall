@@ -4,21 +4,21 @@ title: jQuery Translator
 category: jquery
 ---
 
-WORK IN PROGRESS
-
 Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it.
 
-<form action='' method='get' id='translation_form'>
-  <fieldset>
+h3. Working Example
+
+<form action='' method='get' id='translation_form' class='inlineform'>
+  <fieldset class='half'>
     <legend>From</legend>
     
     <label for='translate'>Translate:</label>
-    <input type='text' name='translate' id='translate' value=''/>
+    <input type='text' name='translate' id='translate' value='' class='text_field'/>
     
     
   </fieldset>
   
-  <fieldset>
+  <fieldset class='half'>
     <legend>To</legend>
   
     <label for='to_lang'>To</label>
@@ -28,7 +28,7 @@ Came across googles ever handy Ajax translator API and I thought I'd write a qui
     </select>
   
     <label for='result'>Result:</label>
-    <input type='text' name='result' id='result' value=''/>
+    <input type='text' name='result' id='result' value='' class='text_field'/>
   
   </fieldset>
   

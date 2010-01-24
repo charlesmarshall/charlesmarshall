@@ -169,24 +169,48 @@ div.post{border-bottom:1px solid #392927;}
   
 
 
-  /** JQUERY EXAMPLE CSS **/
-  #example_container {
-    height: 400px;
-    margin: 20px auto;
-    background: #EBE8D8;
+/** JQUERY EXAMPLE CSS **/
+#example_container {
+  height: 400px;
+  margin: 20px auto;
+  background: #EBE8D8;
+}
+.jqitem {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  background: white;
+}
+.ui-widget-overlay {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #666666;
+  opacity: 0.5;
+}
+
+/** FORMS **/
+.inlineform{
+  padding:10px;
+  background:#EBE8D8;
+}
+  .inlineform input.text_field{
+    padding:4px 5px;
+    font-size:108%;
+    width:190px;
+    margin-bottom:8px;
+    float:left;
+    display:block;
   }
-  .jqitem {
-    border: 1px solid black;
-    height: 100px;
-    width: 100px;
-    background: white;
+  .inlineform label{
+    width:110px;
+    font-size:108%;
+    font-weight:bold;
+    clear:both;
+    margin-bottom:8px;
+    float:left;
+    display:block;
   }
-  .ui-widget-overlay {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: #666666;
-    opacity: 0.5;
-  }
+  
