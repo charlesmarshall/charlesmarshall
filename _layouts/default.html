@@ -63,12 +63,12 @@
       <h4>Related Posts</h4>
       <ul class='half first'>
       {% for related in site.related_posts limit:5 %}
-      <li><a href='{{ realted.url }}' title='{{ related.title }}'>{{ related.title }}</li>
+      <li><a href='{{ related.url }}' title='{{ related.title }}'>{{ related.title }}</a></li>
       {% endfor %}
       </ul>
       <ul class='half last'>
       {% for related in site.related_posts limit:5 offset:5 %}
-      <li><a href='{{ realted.url }}' title='{{ related.title }}'>{{ related.title }}</li>
+      <li><a href='{{ related.url }}' title='{{ related.title }}'>{{ related.title }}</a></li>
       {% endfor %}
       </ul>
     </div>
