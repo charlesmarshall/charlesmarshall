@@ -230,9 +230,9 @@ div.post{border-bottom:1px solid #392927;}
   padding:8px 0;
   border-top:1px solid #EBE8D8;
 }
-  #content .related_posts ul.half{
+  #content .related_posts ul.third{
     float:left;
-    width:45%;
+    width:30%;
     padding-right:2%;
   }
   #content .related_posts ul.first{
