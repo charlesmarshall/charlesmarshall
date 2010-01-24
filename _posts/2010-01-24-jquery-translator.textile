@@ -90,8 +90,8 @@ As part of the google API you can leave the origin language blank and it will tr
     <label for='dest_lang'>To</label>
     <select id='dest_lang' name='dest_lang'>
       <option value='en'>English</option>
-      <option value='es' selected="selected">Spanish</option>
-      <option value='fr'>French</option>
+      <option value='es'>Spanish</option>
+      <option value='fr' selected="selected">French</option>
     </select>
   
     <label for='auto_result'>Result:</label>
@@ -140,8 +140,8 @@ You can also mix and match the two methods, having static content but swapping b
   <fieldset class='half'>
     <label for='trans_to'>Translate to</label>
     <select id='trans_to' name='trans_to'>
-      <option value='en' selected="selected">English</option>
-      <option value='es'>Spanish</option>
+      <option value='en'>English</option>
+      <option value='es' selected="selected">Spanish</option>
       <option value='fr'>French</option>
     </select>
   </fieldset>
