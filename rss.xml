@@ -12,6 +12,6 @@ title: RSS Feed
     <title><![CDATA[{{ page.title }}]]></title>
     <link><![CDATA[{{ siteaddress }}{{ page.url }}]]></link>
     <description><![CDATA[{{ page.content }}]]></description>
-    <pubDate>{{ page.date | date: "%Y-%m-%d" }}</pubDate>		
+    <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>		
   </item>
 {% endfor %}

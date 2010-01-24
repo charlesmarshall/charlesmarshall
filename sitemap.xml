@@ -6,14 +6,14 @@ title: Site Map
 {% assign siteaddress = "http://charlesmarshall.co.uk" %}  				                      
 <url>
 	<loc>{{ siteaddress }}</loc>
-	<lastmod>2010-01-21</lastmod>
+	<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>1</priority>
 </url>
 {% for page in site.posts %}
 <url>
   <loc>{{ siteaddress }}{{ page.url }}</loc>
-  <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
+  <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
