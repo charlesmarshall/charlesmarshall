@@ -58,7 +58,9 @@ jQuery.fn.tagName = function() {
         else result_lang = jQuery(P[usecount].result_language).text();
       }else result_lang = P[usecount].result_language;
       
-      console.log('translate:'+trans+" original_lang:"+original_lang+" result_lang:"+result_lang);
+      console.log('translate:'+trans);
+      console.log("original_lang:"+original_lang)
+      console.log("result_lang:"+result_lang);
       google.language.translate(trans, original_lang, result_lang, function(result) {
         console.log(result);
         if (!result.error) {
