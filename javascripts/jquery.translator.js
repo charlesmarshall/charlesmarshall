@@ -53,10 +53,12 @@ jQuery.fn.tagName = function() {
           dest_tag = dest.tagName();
           ;
       
-      console.log(trans_tag);
 
-      // if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
-      //    else translate = trans.text();
+
+      if(trans_tag == 'input' || trans_tag == 'select' || trans_tag == 'textarea') translate = trans.val();
+      else translate = trans.text();
+      console.log(translate);
+      
       //    
       //    if(origin_lang.length){        
       //      if(origin_lang_tag == 'input' || origin_lang_tag == 'select' || origin_lang_tag == 'textarea') original_language = origin_lang.val();
