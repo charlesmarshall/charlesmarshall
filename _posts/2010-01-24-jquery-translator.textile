@@ -161,8 +161,8 @@ h3. Download
 </script>
 <script src="/javascripts/jquery.translator.js" type="text/javascript" charset="utf-8"></script>
 <script type='text/javascript'>
-var track = function track_translate(result){
-  console.log(result);
+var track = function track_translate(original, result){
+  _gaq.push(['_trackEvent', 'translator', original, result]);
 }
 
 
