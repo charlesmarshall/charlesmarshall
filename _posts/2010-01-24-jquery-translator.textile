@@ -193,7 +193,7 @@ jQuery(document).ready(function(){
     "origin_language": 'en',
     "result": '#dynamic_result',
     "result_language": '#trans_to',
-    "after_translate": track;
+    "after_translate": track
   });
 });
 
