@@ -84,7 +84,7 @@ jQuery.fn.tag = function() {
           var tagname = jQuery(P[usecount].result).tag();
           if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
           else jQuery(P[usecount].result).text(result.translation);
-          if(P[usecount].after_translate && typeof(P[usecount].after_translate) != 'undefined') P[usecount].after_translate(translate, result);
+          if(P[usecount].after_translate && typeof(P[usecount].after_translate) != 'undefined') P[usecount].after_translate(translate, result.translation);
         }
       });
     }

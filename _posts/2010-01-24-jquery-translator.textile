@@ -149,6 +149,36 @@ You can also mix and match the two methods, having static content but swapping b
 <p id='static_english_version' class='example'>Translation is the name of the game!</p>
 <p id='dynamic_result' class='example'></p>
 
+This is achieved very easily by switching the result_language parameter to a selector while keeping the origin_language as 'en'
+
+<pre>
+jQuery('#static_content_translation_form').translator({
+  "origin": '#static_english_version',
+  "origin_language": 'en',
+  "result": '#dynamic_result',
+  "result_language": '#trans_to'
+});  
+</pre>
+
+h3. Hooks
+
+The plugin gives the ability to add a post hook on a successful translation. On this site for example I track (via google analytics page events) what is translated from each query.
+
+In normal jQuery style you can pass in a function as a parameter to be run like this:
+
+<pre>
+jQuery('#static_content_translation_form').translator({
+  "origin": '#static_english_version',
+  "origin_language": 'en',
+  "result": '#dynamic_result',
+  "result_language": '#trans_to',
+  "after_translate": function(original, translation){alert('translated!');}
+});
+</pre>
+
+Both the original text and the translated text is passed in to the function.
+
+
 
 h3. Download
 
@@ -163,7 +193,7 @@ h3. Download
 <script type='text/javascript'>
 var track = function track_translate(original, result){
   _gaq.push(['_trackEvent', 'translator', original, result]);
-}
+};
 
 
 jQuery(document).ready(function(){
