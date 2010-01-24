@@ -45,7 +45,7 @@
   
   
   <div class='full clearfix' id="content">
-    {% if page.home != true %}
+    {% if page.home != true and page.category %}
     <div class='details summary clearfix' >
       <h5 class='date tag curvy'>{{ page.date | date_to_string }}</h5>
       <h6 class='curvy'><a href='/{{ page.category | downcase }}.html' title='{{ page.category | downcase }}'>{{ page.category | downcase }}</a></h6>      
