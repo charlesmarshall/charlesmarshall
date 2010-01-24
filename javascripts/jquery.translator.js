@@ -60,7 +60,13 @@ jQuery.fn.tag = function() {
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') original_language = origin_lang.val();
         else original_language = origin_lang.text();        
       }
-      console.log(translate);
+      
+      if(dest_lang){
+        tagname = dest_lang.tag();
+        if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') dest_language = dest_lang.val();
+        else dest_language = dest_lang.text();        
+      }
+      console.log(dest_language);
       //    
       //    if(dest_lang.length){        
       //      if(dest_lang_tag == 'input' || dest_lang_tag == 'select' || dest_lang_tag == 'textarea') dest_language = dest_lang.val();
