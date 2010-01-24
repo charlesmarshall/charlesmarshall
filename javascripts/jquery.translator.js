@@ -43,16 +43,16 @@ jQuery.fn.tagName = function() {
     },
     translate:function(usecount, ele){
       var trans = jQuery(ele),
-          trans_tag = trans.tagName(),
+          trans_tag = trans.tagName().toLowerCase(),
           
           origin_lang = jQuery(P[usecount].origin_language),
-          origin_lang_tag = origin_lang.tagName(),
+          origin_lang_tag = origin_lang.tagName().toLowerCase(),
           
           dest_lang = jQuery(P[usecount].result_language),
-          dest_lang_tag = dest_lang.tagName(),
+          dest_lang_tag = dest_lang.tagName().toLowerCase(),
           
           dest = jQuery(P[usecount].result),
-          dest_tag = dest.tagName();
+          dest_tag = dest.tagName().toLowerCase();
           ;
       
       console.log(trans.tagName());
