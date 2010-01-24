@@ -59,10 +59,10 @@ jQuery.fn.tagName = function() {
       }else result_lang = P[usecount].result_language;
       
       console.log('translate:'+trans);
-      console.log("original_lang:"+original_lang)
+      console.log("original_lang:"+original_lang);
       console.log("result_lang:"+result_lang);
       google.language.translate(trans, original_lang, result_lang, function(result) {
-        console.log(result);
+        console.log("here...");
         if (!result.error) {
           var tagname = jQuery(P[usecount].result).tagName();
           if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
