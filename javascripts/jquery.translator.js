@@ -32,7 +32,7 @@ jQuery.fn.tagName = function() {
         var obj = this;
         jQuery(this).keyup(function(e){
           console.log(this);
-          if((e.keyCode == 13 || e.keyCode == 32) && jQuery(obj).value().length) jQuery.translator.translate(usecount, obj);
+          if((e.keyCode == 13 || e.keyCode == 32) && jQuery(this).val().length) jQuery.translator.translate(usecount, obj);
         });
         
         jQuery(this).parents('form').submit(function(e){
@@ -45,23 +45,23 @@ jQuery.fn.tagName = function() {
     translate:function(usecount, ele){
       var trans = "", original_lang = "", result_language = "";
       
-      if(jQuery(ele).value()) trans = jQuery(ele).value();
+      if(jQuery(ele).val()) trans = jQuery(ele).val();
       else if(jQuery(ele).text()) trans = jQuery(ele).text();
       
       if(jQuery(P[usecount].origin_language).length){
-        if(jQuery(P[usecount].origin_language).value()) original_lang = jQuery(P[usecount].origin_language).value();
+        if(jQuery(P[usecount].origin_language).val()) original_lang = jQuery(P[usecount].origin_language).val();
         else original_lang = jQuery(P[usecount].origin_language).text();
       }else original_lang = P[usecount].origin_language;
       
       if(jQuery(P[usecount].result_language).length){
-        if(jQuery(P[usecount].result_language).value()) result_language = jQuery(P[usecount].result_language).value();
+        if(jQuery(P[usecount].result_language).val()) result_language = jQuery(P[usecount].result_language).val();
         else result_language = jQuery(P[usecount].result_language).text();
       }else result_lang = P[usecount].result_language;
       
       google.language.translate(trans, original_lang, result_language, function(result) {
         if (!result.error) {
           var tagname = jQuery(P[usecount].result).tagName();
-          if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).value(result.translation);
+          if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
           else jQuery(P[usecount].result).text(result.translation);
         }
       });
