@@ -133,7 +133,6 @@ ul.navigation{float:right;}
     ul.navigation li#active a.category{background:#2E3884;}
     
       #content p.read_more a.category{
-        color:white;
         background:#EBE8D8;
         padding:4px;
       }
