@@ -1,12 +1,11 @@
 jQuery.fn.tagName = function() {
-    return String(this.get(0).tagName);
+    return String(this.get(0).tagName).toLowerCase();
 };
 
 (function(jQuery) {
   
   jQuery.fn.translator = function(options){
     P[usecount] = jQuery.extend({}, jQuery.fn.translator.defaults, options, {container:this});
-    D[usecount] = {};
     return this.each(function(){
       if(this.__translator) return;
       else this.__translator = usecount;
@@ -24,7 +23,6 @@ jQuery.fn.tagName = function() {
   
   
   jQuery.translator = {
-    data:[],
     params:[],
     
     setup:function(usecount){
