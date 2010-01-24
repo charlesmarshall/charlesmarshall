@@ -18,7 +18,8 @@ jQuery.fn.tag = function() {
                                  "origin": '#translate',
                                  "origin_language": '#original_language',
                                  "result": '#result',
-                                 "result_language": '#result_language'
+                                 "result_language": '#result_language',
+                                 "after_translate":false;
                                };
   
   
@@ -83,6 +84,7 @@ jQuery.fn.tag = function() {
           var tagname = jQuery(P[usecount].result).tag();
           if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
           else jQuery(P[usecount].result).text(result.translation);
+          if(typeof(P[usecount].after_translate) == 'function') P[usecount].after_translate(result);
         }
       });
     }

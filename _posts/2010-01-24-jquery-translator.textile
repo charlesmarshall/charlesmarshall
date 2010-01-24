@@ -166,25 +166,33 @@ jQuery(document).ready(function(){
     "origin": '#translate',
     "origin_language": '#from_lang',
     "result": '#result',
-    "result_language": '#to_lang'
+    "result_language": '#to_lang',
+    "after_translate": "track_translate"
   });
   jQuery('#auto_translation_form').translator({
     "origin": '#translate_from',
     "origin_language": '',
     "result": '#auto_result',
-    "result_language": '#dest_lang'
+    "result_language": '#dest_lang',
+    "after_translate": "track_translate"    
   });  
   jQuery(document).translator({
     "origin": '#my_english_version',
     "origin_language": 'en',
     "result": '#my_french_result',
-    "result_language": 'fr'
+    "result_language": 'fr',
+    "after_translate": "track_translate"    
   });
   jQuery('#static_content_translation_form').translator({
     "origin": '#static_english_version',
     "origin_language": 'en',
     "result": '#dynamic_result',
-    "result_language": '#trans_to'
+    "result_language": '#trans_to',
+    "after_translate": "track_translate"    
   });
 });
+
+function track_translate(result){
+  console.log(result);
+}
 </script>
