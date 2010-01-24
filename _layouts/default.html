@@ -49,6 +49,7 @@
     <div class='details summary clearfix' >
       <h5 class='date tag curvy'>{{ page.date | date_to_string }}</h5>
       <h6 class='curvy'><a href='/{{ page.category | downcase }}.html' title='{{ page.category | downcase }}'>{{ page.category | downcase }}</a></h6>      
+      <h6 class='curvy comment_count'><a href='#disqus_thread' title='comments'>0 comments</a></h6>
     </div>
     {% endif %}
     <h1>{{ page.title }}</h1>
@@ -57,6 +58,12 @@
     <div class='introduction curvy clearfix'>{{ page.introduction }}</div>
     {% endif %}
     {{ content }}
+    
+    {% if page.category %}
+    <div id="disqus_thread"></div>
+    <script type="text/javascript" src="http://disqus.com/forums/charlesmarshall/embed.js"></script>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    {% endif %}
     
     {% if site.related_posts and page.category %}
     <div class='related_posts clearfix'>
@@ -78,9 +85,14 @@
       </ul>
     </div>
     {% endif %}
-    
   </div>    
 
+   
+  <div class='full clearfix' id="footer">
+    
+  </div>
+
+  <script src="/javascripts/main.js" type="text/javascript" charset="utf-8"></script>
    
 </body>
 </html>
