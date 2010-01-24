@@ -168,7 +168,14 @@ div.post{border-bottom:1px solid #392927;}
     line-height:1em;
   }
   
-  
+  .details{
+    padding:5px 0;
+    border-top:1px solid #EBE8D8;
+    border-bottom:1px solid #EBE8D8;    
+  }
+  .details h5.date, .details h6, .details a.tag{
+    margin-bottom:0;
+  }
 
 
 /** JQUERY EXAMPLE CSS **/
