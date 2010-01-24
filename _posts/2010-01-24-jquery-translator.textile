@@ -8,6 +8,7 @@ Came across googles ever handy Ajax translator API and I thought I'd write a qui
 
 h2. Summary
 
+<div class='introduction'>
 * The plugin should be run on a form (for dynamic switching) or the document for static content
 * "Automatic language detection":#language-sniffing (by leaving origin_language empty)
 * You can mix "static content":#fixed-content-fixed-language with "dynamic":#fixed-content-dynamic-language, so you can translate page content or form values, by simply switching the selector
@@ -15,6 +16,7 @@ h2. Summary
 * When passing in languages they should use the standard 2 character short code.
 * "After translation hooks":#after-translation-hooks
 * "Download":#download-the-plugin
+</div>
 
 h3(#working-example). Working Example
 
