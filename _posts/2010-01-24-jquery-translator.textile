@@ -2,6 +2,18 @@
 layout: default
 title: jQuery Translator
 category: jquery
+keywords:
+- jQuery
+- translation
+- google
+- translate
+- plugin
+- language detection
+- language sniffing
+- dynamic
+- ajax
+- api
+description: "Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it."
 ---
 
 Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it.
