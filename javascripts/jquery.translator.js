@@ -27,7 +27,7 @@ jQuery.fn.tag = function() {
     
     setup:function(usecount){
       if(P[usecount].container.tag() == 'form') jQuery.translator.setup_form(usecount);
-      else jQuery.translator.translate(usecount,jQuery(P[usecount].origin));      
+      jQuery.translator.translate(usecount,jQuery(P[usecount].origin));      
     },
     setup_form:function(usecount){
       jQuery(P[usecount].origin).each(function(){
