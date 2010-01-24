@@ -19,7 +19,7 @@ jQuery.fn.tag = function() {
                                  "origin_language": '#original_language',
                                  "result": '#result',
                                  "result_language": '#result_language',
-                                 "after_translate":false;
+                                 "after_translate":false
                                };
   
   
