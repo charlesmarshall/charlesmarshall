@@ -1,6 +1,5 @@
 jQuery.fn.tagName = function() {
-  if(this.length) return String(this.get(0).tagName).toLowerCase();
-  else return '';
+  return String(this.get(0).tagName).toLowerCase();
 };
 
 (function(jQuery) {
