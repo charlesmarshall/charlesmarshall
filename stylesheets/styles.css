@@ -48,8 +48,8 @@ h3,h4{font-size:123.1%;}
 h1,h2{color:#7CAAD0;}
 h3,h4{color:#7CAAD0;}
 strong,b,h3{font-weight:bold;}
-h1,h2,h5{margin-bottom:12px;}
-h3,h4{margin-bottom:4px;}
+h2,h5{margin-bottom:12px;}
+h1,h3,h4{margin-bottom:4px;}
 
 pre, .example{
   margin:12px 0;
