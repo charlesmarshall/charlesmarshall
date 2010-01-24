@@ -31,13 +31,19 @@ jQuery.fn.tag = function() {
         jQuery(this).keyup(function(e){
           if((e.keyCode == 13 || e.keyCode == 32) && jQuery(this).val().length) jQuery.translator.translate(usecount, obj);
         });
-        
-        jQuery(this).parents('form').submit(function(e){
-          jQuery.translator.translate(usecount, this);
-          return false;
-        });
-        
-      });     
+      });  
+      jQuery(P[usecount].container).submit(function(){
+        jQuery.translator.translate(usecount, jQuery(P[usecount].origin));
+        return false;
+      });
+      jQuery(P[usecount].origin_language).change(function(){
+        jQuery.translator.translate(usecount, jQuery(P[usecount].origin));
+        return false;
+      });
+      jQuery(P[usecount].result_language).change(function(){
+        jQuery.translator.translate(usecount, jQuery(P[usecount].origin));
+        return false;
+      });
     },
     translate:function(usecount, ele){
       var trans = (jQuery(ele).length) ? jQuery(ele) : false,          
@@ -46,7 +52,8 @@ jQuery.fn.tag = function() {
           dest = (P[usecount].result.length > 1 && jQuery(P[usecount].result).length) ? jQuery(P[usecount].result) : false,
           tagname = '',
           translate = '',
-          original_language = ''
+          original_language = '',
+          dest_language = ''
           ;
 
       if(trans){
