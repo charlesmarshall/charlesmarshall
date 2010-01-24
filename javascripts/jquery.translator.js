@@ -1,5 +1,6 @@
 jQuery.fn.tagName = function() {
-    return String(this.get(0).tagName).toLowerCase();
+  if(this.length) return String(this.get(0).tagName).toLowerCase();
+  else return '';
 };
 
 (function(jQuery) {
@@ -43,13 +44,13 @@ jQuery.fn.tagName = function() {
       var trans = jQuery(ele),
           trans_tag = trans.tagName(),
           
-          origin_lang = jQuery(P[usecount].origin_language),
+          origin_lang = (P[usecount].origin_language.length > 1) ? jQuery(P[usecount].origin_language) : '',
           origin_lang_tag = origin_lang.tagName(),
           
-          dest_lang = jQuery(P[usecount].result_language),
+          dest_lang = (P[usecount].result_language.length > 1) ? jQuery(P[usecount].result_language) : '',
           dest_lang_tag = dest_lang.tagName(),
           
-          dest = jQuery(P[usecount].result),
+          dest = (P[usecount].result.length > 1 && jQuery(P[usecount].result).length) ? jQuery(P[usecount].result) : false,
           dest_tag = dest.tagName();
           ;
       
