@@ -6,7 +6,16 @@ category: jquery
 
 Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it.
 
-h3. Working Example
+h2. Summary
+
+* The plugin should be run on a form (for dynamic switching) or the document for static content
+* You can mix static content with dynamic, so you can translate page content or form values, by simply switching the selector
+* Automatic language detection (by leaving origin_language empty)
+* Supports all "languages available from google":http://code.google.com/apis/ajaxlanguage/documentation/#Details
+* When passing in languages they should use the standard 2 character short code.
+* After translation hooks
+
+(#working-example)h3. Working Example
 
 <form action='' method='get' id='translation_form' class='inlineform'>
   <fieldset class='half'>
@@ -177,8 +186,6 @@ jQuery('#static_content_translation_form').translator({
 </pre>
 
 Both the original text and the translated text is passed in to the function.
-
-
 
 h3. Download
 
