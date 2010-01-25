@@ -12,4 +12,4 @@ description: "There are few if any models in the world to rival the Ferrari 312P
 ---
 There are few if any models in the world to rival the Ferrari 312PB built by Pierre Scerri. This 1:3 scale masterpiece is the real thing in every sense, from its operating 100cc 12-cylinder engine to the exact scale operating Ferrari gauges which are calibrated precisely to indicate rpm, oil pressure, water temperature and oil temperature.
 
-Take a look at the youTube video "here":http://www.youtube.com/watch?v=l3NVJ4pEFuY&amp;eurl=.
+Take a look at the youTube video "here":http://www.youtube.com/watch?v=l3NVJ4pEFuY.
