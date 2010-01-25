@@ -2,10 +2,17 @@
 layout: default
 title: WAA Buys Crap Web Company...
 category: rant
+keywords:
+- WAA
+- rant
+- marketingnet
+- flash site
+description: "Now I left WAA a while ago, but I still like to see their web people doing good work and do tend to moan at them when they don't! Regardless of what minor layout issue, semantic faux pas or just something I think is wrong (I moan a lot)."
+introduction: "<p>Now I left WAA a while ago, but I still like to see their web people doing good work and do tend to moan at them when they don't! Regardless of what minor layout issue, semantic faux pas or just something I think is wrong (I moan a lot).</p><p>I mildly berated them in a previous post regarding the appalling flash site they launched that replaced a nicely marked up (if somewhat overly pink) site. Since the relaunch of www.waa.co.uk their google site index has dropped from over 5000 pages to just over 600! All of the old content they had (mostly articles by Chris Tomlinson) has been removed, nothing new has been added. At least the people they had in web were smart enough to be using open source tech and support the open source community. Looks like that's about to end.</p><p>I know I tend to complain, especially about WAA, but give the full post a read if can handle the moaning.</p>"
 ---
-Now I left WAA a while ago, but I still like to see their web people doing good work and do tend to moan at them when they don't! Regardless of what minor layout issue, semantic faux pas or just something I think is wrong (I moan alot).
+Now I left WAA a while ago, but I still like to see their web people doing good work and do tend to moan at them when they don't! Regardless of what minor layout issue, semantic faux pas or just something I think is wrong (I moan a lot).
 
-I mildly bearated them in a previous post regarding the appalling flash site they launched that replaced a nicely marked up (if somewhat overly pink) site. Since the relaunch of www.waa.co.uk their google site index has dropped from over 5000 pages to just over 600! All of the old content they had (mostly articles by Chris Tomlinson) has been removed, nothing new has been added. At least the people they had in web were smart enough to be using open source tech and support the open source community. Looks like that's aboout to end.
+I mildly berated them in a previous post regarding the appalling flash site they launched that replaced a nicely marked up (if somewhat overly pink) site. Since the relaunch of www.waa.co.uk their google site index has dropped from over 5000 pages to just over 600! All of the old content they had (mostly articles by Chris Tomlinson) has been removed, nothing new has been added. At least the people they had in web were smart enough to be using open source tech and support the open source community. Looks like that's about to end.
 
 WAA have recently bought a new web company, "MarketingNet":http://marketingnet.com/. A java and .net based company. Guess all the remaining good points about WAAs web department are about to be replaced by a huge chunk of paper work, administration and bureaucracy. No longer can they claim to be agile or cutting edge when your using tech like that.
 
