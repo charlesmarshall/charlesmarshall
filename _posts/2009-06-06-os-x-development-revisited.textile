@@ -2,6 +2,17 @@
 layout: default
 title: OS X Web Development (Revisited)
 category: web
+keywords:
+- OS X
+- MySQL
+- PHP
+- Apache
+- LAMP
+- Sequel Pro
+- Leopard
+- install
+description: "Many revisions have passed since we last covered this topic, so with a fresh install on hand it's time to refactor!"
+introduction: "<p>Although I covered this once before, many updates of OS X have come and gone, so it is about time to re write the post!</p><p>This new post will cover how to setup and install all the bits you need to get a good working environment for a LAMP developer, click though to read it in full!</p>"
 ---
 
 Many revisions have passed since we last covered this topic, so with a fresh install on hand it's time to refactor!
