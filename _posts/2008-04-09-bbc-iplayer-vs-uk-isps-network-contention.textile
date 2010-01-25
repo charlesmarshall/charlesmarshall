@@ -2,6 +2,8 @@
 layout: default
 title: BBC iPlayer vs UK ISPs - Network Contention
 category: rant
+description: "This story really wound me up. ISPs attitude to its responsibilities has been a sore point for some time with me; ever since my online gaming days of Earth and Beyond, CS and the like network contention has been a sticky issue."
+introduction: "<p>This story really wound me up. ISPs attitude to its responsibilities has been a sore point for some time with me; ever since my online gaming days of Earth and Beyond, CS and the like network contention has been a sticky issue...</p>"
 ---
 This story really wound me up. ISPs attitude to its responsibilities has been a sore point for some time with me; ever since my online gaming days of Earth and Beyond, CS and the like network contention has been a sticky issue.
 
