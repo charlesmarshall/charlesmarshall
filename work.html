@@ -28,7 +28,11 @@ introduction: "<p>I'm a web developer for One Black Bear (previously I was at WA
     <h5 class='date curvy'>{{ post.date | date_to_string }}</h5>
     <h6 class='curvy'><a href='/{{ post.category | downcase }}.html' title='{{ post.category | downcase }}'>{{ post.category | downcase }}</a></h6>
   </div>
+  {% if post.introduction %}
+  {{ post.introduction }}
+  {% else %}
   {{ post.content }}
+  {% endif %}
   <p class='read_more'><a href="{{ post.url }}" title="{{ post.title }}" class='category curvy'>read more &raquo;</a></p>
 </div>
 {% endfor %}
