@@ -3,7 +3,7 @@ layout: default
 title: BBC iPlayer vs UK ISPs - Network Contention
 category: rant
 description: "This story really wound me up. ISPs attitude to its responsibilities has been a sore point for some time with me; ever since my online gaming days of Earth and Beyond, CS and the like network contention has been a sticky issue."
-introduction: "<p>This story really wound me up. ISPs attitude to its responsibilities has been a sore point for some time with me; ever since my online gaming days of Earth and Beyond, CS and the like network contention has been a sticky issue...</p>"
+introduction: "<p>This story really wound me up. ISPs attitude to its responsibilities has been a sore point for some time with me; ever since my online gaming days of Earth and Beyond, CS and the like network contention has been a sticky issue.</p><p>First lets go over what an ISP should do. When it sells you a 4mb line, you get a 4mb connection to the internet almost all the time; I can accept network outages and local hub upgrades etc. Their advertising should reflect the reality of the situation, so when it says &pound;20 per month gets you a 4mb line then thats what you should get. This is not what happens...</p>"
 ---
 This story really wound me up. ISPs attitude to its responsibilities has been a sore point for some time with me; ever since my online gaming days of Earth and Beyond, CS and the like network contention has been a sticky issue.
 
