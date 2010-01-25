@@ -2,6 +2,17 @@
 layout: default
 title: Expanding Grid
 category: jquery
+keywords:
+- jQuery
+- expanding grid
+- expand
+- grid
+- website
+- web
+- charles marshall
+- charles
+description: "A jQuery plugin to create an expanding grid system. Each item in the grid expands into its neighbours on hover."
+introduction: "<p>A jQuery plugin to create an expanding grid system. Each item in the grid expands into its neighbours on hover.</p>"
 ---
 
 Piece of <a href='/javascripts/jquery.expandinggrid.js'>jQuery</a> to create a grid system from some class items that then expand on hover and contract on hover off.
