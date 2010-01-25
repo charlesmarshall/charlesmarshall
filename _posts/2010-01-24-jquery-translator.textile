@@ -14,7 +14,7 @@ keywords:
 - ajax
 - api
 description: "Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it."
-introduction: "<p>A little jQuery plugin that makes use of googles language API to create a translator.</p><p>The plugin should ideally be run on either form (for dynamic switching) or the entire document when working on static content.</p><ul><li>Automatic language sniffing</li><li>Supports as many languages as google does</li><li>After success hooks</li></ul><p><a href='/javascripts/jquery.translator.js' title='download'>Grab the plugin here</a></p>"
+introduction: "<p>A little jQuery plugin that makes use of googles language API to create a translator.</p><p>The plugin should ideally be run on either form (for dynamic switching) or the entire document when working on static content.</p><ul><li>Automatic language sniffing</li><li>Supports as many languages as google does</li><li>After success hooks</li></ul><p><a href='/javascripts/jquery.translator.js' title='download'>Grab the plugin</a> or <a href='/jquery/2010/01/24/jquery-translator.html'>view examples and more details</a>.</p>"
 ---
 
 Came across googles ever handy Ajax translator API and I thought I'd write a quick jQuery plugin for it.
