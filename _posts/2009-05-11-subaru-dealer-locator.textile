@@ -2,6 +2,18 @@
 layout: default
 title: Dealer Locator
 category: work
+keywords:
+- Subaru dealer locator
+- subaru
+- locator
+- google maps
+- isuzu
+- website
+- replace multimap
+- upgrade
+- IM Group
+description: "Having recently completed an upgrade of the Subaru and Isuzu national website Dealer locator I thought I'd tell you a bit about it. The locators, originally run off Multimap, now use the Google maps system. The project required a fast turnaround and was completed for both brands within two weeks of receiving the brief."
+introduction: "<img src='/images/work/dealer-locator-1.jpg' alt='dealer locator'/><p>Having recently completed an upgrade of the Subaru and Isuzu national website Dealer locator I thought I'd tell you a bit about it.</p><p>The locators, originally run off Multimap, now use the Google maps system. The project required a fast turnaround and was completed for both brands within two weeks of receiving the brief.</p><p>By using Google maps IM Group (Subaru UK and Isuzu UK's parent company) has saved over &pound;20,000 and improved their service to site visitors.</p><p>The new system is faster, allowing for live information, filtering of sales, servicing &amp; parts dealers and the re-designed interface makes finding a dealer even simpler.</p>"
 ---
 
 !/images/work/dealer-locator-1.jpg!:http://maps.oneblackbear.com/subaru
