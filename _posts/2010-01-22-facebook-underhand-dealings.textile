@@ -13,7 +13,7 @@ keywords:
 - sold out
 - underhand
 description: "I had an account on facebook for a long, long time; but no longer. At the end of last year (2009) I'd had enough and deleted my account, which is a challenge in itself. Since then, I've not missed it one bit."
-introduction: "<p>Every time any of my friends or groups did anything you can bet your life I'd get a notification about it. I don't care if you've just bought 5 more sheep or got a full house, I'm not interested!!</p><p>You can turn most of the email about these off, but every time you log back in you'll get dozens of them in your face with each application wanting you to join up.</p>"
+introduction: "<p>Every time any of my friends or groups did anything you can bet your life I'd get a notification about it. I don't care if you've just bought 5 more sheep or got a full house, I'm not interested!!</p><p>You can turn most of the email about these off, but every time you log back in you'll get dozens of them in your face with each application wanting you to join up....</p>"
 ---
 
 I had an account on facebook for a long, long time; but no longer. At the end of last year (2009) I'd had enough and deleted my account, which is a challenge in itself. Since then, I've not missed it one bit.
