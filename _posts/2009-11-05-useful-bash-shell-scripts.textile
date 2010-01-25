@@ -2,6 +2,14 @@
 layout: default
 title: Useful Bash Shell Scripts
 category: general
+keywords:
+- bash
+- shell
+- scripting
+- bourne
+- c shell
+description: "Bash is a type of shell; you will find it sitting on almost every nix based computer you can get your hands on. To check if your running bash type in this on your command prompt"
+introduction: "<p>Bash is a type of shell; you will find it sitting on almost every nix based computer you can get your hands on. To check if your running @bash@ type in this on your command prompt</p><p>I wrote some bash scripts to help with setting up websites; I know the current trend is to use Capistrano but not everyone wants to install all of it's dependancies.</p>"
 ---
 
 Bash is a type of shell; you will find it sitting on almost every nix based computer you can get your hands on. To check if your running @bash@ type in this on your command prompt
