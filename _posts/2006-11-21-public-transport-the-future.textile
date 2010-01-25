@@ -18,6 +18,7 @@ keywords:
 - birmingham UK
 - birmingham
 description: "Living in my new flat I am in the precarious position of being near to many forms of public transport. With bus stops as far as the eye can see and just beyond that is the train station."
+introduction: "<p>Living in my new flat I am in the precarious position of being near to many forms of public transport. With bus stops as far as the eye can see and just beyond that is the train station.</p><p>During my university days I used public transport almost exclusively to get back and forth. Most of the time it was the train, which meant using New Street...</p>"
 ---
 Living in my new flat I'm in the precarious position of being near to many forms of public transport. With bus stops as far as the eye can see and just beyond that is the train station.
 
