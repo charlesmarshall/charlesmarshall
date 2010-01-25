@@ -18,6 +18,7 @@ keywords:
 - birmingham UK
 - birmingham
 description: "Having endured many months of problems getting things connected and accounts activated (take a look at my earlier rant about utilities) I had become accustomed to pathetic customer services. However, Bulldog beat them all"
+introduction: "<p>Having endured many months of problems getting things connected and accounts activated (take a look at my earlier rant about utilities) I had become accustomed to pathetic customer services. However, Bulldog beat them all.</p><p>Somewhere along the line the 'big wigs' at Bulldog would of had to formulate a strategy for resolving customer queries. It looks like this meeting was a very short one. Their answer to everything; out source to India! Yes, thats right, another company jumping on that band wagon....</p>"
 ---
 Having endured many months of problems getting things connected and accounts activated (take a look at my earlier rant about utilities) I had become accustomed to pathetic customer services. However, Bulldog beat them all
 
