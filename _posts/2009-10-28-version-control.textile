@@ -2,6 +2,8 @@
 layout: default
 title: Version Control
 category: general
+description: "Version control is important… VERY IMPORTANT! I have yet to come across a single university / college course for programmers that even mentions it, never mind teaching it in detail. No matter what element of computer work you’re in (web, c++, java etc) you need to be using version control of some form. You do one update, say change a logo or adjust the number of centroids for your k-means algorithm, what do you if 3 days later you find out it was the wrong decision? If you’re not using version control its going to be a painful experience and heavy reliance on your memory; after 3 days you might remember it, but what if it was 3 weeks, or months or even years? There is no way you will remember that far back!"
+introduction: "<p>Version control is important… VERY IMPORTANT! I have yet to come across a single university / college course for programmers that even mentions it, never mind teaching it in detail.</p><p>No matter what element of computer work you’re in (web, c++, java etc) you need to be using version control of some form. You do one update, say change a logo or adjust the number of centroids for your k-means algorithm, what do you if 3 days later you find out it was the wrong decision? If you’re not using version control its going to be a painful experience and heavy reliance on your memory; after 3 days you might remember it, but what if it was 3 weeks, or months or even years? There is no way you will remember that far back!</p>"
 ---
 
 Version control is important... VERY IMPORTANT! I have yet to come across a single university / college course for programmers that even mentions it, never mind teaching it in detail.
