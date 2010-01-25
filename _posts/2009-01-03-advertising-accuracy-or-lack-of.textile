@@ -2,8 +2,10 @@
 layout: default
 title: Advertising Accuracy.. or Lack of..
 category: rant
+description: "Now I don't mind a bit of artistic license when it comes to advertising, but I have my limits. Recently more TV adverts have glaringly inaccurate parts to them and are still broadcast as if they are truths. The big offenders to get my goat so far this year are the PC World sale advert and the Change4Life campaign about healthy eating"
+introduction: "<p>Now I don't mind a bit of artistic license when it comes to advertising, but I have my limits. Recently more TV adverts have glaringly inaccurate parts to them and are still broadcast as if they are truths. The big offenders to get my goat so far this year are the PC World sale advert and the Change4Life campaign about healthy eating.....</p>"
 ---
-Now I don't mind a bit of artistic license when it comes to advertising, but I have my limits. Recently more TV adverts have glaringly inaccurate parts to them and are still broadcast as if they are truths. The big offenders to get my goat so far this year are the PC World sale advert and the Change4Life campaign about healthy eating
+Now I don't mind a bit of artistic license when it comes to advertising, but I have my limits. Recently more TV adverts have glaringly inaccurate parts to them and are still broadcast as if they are truths. The big offenders to get my goat so far this year are the PC World sale advert and the Change4Life campaign about healthy eating.
 
 Don't get me wrong, I think raising awareness about eating properly, exercise etc is needed. Apparently 10% of parents thought jaffa cakes counted towards your daily recommended amount of fruit, how scary is that! Lack of knowledge, apathy, social groups and non stop junk food advertising probably contributed to this sorry state of affairs, but thats for another time. What annoys me in this advert is the fact they show humans killing a dinosaur! Two species separated by over 60 million years!
 
