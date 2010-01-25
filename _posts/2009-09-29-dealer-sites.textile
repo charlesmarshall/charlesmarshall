@@ -2,6 +2,16 @@
 layout: default
 title: Dealer Websites
 category: work
+keywords:
+- IM Group
+- Subaru
+- Isuzu
+- dealers
+- Portfolio
+- Charles Marshall
+- website
+description: "When One Black Bear took over the Subaru account it was clear that their web presence was sub standard at best. The main site was a mess, and still is."
+introduction: "<p>When One Black Bear took over the Subaru account it was clear that their web presence was sub standard at best. The main site was a mess, and still is.</p><p>Most of their content was in iframes being pulled from somewhere else and every other bad practice that you can think of was pretty much in regular use.</p><p>While those issues have not been addressed yet, we now have the opportunity to sort out the dealers websites. Their current package (via Portfolio) is just as bad the main site.</p>"
 ---
 
 When One Black Bear took over the Subaru account it was clear that their web presence was sub standard at best. The main site was a mess, and still is.
