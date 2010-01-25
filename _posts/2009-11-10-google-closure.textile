@@ -2,6 +2,16 @@
 layout: default
 title: Google Closure Javascript Library
 category: web
+keywords:
+- google closure library
+- javascript optimisation
+- optimiser
+- jQuery
+- website
+- web
+- charles marshall
+description: "Google have released their internal javascript library (no, this isn't about GWT, that is something different) and called it Closure. Odd name and one that is already heavily in use"
+introduction: "<p>Google have released their internal javascript library (no, this isn't about GWT, that is something different) and called it Closure. Odd name and one that is already heavily in use</p><p>Naming issues aside, the library offers a whole host of functions (like all the other major libraries) for dom manipulation, event handling, asynchronous calls etc. There are a couple of nice extras that it does have over other libraries.</p><p>Instead of loading the entire library in (which would be huge) you can just load the bits you need using the require call. Nice start, but it gets better....</p>"
 ---
 
 !http://closureoptimizer.com/images/google-closure-logo.jpg!:http://closureoptimizer.com
