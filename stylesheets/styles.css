@@ -185,6 +185,10 @@ div.post{border-bottom:1px solid #392927;}
 #footer{
   padding-top:20px;
 }  
+  #footer img{
+    float:right;
+    display:block;
+  }
   
 /** JQUERY EXAMPLE CSS **/
 #example_container {
