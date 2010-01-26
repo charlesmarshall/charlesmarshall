@@ -182,6 +182,10 @@ div.post{border-bottom:1px solid #392927;}
   }
   .details h5.date, .details h6, .details a.tag{margin-bottom:0;float:right;}
   
+#footer{
+  padding-top:50px;
+}  
+  
 /** JQUERY EXAMPLE CSS **/
 #example_container {
   height: 400px;
