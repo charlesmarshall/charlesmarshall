@@ -184,10 +184,12 @@ div.post{border-bottom:1px solid #392927;}
   
 #footer{
   padding-top:20px;
+  display:table;
 }  
-  #footer img{
+  #footer a{
     float:right;
-    display:block;
+    display:table-cell;
+    vertical-align:middle;
   }
   
 /** JQUERY EXAMPLE CSS **/
