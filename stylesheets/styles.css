@@ -187,9 +187,9 @@ div.post{border-bottom:1px solid #392927;}
   display:table;
 }  
   #footer a{
-    float:right;
     display:table-cell;
     vertical-align:middle;
+    text-align:center;
   }
   
 /** JQUERY EXAMPLE CSS **/
