@@ -1,0 +1,48 @@
+---
+layout: default
+title: HTML 5 - State of Play
+category: rant
+keywords:
+- html5
+- rant
+- html
+- html4
+- silly web developers
+description: "We all know HTML 5 is on it's way, we all know how useful it will be. However, some people seem to think that by using the HTML 5 doctype, they are using HTML 5. This winds me up no end! "
+introduction: "<p>We all know HTML 5 is on it's way, we all know how useful it will be. However, some people seem to think that by using the HTML 5 doctype, they are using HTML 5. This winds me up no end!</p><p>If you are planning on using on using &lt;footer&gt;, &lt;article&gt;, &lt;section&gt;, type='date' or any of the other new parts of HTML 5, then yes, you are using HTML 5.However, your site won't be working too well in many browsers and you have better things to be doing than reading this blog post... like hacking at it with ropey javascript.</p>"
+---
+
+We all know HTML 5 is on it's way, we all know how useful it will be. However, some people seem to think that by using the HTML 5 doctype, they are using HTML 5. This winds me up no end! 
+
+h2. Markup Dictates doctype
+
+If you are planning on using on using @&lt;footer&gt;@, @&lt;article&gt;@, @&lt;section&gt;@, @type='date'@ or any of the other new parts of HTML 5, then yes, you are using HTML 5.However your site won't be working too well in most browsers. 
+  
+In this case I have no issue with you, your problems are more serious than semantic nit-picking. You should go back to hacking away with some javascript to make it work properly...
+
+*My complaint is with those using essentially HTML 4, but with a HTML 5 doctype*. My big question...
+
+h3. Why?
+
+By using HTML 5 in this manner, you are pretty much using HTML 4 with a loose doc type; so why not stop pretending!
+
+h3. The Truth
+
+Your doing it for one of these reasons:
+
+* You want to sound 'cool', 'hip' and part of the 'cutting edge' in your press releases
+* You have bought in to the hype far too much, far too soon
+* You don't understand the differences and simply using it because that's what you last read about
+
+Unfortunately, if you fall in to one of those you are likely to not care about the point I'm making, which is sad.
+
+h3. Some Exclusions do Apply
+
+Some of the new HTML 5 doctype is useable now; the new input types. As browsers default to @type='text'@ when they don't recognise what you mean allows new tags to work on browsers that can handle them.
+
+This is simple enough for something like the for date pickers. If the browser doesn't support @type='date'@, you can use a jQuery UI plugin instead of the browser built in one.
+
+Not all of these types are so simple to degrade.. like the search input, or the url field.
+
+*As neither IE 8 or IE 9 are going to support HTML 5, heres hoping for a fast release for IE 10!*
+
