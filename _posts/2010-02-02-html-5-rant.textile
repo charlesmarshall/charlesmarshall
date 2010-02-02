@@ -16,7 +16,7 @@ We all know HTML 5 is on it's way, we all know how useful it will be. However, s
 
 h2. Markup Dictates doctype
 
-If you are planning on using on using @&lt;footer&gt;@, @&lt;article&gt;@, @&lt;section&gt;@, @type='date'@ or any of the other new parts of HTML 5, then yes, you are using HTML 5.However your site won't be working too well in most browsers. 
+If you are planning on using on using @<footer>@, @<article>@, @<section>@, @type='date'@ or any of the other new parts of HTML 5, then yes, you are using HTML 5.However your site won't be working too well in most browsers. 
   
 In this case I have no issue with you, your problems are more serious than semantic nit-picking. You should go back to hacking away with some javascript to make it work properly...
 
