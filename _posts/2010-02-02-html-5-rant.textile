@@ -26,6 +26,8 @@ h3. Why?
 
 By using HTML 5 in this manner, you are pretty much using HTML 4 with a loose doc type; so why not stop pretending!
 
+Lets be honest, browsers aren't going to be dropping support for HTML 4, so why are you doing it?
+
 h3. The Truth
 
 Your doing it for one of these reasons:
