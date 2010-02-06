@@ -2,6 +2,20 @@
 layout: default
 title: Git Hub Pages...
 category: web
+keywords:
+- github
+- github pages
+- blog
+- git
+- repository
+- gh-pages
+- Jekyll
+- liquid
+- template
+- markdown
+- textile
+- html
+description: "Ooo, the very cool github that handles all your GiT repository needs has now introduced pages. This can be an entire repo or a single branch (called gh-pages)."
 ---
 
 Ooo, the very cool "github":http://github.com that handles all your GiT repository needs has now introduced 'pages'. This can be an entire repo or a single branch (called gh-pages).
