@@ -7,6 +7,7 @@
    <meta name="author" content="Charles Marshall" />
    <meta name="keywords" content="{{ page.keywords | join:',' }}" />
    <meta name="description" content="{{ page.description }}" />
+   <link rel="alternate" type="application/rss+xml" title="charles marshall" href="http://charlesmarshall.co.uk/rss.xml" />
    <meta name="google-site-verification" content="zT2eibYXZrHazVyvyX98snlIzV1QzmBjtBMy8PzR_6k" />
    <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="all" charset="utf-8"/>   
    <!--[if lte IE 7]><link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="all" charset="utf-8"/><![endif]-->
@@ -31,9 +32,9 @@
   
   <div class='full clearfix' id="header">
     <ul class='navigation clearfix inline'>
-      <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy' accesskey='S'>RSS</a></li>
+      <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy' accesskey='R'>RSS</a></li>
       <li{% if page.category == 'general' or page.catname == 'general' %} id='active'{% endif %} class='category'><a href='/general.html' title='general' class='category curvy' accesskey='G'>general</a></li>
-      <li{% if page.category == 'rant' or page.catname == 'rant' %} id='active'{% endif %} class='category'><a href='/rant.html' title='rant' class='category curvy' accesskey='R'>rant</a></li>    
+      <li{% if page.category == 'rant' or page.catname == 'rant' %} id='active'{% endif %} class='category'><a href='/rant.html' title='rant' class='category curvy' accesskey='A'>rant</a></li>    
       <li{% if page.category == 'web' or page.catname == 'web' %} id='active'{% endif %} class='category'><a href='/web.html' title='web' class='category curvy' accesskey='W'>web</a></li>      
       <li{% if page.category == 'jquery' or page.catname == 'jquery' %} id='active'{% endif %} class='category'><a href='/jquery.html' title='jquery' class='category curvy' accesskey='J'>jQuery</a></li>      
       <li{% if page.category == 'work' or page.catname == 'work' %} id='active'{% endif %} class='category'><a href='/work.html' title='work' class='category curvy' accesskey='O'>work</a></li>      
