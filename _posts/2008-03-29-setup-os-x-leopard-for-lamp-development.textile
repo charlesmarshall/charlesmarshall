@@ -19,7 +19,6 @@ keywords:
 - FreeBSD
 - Unix
 - Sheldon Els
-
 description: "Having recently received my lovely new work Macbook Pro and have been setting it up for some serious PHP and MySQL development. Some of these stages were seriously difficult to find and it took myself and Sheldon Els (also on his shiny new Macbook Pro) a while to figure out; so we thought we would share.."
 ---
 
