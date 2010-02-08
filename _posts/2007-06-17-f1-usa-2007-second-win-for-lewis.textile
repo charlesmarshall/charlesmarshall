@@ -1,6 +1,6 @@
 ---
 layout: default
-title: F1 - USA 2007 (Second win for Lewis!)
+title: "F1 - USA 2007 (Second win for Lewis!)"
 category: motorsport
 ---
 
