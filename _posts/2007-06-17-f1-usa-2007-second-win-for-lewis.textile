@@ -1,1 +1,7 @@
----layout: defaulttitle: F1 - USA 2007 (Second win for Lewis!)category: motorsport---"Full review here":http://www.formula1.com/news/headlines/2007/7/6548.html
+---
+layout: default
+title: F1 - USA 2007 (Second win for Lewis!)
+category: motorsport
+---
+
+"Full review here":http://www.formula1.com/news/headlines/2007/7/6548.html
