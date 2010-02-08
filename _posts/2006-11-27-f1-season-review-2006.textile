@@ -2,24 +2,6 @@
 layout: "default"
 title: "F1 Season Review: 2006"
 category: motorsport
-keywords:
-- "motorsport"
-- "2006 F1"
-- "F1"
-- "championship"
-- "racing"
-- "Schumacher"
-- "Ferrari"
-- "driver"
-- "racer"
-- "Massa"
-- "charles marshall"
-- "charles"
-- "marshall
-- "web developer"
-- "birmingham UK"
-- "birmingham"
-
 description: "The many twists and turns of the 2006 F1 championship lead to an intriguing end. With the retirement of undoubtedly the greatest driver of the modern age (regardless of his misdemeanours) it would have been poetic justice if he'd gone out in style by winning an 8th title."
 introduction: "<p>The many twists and turns of the 2006 F1 championship lead to an intriguing end. With the retirement of undoubtedly the greatest driver of the modern age (regardless of his misdemeanours) it would have been poetic justice if he'd gone out in style by winning an 8th title.</p>"
 ---
