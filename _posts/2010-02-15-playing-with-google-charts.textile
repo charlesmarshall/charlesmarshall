@@ -1,0 +1,41 @@
+---
+layout: default
+title: Playing With Google Charts API
+category: web
+keywords:
+- web
+- google charts API
+- google
+- charts
+- API
+
+- api
+description: ""
+introduction: ""
+---
+
+WORK IN PROGRESS
+
+<div id="g_chart"></div>
+
+
+<script type="text/javascript" charset="utf-8">
+var chart_types = ['areachart'];
+google.load("visualization", "1");
+
+jQuery(document).ready(function(){
+  load_chart();  
+});
+
+
+function load_chart(){
+  var query = new google.visualization.Query('http://spreadsheets.google.com/tq?key=rkXGB7b-ta07OIzWlbRf7ooKYQ10eCg');
+  query.send(make_chart);
+}
+
+function make_chart(response){
+  var data = response.getDataTable();
+  console.log(data);
+}
+  
+</script>
