@@ -8,34 +8,92 @@ keywords:
 - google
 - charts
 - API
-
+- graphs
+- graphing
 - api
-description: ""
-introduction: ""
+description: "With the up coming Multipack Hack day to work on a green focused end product I thought I'd make use of the newly released data from the government and google charts new api to make something useful. I've gone for recycling per region during 2005/2006 in 1000s of tonnes and plugged in a few different chart types. When I get a bit more time will improve this. All the javascript is inline (I know, very naughty..) so feel free to use whatever you want; although some backlinks would be nice!"
+introduction: "<p>With the up coming <a href='http://multipack.co.uk'>Multipack</a> Hack day to work on <a href='http://agreenfocus.org/'>a green focused end product</a> I thought I'd make use of the newly <a href='http://data.gov.uk'>released data from the government</a> and <a href='http://code.google.com/apis/charttools/index.html'>google charts new api</a> to make something useful.</p><p>I've gone for <strong>recycling per region during 2005/2006</strong> in 1000s of tonnes and plugged in a few different chart types. When I get a bit more time will improve this.</p><p>All the javascript is inline (I know, very naughty..) so feel free to use whatever you want; although some backlinks would be nice!</p>"
 ---
 
-WORK IN PROGRESS
+With the up coming "Multipack":http://multipack.co.uk Hack day to work on "a green focused end product":http://agreenfocus.org/ I thought I'd make use of the newly "released data from the government":http://data.gov.uk and "google charts new api":http://code.google.com/apis/charttools/index.html to make something useful.
 
-<div id="g_chart"></div>
+I've gone for *recycling per region during 2005/2006* in 1000s of tonnes and plugged in a few different chart types. When I get a bit more time will improve this.
+
+All the javascript is inline (I know, very naughty..) so feel free to use whatever you want; although some backlinks would be nice!
+
+<form action='' method='post' name='chart_api' id='chart_api_example' class='inlineform'>
+  <fieldset>
+    
+    <label for='recycle_region'>Region:</label>
+    <select id='recycle_region' name='recycle_region'>
+      <option value='' selected='selected'>Please select...</option>
+    </select>
+    
+    <label for='chart_type'>Chart type:</label>
+    <select id='chart_type' name='chart_type'>
+      <option value='' selected='selected'>Please select...</option>
+    </select>          
+      
+  </fieldset>
+  <fieldset id="g_chart"></fieldset>
+</form>
 
 
 <script type="text/javascript" charset="utf-8">
-var chart_types = ['areachart'];
-google.load("visualization", "1");
+var chart_container = document.getElementById('g_chart'),
+    chart_types = ['barchart', 'piechart', 'areachart', 'columnchart', 'linechart'],
+    chart_options = {
+                  'barchart':{},
+                  'piechart':{is3D: true},
+                  'areachart':{},
+                  'columnchart':{is3D: true},
+                  'linechart':{}
+                },
+    area_list = {
+                'East': 'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=6',
+                'East Midlands': 'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=3',
+                'London': 'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=7',
+                'North East': 'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=4',
+                'South West':'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=9',
+                'South East': 'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=8',                               
+                'West Midlands': 'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=5',                  
+                'Yorkshire and the Humber': 'http://spreadsheets.google.com/tq?key=0Aj0ssMmpf7rJdGEwN09JeldsYlJmN29vS1lRMTBlQ2c&gid=2'
+                }
+    ;
+google.load("visualization", "1", {packages:chart_types});
 
 jQuery(document).ready(function(){
-  load_chart();  
+  load_options();
+  load_chart();
 });
-
-
-function load_chart(){
-  var query = new google.visualization.Query('http://spreadsheets.google.com/tq?key=rkXGB7b-ta07OIzWlbRf7ooKYQ10eCg');
-  query.send(make_chart);
+function load_options(){
+  var regions = '', charts = '';
+  for(var i in chart_types) charts +='<option value="'+chart_types[i]+'">'+chart_types[i]+'</option>';
+  jQuery('#chart_type').html(charts);
+  for(var i in area_list) regions +='<option value="'+i+'">'+i+'</option>';
+  jQuery('#recycle_region').html(regions);
+  jQuery('#recycle_region, #chart_type').change(function(){
+    load_chart(jQuery('#recycle_region').val(), jQuery('#chart_type').val());
+  });
 }
-
-function make_chart(response){
-  var data = response.getDataTable();
-  console.log(response);
-}
+function load_chart(region, type){
+  if(!region) var region = 'East';
+  if(!type) var type = chart_types[0];
+  var query = new google.visualization.Query(area_list[region]);
   
+  query.send(function(response){
+    var data = response.getDataTable(),
+        opts = jQuery.extend({}, chart_options[type], {height:400, legend: 'bottom', title: 'Recycling By Area and Type (in 1000s tonnes)', 'backgroundColor':'#EBE8D8', 'legendBackgroundColor':'#EBE8D8'}),
+        chart = false          
+        ;
+    if(type == 'barchart') chart = new google.visualization.BarChart(chart_container);
+    else if(type == 'piechart') chart = new google.visualization.PieChart(chart_container);
+    else if(type == 'areachart') chart = new google.visualization.AreaChart(chart_container);
+    else if(type == 'columnchart') chart = new google.visualization.ColumnChart(chart_container);
+    else if(type == 'linechart') chart = new google.visualization.LineChart(chart_container);
+    
+    chart.draw(data, opts);
+  });
+}
+
 </script>
