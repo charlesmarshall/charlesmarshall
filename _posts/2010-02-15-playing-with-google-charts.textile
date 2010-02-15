@@ -35,7 +35,7 @@ function load_chart(){
 
 function make_chart(response){
   var data = response.getDataTable();
-  console.log(data);
+  console.log(response);
 }
   
 </script>
