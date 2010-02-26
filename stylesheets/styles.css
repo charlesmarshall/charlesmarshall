@@ -82,6 +82,10 @@ ul.inline li, ol.inline li{float:left;}
     list-style-type:decimal;
     margin-left:25px;
   }
+  #content .file_list ul li{
+    list-style-type:none;
+    margin-left:0;
+  }
 
 .full{
   width:80%;
