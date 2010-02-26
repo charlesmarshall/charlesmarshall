@@ -85,6 +85,7 @@ ul.inline li, ol.inline li{float:left;}
   #content .file_list ul li{
     list-style-type:none;
     margin-left:0;
+    margin-right:1em;
   }
 
 .full{
