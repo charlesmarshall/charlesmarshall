@@ -4,16 +4,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+   <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+   <meta name="DC.title" lang="en" content="{{ page.title }} - Charles Marshall" />
+   <meta name="DC.subject" lang="en" content="{{ page.keywords | join:',' }}" />
+   <meta name="DC.description" lang="en" content="{{ page.description }}" />
+   <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" />
+   <meta name="DC.format" content="text/html" />
+   <meta name="DC.identifier" scheme="DCTERMS.URI" content="http://charlesmarshall.co.uk" />
+   <meta name="DC.language" scheme="DCTERMS.RFC1766" content="en" />
    <meta name="author" content="Charles Marshall" />
    <meta name="keywords" content="{{ page.keywords | join:',' }}" />
    <meta name="description" content="{{ page.description }}" />
    <link rel="alternate" type="application/rss+xml" title="charles marshall" href="http://charlesmarshall.co.uk/rss.xml" />
    <meta name="google-site-verification" content="zT2eibYXZrHazVyvyX98snlIzV1QzmBjtBMy8PzR_6k" />
-   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="all" charset="utf-8"/>   
+   <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="all" charset="utf-8"/>
    <!--[if lte IE 7]><link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="all" charset="utf-8"/><![endif]-->
-   
-   <script src='http://www.google.com/jsapi'  type='text/javascript'></script>	
-   <script type='text/javascript'>                      
+
+   <script src='http://www.google.com/jsapi'  type='text/javascript'></script>
+   <script type='text/javascript'>
     google.load('jquery', '1.3');
     google.load('jqueryui', '1.7');
     var _gaq = _gaq || [];
@@ -25,47 +34,47 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
     })();
    </script>
-   
+
    <title>{{ page.title }} - Charles Marshall</title>
 </head>
 <body class='{{ page.catname }}'>
-  
+
   <div class='full clearfix' id="header">
     <ul class='navigation clearfix inline'>
       <li class='last rss category'><a href='/rss.xml' title='RSS' class='category rss curvy' accesskey='R'>RSS</a></li>
       <li{% if page.category == 'general' or page.catname == 'general' %} id='active'{% endif %} class='category'><a href='/general.html' title='general' class='category curvy' accesskey='G'>general</a></li>
-      <li{% if page.category == 'rant' or page.catname == 'rant' %} id='active'{% endif %} class='category'><a href='/rant.html' title='rant' class='category curvy' accesskey='A'>rant</a></li>    
-      <li{% if page.category == 'web' or page.catname == 'web' %} id='active'{% endif %} class='category'><a href='/web.html' title='web' class='category curvy' accesskey='W'>web</a></li>      
-      <li{% if page.category == 'jquery' or page.catname == 'jquery' %} id='active'{% endif %} class='category'><a href='/jquery.html' title='jquery' class='category curvy' accesskey='J'>jQuery</a></li>      
-      <li{% if page.category == 'work' or page.catname == 'work' %} id='active'{% endif %} class='category'><a href='/work.html' title='work' class='category curvy' accesskey='O'>work</a></li>      
+      <li{% if page.category == 'rant' or page.catname == 'rant' %} id='active'{% endif %} class='category'><a href='/rant.html' title='rant' class='category curvy' accesskey='A'>rant</a></li>
+      <li{% if page.category == 'web' or page.catname == 'web' %} id='active'{% endif %} class='category'><a href='/web.html' title='web' class='category curvy' accesskey='W'>web</a></li>
+      <li{% if page.category == 'jquery' or page.catname == 'jquery' %} id='active'{% endif %} class='category'><a href='/jquery.html' title='jquery' class='category curvy' accesskey='J'>jQuery</a></li>
+      <li{% if page.category == 'work' or page.catname == 'work' %} id='active'{% endif %} class='category'><a href='/work.html' title='work' class='category curvy' accesskey='O'>work</a></li>
       <li class='first category'{% if page.home %} id="active"{% endif %}><a href='/' title='Home' class='category home curvy' accesskey='H'>home</a></li>
     </ul>
-    
+
     <samp><a href='/' title='charles marshall' class='curvy category box_shadow'>charles marshall</a></samp>
   </div>
-  
-  
+
+
   <div class='full clearfix' id="content">
     {% if page.home != true and page.category %}
     <div class='details summary clearfix' >
       <h6 class='curvy comment_count'><a href='#disqus_thread' title='comments'>0 comments</a></h6>
-      <h6 class='curvy'><a href='/{{ page.category | downcase }}.html' title='{{ page.category | downcase }}'>{{ page.category | downcase }}</a></h6>      
+      <h6 class='curvy'><a href='/{{ page.category | downcase }}.html' title='{{ page.category | downcase }}'>{{ page.category | downcase }}</a></h6>
       <h5 class='date tag curvy'>{{ page.date | date_to_string }}</h5>
     </div>
     {% endif %}
     <h1>{{ page.title }}</h1>
-    
+
     {% if page.header_introduction %}
     <div class='introduction curvy clearfix'>{{ page.header_introduction }}</div>
     {% endif %}
     {{ content }}
-    
+
     {% if page.category %}
     <div id="disqus_thread"></div>
     <script type="text/javascript" src="http://disqus.com/forums/charlesmarshall/embed.js"></script>
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     {% endif %}
-    
+
     {% if site.related_posts and page.category %}
     <div class='related_posts clearfix'>
       <h4>Related Posts</h4>
@@ -86,17 +95,17 @@
       </ul>
     </div>
     {% endif %}
-  </div>    
+  </div>
 
-   
+
   <div class='full clearfix' id="footer">
     <a href='http://flickr.com/photos/charlesmarshall' title='flickr'><img src='/images/flickr.jpg' alt='flickr' class='flickr'/></a>
     <a href='http://twitter.com/charlesmarshall' title='twitter'><img src='/images/twitter.jpg' alt='twitter' class='twitter'/></a>
     <a href='http://multipack.co.uk' title='multipack'><img src='/images/multipack.jpg' alt='multipack' /></a>
-    <a href='http://oneblackbear.com/' title='one black bear'><img src='/images/oneblackbear.jpg' alt='oneblackbear' /></a>        
+    <a href='http://oneblackbear.com/' title='one black bear'><img src='/images/oneblackbear.jpg' alt='oneblackbear' /></a>
   </div>
 
   <script src="/javascripts/main.js" type="text/javascript" charset="utf-8"></script>
-   
+
 </body>
 </html>
