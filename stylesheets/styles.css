@@ -136,7 +136,7 @@ ul.navigation{float:right;}
     ul.navigation a.category:hover{background:#7CAAD0;}
     ul.navigation li#active a.category{background:#2E3884;}
     
-      #content .read_more a.category{
+      #content .read_more a.category,#content .file_list a.category{
         background:#EBE8D8;
         padding:4px;
         font-weight:bold;
