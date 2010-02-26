@@ -29,7 +29,7 @@ h3. The Config
 
 Just to keep the page short, I've only put a couple of pages to fetch, but you can use as many as you want.
 
-{% highlight ruby %}
+<pre>
 key: "1234567890"
 base_url: "http://1234567890.api.co.uk/"
 pages:
@@ -39,13 +39,13 @@ pages:
   offers:
     url: "/offers/all.xml"
     filename: "offers.xml"
-{% endhighlight %}
+</pre>
 
 h3. The Ruby
 
 The files that are downloaded are saved within a local folder called results; as this was a quick script I left it hard coded, feel free to change it.
 
-{% highlight ruby %}
+<pre>
 #!/usr/bin/ruby
 
 require "yaml"
@@ -71,8 +71,7 @@ examples = config['pages'].sort
 puts "-- fetching examples\n"
 download(examples, config['base_url'], config['key'])
 puts "-- done\n"  
-{% endhighlight %}
-
+</pre>
 
 h3. The Files
 
