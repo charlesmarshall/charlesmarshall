@@ -77,8 +77,10 @@ h3. The Files
 
 All the files that are used... 
 
-<ul class="navigation clearfix">
-  <li class='category'><a href='/git-pre-commit-files/example_config.yml' title='example config' class='category curvy'>config file &raquo;</a></li>
-  <li class='category'><a href='/git-pre-commit-files/hook.rb' title='hook rb script' class='category curvy'>ruby script &raquo;</a></li>
-  <li class='category'><a href='/git-pre-commit-files/all.zip' title='zip' class='category curvy'>all files &raquo;</a></li>
-</ul>
+<div class='file_list clearfix'>
+  <ul class="navigation clearfix inline">
+    <li class='category'><a href='/git-pre-commit-files/example_config.yml' title='example config' class='category curvy'>config file &raquo;</a></li>
+    <li class='category'><a href='/git-pre-commit-files/hook.rb' title='hook rb script' class='category curvy'>ruby script &raquo;</a></li>
+    <li class='category'><a href='/git-pre-commit-files/all.zip' title='zip' class='category curvy'>all files &raquo;</a></li>
+  </ul>
+</div>
