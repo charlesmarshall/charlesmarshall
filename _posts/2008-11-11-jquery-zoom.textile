@@ -1,6 +1,7 @@
 ---
 layout: default
 title: jQuery Zoom
+category: jquery
 keywords:
 - jQuery
 - zoom
