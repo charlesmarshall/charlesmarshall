@@ -220,7 +220,7 @@ div.post{border-bottom:1px solid #392927;}
 }
 
 /** FORMS **/
-.inlineform{
+.inlineform, .example{
   padding:10px;
   background:#EBE8D8;
   margin:10px 0;
