@@ -1,6 +1,0 @@
----
-layout: default
-title: jQuery Diagonal Accordion
-category: jquery
----
-Looks like anything can be done with a bit of math and javascript.. Go take a look at the jQuery plugins page to see more ;)
