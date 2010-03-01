@@ -1,6 +1,6 @@
 ---
 layout: default
-title: jQuery Modal
+title: jQuery Smart Modal
 category: jquery
 keywords:
 - jQuery
@@ -197,6 +197,17 @@ If you take a look at the code you will notice that smart modal has totally chan
 For those of an adventurous nature there are now two new functions you can call manually - .smart_modal_hide() &amp; .smart_modal_show(). 
 
 Once you have instantiated the link using .smart_modal() you can call either of those to show or hide it.
+
+h2. Files
+
+All the files that are used... 
+
+<div class='file_list clearfix'>
+  <ul class="clearfix inline">
+    <li class='category'><a href='http://github.com/tinyjs/jquery-smart-modal/zipball/master' title='zip' class='category curvy'>zip &raquo;</a></li>
+  </ul>
+</div>
+
 
 
 <link rel="stylesheet" href="/jquery-smart-modal/styles.css" type="text/css" media="all" charset="utf-8" />
