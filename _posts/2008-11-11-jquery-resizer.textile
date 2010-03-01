@@ -4,15 +4,10 @@ title: jQuery Resizer
 category: jquery
 keywords:
 - jQuery
-- translation
-- google
-- translate
+- resizer
+- resize
+- "change size"
 - plugin
-- language detection
-- language sniffing
-- dynamic
-- ajax
-- api
 description: "Inside our current cms we utilise a jQuery resize tool for stretching out our content entry area. However, it is a bit clunky and and the large size (9k) doesn't help matters."
 introduction: "<p>Inside our current cms we utilise a jQuery resize tool for stretching out our content entry area. However, it is a bit clunky and and the large size (9k) doesn't help matters.</p>"
 ---
@@ -114,6 +109,16 @@ If you use a target then the resize is based on where you drag the trigger eleme
 h2. Other Resizable Elements
 
 Can be used on things other then divs...
+
+h2. Files
+
+All the files that are used... 
+
+<div class='file_list clearfix'>
+  <ul class="clearfix inline">
+    <li class='category'><a href='http://github.com/tinyjs/jquery-resizer/zipball/master' title='zip' class='category curvy'>zip &raquo;</a></li>
+  </ul>
+</div>
 
 
 <link rel="stylesheet" href="/jquery-resizer/styles.css" type="text/css" media="all" charset="utf-8" />
