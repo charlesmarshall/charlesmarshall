@@ -88,6 +88,7 @@ ul.inline li, ol.inline li{float:left;}
     margin-left:0;
     margin-right:1em;
   }
+  .file_list{margin-bottom:10px;}
 
 .full{
   width:80%;
