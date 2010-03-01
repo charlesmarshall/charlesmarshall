@@ -9,8 +9,8 @@ keywords:
 - "diagonal accordion"
 - plugin
 - javascript
-description: ""
-introduction: ""
+description: "A while ago we got a very random design from a client; they wanted an accordion, but at 45 degrees.. Yes, that's right.. "
+introduction: "<p>A while ago we got a very random design from a client; they wanted an accordion, but at 45 degrees.. Yes, that's right..</p><p>It makes the visible content area tiny, and clearly restricts the size of the page so in my opinion it's mostly pointless. However, still better than using flash!</p>"
 ---
 
 
