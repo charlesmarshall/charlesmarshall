@@ -27,9 +27,7 @@ h2. Simple Image Zoom
 Here is a container with 4 images, nice and simple. In this case I have already entered the ul code, so the js won't insert it.
 
 <div class="example clearfix">
-	<div id="zoom" class="zoom">
-		<ul class="zoom_control">
-			<li class="zoom_plus"><a class="plus" href="#"><span> </span></a></li>
+	<div id="zoom" class="zoom"><ul class="zoom_control"><li class="zoom_plus"><a class="plus" href="#"><span> </span></a></li>
 			<li class="zoom_4"><a rel="zoom_4" class="zoom_level" href="#"><span> </span></a></li>
 			<li class="zoom_3"><a rel="zoom_3" class="zoom_level" href="#"><span> </span></a></li>
 			<li class="zoom_2"><a rel="zoom_2" class="zoom_level" href="#"><span> </span></a></li>
