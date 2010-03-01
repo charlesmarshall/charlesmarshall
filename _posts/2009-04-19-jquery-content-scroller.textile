@@ -11,7 +11,7 @@ keywords:
 - scolling
 - plugin
 - javascript
-description: "Scrolling content.."
+description: "Scrolling content..."
 introduction: "<p>Scrolling content...</p>"
 ---
 
