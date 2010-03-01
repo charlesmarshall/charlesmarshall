@@ -57,6 +57,7 @@ All the files that are used...
 You can also find this project over at the main "jQuery plugins":http://plugins.jquery.com website.
 
 <link rel="stylesheet" href="/jquery-zoom/styles.css" type="text/css" media="all" charset="utf-8"/>
+<script type="text/javascript" src="http://github.com/tinyjs/jquery-image-zoom/raw/master/jquery.zoom.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function() {
 	jQuery('#zoom').zoom({target_div:"main_internal", zoom_images:new Array('http://github.com/tinyjs/jquery-image-zoom/raw/master/image_1.jpg', 'http://github.com/tinyjs/jquery-image-zoom/raw/master/image_2.jpg', 'http://github.com/tinyjs/jquery-image-zoom/raw/master/image_3.jpg', 'http://github.com/tinyjs/jquery-image-zoom/raw/master/image_4.jpg') });
