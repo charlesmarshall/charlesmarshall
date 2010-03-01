@@ -5,9 +5,10 @@ html,body, #diagonal_madness{overflow-x:hidden;}
 	margin:5px 0;
 }
 #diagonal_madness{
-	margin-top:20px;
-	margin-left:50px;
+	margin:20px 0;
 	height:300px;
+	width:600px;
+  padding:0;
 }
 
 .accordion{background:url('/diagonal-accordion/bar.gif') no-repeat top left;}
