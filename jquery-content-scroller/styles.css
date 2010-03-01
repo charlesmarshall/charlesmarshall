@@ -6,10 +6,8 @@
 	float:left;
 }
 
-ul#controls, ul#controls2{
-
-}
-ul#controls li, #controls2 li{
+ul#controls, ul#controls2{}
+ul#controls li, ul#controls2 li{
 	float:left;
 	margin:0 5px 0 0;
 	list-style-type:none;
