@@ -57,6 +57,7 @@ pre, .example{
   padding:8px;
 }
 .example{background:#EBE8D8;}
+.example .hidden{display:none;}
 p{
   font-size:108%;
   line-height:1.5em;
