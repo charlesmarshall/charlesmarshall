@@ -8,7 +8,7 @@ keywords:
 - scroller
 - content
 - scrollTo
-- scolling
+- scrolling
 - plugin
 - javascript
 description: "Scrolling content..."
