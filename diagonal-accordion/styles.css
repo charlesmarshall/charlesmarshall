@@ -2,7 +2,8 @@ html,body, #diagonal_madness{overflow-x:hidden;}
 .accordion{
 	border:1px dotted black;
 	width:500px;/*little bit bigger*/
-	margin:5px 0;
+	margin:0;
+	height:284px;
 }
 #diagonal_madness{
 	margin:20px 0;

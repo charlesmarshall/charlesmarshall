@@ -116,7 +116,10 @@ h2. Show and Hide Functions
 <pre>
   <script type="text/javascript">
   jQuery(document).ready(function() {  
-    jQuery('.modal4').smart_modal({show:function(){alert('This happens on show!');}, hide:function(){alert('On Hide!');} });
+    jQuery('.modal4').smart_modal({
+      show:function(){alert('This happens on show!');}, 
+      hide:function(){alert('On Hide!');} 
+    });
   });
   </script>
 </pre>
