@@ -30,7 +30,7 @@ All the files that are used...
 
 
 <link rel="stylesheet" href="http://github.com/tinyjs/jquery-image-dragging/raw/master/draggable.css" type="text/css" media="all" charset="utf-8"/>
-<script type="text/javascript" src="http://github.com/tinyjs/jquery-image-dragging/raw/master/jquery.zoom.js"></script>
+<script type="text/javascript" src="http://github.com/tinyjs/jquery-image-dragging/raw/master/jquery.draggable.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function() {
 	jQuery('#draggable').drag();
