@@ -2,7 +2,146 @@
 layout: default
 title: jQuery Resizer
 category: jquery
+keywords:
+- jQuery
+- translation
+- google
+- translate
+- plugin
+- language detection
+- language sniffing
+- dynamic
+- ajax
+- api
+description: "Inside our current cms we utilise a jQuery resize tool for stretching out our content entry area. However, it is a bit clunky and and the large size (9k) doesn't help matters."
+introduction: "<p>Inside our current cms we utilise a jQuery resize tool for stretching out our content entry area. However, it is a bit clunky and and the large size (9k) doesn't help matters.</p>"
 ---
+
 Inside our current cms we utilise a jQuery resize tool for stretching out our content entry area. However, it is a bit clunky and and the large size (9k) doesn't help matters. 
 
-Time to make a new one. If you've happy with it or having issues drop me a message on either the jQuery project page.						
+Time to make a new one....
+
+h2. Simple Resizable Div
+
+If you click and drag inside the red box below it will grow until you let go.
+
+<div class="example clearfix">
+	<div id="resizer"></div>	
+</div>
+
+<pre>
+  <script type="text/javascript">
+  jQuery(document).ready(function() {
+  	jQuery('#resizer').resize();
+  });  
+  </script>
+</pre>
+
+h2. Resizable Div With Max Limits
+
+If you click and drag inside the red box below it will grow until it reaches a max width and height.
+
+<div class="example clearfix">
+	<div id="resizer_maxed"></div>	
+</div>
+
+<pre>
+  <script type="text/javascript">
+  jQuery(document).ready(function() {
+  	jQuery('#resizer_maxed').resize({x:450, y:300});
+  });  
+  </script>
+</pre>
+
+h2. Resizable Div With Max and Min Limits
+
+If you click and drag inside the red box below it will grow until it reaches a max width and height.
+
+It will not resize below a certain amount.
+
+<div class="example clearfix">
+	<div id="resizer_min_max"></div>			
+</div>
+
+<pre>
+  <script type="text/javascript">
+  jQuery(document).ready(function() {
+  	jQuery('#resizer_min_max').resize({x:450,min_width:190, y:300, min_height:90});
+  });  
+  </script>
+</pre>
+
+
+h2. Resizable Div - Turning Off A Direction
+
+By passing in false you can turn of expansion in either direction
+
+<div class="example clearfix">
+	<div id="resize_no_x">
+		<p>Fixed width</p>
+	</div>
+	<div id="resize_no_y">
+		<p>Fixed height</p>
+	</div>
+</div>
+
+<pre>
+  <script type="text/javascript">
+  jQuery(document).ready(function() {
+  	jQuery('#resize_no_x').resize({x:false});	
+  	jQuery('#resize_no_y').resize({y:false});
+  });  
+  </script>
+</pre>
+
+h2. Resizable Div - Targets
+
+If you use a target then the resize is based on where you drag the trigger element.
+
+<div class="example clearfix">
+	<div id="resizer_area"></div>
+	<div id="resize_bar">&lt; ^ v &gt;</div>
+</div>
+
+<pre>
+  <script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('#resize_bar').resize({target:'#resizer_area'});
+  });  
+  </script>
+</pre>	
+
+h2. Other Resizable Elements
+
+Can be used on things other then divs...
+
+<div class="example clearfix">
+	<img src="http://github.com/tinyjs/jquery-resizer/raw/master/big_image.jpg"  alt="Big Image" id="resize_image"/>
+	<div id="resize_image_bar">&lt; ^ v &gt;</div>
+	<p id="resize_p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<pre>
+  <script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('#resize_p').resize();	
+  	jQuery('#resize_image_bar').resize({target:'#resize_image'});
+  });  
+  </script>
+</pre>
+
+<link rel="stylesheet" href="/jquery-resizer/styles.css" type="text/css" media="all" charset="utf-8" />
+<script type="text/javascript" src="http://github.com/tinyjs/jquery-resizer/raw/master/jquery.resizer.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery('#resizer').resize();
+	jQuery('#resizer_maxed').resize({x:450, y:300});
+	jQuery('#resizer_min_max').resize({x:450,min_width:190, y:300, min_height:90});	
+	jQuery('#resize_no_x').resize({x:false});	
+	jQuery('#resize_no_y').resize({y:false});		
+	jQuery('#resize_bar').resize({target:'#resizer_area'});
+	jQuery('#resize_p').resize();	
+	jQuery('#resize_image_bar').resize({target:'#resize_image'});		
+});
+</script>
