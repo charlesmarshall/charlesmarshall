@@ -9,11 +9,11 @@ keywords:
 - "modal popup"
 - gallery
 - javascript
-description: ""
-introduction: ""
+description: "With recent projects I needed a flexible modal box. Most of the ones out there are either horribly bloated or only work for images, which really sucks when you want a form inside one."
+introduction: "<p>With recent projects I needed a flexible modal box. Most of the ones out there are either horribly bloated or only work for images, which really sucks when you want a form inside one.</p><p>Easy answer, make my own... Here it is. By the way, the minimised version in under 2k with a tiny 1k stylesheet.</p><p>It works for images and other containing elements. Click thought to see the examples..</p>"
 ---
 
-With recent projects I needed a flexible modal box. Most of the ones out there are either horribly bloated or only work for images, which really sucks when you want a form inside one.</p>
+With recent projects I needed a flexible modal box. Most of the ones out there are either horribly bloated or only work for images, which really sucks when you want a form inside one.
 
 Easy answer, make my own... Here it is. By the way, the minimised version in under 2k with a tiny 1k stylesheet.
 
