@@ -1,0 +1,15 @@
+key: "api-key"
+base_url: "http://api-key.api.co.uk"
+schema_pages:
+  news:
+    url: "/news/limit/4.xml"
+    filename: "news.xml"
+  events:
+    url: "/events/limit/4.xml"
+    filename: "events.xml"
+  offers:
+    url: "/offers/limit/4.xml"
+    filename: "offers.xml"
+  cars:
+    url: "/cars/all/limit/4.xml"
+    filename: "cars.xml"
