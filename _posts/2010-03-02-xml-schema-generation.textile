@@ -9,8 +9,9 @@ keywords:
 - xml schema
 - xml
 - dtd
-description: ""
-introduction: ""
+- automation
+description: "As we add more functionality to the IM Group API keeping up with the documentation changes can be painful. To keep on top of it, I made a useful git pre-commit script which reads and downloads xml data in order to keep the example files up to date."
+introduction: "<p>As we add more functionality to the IM Group API keeping up with the documentation changes can be painful. To keep on top of it, I made a useful <a href='/general/2010/02/24/pre-commit-script.html'>git pre-commit script</a> which reads and downloads xml data in order to keep the example files up to date.</p><p>With more people using the API I've started to receive requests for an up to date schema, so time to automate that as well...</p>"
 ---
 
 As we add more functionality to the IM Group API keeping up with the documentation changes can be painful. To keep on top of it, I made a useful "git pre-commit script":/general/2010/02/24/pre-commit-script.html which reads and downloads xml data in order to keep the example files up to date.
@@ -18,6 +19,8 @@ As we add more functionality to the IM Group API keeping up with the documentati
 With more people using the API I've started to receive requests for an up to date schema, so time to automate that as well...
 
 Thankfully I found a "very useful website that you can feed a url of some valid xml and it will give you a schema":http://www.xmlforasp.net/CodeBank/System_Xml_Schema/BuildSchema/BuildXMLSchema.aspx so all that need to be done was write some code to post data to the form and parse the result.
+
+Now every time the API is updated new examples and schema are automatically downloaded!
 
 h2. The Code
 
