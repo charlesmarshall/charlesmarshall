@@ -15,7 +15,7 @@ description: "A jQuery plugin to create an expanding grid system. Each item in t
 introduction: "<p>A jQuery plugin to create an expanding grid system. Each item in the grid expands into its neighbours on hover.</p>"
 ---
 
-Piece of <a href='/javascripts/jquery.expandinggrid.js'>jQuery</a> to create a grid system from some class items that then expand on hover and contract on hover off.
+Piece of <a href='http://github.com/charlesmarshall/jQuery-Expanding-Grid/raw/master/jquery.expandinggrid.js'>jQuery</a> to create a grid system from some class items that then expand on hover and contract on hover off.
  
 
 <div id="example_container">
@@ -35,7 +35,7 @@ Piece of <a href='/javascripts/jquery.expandinggrid.js'>jQuery</a> to create a g
   
 </div>
 
-<script src="/javascripts/jquery.expandinggrid.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://github.com/charlesmarshall/jQuery-Expanding-Grid/raw/master/jquery.expandinggrid.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
 jQuery(document).ready(function(){
   jQuery('#example_container').expandinggrid({"grid_items":"jqitem", "expand_by":2.09});
