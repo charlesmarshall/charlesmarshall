@@ -1,6 +1,7 @@
 (function(jQuery) {
   var keyboardmap={},
       shifted=false
+      ;
   keyboardmap['numeric'] = [49,50,51,52,53,54,55,56,57,48];
   keyboardmap['mac'] =[
                         [49,  33],    //1 & !
@@ -21,7 +22,7 @@
                       ];
 
   jQuery.fn.on_screen_keys = function(options){
-    P[usecount] = jQuery.extend({}, jQuery.fn.on_screen_keys.defaults, options, {container:this});
+    P[usecount] = jQuery.extend({}, jQuery.fn.on_screen_keys.defaults, options, {container:this, keyboardmap:keyboardmap});
     return this.each(function(){
       if(this.__kb) return;
       else this.__kb = usecount;
@@ -50,8 +51,8 @@
     params:[],
 
     setup:function(usecount){
-      var kmap = keyboardmap['mac'];
-      if(P[usecount].type && typeof(keyboardmap[P[usecount].type]) != "undefined") kmap = keyboardmap[P[usecount].type];
+      var kmap = P[usecount].keyboardmap['mac'];
+      if(P[usecount].type && typeof(keyboardmap[P[usecount].type]) != "undefined") kmap = P[usecount].keyboardmap[P[usecount].type];
       if(!jQuery("."+P[usecount].classes.keyboard).length) jQuery.on_screen_keys.insert_keyboard(usecount,kmap);
       jQuery.on_screen_keys.triggers(usecount);
     },
