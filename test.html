@@ -123,6 +123,7 @@
       GEvent.addListener(this._pano, "error", function(){
         return control.dragError();
       });
+      jQuery(this._pano).find('object')[0].FlashCrossClick = function(){alert('running');};
       GEvent.addListener(this._man_marker, 'dragend', function(){
         var ll = control._man_marker.getLatLng();
         control._svclient.getNearestPanorama(ll,function(res){
@@ -133,7 +134,6 @@
               p.attr('value', fvars);
               p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
               GEvent.removeListener(justonce);
-              p.parent().FlashCrossClick = function(){alert('running');};
             });
             jQuery(control._pano_container).show().css('margin-top', "-"+jQuery(control._map.getContainer()).outerHeight()+'px');
           }else{
@@ -141,7 +141,7 @@
           }
         });
       });
-      
+
 
     };
     SVC.prototype.getDefaultPosition = function() {
