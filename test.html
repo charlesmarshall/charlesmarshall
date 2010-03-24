@@ -128,10 +128,11 @@
         control._svclient.getNearestPanorama(ll,function(res){
           if(res.code == 200){
             control._pano.setLocationAndPOV(res.location.latlng);
-            GEvent.addListener(control._pano, "initialized", function(){
+            var justonce = GEvent.addListener(control._pano, "initialized", function(){
               var p = jQuery("param[name='flashvars']"), fvars = p.attr('value').replace("context=api", "content=maps_sv");
               p.attr('value', fvars);
               p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
+              GEvent.removeListener(justonce);
             });
             jQuery(control._pano_container).show().css('margin-top', "-"+jQuery(control._map.getContainer()).outerHeight()+'px');
           }else{
