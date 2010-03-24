@@ -123,7 +123,7 @@
       GEvent.addListener(this._pano, "error", function(){
         return control.dragError();
       });
-      
+
 
       GEvent.addListener(this._man_marker, 'dragend', function(){
         var ll = control._man_marker.getLatLng();
@@ -131,10 +131,7 @@
           if(res.code == 200){
             control._pano.setLocationAndPOV(res.location.latlng);
             var justonce = GEvent.addListener(control._pano, "initialized", function(){
-              jQuery(this._pano).find('object')[0].FlashCrossClick = function(){alert('here');};
-              var p = jQuery("param[name='flashvars']"), fvars = p.attr('value').replace("context=api", "content=maps_sv");
-              p.attr('value', fvars);
-              p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
+              control.street_view_started();
               GEvent.removeListener(justonce);
             });
             jQuery(control._pano_container).show().css('margin-top', "-"+jQuery(control._map.getContainer()).outerHeight()+'px');
@@ -144,7 +141,17 @@
         });
       });
 
-
+    };
+    SVC.prototype.street_view_started = function(){
+      var p = jQuery("param[name='flashvars']"),
+          fvars = p.attr('value').replace("context=api", "content=maps_sv"),
+          fobj = jQuery(this._pano).find('object')[0]
+          ;
+      //fobj.FlashCrossClick = function(){alert('here');};
+      console.log(fobj);
+      //naughty editing of flash params and src to get the version with the close button.
+      p.attr('value', fvars);
+      p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
     };
     SVC.prototype.getDefaultPosition = function() {
       return new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(14, 7));
