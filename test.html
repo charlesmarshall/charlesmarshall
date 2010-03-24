@@ -145,7 +145,7 @@
     SVC.prototype.street_view_started = function(){
       var p = jQuery("param[name='flashvars']"),
           fvars = p.attr('value').replace("context=api", "content=maps_sv"),
-          fobj = jQuery(this._pano).find('object')[0]
+          fobj = jQuery(this._pano)//.find('object')[0]
           ;
       //fobj.FlashCrossClick = function(){alert('here');};
       console.log(fobj);
