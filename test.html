@@ -149,7 +149,7 @@
           ;
       p.attr('value', fvars);
       p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
-      console.log(jQuery(this._pano_container));
+      console.log(jQuery(this._pano_container).find("object"));
     };
     SVC.prototype.getDefaultPosition = function() {
       return new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(14, 7));
