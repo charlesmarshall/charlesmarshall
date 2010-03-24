@@ -146,9 +146,7 @@
       var p = jQuery("param[name='flashvars']"),
           fvars = p.attr('value').replace("context=api", "content=maps_sv")
           ;
-      //fobj.FlashCrossClick = function(){alert('here');};
-      console.log(jQuery(control._pano_container));
-      //naughty editing of flash params and src to get the version with the close button.
+      console.log(fvars);
       p.attr('value', fvars);
       p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
     };
