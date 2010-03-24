@@ -125,22 +125,21 @@
         return control.dragError();
       });
 
-
       GEvent.addListener(this._man_marker, 'dragend', function(){
         var ll = control._man_marker.getLatLng();
         control._svclient.getNearestPanorama(ll,function(res){
           if(res.code == 200){
             control._pano.setLocationAndPOV(res.location.latlng);
-            var justonce = GEvent.addListener(control._pano, "initialized", function(){
-              console.log("started");
-              control.street_view_started();
-              GEvent.removeListener(justonce);
-            });
             jQuery(control._pano_container).show().css('margin-top', "-"+jQuery(control._map.getContainer()).outerHeight()+'px');
           }else{
             return control.dragError();
           }
         });
+      });
+      var justonce = GEvent.addListener(this._pano, "initialized", function(){
+        console.log("started");
+        control.street_view_started();
+        GEvent.removeListener(justonce);
       });
 
     };
@@ -150,7 +149,7 @@
           ;
       p.attr('value', fvars);
       p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
-      
+
     };
     SVC.prototype.getDefaultPosition = function() {
       return new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(14, 7));
