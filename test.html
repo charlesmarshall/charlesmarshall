@@ -131,6 +131,7 @@
           if(res.code == 200){
             control._pano.setLocationAndPOV(res.location.latlng);
             var justonce = GEvent.addListener(control._pano, "initialized", function(){
+              console.log("started");
               control.street_view_started();
               GEvent.removeListener(justonce);
             });
