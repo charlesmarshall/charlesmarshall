@@ -135,7 +135,7 @@
         });
       });
       GEvent.addListener(control._pano, "initialized", function(){
-        var p = jQuery("param");
+        var param = jQuery("param[name='flashvars']");
         console.log(p);
       });
 
