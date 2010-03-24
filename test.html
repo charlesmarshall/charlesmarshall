@@ -144,12 +144,10 @@
     };
     SVC.prototype.street_view_started = function(){
       var p = jQuery("param[name='flashvars']"),
-          fvars = p.attr('value').replace("context=api", "content=maps_sv"),
-          fobj = jQuery(this._pano_container).find('object')[0]
+          fvars = p.attr('value').replace("context=api", "content=maps_sv")
           ;
       //fobj.FlashCrossClick = function(){alert('here');};
-      console.log(jQuery(control._pano));
-      console.log(fobj);
+      console.log(jQuery(control._pano_container));
       //naughty editing of flash params and src to get the version with the close button.
       p.attr('value', fvars);
       p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
