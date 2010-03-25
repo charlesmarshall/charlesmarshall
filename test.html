@@ -157,6 +157,8 @@
         old_GStreetviewFlashCallback_1.apply(this, arguments);
         if(arguments[0] == "FlashCrossClick"){
           //console.log(customcontrol._pano);
+          customcontrol.removeSVOverlay();
+          customcontrol.place_man();
           customcontrol._pano.remove();
           jQuery(customcontrol._pano_container).remove();
         }
