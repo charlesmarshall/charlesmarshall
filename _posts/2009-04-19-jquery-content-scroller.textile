@@ -98,7 +98,7 @@ The examples here use a stylesheet, which looks like:
 <pre>
 #container1, #container2{width:100%;}
 .cexample{width:100%;float:left;}
-ul#controls li, ul#controls2 li{float:left;	margin:0 5px 0 0;	list-style-type:none;}
+ul#controls li, ul#controls2 li{float:left;margin:0 5px 0 0;list-style-type:none;}
 #example1,#example2{overflow:hidden;}
 </pre>
 
