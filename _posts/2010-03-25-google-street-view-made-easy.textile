@@ -152,7 +152,7 @@ All the files that are used...
 <div class='file_list clearfix'>
   <ul class="clearfix inline">
     <li class='category'><a href='http://github.com/charlesmarshall/streetview/raw/v2-jquery/streetview.js' title='jQuery and SVC' class='category curvy'>Javascript file &raquo;</a></li>
-    <li class='category'><a href='http://github.com/charlesmarshall/streetview/raw/v2-jquery/styles.css' title='Stylesheet' class='category curvy'>CSS file &raquo;</a></li>
+    <li class='category'><a href='http://github.com/charlesmarshall/streetview/raw/v2-jquery/styles.css' title='Stylesheet' class='category curvy'>css file &raquo;</a></li>
     <li class='category'><a href='http://github.com/charlesmarshall/streetview/zipball/v2-jquery' title='Zip of all' class='category curvy'>Zip file of &raquo;</a></li>    
   </ul>
 </div>
