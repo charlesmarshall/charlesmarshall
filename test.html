@@ -157,7 +157,7 @@
 
       old_GStreetviewFlashCallback_1 = GStreetviewFlashCallback_1;
       GStreetviewFlashCallback_1 = function(){
-        //console.log(arguments);
+        console.log(arguments);
         old_GStreetviewFlashCallback_1.apply(this, arguments);
         if(arguments[0] == "FlashCrossClick"){
           //console.log(customcontrol._pano);
