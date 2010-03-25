@@ -44,11 +44,7 @@
   </div>
   <script type='text/javascript'>
     var MAP=false;
-    var old_GStreetviewFlashCallback_1 = GStreetviewFlashCallback_1;
-    GStreetviewFlashCallback_1 = function(){
-      old_GStreetviewFlashCallback_1.apply(this, arguments);
-      if(arguments[0] == "FlashCrossClick") customcontrol._pano.remove();
-    }
+    var old_GStreetviewFlashCallback_1;
 
     //OBJ
     function SVC(svdiv, pano, map, run_init, start_postion){
@@ -155,6 +151,11 @@
       p.attr('value', fvars);
       p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
 
+      old_GStreetviewFlashCallback_1 = GStreetviewFlashCallback_1;
+      GStreetviewFlashCallback_1 = function(){
+        old_GStreetviewFlashCallback_1.apply(this, arguments);
+        if(arguments[0] == "FlashCrossClick") customcontrol._pano.remove();
+      }
     };
     SVC.prototype.getDefaultPosition = function() {
       return new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(14, 7));
