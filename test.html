@@ -130,7 +130,7 @@
         var ll = control._man_marker.getLatLng();
         control._svclient.getNearestPanorama(ll,function(res){
           if(res.code == 200){
-            control._pano.setLocationAndPOV(res.location.latlng, {yaw:0,pitch:0,zoom:0});
+            control._pano.setLocationAndPOV(res.location.latlng, res.location.pov);
             jQuery(control._pano_container).show().css('margin-top', "-"+jQuery(control._map.getContainer()).outerHeight()+'px');
           }else{
             return control.dragError();
