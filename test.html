@@ -44,7 +44,12 @@
   </div>
   <script type='text/javascript'>
     var MAP=false;
-    function FlashCrossClick(){alert("here");};
+    var old_GStreetviewFlashCallback_1 = GStreetviewFlashCallback_1;
+    GStreetviewFlashCallback_1 = function(){
+      old_GStreetviewFlashCallback_1.apply(this, arguments);
+      if(arguments[0] == "FlashCrossClick") customcontrol._pano.remove();
+    }
+
     //OBJ
     function SVC(svdiv, pano, map, run_init, start_postion){
       var control = this;
@@ -173,13 +178,14 @@
 
 
     //INIT
+    var customcontrol;
     function initialize() {
       var latlng = new google.maps.LatLng(52.502625,-1.893997),
           opts = {zoom: 12, center: latlng},
           customcontroldiv = jQuery('#sv_control')[0],
-          sview = jQuery('#gstreetview')[0],
-          customcontrol = new SVC(customcontroldiv, sview, MAP);
+          sview = jQuery('#gstreetview')[0]
           ;
+      customcontrol = new SVC(customcontroldiv, sview, MAP);
       customcontroldiv.index = 0;
       //v3 - MAP = new google.maps.Map(document.getElementById("gmap"), opts);
       //v2
