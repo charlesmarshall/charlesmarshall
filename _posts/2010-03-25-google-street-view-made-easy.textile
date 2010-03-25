@@ -91,7 +91,7 @@ Make sure you have set up your markup to something sensible
 As always, style the google map
 
 <pre>
- #gmap{
+#gmap{
   width:100%;
   height:350px;
 }
