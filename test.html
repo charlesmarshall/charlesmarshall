@@ -138,12 +138,12 @@
         });
       });
 
-      control.init_post_streetview_init_hook();
+      this.init_post_streetview_init_hook();
     };
     SVC.prototype.init_post_streetview_init_hook = function(){
       var justonce = GEvent.addListener(this._pano, "initialized", function(){
         //console.log("started");
-        control.street_view_started();
+        this.street_view_started();
         GEvent.removeListener(justonce);
       });
 
