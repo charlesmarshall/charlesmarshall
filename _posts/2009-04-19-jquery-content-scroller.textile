@@ -11,13 +11,19 @@ keywords:
 - scrolling
 - plugin
 - javascript
-description: "Scrolling content..."
-introduction: "<p>Scrolling content...</p>"
+description: "This plugin converts a bunch of divs that would normally flow underneath each other to flow next to each other, with just the one being visible at a time"
+introduction: "<p>A jQuery plugin to convert divs that normally flow underneath each other to flow next to each other with paginated controls.</p>"
 ---
 
-h2. Example Scrollers
+A jQuery plugin to convert divs that normally flow underneath each other to flow next to each other with paginated controls.
 
-This first one uses the 5 divs and converts them into scroller elements which react to the on click of the ul.
+The plugin will automatically create a set of controls that associates with the scrolling elements, letting you move between each one.
+
+
+
+h2. Standard, Auto Generated Controls
+
+This first one uses the 5 divs as 'pages' and converts them into scroller elements which react to the on click of the ul.
 
 <div id="example1">
   <div id="container1" class="clearfix example">	
@@ -39,6 +45,24 @@ This first one uses the 5 divs and converts them into scroller elements which re
   </div>
 </div>
 
+This one is as simple to setup as it gets:
+
+<pre>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery('#container1').contentscroller({pages:'.cexample'});
+});
+</script>
+</pre>
+
+As the plugins default setup looks for DOM elements with the class of 'page', in this case the example is using an alternative class. We just pass in the alternative selector and it all works.
+
+h2. Auto Generated Controls With Hooks
+
+If you want to alter things, or trigger events when a new 'page' loads or something similar there are two hooks you can use; before and after.
+
+In this example I'm keeping it simple by just running an alert for both; but you can pass something to run for both.
+
 <div id="example2">
   <div id="container2" class="clearfix example">	
   	<div class="cexample">
@@ -50,7 +74,43 @@ This first one uses the 5 divs and converts them into scroller elements which re
   </div>
 </div>
 
-This one has before and after functions.
+Setup for that is:
+
+<pre>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery('#container2').contentscroller({pages:'.cexample', controller:'#controls2', before:"alert('before')", after:"alert('after')"});
+});
+</script>
+</pre>
+
+Both the before and after values are eval'd with the javascript, this is very naughty and I really need to change that to take a normal function.
+
+NOTE: As the controls are auto generated and use a unique id, the second time we add a scroller to the page we have to force a new id. This is done by just setting the 'controller' option when creating it. (I really need to fix that...)
+
+h2. Styling
+
+The examples here use a stylesheet, which looks like:
+
+<pre>
+#container1, #container2{width:100%;}
+.cexample{width:100%;float:left;}
+ul#controls li, ul#controls2 li{float:left;	margin:0 5px 0 0;	list-style-type:none;}
+#example1,#example2{overflow:hidden;}
+</pre>
+
+
+h3. The Files
+
+All the files that are used... 
+
+<div class='file_list clearfix'>
+  <ul class="clearfix inline">
+    <li class='category'><a href='/jquery-content-scroller/styles.css' title='Stylesheet' class='category curvy'>Stylesheet &raquo;</a></li>
+    <li class='category'><a href='http://github.com/tinyjs/content-scroller/raw/master/jquery.contentscroller.js' title='Javascript' class='category curvy'>Javascript file &raquo;</a></li>    
+  </ul>
+</div>
+
 
 <link rel="stylesheet" href="/jquery-content-scroller/styles.css" type="text/css" media="all" charset="utf-8" />
 <script type="text/javascript" charset="utf-8" src="http://github.com/tinyjs/content-scroller/raw/master/jquery.contentscroller.js"></script>
