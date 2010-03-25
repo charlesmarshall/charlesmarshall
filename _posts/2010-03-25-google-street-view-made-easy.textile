@@ -14,8 +14,8 @@ keywords:
 - jquery
 - simple
 - extension
-description: ""
-introduction: "<p>work in progress</p>"
+description: "Street view is one the most outstanding features of not just google maps, but any google project. Just think how many photos are needed, and then how do you stitch them together? Well here is a simple plugin so you can use it on your maps too!"
+introduction: "<p>Street view is one the most outstanding features of not just google maps, but any google project. Just think how many photos are needed, and then how do you stitch them together?</p><p>Here is a simple plugin so you can use it on your maps too!</p>"
 ---
 
 Street view is one the most outstanding features of not just google maps, but any google project. Just think how many photos are needed, and then how do you stitch them together?
