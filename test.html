@@ -52,7 +52,6 @@
       this._svclient = new GStreetviewClient();
       this._map = map;
       this._pano = new GStreetviewPanorama(pano);
-      GEvent.addListener(this._pano, "initialized", function(){console.log("init called")});
       this._pano_container = pano;
       this._container = svdiv;
       this._controlUI = jQuery('#sv_ui')[0];
