@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Google Street View Made Easy
-category: web
+category: jquery
 keywords:
 - web
 - google
