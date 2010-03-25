@@ -142,7 +142,7 @@
     SVC.prototype.init_streetview_init_after_hook = function(){
       control = this;
       var justonce = GEvent.addListener(this._pano, "initialized", function(){
-        console.log("started");
+        //console.log("started");
         control.street_view_started();
         GEvent.removeListener(justonce);
       });
