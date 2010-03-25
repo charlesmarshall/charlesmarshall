@@ -156,8 +156,9 @@
         console.log(arguments);
         old_GStreetviewFlashCallback_1.apply(this, arguments);
         if(arguments[0] == "FlashCrossClick"){
-          console.log("here");
+          console.log(customcontrol._pano);
           customcontrol._pano.remove();
+          jQuery(customcontrol._pano_container).remove();
         }
       }
     };
