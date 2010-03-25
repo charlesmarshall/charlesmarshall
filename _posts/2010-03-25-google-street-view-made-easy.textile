@@ -25,7 +25,9 @@ work in progress
 </div>
 
 
-
+<script type='text/javascript'>
+  google.load('maps', '2', {"other_params":"sensor=true&key=ABQIAAAAQ_MbVb_KdIi7Z-3agFFibxTr40-U6rKi3H1zIkD0TDNPyGQE8BRJbeg0G5ZalFKDmIo4Mlkk2y9uyw"});
+</script>
 <link rel="stylesheet" href="http://github.com/charlesmarshall/streetview/raw/v2-jquery/styles.css" type="text/css" media="screen" charset="utf-8"/>
 <script src="http://github.com/charlesmarshall/streetview/raw/v2-jquery/streetview.js" type="text/javascript" charset="utf-8"></script>
 <script>
