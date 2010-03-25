@@ -44,7 +44,8 @@
   </div>
   <script type='text/javascript'>
     var MAP=false;
-    function FlashCrossClick(){alert("here");};
+    var old_GStreetviewFlashCallback_1;
+
     //OBJ
     function SVC(svdiv, pano, map, run_init, start_postion){
       var control = this;
@@ -129,27 +130,44 @@
         var ll = control._man_marker.getLatLng();
         control._svclient.getNearestPanorama(ll,function(res){
           if(res.code == 200){
-            control._pano.setLocationAndPOV(res.location.latlng);
+            control._pano.setLocationAndPOV(res.location.latlng, res.location.pov);
             jQuery(control._pano_container).show().css('margin-top', "-"+jQuery(control._map.getContainer()).outerHeight()+'px');
           }else{
             return control.dragError();
           }
         });
       });
+      control.init_streetview_init_after_hook();
+    };
+    SVC.prototype.init_streetview_init_after_hook = function(){
+      control = this;
       var justonce = GEvent.addListener(this._pano, "initialized", function(){
-        console.log("started");
+        //console.log("started");
         control.street_view_started();
         GEvent.removeListener(justonce);
       });
-
     };
     SVC.prototype.street_view_started = function(){
-      var p = jQuery("param[name='flashvars']"),
+      var control = this,
+          p = jQuery("param[name='flashvars']"),
           fvars = p.attr('value').replace("context=api", "content=maps_sv")
           ;
       p.attr('value', fvars);
       p.parent().attr('data',p.parent().attr('data').replace("googlepano.112.swf", "googlepano.121.swf") );
 
+      old_GStreetviewFlashCallback_1 = GStreetviewFlashCallback_1;
+      GStreetviewFlashCallback_1 = function(){
+        //console.log(arguments);
+        old_GStreetviewFlashCallback_1.apply(this, arguments);
+        if(arguments[0] == "FlashCrossClick" || arguments[0] == "FlashZoomMinusClick"){
+          //console.log(customcontrol._pano);
+          control.init_streetview_init_after_hook();
+          control.removeSVOverlay();
+          control.place_man();
+          control._pano.remove();
+          jQuery(control._pano_container).html("");
+        }
+      }
     };
     SVC.prototype.getDefaultPosition = function() {
       return new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(14, 7));
@@ -173,13 +191,14 @@
 
 
     //INIT
+    var customcontrol;
     function initialize() {
       var latlng = new google.maps.LatLng(52.502625,-1.893997),
           opts = {zoom: 12, center: latlng},
           customcontroldiv = jQuery('#sv_control')[0],
-          sview = jQuery('#gstreetview')[0],
-          customcontrol = new SVC(customcontroldiv, sview, MAP);
+          sview = jQuery('#gstreetview')[0]
           ;
+      customcontrol = new SVC(customcontroldiv, sview, MAP);
       customcontroldiv.index = 0;
       //v3 - MAP = new google.maps.Map(document.getElementById("gmap"), opts);
       //v2
