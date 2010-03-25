@@ -18,13 +18,25 @@ description: "Street view is one the most outstanding features of not just googl
 introduction: "<p>Street view is one the most outstanding features of not just google maps, but any google project. Just think how many photos are needed, and then how do you stitch them together?</p><p>Here is a simple plugin so you can use it on your maps too!</p>"
 ---
 
+h2. Summary
+
+<div class='introduction curvy'>
+  
+* "Working example":#map_street_view
+* "What is missing":#whats-missing from the street view API
+* Details on "how to use the plugin":#using-street-view
+* "Download":#download-files
+
+</div>
+
+
 Street view is one the most outstanding features of not just google maps, but any google project. Just think how many photos are needed, and then how do you stitch them together?
 
 Then you have to blur peoples faces, watch out for public displays of nudity and a whole bunch of other checks.
 
 Unsurprisingly enough getting street view on your google map isn't any easy task. It has got a lot better recently, with more functions making life easier but nothing to match to complexity or the features of the main google maps site.
 
-h2. What's Missing
+h2(#whats-missing). What's Missing
 
 In order to replicate the googles own maps there are certain key features that don't exist by default, so I've had to copy it as close as possible.
 
@@ -54,7 +66,7 @@ Enough talk, here is the working demo.
 
 It's also easy to use..
 
-h2. Using Street View
+h2(#using-street-view). Using Street View
 
 To make it easy to use I've made a jQuery plugin wrapper for the custom SVC prototype object (which handles the grunt work).
 
@@ -145,7 +157,7 @@ What they mean...
   * control_text - part of the custom control
   * street_view - the container for the street view flash object (if the selector isn't there the markup is inserted)
 
-h3. The Files
+h3(#download-files). The Files
 
 All the files that are used...
 
