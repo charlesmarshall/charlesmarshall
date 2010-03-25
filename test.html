@@ -148,7 +148,8 @@
       });
     };
     SVC.prototype.street_view_started = function(){
-      var p = jQuery("param[name='flashvars']"),
+      var control = this,
+          p = jQuery("param[name='flashvars']"),
           fvars = p.attr('value').replace("context=api", "content=maps_sv")
           ;
       p.attr('value', fvars);
@@ -160,10 +161,11 @@
         old_GStreetviewFlashCallback_1.apply(this, arguments);
         if(arguments[0] == "FlashCrossClick"){
           //console.log(customcontrol._pano);
-          customcontrol.removeSVOverlay();
-          customcontrol.place_man();
-          customcontrol._pano.remove();
-          jQuery(customcontrol._pano_container).html("");
+          control.init_streetview_init_after_hook();
+          control.removeSVOverlay();
+          control.place_man();
+          control._pano.remove();
+          jQuery(control._pano_container).html("");
         }
       }
     };
