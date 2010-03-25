@@ -157,9 +157,9 @@
 
       old_GStreetviewFlashCallback_1 = GStreetviewFlashCallback_1;
       GStreetviewFlashCallback_1 = function(){
-        console.log(arguments);
+        //console.log(arguments);
         old_GStreetviewFlashCallback_1.apply(this, arguments);
-        if(arguments[0] == "FlashCrossClick"){
+        if(arguments[0] == "FlashCrossClick" || arguments[0] == "FlashZoomMinusClick"){
           //console.log(customcontrol._pano);
           control.init_streetview_init_after_hook();
           control.removeSVOverlay();
