@@ -19,3 +19,21 @@ introduction: "<p>work in progress</p>"
 ---
 
 work in progress
+
+<div class='example' id="map_street_view">
+  <div id="gmap" class='gmap'></div>
+</div>
+
+
+
+<link rel="stylesheet" href="http://github.com/charlesmarshall/streetview/raw/v2-jquery/styles.css" type="text/css" media="screen" charset="utf-8"/>
+<script src="http://github.com/charlesmarshall/streetview/raw/v2-jquery/streetview.js" type="text/javascript" charset="utf-8"></script>
+<script>
+var latlng = new google.maps.LatLng(52.502625,-1.893997),
+    opts = {zoom: 12, center: latlng},
+    MAP = new GMap2(document.getElementById("gmap"))
+    ;
+MAP.setCenter(opts.center, opts.zoom);
+MAP.setUIToDefault();
+jQuery('#gmap').streetview({map:MAP, icon_image: "http://github.com/charlesmarshall/streetview/raw/v2-jquery/street-view.png"});
+</script>
