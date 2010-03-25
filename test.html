@@ -155,7 +155,10 @@
       GStreetviewFlashCallback_1 = function(){
         console.log(arguments);
         old_GStreetviewFlashCallback_1.apply(this, arguments);
-        if(arguments[0] == "FlashCrossClick") customcontrol._pano.remove();
+        if(arguments[0] == "FlashCrossClick"){
+          console.log("here");
+          customcontrol._pano.remove();
+        }
       }
     };
     SVC.prototype.getDefaultPosition = function() {
