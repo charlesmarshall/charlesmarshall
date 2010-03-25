@@ -26,7 +26,7 @@ h2. Standard, Auto Generated Controls
 This first one uses the 5 divs as 'pages' and converts them into scroller elements which react to the on click of the ul.
 
 <div id="example1">
-  <div id="container1" class="clearfix example">	
+  <div id="container1" class="clearfix example">
   	<div class="cexample">
     	<h3>Content Page 1</h3>
     </div>
@@ -64,7 +64,7 @@ If you want to alter things, or trigger events when a new 'page' loads or someth
 In this example I'm keeping it simple by just running an alert for both; but you can pass something to run for both.
 
 <div id="example2">
-  <div id="container2" class="clearfix example">	
+  <div id="container2" class="clearfix example">
   	<div class="cexample">
     	<h3>Content Page 1</h3>
     </div>
@@ -79,7 +79,10 @@ Setup for that is:
 <pre>
 <script type="text/javascript">
 jQuery(document).ready(function() {
-	jQuery('#container2').contentscroller({pages:'.cexample', controller:'#controls2', before:"alert('before')", after:"alert('after')"});
+	jQuery('#container2').contentscroller({pages:'.cexample',
+	                                      controller:'#controls2',
+	                                      before:"alert('before')",
+	                                      after:"alert('after')"});
 });
 </script>
 </pre>
@@ -102,12 +105,12 @@ ul#controls li, ul#controls2 li{float:left;	margin:0 5px 0 0;	list-style-type:no
 
 h3. The Files
 
-All the files that are used... 
+All the files that are used...
 
 <div class='file_list clearfix'>
   <ul class="clearfix inline">
     <li class='category'><a href='/jquery-content-scroller/styles.css' title='Stylesheet' class='category curvy'>Stylesheet &raquo;</a></li>
-    <li class='category'><a href='http://github.com/tinyjs/content-scroller/raw/master/jquery.contentscroller.js' title='Javascript' class='category curvy'>Javascript file &raquo;</a></li>    
+    <li class='category'><a href='http://github.com/tinyjs/content-scroller/raw/master/jquery.contentscroller.js' title='Javascript' class='category curvy'>Javascript file &raquo;</a></li>
   </ul>
 </div>
 
