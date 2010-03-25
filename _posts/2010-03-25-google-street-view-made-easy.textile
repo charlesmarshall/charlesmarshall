@@ -26,7 +26,7 @@ h2. Summary
 * "What is missing":#whats-missing from the street view API
 * Details on "how to use the plugin":#using-street-view
 * "Download":#download-files
-
+* Big thanks to "Sheldon Els":http://sheldon.github.com/ for helping out
 </div>
 
 
@@ -54,7 +54,7 @@ h3. Closing
 
 One thing you notice when your using the API based street view is the lack of a little x.
 
-Strangely enough, it is on the google maps one. With a bit of backwards engineering that problem was overcome (big thanks to "Sheldon Els":http://sheldon.github.com/ for sorting that part out).
+Strangely enough, it is on the google maps one. With a bit of reverse engineering that problem was overcome (big thanks to "Sheldon Els":http://sheldon.github.com/ for sorting that part out).
 
 h2. Demo
 
