@@ -49,7 +49,7 @@ for key,value in enumerate(self.request.GET.items()):
   
 </pre>
 
-Success, or so you'd think... However, the key is not very useful, it comes out as the full thing. So, the first key is @ [0][firstname] @ which is about as useful as a chocolate tea pot when I'm trying to make a multi-dimensional array.
+Success, or so you'd think... However, the key is not very useful, it comes out as the full thing. So, the first key is @[0][firstname]@ which is about as useful as a chocolate tea pot when I'm trying to make a multi-dimensional array.
 
 In the end, I couldn't find a way to handle incoming data structured like that. Instead I had to revert to using single names like this:
 
