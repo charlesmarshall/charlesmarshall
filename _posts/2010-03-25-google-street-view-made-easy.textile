@@ -30,6 +30,7 @@ h2. Summary
 
 </div>
 
+*Browser compatibility is an on going issue, this is only guaranteed to work in Firefox 3.2 at the moment, working on rest!*
 
 Street view is one the most outstanding features of not just google maps, but any google project. Just think how many photos are needed, and then how do you stitch them together?
 
