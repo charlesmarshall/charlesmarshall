@@ -130,7 +130,7 @@ As part of the google API you can leave the origin language blank and it will tr
   
 </form>
 
-To do this, you just need to modify the call to translator to have an empty origin_langauge parameter:
+To do this, you just need to modify the call to translator to have an empty origin_language parameter:
 
 <pre>
 jQuery('#auto_translation_form').translator({
