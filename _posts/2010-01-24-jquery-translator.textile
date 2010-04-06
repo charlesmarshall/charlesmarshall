@@ -174,6 +174,19 @@ As the "google API supports and preserves markup":http://code.google.com/apis/aj
 	<p>This <a href='#translating-html-blocks' title='example link'>paragraph</a> has an a tag within it.</p>
 </div>
 
+And it works in exactly the same way as the static selector with just one change:
+
+<pre>
+jQuery(window).translator({
+   "origin": '#preserve-markup',
+   "origin_language": 'en',
+   "result": '#preserve-markup',
+   "result_language": 'es',
+   "after_translate": track
+ });	
+</pre>
+
+As you can see, the origin and the result parameters are the same selector, resulting in a replacement.
 
 h3(#fixed-content-dynamic-language). Translating Page Content With a Selectable Language
 
