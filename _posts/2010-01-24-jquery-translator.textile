@@ -188,6 +188,8 @@ jQuery(window).translator({
 
 As you can see, the origin and the result parameters are the same selector, resulting in a replacement.
 
+NOTE: I update the plugin to do this due to a request from "Parthiban":#comment-43473998 , hope this works for you!
+
 h3(#fixed-content-dynamic-language). Translating Page Content With a Selectable Language
 
 You can also mix and match the two methods, having static content but swapping between languages like below:
