@@ -161,7 +161,7 @@ jQuery(document).translator({
 });
 </pre>
 
-h3(#translating-html-blocks). Translating HTML Blocks
+h3(#translating-html-blocks). Translating Blocks of Markup
 
 As the "google API supports and preserves markup":http://code.google.com/apis/ajaxlanguage/documentation/reference.html#GlobalMethods with the string that is passed along, it is pretty straight forward. In this example the outer containers contents is translated from English to Spanish and maintains all markup.
 
