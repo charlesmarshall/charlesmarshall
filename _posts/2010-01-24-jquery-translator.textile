@@ -90,6 +90,8 @@ jQuery(document).ready(function(){
 </script>  
 </pre>
 
+For a list of all supported languages have a look at "googles languages enum":http://code.google.com/apis/ajaxlanguage/documentation/reference.html#LangNameArray
+
 h3(#events-and-triggers). Plugin Events and Triggers
 
 The plugin should be called on the parent form as it captures the form submit event and runs the translate. It also runs the a translation call on the following events:
@@ -264,7 +266,7 @@ jQuery(document).ready(function(){
     "result_language": '#trans_to',
     "after_translate": track
   });
-	jQuery(document).translator({
+	jQuery(window).translator({
     "origin": '#preserve-markup',
     "origin_language": 'en',
     "result": '#preserve-markup',
