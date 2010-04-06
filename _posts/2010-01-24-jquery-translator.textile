@@ -236,13 +236,13 @@ jQuery('#static_content_translation_form').translator({
 
 Both the original text and the translated text is passed in to the function.
 
-h3(#download-the-plugin). Download
-
-"Grab the plugin here":http://github.com/charlesmarshall/jQuery-Translator/raw/master/jquery.translator.js
-
 h3(#notes-about-the-plugin). Notes
 
 The only issue that I know is that the plugin works only once per selector, so you can't use it on jQuery(document) more than once for example.
+
+h3(#download-the-plugin). Download
+
+"Grab the plugin here":http://github.com/charlesmarshall/jQuery-Translator/raw/master/jquery.translator.js
 
 <script type='text/javascript'>                      
   google.load("language", "1");
