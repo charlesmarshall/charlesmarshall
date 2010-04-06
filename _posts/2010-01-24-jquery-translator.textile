@@ -25,7 +25,7 @@ h2. Summary
   
 * The plugin should be run on a form (for dynamic switching) or the document for static content
 * "Automatic language detection":#language-sniffing (by leaving origin_language empty)
-* You can mix "static content":#fixed-content-fixed-language with "dynamic":#fixed-content-dynamic-language, so you can translate page content or form values, by simply switching the selector
+* You can mix "static content":#fixed-content-fixed-language (even "html blocks":#translating-html-blocks) with "dynamic":#fixed-content-dynamic-language, so you can translate page content or form values, by simply switching the selector
 * Supports all "languages available from google":http://code.google.com/apis/ajaxlanguage/documentation/#Details
 * When passing in languages they should use the standard 2 character short code.
 * "After translation hooks":#after-translation-hooks
@@ -159,6 +159,20 @@ jQuery(document).translator({
 });
 </pre>
 
+h3(#translating-html-blocks). Translating HTML Blocks
+
+As the "google API supports and preserves markup":http://code.google.com/apis/ajaxlanguage/documentation/reference.html#GlobalMethods with the string that is passed along, it is pretty straight forward. In this example the outer containers contents is translated from English to Spanish and maintains all markup.
+
+<div id="preserve-markup" class='example'>
+	<p>This is a paragraph that was in english, but should be translated to spanish.</p>
+	<ul>
+		<li>This is a bullet point, within an unordered list</li>
+		<li>so is this</li>
+	</ul>
+	<p>This <a href='#translating-html-blocks' title='example link'>paragraph</a> has an a tag within it.</p>
+</div>
+
+
 h3(#fixed-content-dynamic-language). Translating Page Content With a Selectable Language
 
 You can also mix and match the two methods, having static content but swapping between languages like below:
@@ -248,6 +262,13 @@ jQuery(document).ready(function(){
     "origin_language": 'en',
     "result": '#dynamic_result',
     "result_language": '#trans_to',
+    "after_translate": track
+  });
+	jQuery(document).translator({
+    "origin": '#preserve-markup',
+    "origin_language": 'en',
+    "result": '#preserve-markup',
+    "result_language": 'es',
     "after_translate": track
   });
 });
