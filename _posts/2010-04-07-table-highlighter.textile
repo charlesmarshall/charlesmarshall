@@ -103,22 +103,22 @@ You pass in an object, which by default has these values, each item has a commen
 
 <pre>
 {
-	//selectors are the jquery selectors used to find things
-	"selectors":{ 
-		"headings":'.heading', //this is the row containing the main headers
-		'column_header': '.column_header', //the actual column header
-		'rows': '.row',  //rows containing the actual data
-		'row_header': '.row_header', //part of the data row that acts as the header for that row
-		'row_data': '.row_data' //parts of the row that are data
-		},
-	"active_classes":{
-		"all": "active", //applied to all active elements
-		"column_header":"active_column_header", //applied to the currently active column header
-		"rows":"active_row", //applied to the currently active row
-		"row_header": "active_row_header", //the currently active row header
-		"row_data": "active_row_data", //the data elements within the active row
-		"current_hover": "active_position" //the element where you are hovering over
-		}
+//selectors are the jquery selectors used to find things
+"selectors":{ 
+ "headings":'.heading', //this is the row containing the main headers
+ 'column_header': '.column_header', //the actual column header
+ 'rows': '.row',  //rows containing the actual data
+ 'row_header': '.row_header', //part of the data row that acts as the header for that row
+ 'row_data': '.row_data' //parts of the row that are data
+ },
+"active_classes":{
+ "all": "active", //applied to all active elements
+ "column_header":"active_column_header", //applied to the currently active column header
+ "rows":"active_row", //applied to the currently active row
+ "row_header": "active_row_header", //the currently active row header
+ "row_data": "active_row_data", //the data elements within the active row
+ "current_hover": "active_position" //the element where you are hovering over
+ }
 };	
 </pre>
 
