@@ -93,6 +93,47 @@ tr.row td.active_position{background:black;color:white;}
 
 That's all you need to do!
 
+h2(#customisation). Customisation
+
+There are several options you can change and configure so the plugin works the way you need it to; these options are passed as normal.
+
+h3(#optional-values). Options
+
+You pass in an object, which by default has these values, each item has a comment explaining it:
+
+<pre>
+{
+	//selectors are the jquery selectors used to find things
+	"selectors":{ 
+		"headings":'.heading', //this is the row containing the main headers
+		'column_header': '.column_header', //the actual column header
+		'rows': '.row',  //rows containing the actual data
+		'row_header': '.row_header', //part of the data row that acts as the header for that row
+		'row_data': '.row_data' //parts of the row that are data
+		},
+	"active_classes":{
+		"all": "active", //applied to all active elements
+		"column_header":"active_column_header", //applied to the currently active column header
+		"rows":"active_row", //applied to the currently active row
+		"row_header": "active_row_header", //the currently active row header
+		"row_data": "active_row_data", //the data elements within the active row
+		"current_hover": "active_position" //the element where you are hovering over
+		}
+};	
+</pre>
+
+h3. The Files
+
+All the files that are used... 
+
+<div class='file_list clearfix'>
+  <ul class="clearfix inline">
+    <li class='category'><a href='http://github.com/charlesmarshall/jQuery-Table-Highlighter/raw/master/jquery.tablehightlight.js' title='Plugin' class='category curvy'>JavaScript</a></li>
+    <li class='category'><a href='http://github.com/charlesmarshall/jQuery-Table-Highlighter/raw/master/styles.css' title='css' class='category curvy'>css</a></li>
+    <li class='category'><a href='http://github.com/charlesmarshall/jQuery-Table-Highlighter/raw/master/index.html' title='demo page' class='category curvy'>demo page</a></li>
+    <li class='category'><a href='http://github.com/charlesmarshall/jQuery-Table-Highlighter/zipball/master' title='zip of all' class='category curvy'>zip of all</a></li>
+  </ul>
+</div>
 
 <!-- here is the code that does it all -->
 <link rel="stylesheet" href="http://github.com/charlesmarshall/jQuery-Table-Highlighter/raw/master/styles.css" type="text/css" media="all" charset="utf-8"/>
