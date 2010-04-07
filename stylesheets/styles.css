@@ -24,7 +24,9 @@ select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}
 table{font-size:inherit;font:100%;}
 pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 body{text-align:center;}
-
+table{width:80%; margin:20px auto;}
+td,th{font-size:116%;padding:3px;}
+th{font-weight:bold;}
 /* Nasty clearfix hacks */
 .clearfix{display:inline-block;}
 /* Hide from IE Mac \*/ 
