@@ -13,10 +13,10 @@ introduction: "<p>You might of noticed that it has been quite a while since I po
 ---
 
 <div class='post_images clearfix'>
-	!/images/work/subaru/home.jpg(Homepage)!
-	!/images/work/subaru/range.jpg(Vehicle Range)!
-	!/images/work/subaru/accessories.jpg(Vehicle Accessories)!
-	!/images/work/subaru/vehicle.jpg(Vehicle)!
+	<img src="/images/work/subaru/home.jpg" alt="Home" />
+	<img src="/images/work/subaru/range.jpg" alt="Vehicle range" />	
+	<img src="/images/work/subaru/accessories.jpg" alt="Accessories" />
+	<img src="/images/work/subaru/vehicle.jpg" alt="vehicle page" />	
 </div>
 You might of noticed that it has been quite a while since I posted anything new in the work section; I haven't been slacking off, honest! What has been taking up my time in between launching dealer websites (we now have 3 versions, "original subaru":http://www.exetersubaru.co.uk/, "new style subaru site":http://subaruvehicles.co.uk/ and of course the "isuzu dealer":http://isuzu.alexandra-cars.co.uk/ sites) has been the work towards the new Subaru UK site.
 
