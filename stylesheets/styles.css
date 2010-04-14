@@ -175,6 +175,7 @@ div.post{border-bottom:1px solid #392927;}
     margin:0 0 8px 8px;
   }
 	.post_images{
+		width:300px;
 		float:right;
 		margin:0 0 8px 8px;
 	}
