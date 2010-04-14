@@ -174,15 +174,6 @@ div.post{border-bottom:1px solid #392927;}
     float:right;
     margin:0 0 8px 8px;
   }
-	.post_images{
-		width:300px;
-		float:right;
-		margin:0 0 8px 8px;
-	}
-	.post_images img{
-		float:none;
-		margin:0 0 15px 0;
-	}
   .summary h5.date, .summary h6, a.tag{
     padding:4px;
     float:left;
