@@ -74,8 +74,13 @@
     {% if page.header_introduction %}
     <div class='introduction curvy clearfix'>{{ page.header_introduction }}</div>
     {% endif %}
+		{% if page.clearfix %}
+		<div class='clearfix'>
+		{% endif %}	
     {{ content }}
-
+		{% if page.clearfix %}
+		</div>
+		{% endif %}
     {% if page.category %}
     <div id="disqus_thread"></div>
     <script type="text/javascript" src="http://disqus.com/forums/charlesmarshall/embed.js"></script>
