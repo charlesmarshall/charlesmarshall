@@ -17,28 +17,9 @@ a.button{
 	text-decoration:none;
 	-moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-	font-size:93%;
+	font-size:116%;
 	text-align:center;
 }
-a.disabled{background:#D2D2D2;}
-a.button span{
-	font-size:77%;
-	color:#fff;
-}
-a.disabled span{color:#eeeeee;}
-h1 a.button{
-	padding:0 3px;
-	width:15px;
-	text-align:center;
-	float:right;
-}
-h1 a.karma,.list_item h3 a.button{
-	width:70px;
-	padding:0 3px 2px 3px;
-}
-h1 a.button span{font-size:108%;}
-h1 a.karma span{font-size:77%;}
-.list_item h3 a.button{float:right;width:55px;}
 /********* END Pagination and errors ****************/
 
 
@@ -54,7 +35,6 @@ h1 a.karma span{font-size:77%;}
     clear: both; 
     visibility: hidden;
 }
-
 
 *{
 	text-align:left;
