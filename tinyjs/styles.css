@@ -95,7 +95,14 @@ html{
 		margin:10px auto 0 auto;		
 	}
 	#intro h1{text-align:center;}
-	
+#join_us{
+	padding:10px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	background-color:#749900 !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(#A0D300), to(#749900)) !important;
+	background: -moz-linear-gradient(#A0D300, #749900) !important;
+}	
 #oneblackbear img{
 	float:left;
 	margin-right:5px;
