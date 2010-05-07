@@ -99,9 +99,9 @@ html{
 	padding:10px;
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
-	background-color:#749900 !important;
-	background: -webkit-gradient(linear, left top, left bottom, from(#A0D300), to(#749900)) !important;
-	background: -moz-linear-gradient(#A0D300, #749900) !important;
+	background-color:#506A00 !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(#5F8000), to(#506A00)) !important;
+	background: -moz-linear-gradient(#5F8000, #506A00) !important;
 }	
 #oneblackbear img{
 	float:left;
