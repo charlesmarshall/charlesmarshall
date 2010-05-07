@@ -81,8 +81,8 @@ html{
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	background-color:#506A00 !important;
-	background: -webkit-gradient(linear, left top, left bottom, from(#476000), to(#3E5300)) !important;
-	background: -moz-linear-gradient(#476000, #3E5300) !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(#557300), to(#506A00)) !important;
+	background: -moz-linear-gradient(#557300, #506A00) !important;
 }	
 #oneblackbear img{
 	float:left;
