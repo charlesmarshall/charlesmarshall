@@ -115,3 +115,5 @@ All the files that are used...
     <li class='category'><a href='/python-parameters/ParamSort.py' title='Python Class' class='category curvy'>Python file &raquo;</a></li>
   </ul>
 </div>
+
+*EDIT (08/06/2010):* It seems I was indeed wrong, there is a utility for this built in to the cgi module (and in 2.6 the urlparse module) called "parse_qs":http://docs.python.org/library/urlparse.html#module-urlparse that does this for query strings (GET data). I'll presume there is something similar that does the same for post data. 
