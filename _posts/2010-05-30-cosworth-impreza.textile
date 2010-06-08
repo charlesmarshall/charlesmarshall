@@ -15,6 +15,8 @@ introduction: "<p><img src='/images/work/cosworth-impreza.jpg' alt='subaru coswo
 
 !/images/work/cosworth-impreza.jpg(Cosworth Impreza)!If you've been keeping up on the latest motoring news you will have heard about this already. Although I can't tell you anything about the car (yet), I can tell you it will be making an appearance on the website very soon.
 
+After everything is up and running on the main Subaru site we will pushing it out to all the dealer sites we run; so it wont be long till you can pester your nearest dealership about trying one.
+
 *EDIT (07/05/2010):* Now we have some approved images we've added a gallery section to the "Cosworth page":http://subaru.co.uk/vehicles/cosworth#cosgallery 
 
 *EDIT (01/05/2010):* The Cosworth Impreza is now live and ready for you to buy! More details see the "main site":http://subaru.co.uk/vehicles/cosworth
