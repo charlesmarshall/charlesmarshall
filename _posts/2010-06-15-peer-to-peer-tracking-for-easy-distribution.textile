@@ -16,9 +16,11 @@ More concerning, with changes coming thick and fast how do you make sure everyon
 
 h2. Existing Tech
 
-So any tech that can be used needs to be evaluated based on a few criteria, the "granny factor" and the technical viability. The "granny factor" is simple, would you 70 year old grandma be able to do it without supervision.
+Any tech that can be used needs to be evaluated based on a few, simple, criteria. The "granny factor", technical viability and cost. 
 
-From the geek side of things it needs to be pain free (no one wants to spend hours answering emails about it), capable of handling large numbers of files, massive sizes and be fast.
+The "granny factor" is simple: would your 70 year old grandma be able to do it without supervision.
+
+From the geek side of things it needs to be pain free (no one wants to spend hours answering emails about it), capable of handling large quantity of files, massive individual sizes and be as fast as possible.
 
 h3. The Contenders
 
