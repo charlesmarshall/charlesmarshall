@@ -58,7 +58,7 @@ Simplicity is the key to the spread of torrents. If a 12 year old can use it to 
 
 When it comes to creating a new torrent it's not quite as easy as downloading, but if you're using something like utorrent there is a simple step-by-step wizard that takes care of it for you.
 
-Like drop box, it high scores on the technical side. Setting up a torrent tracker is simple (and dozens of free / open trackers exist already), the network traffic can be shaped and throttled (your isp probably does that already) and (if you believe the RIAA figures) almost everyone will have the software installed and now how to use it.
+Like drop box, it high scores on the technical side. Setting up a torrent tracker is simple (and dozens of free / open trackers exist already), the network traffic can be shaped and throttled (your isp probably does that already) and (if you believe the RIAA figures) almost everyone will have the software installed and know how to use it.
 
 As widely used as email, as simple as dropbox and without any charges... Sounds good..
 
