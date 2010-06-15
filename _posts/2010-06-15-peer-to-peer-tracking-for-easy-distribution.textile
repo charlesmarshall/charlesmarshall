@@ -28,7 +28,7 @@ h4. Email
 
 The simplest (scores very high in the granny side of things, once setup), but not capable of handling the load; most providers have 2-5Mb limits.
 
-h4. FTP
+h4. Ftp
 
 Technically good, simple for your bog standard server admin to setup and no maintenance problems, but have you ever tried to explain to your non-techy gran how to upload something using it? Yeah, not going to happen...
 
