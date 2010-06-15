@@ -46,7 +46,7 @@ Firstly, size problems. The base level account is way too small (5Gb), the last 
 
 The largest size available is 100Gb, so thats not quite 20 campaigns...
 
-Of course that size account is not free; it's $19.99 a month; thats the second problem, budget.
+Of course that size account is not free; it's $19.99 a month; and thats the second problem, budget.
 
 Access is also troubling. Without getting each client to create their own dropbox account and share folders with your account there is no way to limit access, not so good.
 
