@@ -10,7 +10,9 @@ description: "After the past few months we've done some very media heavy adverts
 introduction: "<p>With many of our clients we have large numbers of big files (100Mb+) and one problem we always run in to is how do you send this data around everyone that needs?</p><p>Even more to the point, how do you make sure everyone gets the right set of files?</p>"
 ---
 
-After the past few months we've done some very media heavy adverts with much back and forth over image changes. As you can imagine, this can be troublesome especially when you have lots images, which are mostly tiffs, at about 150Mb each.
+After the past few months we've done some very media heavy adverts with much back and forth over image changes. As you can imagine, this can be troublesome especially when you have lots of files, each one at about 150Mb.
+
+More concerning, with changes coming thick and fast how do you make sure everyone has the most recent files?
 
 h2. Existing Tech
 
