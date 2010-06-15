@@ -54,7 +54,7 @@ h4. Torrents (peer 2 peer)
 
 Yes, it's a dirty word, synonymous with pirating; but lets look at this objectively and not though the eyes of the media / RIAA / Disney etc.
 
-Simple is the key to the spread of the use of torrents. If a 12 year old can use it to download the latest top 10 it's a good bet your gran can handle it too.
+Simplicity is the key to the spread of torrents. If a 12 year old can use it to download the latest top 10 it's a good bet your gran can handle it too.
 
 When it comes to creating a new torrent it's not quite as easy as downloading, but if you're using something like utorrent there is a simple step-by-step wizard that takes care of it for you.
 
