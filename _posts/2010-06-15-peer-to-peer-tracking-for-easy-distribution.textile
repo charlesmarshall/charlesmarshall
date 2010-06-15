@@ -1,0 +1,77 @@
+---
+layout: default
+title: Ideas on Asset Distribution
+category: work
+keywords:
+- peer 2 peer
+- torrents
+- tracker
+description: "After the past few months we've done some very media heavy adverts with much back and forth over image changes. As you can imagine, this can be troublesome especially when you have lots images, which are mostly tiffs, at about 150Mb each."
+introduction: "<p>With many of our clients we have large numbers of big files (100Mb+) and one problem we always run in to is how do you send this data around everyone that needs?</p><p>Even more to the point, how do you make sure everyone gets the right set of files?</p>"
+---
+
+After the past few months we've done some very media heavy adverts with much back and forth over image changes. As you can imagine, this can be troublesome especially when you have lots images, which are mostly tiffs, at about 150Mb each.
+
+h2. Existing Tech
+
+So any tech that can be used needs to be evaluated based on a few criteria, the "granny factor" and the technical viability. The "granny factor" is simple, would you 70 year old grandma be able to do it without supervision.
+
+From the geek side of things it needs to be pain free (no one wants to spend hours answering emails about it), capable of handling large numbers of files, massive sizes and be fast.
+
+h3. The Contenders
+
+h4. Email
+
+The simplest (scores very high in the granny side of things, once setup), but not capable of handling the load; most providers have 2-5Mb limits.
+
+h4. FTP
+
+Technically good, simple for your bog standard server admin to setup and no maintenance problems, but have you ever tried to explain to your non-techy gran how to upload something using it? Yeah, not going to happen...
+
+How about a comprise, something simple and something technically sound... How about a recent startup favourite..
+
+h4. Dropbox
+
+Not the simplest to setup; a guide & instructions are going to be needed to get your granny going, but once it is installed it checks most of the boxes.
+
+It's easy to use on a daily basis; just drop it the files and it sync them for you to all the other relevant people.
+
+Version control is supported, so if you delete the wrong file you can retrieve it without any problems. But that doesn't make it perfect...
+
+Firstly, size problems, the base level account is way too small (5Gb), the last campaign had 19 images and weighed in at 2.8Gb. What would you do if you had 3 going at once? You'd have to upgrade...
+
+The largest size available is 100Gb, so thats not quite 20 campaigns...
+
+Of course that size account is not free; it's $19.99 a month; thats the second problem, budget.
+
+Access is also troubling. Without getting each client to create their own dropbox account and share folders with your account there is no way to limit access, not so good.
+
+h4. Torrents (peer 2 peer)
+
+Yes, it's a dirty word, synonymous with pirating; but lets look at this objectively and not though the eyes of the media / RIAA / Disney etc.
+
+Simple is the key to the spread of the use of torrents. If a 12 year old can use it to download the latest top 10 it's a good bet your gran can handle it too.
+
+When it comes to creating a new torrent it's not quite as easy as downloading, but if you're using something like utorrent there is a simple step-by-step wizard that takes care of it for you.
+
+Like drop box, it high scores on the technical side. Setting up a torrent tracker is simple (and dozens of free / open trackers exist already), the network traffic can be shaped and throttled (your isp probably does that already) and (if you believe the RIAA figures) almost everyone will have the software installed and now how to use it.
+
+As widely used as email, as simple as dropbox and without any charges... Sounds good..
+
+If you need some level of access control you can; just email the torrent file to the correct people.
+
+The only serious draw back is whoever created the torrent needs to be online long enough for someone else to download it.
+
+h2. Where Next?
+
+As the assets we tend to handle are copyrighted artwork, unreleased advertising (on and offline), large data sets and such like a private tracker is the ideal solution.
+
+I've made a start on creating a super-fast memcache based tracker running off google app engine (again free at a certain level) which is working nicely and once it fully complies with the torrent protocol I'll be blogging about it here!
+
+Until it's all sorted out we'll be sticking with dropbox, but the way forward (especially in web side of things) really is though distribution.
+
+
+
+
+
+
