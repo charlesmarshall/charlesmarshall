@@ -74,7 +74,7 @@ Very simple:
 
 @./vhost -c WEBSITE USERNAME@
 
-As you might of guessed, @WEBSITE@ is the full server name - google.com - for example, and @USERNAME@ is the (if you hadn't guessed) the user name.
+As you might of guessed, @WEBSITE@ is the full server name - google.com - for example, and @USERNAME@ is (if you hadn't guessed) the user name.
 
 It comes with a couple of extra options, @-i@ can be handy. This changes the ip address used on the vhost from * to the servers ip address (via @hostname -i@):
 
