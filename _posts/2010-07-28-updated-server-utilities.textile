@@ -108,7 +108,7 @@ Once you have, just run this to set it up:
 
 @./git USERNAME ORIGIN BRANCH@
 
-Can you guess what @USERNAME@ is? That's right, the user you want to fetch the git repo with. The script makes use of @su -c@ to run the git setup. 
+Can you guess what @USERNAME@ is? That's right, the user you want to fetch the git repo with. The script makes use of @su -c@ to run the git setup.
 
 @ORIGIN@ is a bit complicated, its the web accessible path that git can fetch the repo from, something like @git://website.com/user/project.git@, see the git docs for more info.
 
