@@ -1,0 +1,133 @@
+---
+layout: default
+title: Server Utilities
+category: general
+keywords:
+- server
+- server admin
+- server utilities
+- bash script
+- bash
+- shell script
+- bash shell
+description: "A while ago I made a few server utility scripts, well I never really tested them much and they did have some issues, so I've updated them."
+introduction: "<p>A while ago I made a few server utility scripts, well I never really tested them much and they did have some issues, so I've updated them.</p><p>This time, instead of getting all complicated by shelling in to the server, they are designed to run on the server, this makes the code much simpler.</p>"
+---
+
+The previous version of these server scripts ran locally on your machine and ssh'd to the server you were after. This had some issues, the big was presuming the machine you were on had a 'NIX style environment, leaving the Windows users out in the cold.
+
+Personally, I don't any linux server admins that run windows on their machine, but it could happen. With that in mind (and making the code easier) I changed it over so they are now designed to run on the server itself and I try to keep things like the admin password out of the history.
+
+So far the new shell scripts do "user admin":#user_script (including mysql), "apache vhost creation":#vhost_script, "git checkouts":#git_script and a work in progress "ubuntu 10.04 LTS configuration":#ubuntu_script script.
+
+h2(#user_script). User Admin
+
+The @user.sh@ bash script has create and delete options only. As these commands can be damaging, there is also an echo only option, By using @-e@ the commands are simply printed out and not actually run.
+
+To try and keep the admin passwords out of the limelight and the history, the first thing the script does is request the root password (you can use another user other than root if you want), at this point it copies to an internal variable which is piped in to other commands along the way.
+
+The process is very similar to that of the "previous scripts":/general/2009/11/05/useful-bash-shell-scripts.html after that point.
+
+h3. Creating a user
+
+By using the -c flag you signify your desire to make a new user; the command would look something like this:
+
+@./user.sh -c USERNAME PASSWORD@
+
+With @USERNAME@ being the name of the user you want to create and @PASSWORD@ is the password for that user. As leaving the password in the history isn't such a good idea, you can exclude that from the command and the script will ask you for it. This way, the command would look like this:
+
+@./user.sh -c USERNAME@
+
+By default the scripts use @root@  as the user to do the mysql setup, this can be changed by using the -r flag:
+
+@./user.sh -c USERNAME -r@
+
+Once -r is set it will ask you an alternative user account to use. If you're not sure about what will happen with any of the commands, just pass along the @-e@ flag:
+
+@./user.sh -c USERNAME -r -e@
+
+All the commands will be echo'd out instead of being ran
+
+The creation process makes a new group (via @groupadd@), then a new user (with @useradd@), creates a mysql database (matching the users name) and then finally generates an ssh key file.
+
+h3. Deleting a user
+
+Deletion basically reverses everything the creation side of the script did. It's quick and easy to run:
+
+@./user.sh -d USERNAME@
+
+By default this leaves the database and mysql alone (as you don't want to accidentally wipe all your data!), but you can force it to with @-k@:
+
+@./user.sh -d USERNAME -k@
+
+Then you can kiss goodbye to your database and the user permissions along with the normal user deletion.
+
+As with the creation @-e@ will echo it out and not run
+
+h2(#vhost_script). Vhosts
+
+As these are normally web servers, this is a quick way to make a vhost for your newly created user. Again, create and delete options.
+
+h3. Creating a vhost
+
+Very simple:
+
+@./vhost -c WEBSITE USERNAME@
+
+As you might of guessed, @WEBSITE@ is the full server name - google.com - for example, and @USERNAME@ is the (if you hadn't guessed) the user name.
+
+It comes with a couple of extra options, @-i@ can be handy. This changes the ip address used on the vhost from * to the servers ip address (via @hostname -i@):
+
+@./vhost -c WEBSITE USERNAME -i@
+
+If your running something like ubuntu and your vhost path is not the normal @/etc/http2/conf.d/@ you can change that as well:
+
+@./vhost -c WEBSITE USERNAME -i --vhost_dir PATH_VHOSTS@
+
+Where @PATH_VHOSTS@ is the full path to the folder (with the trailing /), so something like @/etc/apache2/conf.d/@
+
+If you are happy and want to make that vhost live, you can use @--restart@ to restart apache:
+
+@./vhost -c WEBSITE USERNAME --restart@
+
+The file created is @WEBSITE@-apache-vhost.conf
+
+h3. Deleting a vhost
+
+Just use the @-d@:
+
+@./vhost -d WEBSITE@
+
+Again, you can make use of @--restart@ if you are sure about it.
+
+h2(#git_script). GiT setup
+
+Most occasions you need to deploy your site to your newly created user, this lets you pull in from a git repo, but does presume that in the case of private repos you've given the new user access to the repo.
+
+Once you have, just run this to set it up:
+
+@./git USERNAME ORIGIN BRANCH@
+
+Can you guess what @USERNAME@ is? That's right, the user you want to fetch the git repo with. The script makes use of @su -c@ to run the git setup. 
+
+@ORIGIN@ is a bit complicated, its the web accessible path that git can fetch the repo from, something like @git://website.com/user/project.git@, see the git docs for more info.
+
+@BRANCH@ is the git branch you want to checkout to; in the case of these scripts it would be @on-server@
+
+There is also an optional parameter that you can pass in to place the repo in a sub-folder of the user, rather than directly on the users home. For example, if you are using @public@ as the base of your project you can run:
+
+@./git USERNAME ORIGIN BRANCH public/@
+
+That will checkout your repo into public subfolder..
+
+@./git USERNAME ORIGIN BRANCH public/more/depth/@
+
+The bash makes use of @mkdir -p@, so go as deep as you like.
+
+h2(#ubuntu_script). Ubuntu setup
+
+To speed things along, I threw together most of the commands used for setting up a Ubuntu 10.04 LTS for running a typical LAMP stack.
+
+h3. The Files
+
+All these scripts are sitting over on "my github project page":http://github.com/charlesmarshall/Utils
