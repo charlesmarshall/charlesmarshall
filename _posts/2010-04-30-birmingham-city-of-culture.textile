@@ -7,8 +7,10 @@ keywords:
 - birmingham
 - culture
 description: "With the success of the first European City of Culture (which was Liverpool) the UK has launched a City of Culture contest of its own. Major cities from around he country will bid for the honour and we're all hoping Birmingham gets the nod."
-introduction: "<p>With the success of the first European City of Culture (which was Liverpool) the UK has launched a City of Culture contest of its own. Major cities from around he country will bid for the honour and we're all hoping Birmingham gets the nod. Coincidently, One Black Bear are building the website!</p>"
+introduction: "<img src='/images/work/birmingham-city-of-culture.gif' alt='City of Culture' /><p>With the success of the first European City of Culture (which was Liverpool) the UK has launched a City of Culture contest of its own. Major cities from around he country will bid for the honour and we're all hoping Birmingham gets the nod. Coincidently, One Black Bear are building the website!</p>"
 ---
+
+!/images/work/birmingham-city-of-culture-website.png!:http://birminghamculture.org
 
 With the short list announced for the inaugural UK City of Culture we're happy to say that Birmingham made the list! The other contenders are Londonderry, Norwich and Sheffield.
 
