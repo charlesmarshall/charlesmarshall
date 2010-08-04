@@ -8,7 +8,7 @@ keywords:
 - acme
 - trees
 description: "Need help with that troublesome Fir? Issues with an overgrown Pine? Then these are the guys that can help"
-introduction: "<img src='/images/work/acme-trees.png' alt='Acme Trees' /><p></p>"
+introduction: "<img src='/images/work/acme-trees.png' alt='Acme Trees' /><p>Need help with that troublesome Fir? Issues with an overgrown Pine? Then these are the guys that can help</p>"
 ---
 
 !/images/work/acme-trees.png!:http://acmetreeservices.co.uk/
