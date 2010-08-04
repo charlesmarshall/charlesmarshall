@@ -1,0 +1,22 @@
+---
+layout: default
+title: Rayburn
+category: work
+keywords:
+- AGA
+- Rayburn
+- AGA Rayburn
+- range cookers
+description: "The experts on range cookers."
+introduction: "<p>A name I remember, as I grew up a few miles away from their head office! Rayburn is a brand name even I know; sellers of range cookers all over the country, but based in my home town of Telford.</p>"
+---
+
+Even though I was born only a few miles away it was my colleague "Sheldon Els":http://sheldon.github.com/ who built this one, but as I'm a local lad I thought I'd blog about it anyway!
+
+This time, the client is handling the hosting and further work themselves, so its been built on software they request; umbraco. Not a bad cms, but .net is still overly complicated.
+
+Doing simple things like recursive and nested navigations take more time than can believe, but on the whole the interface is reasonable, updated regularly and pretty stable. 
+
+The end result is good, the "new version of the website is up and looking good":http://rayburn-web.co.uk/!
+
+
