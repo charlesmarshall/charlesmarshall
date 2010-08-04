@@ -20,9 +20,8 @@ The new, improved and re-written website for GBR (now GBR Phoenix Beard) is aliv
 
 Making use of css3 and html5 the new version is faster and slicker than ever (as long as you're using a good browser).
 
+All the pretty rounded corners, gradients and of course the drop shadows (inset shadows as well) the like are now all done via css3, with some nasty old school images for the Internet Explorer users out there (sorry, but you should use a better browser).
 
+While I was at it, I also upgrade the site to run from the latest stable branch of both the cms and php wax framework to take advantage of some nice new improvements (I will back port them soon, honest!).
 
-
-
-
-
+One of the handy features is a new helper function to figure out the sha1 one of the git repo and store it in a config var. Great to append on the end of stylesheet, javascript and the like to avoid pesky caching issues with clients!
