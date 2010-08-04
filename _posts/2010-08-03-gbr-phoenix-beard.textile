@@ -1,0 +1,28 @@
+---
+layout: default
+title: GBR Phoenix Beard
+category: work
+keywords:
+- GBR
+- property
+- gbrproperty
+- gbr phoenix beard
+- phoenix beard
+- birmingham property
+- birmingham
+description: "Two local property companies merged (GBR & Phoenix Beard) to form the new GBR Phoenix Beard. We previously built the GBR website, and our spec this time round was to re skin and replace."
+introduction: "<img src='/images/work/gbr-phoenix-beard.png' alt='GBR Phoenix Beard' /><p>Two local property companies merged (GBR & Phoenix Beard) to form the new GBR Phoenix Beard. We previously built the GBR website, and our spec this time round was to re skin and replace.</p>"
+---
+
+!/images/work/gbr-phoenix-beard-website.png!:http://www.gbrpb.com
+
+The new, improved and re-written website for GBR (now GBR Phoenix Beard) is alive and kicking!
+
+Making use of css3 and html5 the new version is faster and slicker than ever (as long as you're using a good browser).
+
+
+
+
+
+
+
