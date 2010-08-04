@@ -1,0 +1,21 @@
+---
+layout: default
+title: St Phillips Chambers
+category: work
+keywords:
+- barristers
+- chambers
+description: "Local chambers"
+introduction: "<p>A new website for local chambers, who happen to be one of the countries leading specialists</p>"
+---
+
+Not a site I can take credit for, Ross Riley built this one, but it's just around the corner so well worth a mention.
+
+We've just finished and pushed live an over hauled and "revamped version of their website":http://www.st-philips.com/, but not on our CMS. 
+
+As this site will be maintained internally by their IT department it's being built using activeedition instead. I'm not a fan.
+
+
+
+
+
