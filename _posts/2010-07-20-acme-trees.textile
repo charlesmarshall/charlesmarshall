@@ -19,5 +19,7 @@ One of very few websites that is running on our framework, but not making use of
 
 Really nice design, put together by "Helen Williams":http://www.helenwilliamsdesign.co.uk/ with a helping hand from Gareth Brown.
 
+It has some nice fading between images on the home page (jQuery for the win!) and good visual touches like the custom bullet point images.
+
 
 
