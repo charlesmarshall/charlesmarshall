@@ -28,5 +28,9 @@ h3. Tech used
 
 In previous posts I've mentioned changes like "swapping apache for nginx":/web/2010/09/15/nginx-apache.html and the improvements to the framework, well those are all in use on "national express":http://nxbus.co.uk and working nicely.
 
+Combining both layout cache with partial cache mechanism also means that (unless the cache is cleared) all pages are served from the cache with load times and size being tiny.
+
+YSlow gives the site between 89 and 93 out of 100, depending on the page. Pretty good performance! 
+
 
 
