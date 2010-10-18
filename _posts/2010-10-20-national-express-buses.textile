@@ -18,6 +18,12 @@ introduction: "<img src='/images/work/national-express-buses.jpg' alt='National 
 
 !/images/work/national-express-homepage.jpg!:http://nxbus.co.uk/ We've just launched the "brand new national express buses website":http://nxbus.co.uk/. It has some very nice new features, such as the live service alerts system, maps of the routes, and an overall improved interface, searching and of course tech.
 
+Previously all the areas had their own individual websites, domains, admin area and were totally separated. With this new site we have merged all of the previous sites under the single domain, so each share a common identity, layout, structure and functionality.
+
+Since the original design (on the right) we have added some illustrated cityscapes matching the section of the you are viewing; so the bullring shows up for the west midlands, desperate dan for dundee etc. 
+
+To go with these we have also got a mobile version of the website coming out very soon.
+
 In previous posts I've mentioned changes like "swapping apache for nginx":/web/2010/09/15/nginx-apache.html and the improvements to the framework, well those are all in use on "national express":http://nxbus.co.uk and working nicely.
 
 
