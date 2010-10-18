@@ -24,6 +24,8 @@ Since the original design (on the right) we have added some illustrated cityscap
 
 To go with these we have also got a mobile version of the website coming out very soon.
 
+h3. Tech used
+
 In previous posts I've mentioned changes like "swapping apache for nginx":/web/2010/09/15/nginx-apache.html and the improvements to the framework, well those are all in use on "national express":http://nxbus.co.uk and working nicely.
 
 
