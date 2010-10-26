@@ -18,6 +18,8 @@ description: "Street view is one the most outstanding features of not just googl
 introduction: "<p>Street view is one the most outstanding features of not just google maps, but any google project. Just think how many photos are needed, and then how do you stitch them together?</p><p>Here is a simple plugin so you can use it on your maps too!</p>"
 ---
 
+*EDIT: 26/10/2010* The street view man and all the triggers associated with it are now built in to v3 of google maps API, so please use that instead of this! 
+
 h2. Summary
 
 <div class='introduction curvy'>
