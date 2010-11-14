@@ -1,0 +1,62 @@
+---
+layout: default
+title: PHP Iterators, RecursiveIterators and RecursiveRegexIterators
+category: web
+keywords:
+- Iterators
+- regular expressions
+- RecursiveRegexIterator
+- RecursiveIterator
+description: "As one the of big parts of our php wax framework we recursively scan over a set of directories and find all the php files. This can be seriously slow if you're not careful. As part of a set of improvements coming to wax we took another look at this and found the wonderful RecursiveRegexIterator."
+introduction: "<p>As one the of big parts of our php wax framework we recursively scan over a set of directories and find all the php files. This can be seriously slow if you're not careful. As part of a set of improvements coming to wax we took another look at this and found the wonderful RecursiveRegexIterator.</p>"
+---
+
+As one the of big parts of our php wax framework we recursively scan over a set of directories and find all the php files. This did throw up quite a few performance issues over the course of developing wax, which I'll go over.
+
+h2. Vanilla Iterators
+
+At the very start of wax we started to use the slightly documented RecursiveDirectoryIterator with the RecursiveIteratorIterator like this:
+
+@$dir = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory), true);@
+
+However, this gave us a big old problem with hidden files. The iterators themselves only ignore . & .. directories, everything else it will recurse into, including .git folders.
+
+As wax has been around for a while with lost of changes using that iterator setup meant we were scanning over thousands of git files that we didn't need to.
+
+We improved this slightly by checking the file name inside the loop that traverses the @$dir@ variable, but that had knock on effect of now having to fetch the file name of all the files, even when they aren't php ones.
+
+h2. Custom Iterator
+
+To try and combat the extra invocations and reduce the number of the iterations @$dir@ causes we created a custom recursive iterator, @WaxRecursiveDirectoryIterator@, this is a simple extension of a standard @RecursiveDirectoryIterator@ that overrides the @hasChildren@ method:
+
+<code>
+class WaxRecursiveDirectoryIterator extends RecursiveDirectoryIterator {
+  
+  public function hasChildren() {
+    if(substr($this->getFilename(),0,1)==".") return false;
+    else return parent::hasChildren();
+  }
+}
+</code>
+
+This worked well, it reduced iteration count substantially by ignoring any folder starting with . (therefore ignoring everything in .git). The downside of this is invocation of getFilename & the performance drop of leaving the raw c class.
+
+h2. Keeping Standard
+
+Recently we've started looking at some performance and functionality changes and as every page runs though the autoloader, it is very important to get it as quick and light as possible. The majority of the self cost was still the recursive looping.
+
+After looking around for new ways of doing this, I found the RecursiveRegexIterator. As one of the more obscure iterators, there just isn't much in the way of documentation or examples or how it works,
+
+With some playing around we found the right order to use:
+
+<code>
+$dir = new RecursiveIteratorIterator(new RecursiveRegexIterator(new RecursiveDirectoryIterator($d, RecursiveDirectoryIterator::FOLLOW_SYMLINKS), $PATTERN), true);
+</code>
+
+Doing it this way allow for recursive scanning of the directories (so all files are found), matched against the regex pattern, and then a recursive iterator to go over the results.
+
+While testing we found that the regex pattern used must be able to match files and directories (so it recurses) and this is the solution:
+
+<code>
+$dir = new RecursiveIteratorIterator(new RecursiveRegexIterator(new RecursiveDirectoryIterator($d, RecursiveDirectoryIterator::FOLLOW_SYMLINKS), '#(?<!/)\.php$|^[^\.]*$#i'), true);
+</code>
