@@ -20,9 +20,9 @@ Firstly decide what suffix your going to use for your local machine, be sensible
 You will need a line such as "NameVirtualHost *:80" to make sure any web connections are picked up. Now create you first virtual host a bit like this:
 
 &lt;VirtualHost *:80&gt;
-&nbsp;&nbsp;&nbsp; DocumentRoot /Users/_username_/Sites/_sitename_/_docroot_
+&nbsp;&nbsp;&nbsp; DocumentRoot /Users/username/Sites/sitename/docroot
 &nbsp;&nbsp;&nbsp; ServerName mysite.local
-&nbsp;&nbsp;&nbsp; &lt;Directory "/Users/_username_/Sites/_sitename_/_docroot_"&gt;
+&nbsp;&nbsp;&nbsp; &lt;Directory "/Users/username/Sites/sitename/docroot"&gt;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AllowOverride All
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Options All
 &nbsp;&nbsp;&nbsp; &lt;/Directory&gt;
@@ -41,9 +41,9 @@ Save the file and refresh your browser. Bingo, its working (asuming the director
 If your like me and your containing folder is called the same thing as the server name and you have lots and lots of sites you can save yourself some effort and make use of Apache's VirtualDocumentRoot (bearing in mind you will have to ensure mod_vhost_alias is enabled) and set your config file to have something like this:
 
 &lt;VirtualHost *:80&gt;
-&nbsp;&nbsp;&nbsp; VirtualDocumentRoot /Users/_username_/Sites/%0/_docroot_
+&nbsp;&nbsp;&nbsp; VirtualDocumentRoot /Users/username/Sites/%1/docroot
 &nbsp;&nbsp;&nbsp; ServerName %0.local
-&nbsp;&nbsp;&nbsp; &lt;Directory "/Users/_username_/Sites/%0/_docroot_"&gt;
+&nbsp;&nbsp;&nbsp; &lt;Directory "/Users/username/Sites/%1/docroot"&gt;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AllowOverride All
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Options All
 &nbsp;&nbsp;&nbsp; &lt;/Directory&gt;
