@@ -15,6 +15,10 @@
     -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
     box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
   }
+  #content .container-large{
+    width:94%;
+    clear:both;
+  }
     
     #content .container .inner{
       background:#CEDFEA;

@@ -1,14 +1,27 @@
+function removeDuplicate(_array){
+  var newArray=new Array();
+  label:for(var i=0; i<_array.length;i++ ){
+    for(var j=0; j<newArray.length;j++ ){
+      if(newArray[j]==_array[i])
+      continue label;
+    }
+    newArray[newArray.length] = _array[i];
+  }
+  return newArray;
+}
+
+
 var dDATA =
-[
-  {"Player":"Player 1", "Score":"140", "Date":"2011-05-01"},
-  {"Player":"Player 1", "Score":"100", "Date":"2011-04-16"},
-  {"Player":"Player 1", "Score":"105", "Date":"2011-04-30"},
-  {"Player":"Player 2", "Score":"110", "Date":"2011-05-01"},
-  {"Player":"Player 2", "Score":"120", "Date":"2011-04-16"},
-  {"Player":"Player 2", "Score":"125", "Date":"2011-04-30"},
-  {"Player":"Player 3", "Score":"100", "Date":"2011-05-01"},
-  {"Player":"Player 3", "Score":"90", "Date":"2011-04-16"},
-  {"Player":"Player 3", "Score":"100", "Date":"2011-04-30"}
+[                                                     
+  {"Player":"Player 1", "Score":"140", "Date":20},
+  {"Player":"Player 1", "Score":"100", "Date":21},
+  {"Player":"Player 1", "Score":"105", "Date":22},
+  {"Player":"Player 2", "Score":"110", "Date":20},
+  {"Player":"Player 2", "Score":"120", "Date":21},
+  {"Player":"Player 2", "Score":"125", "Date":22},
+  {"Player":"Player 3", "Score":"100", "Date":20},
+  {"Player":"Player 3", "Score":"100", "Date":21},
+  {"Player":"Player 3", "Score":"100", "Date":22}
 ];
 
 jQuery(document).ready(function(){
@@ -21,10 +34,11 @@ jQuery(document).ready(function(){
     graphs:[],
     graph_counter: 0,
     initialize: function(){
-      var data = dDATA, names = this.findAllColumnNames(data), g, defaults = {'pie':{value:"Score", group:"Player"}, 'bar':{x:"Score", y:"Date"}};
+      var data = dDATA, names = this.findAllColumnNames(data), g, defaults = {'line':{group:'Player',x:'Date', 'y':'Score'},'pie':{value:"Score", group:"Player"}, 'bar':{x:"Score", y:"Date"}};
 
       for(var i in defaults){
-        g = this.draw.containers[i]("#content", "Bar Chart", defaults[i], this.graph_counter);
+        if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", "Bar Chart", defaults[i], this.graph_counter);
+        else g = this.draw.containers.generic("#content", "Bar Chart", defaults[i], this.graph_counter);
         this.graphs.push(g);
         this.draw.graphs[i](data, defaults[i], this.graph_counter);
         this.graph_counter++;
@@ -46,15 +60,15 @@ jQuery(document).ready(function(){
     },
     draw:{
       containers:{
-        pie:function(appendTo, title, cols, graph_number){
+        line:function(appendTo, title, cols, graph_number){
           var colstr ="", container = "";
           for(var z in cols) colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
-          container = "<div class='container clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
+          container = "<div class='container container-large clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
           jQuery(appendTo).append(container);
           return jQuery(container);
         },
-        bar:function(appendTo, title, cols, graph_number){
+        generic:function(appendTo, title, cols, graph_number){
           var colstr ="", container = "";
           for(var z in cols) colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
@@ -62,8 +76,43 @@ jQuery(document).ready(function(){
           jQuery(appendTo).append(container);
           return jQuery(container);
         }
+
       },
       graphs:{
+        line:function(data, cols, graph_number){
+          var ca = jQuery("#graph-"+graph_number),
+              groupcol = cols.group,
+              xcol = cols.x,
+              ycol = cols.y,
+              w=(ca.outerWidth()*0.95),
+              h=300,
+              values={},
+              all_y=[],
+              all_x=[],
+              x = [],
+              y = [],
+              r = Raphael("g-"+graph_number, w, h);
+
+          //so split the data by the group column
+          for(var i in data){
+            var ind = data[i][groupcol];
+            if(typeof values[ind] == "undefined") values[ind]={x:[], y:[]};
+            values[ind].x.push(data[i][xcol]);
+            values[ind].y.push(data[i][ycol]);
+            all_y.push(data[i][ycol]);
+            all_x.push(data[i][xcol]);
+          }
+          
+          
+          
+          for(var ind in values){
+            x.push(values[ind].x.sort());
+            y.push(values[ind].y.sort());            
+          }
+          var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"});
+          
+
+        },
         pie:function(data, cols, graph_number){
           var ca = jQuery("#graph-"+graph_number),
               groupcol = cols.group,
@@ -71,7 +120,7 @@ jQuery(document).ready(function(){
               chart = false,
               total = 0,
               pie,
-              w=(ca.outerWidth()-10),
+              w=(ca.outerWidth()*0.9),
               h=300,
               _data=[],
               _labels=[],
@@ -116,7 +165,7 @@ jQuery(document).ready(function(){
               xcol = cols.x,
               ycol = cols.y,
               chart = false,
-              w=(ca.outerWidth()-20),
+              w=(ca.outerWidth()*0.95),
               h=300,
               _data=[],
               _labels=[],
