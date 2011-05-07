@@ -24,21 +24,18 @@
 
   <div class='container clearfix' id="data-entry">
     <h2>Add Data</h2>
-    <form class='inner' action="" method="post">
+    <form class='inner' action="" method="post" id="data-entry-manual-form">
       <fieldset>
-        <label for="raw-data">Enter the data in the box below in a standard csv format <a href="#raw-data-entry-info"><small>(see below)</small></a>.</label>
+        <label for="raw-data">Enter the data in the box below in a json format <a href="#raw-data-entry-info"><small>(see below)</small></a>.</label>
         <textarea name="raw-data" id="raw-data" row='20' cols='20'></textarea>
         <input type='submit' class='button submit_field green_button' name='submit' value='submit data'>
         <div id='raw-data-entry-info'>
           <ul>
-            <li>First row contains field names</li>
-            <li>Fields are comma separated</li>
-            <li>Fields are contained within quotes</li>
+            <li>Keys are field names</li>
+            <li>No recursion, single depth only</li>
           </ul>
           <p>An example would be:</p>
-          <pre id='raw-data-example'>"Name", "Age", "Height", "Weight"
-"Pete", "25", "170", "85"
-"Paula", "23", "140", "65"</pre>
+<pre id='raw-data-example'></pre>
           <p><a href='#raw-data-example' class='use button'>Use example data</a></p>
         </div>
       </fieldset>
@@ -62,6 +59,8 @@
 <script src="javascripts/backbone/localstorage.js" type="text/javascript"></script>
 <script src="javascripts/backbone/models/dRow.js" type="text/javascript"></script>
 <script src="javascripts/backbone/models/dCollection.js" type="text/javascript"></script>
+
+<script src="javascripts/backbone/app.js" type="text/javascript"></script>
 
 <script src="javascripts/raphael/raphael.js" type="text/javascript"></script>
 <script src="javascripts/raphael/g.raphael.js" type="text/javascript"></script>
