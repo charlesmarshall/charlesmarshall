@@ -15,25 +15,7 @@ jQuery(document).ready(function(){
   
   window.AppView = Backbone.View.extend({
     el: jQuery("body"),
-    events: {
-      "submit #data-entry-manual-form": "triggerGraphForm",
-      "click #default-example": "useDefaultData"
-    },
-    useDefaultData: function(){
-      e.preventDefault();
-      var find = jQuery(e.target||e.srcElement).attr('href'), data = jQuery(find).text();
-      jQuery("#raw-data").val(data);
-      if(data) parsed = this.parseData(data);
-      if(parsed) this.graphForm(parsed);
-    },
-    triggerGraphForm: function(e){
-      e.preventDefault();
-      var data = jQuery(e.target||e.srcElement).find('textarea').val(), 
-          parsed = false
-          ;
-      if(data) parsed = this.parseData(data);
-      if(parsed) this.graphForm(parsed);
-    },
+    
     parseData: function(data){
       try{
         parsed = JSON.parse(data); 
@@ -43,9 +25,7 @@ jQuery(document).ready(function(){
       }
       return parsed;
     },
-    graphForm: function(data){
-      
-    }
+    
   });
   
   window.App = new AppView;
