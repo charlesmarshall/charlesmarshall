@@ -1,0 +1,16 @@
+form{padding:5px;}
+  form fieldset{padding:5px;}
+    form label{
+      font-size:108%;
+      margin-bottom:10px;
+      display:block;
+    }
+    form input{}
+    form textarea{
+      width:98%;
+      height:80px;
+      padding:1%;
+      display:block;
+      margin-bottom:10px;
+    }
+    

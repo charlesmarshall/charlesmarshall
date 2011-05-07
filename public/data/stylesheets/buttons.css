@@ -1,0 +1,46 @@
+.button{
+  display:inline-block;
+  padding:8px;
+  font-weight:bold;
+  color:#42788e;
+  background:#92dbf6;
+  text-transform:lowercase;
+  border:1px solid #82bed5;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;  
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  text-shadow: rgb(255,255,255) 2px 2px 2px;
+  text-shadow: rgba(255,255,255, 0.4) 2px 2px 2px;
+  background: -moz-linear-gradient(#aee5f8, #6fcef3);
+  background: -webkit-linear-gradient(#aee5f8, #6fcef3);
+}
+  .button:hover{
+    background: -moz-linear-gradient(#6fcef3, #aee5f8);
+    background: -webkit-linear-gradient(#6fcef3, #aee5f8);
+  }
+  
+
+/** colour rides **/
+.red_button{}
+  .red_button:hover{}
+
+.green_button{
+  color:#5d7731;
+  background:#b9d972;
+  border-color:#8bb14d;
+  background: -moz-linear-gradient(#cae295, #b9d972);
+  background: -webkit-linear-gradient(#cae295, #b9d972);
+}
+  .green_button:hover{
+    background: -moz-linear-gradient(#b9d972, #cae295);
+    background: -webkit-linear-gradient(#b9d972, #cae295);
+  }
+
+/** form submit **/
+input.submit_field{
+  margin-bottom:10px;
+}
