@@ -12,7 +12,7 @@ function removeDuplicate(_array){
 
 
 var dDATA =
-[                                                     
+[
   {"Player":"Player 1", "Score":"140", "Date":20},
   {"Player":"Player 1", "Score":"100", "Date":21},
   {"Player":"Player 1", "Score":"105", "Date":22},
@@ -102,15 +102,22 @@ jQuery(document).ready(function(){
             all_y.push(data[i][ycol]);
             all_x.push(data[i][xcol]);
           }
-          
-          
-          
+
+
+
           for(var ind in values){
             x.push(values[ind].x.sort());
-            y.push(values[ind].y.sort());            
+            y.push(values[ind].y.sort());
           }
-          var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"});
-          
+          var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
+                        this.tags = r.set();
+                        for (var i = 0, ii = this.y.length; i < ii; i++) {
+                          this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
+                        }
+                      }, function () {
+                        this.tags && this.tags.remove();
+                      });
+
 
         },
         pie:function(data, cols, graph_number){
