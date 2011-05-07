@@ -27,7 +27,11 @@ jQuery(document).ready(function(){
     formSubmit: function(e){
       console.log("submit");
       e.preventDefault();
-      var data = jQuery(this).find('textarea').val();
+      var data = jQuery(this).find('textarea').val(), 
+          parsed = false;
+      if(parsed){
+        alert("parsed");
+      }else alert("not valid");
     }
   });
   
