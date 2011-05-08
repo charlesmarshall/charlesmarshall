@@ -14,7 +14,7 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
-      {_type:'line', group_line:"browser", x:"hour", y:"views"},
+      {_type:'line', _group_line:"browser", x:"hour", y:"views"},
       {_type:'line', _group_line:false, x:"hour", y:"views"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
