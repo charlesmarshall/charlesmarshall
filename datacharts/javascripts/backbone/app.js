@@ -140,6 +140,8 @@ jQuery(document).ready(function(){
               w=(ca.outerWidth()*0.95),
               h=300,
               lines={},
+              x=[],
+              y=[],
               r = Raphael("g-"+graph_number, w, h);
 
           if(line_group){
@@ -149,8 +151,19 @@ jQuery(document).ready(function(){
               if(typeof lines[a][b] == "undefined") lines[a][b] = 0;
               lines[a][b] += parseInt(data[r][ycol]);
             }
+            for(var a in lines){
+              var tmp_x=[], tmp_y=[];
+              for(var b in lines[a]){
+                tmp_x.push(b);
+                tmp_y.push(lines[a][b]);
+              }
+              x.push(tmp_x);
+              y.push(tmp_y);
+            }
           }
           console.log(lines);
+          console.log(x);
+          console.log(y);
           // var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
           //               this.tags = r.set();
           //               for (var i = 0, ii = this.y.length; i < ii; i++) {
