@@ -14,7 +14,7 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
-      {_type:'line', _group_line:"browser", x:"hour", y:"views"},
+      {_type:'line', _group_line:"browser", x:"hour", y:"views", _shade:true},
       {_type:'line', _group_line:false, x:"hour", y:"views"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
@@ -175,7 +175,7 @@ jQuery(document).ready(function(){
           }
           
           
-          line = r.g.linechart(30, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
+          line = r.g.linechart(30, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o", shade:cols._shade||false}).hoverColumn(function () {
                   this.tags = r.set();
                   for (var i = 0, ii = this.y.length; i < ii; i++) {
                     this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
