@@ -38,10 +38,11 @@ jQuery(document).ready(function(){
 
   window.AppView = Backbone.View.extend({
     el: jQuery("body"),
+    data_sets:DEFAULT_DATASETS,
     graphs:[],
     graph_counter: 0,
     initialize: function(){
-      this.addDatasetsToSelect(DEFAULT_DATASETS, jQuery(".data-set-list"));
+      this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
       
       // var data = dDATA, names = this.findAllColumnNames(data), g, defaults = };
       // 
@@ -56,7 +57,10 @@ jQuery(document).ready(function(){
     addDatasetsToSelect:function(datasets, select){
       var options = '';
       for(var x in datasets) options +'<option value="'+datasets[x].form_value+'">'+x+'</option>';
-      select.each(function(){ jQuery(this).html(options); });
+      select.each(function(){
+        console.log(this);
+        jQuery(this).html(options); 
+      });
     },
     parseData: function(data){
       try{
