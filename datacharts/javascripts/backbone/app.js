@@ -164,14 +164,15 @@ jQuery(document).ready(function(){
           console.log(lines);
           console.log(x);
           console.log(y);
-          // var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
-          //               this.tags = r.set();
-          //               for (var i = 0, ii = this.y.length; i < ii; i++) {
-          //                 this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
-          //               }
-          //             }, function () {
-          //               this.tags && this.tags.remove();
-          //             });
+          
+          var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
+                        this.tags = r.set();
+                        for (var i = 0, ii = this.y.length; i < ii; i++) {
+                          this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
+                        }
+                      }, function () {
+                        this.tags && this.tags.remove();
+                      });
 
 
         },
