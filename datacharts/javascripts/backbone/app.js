@@ -21,7 +21,7 @@ var DEFAULT_DATASETS = {
     ],
     'data':[
       {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"7"},
-      {views:1, page:"/help", country:"UK", hour:1100, browser:"IE", version:"7"},
+      {views:1, page:"/help", country:"UK", hour:0900, browser:"IE", version:"7"},
       {views:1, page:"/faq", country:"UK", hour:0900, browser:"IE", version:"7"},
       {views:1, page:"/faq", country:"UK", hour:1100, browser:"IE", version:"7"},
       {views:1, page:"/", country:"UK", hour:1900, browser:"IE", version:"8"},
@@ -144,9 +144,10 @@ jQuery(document).ready(function(){
 
           if(line_group){
             for(var r in data){
-              if(typeof lines[data[r][line_group]] == "undefined") lines[data[r][line_group]] = {};
-              if(typeof lines[data[r][line_group]][xcol] == "undefined") lines[data[r][line_group]][data[r][xcol]] = 0;
-              lines[data[r][line_group]][data[r][xcol]] += parseInt(data[r][ycol]);
+              var a = data[r][line_group], b = data[r][xcol];
+              if(typeof lines[a] == "undefined") lines[a] = {};
+              if(typeof lines[a][b] == "undefined") lines[a][b] = 0;
+              lines[a][b] += parseInt(data[r][ycol]);
             }
           }
           console.log(lines);
