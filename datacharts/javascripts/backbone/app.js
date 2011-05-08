@@ -144,6 +144,7 @@ jQuery(document).ready(function(){
 
           if(line_group){
             for(var r in data){
+              if(typeof lines[data[r][line_group]] == "undefined") lines[data[r][line_group]] = {};
               lines[data[r][line_group]][xcol] += data[r][ycol];
             }
           }
