@@ -258,6 +258,7 @@ jQuery(document).ready(function(){
             x.push(pos);
             y.push(_data[pos]);
           }
+          y = [y];
           chart = r.g.barchart(0, 10, (w-20), (h-20), y, {stacked: true});
           chart.hover(function() {
             // Create a popup element on top of the bar
