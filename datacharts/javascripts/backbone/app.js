@@ -31,8 +31,8 @@ var DEFAULT_DATASETS = {
   },
   'Weekly Expenditure':{
     'graphs':{
-      'pie':{value:"amount", group:"type"},
-      'bar':{x:"week", y:"amount"}
+      'line':{group:'week',x:'accuracy', 'y':'score'},
+      'pie':{value:"amount", group:"type"}
     },
     'data':[
       {'type':'Food', 'amount':35, 'week':1},
@@ -90,7 +90,7 @@ jQuery(document).ready(function(){
     },
     datasetChange:function(e){
       e.preventDefault();
-      this.redrawAll(jQuery(e.target||e.srcElement));      
+      this.redrawAll(jQuery(e.target||e.srcElement));
     },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
