@@ -242,17 +242,23 @@ jQuery(document).ready(function(){
               chart = false,
               w=(ca.outerWidth()*0.95),
               h=300,
-              _data=[],
-              _labels=[],
+              _data={},
+              x=[],
+              y=[],
               r = Raphael("g-"+graph_number, w, h);
 
           ca.addClass('graph-loaded');
 
-          for(var i in data){
-            _data.unshift(data[i][ycol]);
-            _labels.unshift(data[i][xcol]);
+          for(var ind in data){
+            var a = data[ind][xcol];
+            if(typeof _data[a] == "undefined") _data[a] = 0;
+            _data[a] += parseInt(data[ind][ycol]);
           }
-          chart = r.g.barchart(0, 10, (w-20), (h-20), [_data], {stacked: true});
+          for(var pos in _data){
+            x.push(pos);
+            y.push(_data[pos]);
+          }
+          chart = r.g.barchart(0, 10, (w-20), (h-20), y, {stacked: true});
           chart.hover(function() {
             // Create a popup element on top of the bar
             this.flag = r.g.popup(this.bar.x, this.bar.y, (this.bar.value || "0")).insertBefore(this);
