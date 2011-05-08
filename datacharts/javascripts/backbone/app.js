@@ -145,7 +145,8 @@ jQuery(document).ready(function(){
           if(line_group){
             for(var r in data){
               if(typeof lines[data[r][line_group]] == "undefined") lines[data[r][line_group]] = {};
-              lines[data[r][line_group]][xcol] += data[r][ycol];
+              if(typeof lines[data[r][line_group]][xcol] == "undefined") lines[data[r][line_group]][xcol] = 0;
+              lines[data[r][line_group]][xcol] += parseInt(data[r][ycol]);
             }
           }
           console.log(lines);
