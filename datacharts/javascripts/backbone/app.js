@@ -144,7 +144,7 @@ jQuery(document).ready(function(){
 
           if(line_group){
             for(var r in data){
-              lines[data[r][line_group]] = {x:data[r][xcol], y:data[r][ycol]};
+              lines[data[r][line_group]][xcol] += data[r][ycol];
             }
           }
           console.log(lines);
