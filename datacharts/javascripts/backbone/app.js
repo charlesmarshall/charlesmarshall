@@ -65,7 +65,7 @@ jQuery(document).ready(function(){
     addGraph:function(i, cols, data){
       var g;
       if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i+" Chart", cols, this.graph_counter);
-      else g = this.draw.containers.generic("#content", i+" Chart", cols, this.graph_counter);      
+      else g = this.draw.containers.generic("#content", i.charAt(0).toUpperCase()+i.substring(1)+" Chart", cols, this.graph_counter);      
       this.draw.graphs[i](data, cols, this.graph_counter);
       this.graph_counter++;
       return g;
