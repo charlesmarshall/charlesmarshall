@@ -14,8 +14,9 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
-      {_type:'line', group_line:"browser", x:"hour", y:"views", _shade:true},
-      {_type:'line', group_line:false, x:"hour", y:"views"},
+      {_type:'line', grouping:"browser", x:"hour", y:"views", _shade:true},
+      {_type:'line', grouping:false, x:"hour", y:"views"},
+      {_type:'bar', grouping:"browser", x:"hour", y:"views"},
       {_type:'bar', x:"hour", y:"views"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
@@ -135,7 +136,7 @@ jQuery(document).ready(function(){
         line:function(data, cols, graph_number){
           jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
-              line_group = cols.group_line,
+              line_group = cols.grouping,
               xcol = cols.x,
               ycol = cols.y,
               w=(ca.outerWidth()*0.95),
@@ -238,6 +239,7 @@ jQuery(document).ready(function(){
           jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
               xcol = cols.x,
+              bar_group = cols.grouping,
               ycol = cols.y,
               chart = false,
               w=(ca.outerWidth()*0.95),
@@ -248,17 +250,34 @@ jQuery(document).ready(function(){
               r = Raphael("g-"+graph_number, w, h);
 
           ca.addClass('graph-loaded');
-
-          for(var ind in data){
-            var a = data[ind][xcol];
-            if(typeof _data[a] == "undefined") _data[a] = 0;
-            _data[a] += parseInt(data[ind][ycol]);
+          if(bar_group){
+            for(var i in data){
+              var a = data[i][bar_group], b = data[i][xcol];
+              if(typeof _data[a] == "undefined") _data[a] = {};
+              if(typeof _data[a][b] == "undefined") _data[a][b] = 0;
+              _data[a][b] += parseInt(data[i][ycol]);
+            }
+            for(var a in lines){
+              var tmp_x=[], tmp_y=[];
+              for(var b in lines[a]){
+                tmp_x.push(b);
+                tmp_y.push(lines[a][b]);
+              }
+              x.push(tmp_x);
+              y.push(tmp_y);
+            }
+          }else{
+            for(var ind in data){
+              var a = data[ind][xcol];
+              if(typeof _data[a] == "undefined") _data[a] = 0;
+              _data[a] += parseInt(data[ind][ycol]);
+            }
+            for(var pos in _data){
+              x.push(pos);
+              y.push(_data[pos]);
+            }
+            y = [y];
           }
-          for(var pos in _data){
-            x.push(pos);
-            y.push(_data[pos]);
-          }
-          y = [y];
           chart = r.g.barchart(0, 10, (w-20), (h-20), y, {stacked: true});
           chart.hover(function() {
             // Create a popup element on top of the bar
