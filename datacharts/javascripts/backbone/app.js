@@ -163,10 +163,10 @@ jQuery(document).ready(function(){
               y.push(tmp_y);
             }
           }else{
-            for(var i in data){
-              var a = data[i][xcol];
+            for(var ind in data){
+              var a = data[ind][xcol];
               if(typeof lines[a] == "undefined") lines[a] = 0;
-              lines[a] += parseInt(data[i][ycol]);
+              lines[a] += parseInt(data[ind][ycol]);
             }
             console.log(lines);
           }
