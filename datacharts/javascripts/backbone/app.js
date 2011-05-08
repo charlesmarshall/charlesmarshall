@@ -14,9 +14,9 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Game Scores':{
     'graphs':[
-      {group:'player',x:'game_number', 'y':'score', type:'line'},
-      {group:'player',x:'accuracy', 'y':'score', type:'line'},
-      {value:"score", group:"player", type:'pie'},
+      {group:'player',x:'game_number', 'y':'score', _type:'line'},
+      {group:'player',x:'accuracy', 'y':'score', _type:'line'},
+      {value:"score", group:"player", _type:'pie'},
     ],
     'data':[
       {'player':'Blue', 'score':14, 'accuracy':23, 'game_number':1},
@@ -32,8 +32,8 @@ var DEFAULT_DATASETS = {
   },
   'Weekly Expenditure':{
     'graphs':[
-      {type:'line', group:'type',x:'week', 'y':'amount'},
-      {type:'pie', value:"amount", group:"type"}
+      {_type:'line', group:'type',x:'week', 'y':'amount'},
+      {_type:'pie', value:"amount", group:"type"}
     ],
     'data':[
       {'type':'Food', 'amount':35, 'week':1},
@@ -105,7 +105,7 @@ jQuery(document).ready(function(){
       return this.data_sets[selected];
     },
     addDatasetGraphs:function(dataset){
-      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i].type, dataset.graphs[i], dataset.data));
+      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i]._type, dataset.graphs[i], dataset.data));
     },
     addGraph:function(graphtype, cols, data){
       var g;
@@ -133,7 +133,7 @@ jQuery(document).ready(function(){
       containers:{
         line:function(appendTo, title, cols, graph_number){
           var colstr ="", container = "";
-          for(var z in cols) colstr+= cols[z]+"/";
+          for(var z in cols) if(z.charAt(0) != "_") colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
           container = "<div class='g-container container container-large clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
           jQuery(appendTo).append(container);
