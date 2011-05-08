@@ -140,16 +140,17 @@ jQuery(document).ready(function(){
               w=(ca.outerWidth()*0.95),
               h=300,
               lines={},
+              line=false,
               x=[],
               y=[],
               r = Raphael("g-"+graph_number, w, h);
 
           if(line_group){
-            for(var r in data){
-              var a = data[r][line_group], b = data[r][xcol];
+            for(var i in data){
+              var a = data[i][line_group], b = data[i][xcol];
               if(typeof lines[a] == "undefined") lines[a] = {};
               if(typeof lines[a][b] == "undefined") lines[a][b] = 0;
-              lines[a][b] += parseInt(data[r][ycol]);
+              lines[a][b] += parseInt(data[i][ycol]);
             }
             for(var a in lines){
               var tmp_x=[], tmp_y=[];
@@ -165,14 +166,14 @@ jQuery(document).ready(function(){
           console.log(x);
           console.log(y);
           
-          var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
-                        this.tags = r.set();
-                        for (var i = 0, ii = this.y.length; i < ii; i++) {
-                          this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
-                        }
-                      }, function () {
-                        this.tags && this.tags.remove();
-                      });
+          line = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
+                  this.tags = r.set();
+                  for (var i = 0, ii = this.y.length; i < ii; i++) {
+                    this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
+                  }
+                  }, function () {
+                    this.tags && this.tags.remove();
+                  });
 
 
         },
