@@ -42,7 +42,9 @@ jQuery(document).ready(function(){
     graphs:[],
     graph_counter: 0,
     initialize: function(){
+      var data, names, g;
       this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
+      data = this.getSelectedDataset(jQuery("#data-set-list"));
       
       // var data = dDATA, names = this.findAllColumnNames(data), g, defaults = };
       // 
@@ -56,12 +58,15 @@ jQuery(document).ready(function(){
     },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
-      for(var x in datasets) options +='<option value="'+datasets[x].form_value+'">'+x+'</option>';
-      select.each(function(){
-        console.log(this);
-        
+      for(var x in datasets) options +='<option value="'+x+'">'+x+'</option>';
+      select.each(function(){        
         jQuery(this).html(options); 
       });
+    },
+    getSelectedDataset:function(select){
+      var selected = select.val();
+      console.log(selected);
+      return this.data_sets[selected];
     },
     parseData: function(data){
       try{
