@@ -14,6 +14,7 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
+      {_type:'line', group_line:"browser", x:"hour", y:"views"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
       {_type:'pie', value:"views", group:"browser"}
@@ -21,18 +22,18 @@ var DEFAULT_DATASETS = {
     'data':[
       {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"7"},
       {views:1, page:"/help", country:"UK", hour:1100, browser:"IE", version:"7"},
-      {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"7"},
+      {views:1, page:"/faq", country:"UK", hour:0900, browser:"IE", version:"7"},
       {views:1, page:"/faq", country:"UK", hour:1100, browser:"IE", version:"7"},
       {views:1, page:"/", country:"UK", hour:1900, browser:"IE", version:"8"},
       {views:1, page:"/about", country:"UK", hour:1100, browser:"IE", version:"8"},
       {views:1, page:"/", country:"Ireland", hour:1200, browser:"IE", version:"8"},
       {views:1, page:"/contact", country:"UK", hour:1100, browser:"IE", version:"7"},
       {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"7"},
-      {views:1, page:"/login", country:"Germany", hour:1500, browser:"IE", version:"9"},  
-      
+      {views:1, page:"/login", country:"Germany", hour:1500, browser:"IE", version:"9"},
+
       {views:1, page:"/", country:"UK", hour:0900, browser:"FireFox", version:"4"},
       {views:1, page:"/help", country:"UK", hour:1100, browser:"FireFox", version:"4"},
-      
+
       {views:1, page:"/", country:"France", hour:1400, browser:"Chrome", version:"13"},
       {views:1, page:"/faq", country:"UK", hour:2100, browser:"Chrome", version:"13"},
       {views:1, page:"/", country:"UK", hour:2300, browser:"IE", version:"7"},
@@ -40,10 +41,10 @@ var DEFAULT_DATASETS = {
       {views:1, page:"/", country:"UK", hour:1200, browser:"IE", version:"7"},
       {views:1, page:"/contact", country:"UK", hour:1100, browser:"IE", version:"8"},
       {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"9"},
-      {views:1, page:"/login", country:"UK", hour:1500, browser:"IE", version:"8"}   
+      {views:1, page:"/login", country:"UK", hour:1500, browser:"IE", version:"8"}
     ]
   }
-  
+
 };
 
 jQuery(document).ready(function(){
@@ -133,36 +134,28 @@ jQuery(document).ready(function(){
         line:function(data, cols, graph_number){
           jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
-              groupcol = cols.group,
+              line_group = cols.group_line,
               xcol = cols.x,
               ycol = cols.y,
               w=(ca.outerWidth()*0.95),
               h=300,
-              values={},
-              x = [],
-              y = [],
+              lines={},
               r = Raphael("g-"+graph_number, w, h);
 
-          //so split the data by the group column
-          for(var i in data){
-            var ind = data[i][groupcol];
-            if(typeof values[ind] == "undefined") values[ind]={x:[], y:[]};
-            values[ind].x.push(data[i][xcol]);
-            values[ind].y.push(data[i][ycol]);
+          if(line_group){
+            for(var r in data){
+              lines[data[r][line_group]] = {x:data[r][xcol], y:data[r][ycol]};
+            }
           }
-          
-          for(var ind in values){
-            x.push(values[ind].x.sort());
-            y.push(values[ind].y.sort());
-          }
-          var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
-                        this.tags = r.set();
-                        for (var i = 0, ii = this.y.length; i < ii; i++) {
-                          this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
-                        }
-                      }, function () {
-                        this.tags && this.tags.remove();
-                      });
+          console.log(lines);
+          // var lines = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
+          //               this.tags = r.set();
+          //               for (var i = 0, ii = this.y.length; i < ii; i++) {
+          //                 this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
+          //               }
+          //             }, function () {
+          //               this.tags && this.tags.remove();
+          //             });
 
 
         },
