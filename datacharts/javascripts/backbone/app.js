@@ -39,7 +39,7 @@ var DEFAULT_DATASETS = {
 
       {views:1, page:"/", country:"France", hour:1400, browser:"Chrome", version:"13"},
       {views:1, page:"/faq", country:"UK", hour:2100, browser:"Chrome", version:"13"},
-      {views:1, page:"/", country:"UK", hour:0900, browser:"Chrome", version:"8"}
+      {views:1, page:"/", country:"UK", hour:0900, browser:"Chrome", version:"13"},
             
       {views:1, page:"/", country:"UK", hour:2300, browser:"IE", version:"7"},
       {views:1, page:"/forgot", country:"UK", hour:2000, browser:"IE", version:"8"},
