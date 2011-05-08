@@ -39,12 +39,17 @@ var DEFAULT_DATASETS = {
 
       {views:1, page:"/", country:"France", hour:1400, browser:"Chrome", version:"13"},
       {views:1, page:"/faq", country:"UK", hour:2100, browser:"Chrome", version:"13"},
+      {views:1, page:"/", country:"UK", hour:0900, browser:"Chrome", version:"8"}
+            
       {views:1, page:"/", country:"UK", hour:2300, browser:"IE", version:"7"},
       {views:1, page:"/forgot", country:"UK", hour:2000, browser:"IE", version:"8"},
       {views:1, page:"/", country:"UK", hour:1200, browser:"IE", version:"7"},
       {views:1, page:"/contact", country:"UK", hour:1100, browser:"IE", version:"8"},
       {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"9"},
-      {views:1, page:"/login", country:"UK", hour:1500, browser:"IE", version:"8"}
+      {views:1, page:"/login", country:"UK", hour:1500, browser:"IE", version:"8"},
+
+      {views:1, page:"/", country:"UK", hour:1100, browser:"IE", version:"8"}
+      {views:1, page:"/", country:"UK", hour:1500, browser:"IE", version:"8"}
     ]
   }
 
@@ -257,6 +262,7 @@ jQuery(document).ready(function(){
               if(typeof _data[a][b] == "undefined") _data[a][b] = 0;
               _data[a][b] += parseInt(data[i][ycol]);
             }
+            //this needs tweaking to maintain positional
             for(var a in _data){
               var tmp_x=[], tmp_y=[];
               for(var b in _data[a]){
