@@ -257,11 +257,11 @@ jQuery(document).ready(function(){
               if(typeof _data[a][b] == "undefined") _data[a][b] = 0;
               _data[a][b] += parseInt(data[i][ycol]);
             }
-            for(var a in lines){
+            for(var a in _data){
               var tmp_x=[], tmp_y=[];
-              for(var b in lines[a]){
+              for(var b in _data[a]){
                 tmp_x.push(b);
-                tmp_y.push(lines[a][b]);
+                tmp_y.push(_data[a][b]);
               }
               x.push(tmp_x);
               y.push(tmp_y);
