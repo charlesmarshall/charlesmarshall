@@ -60,13 +60,13 @@ jQuery(document).ready(function(){
       return this.data_sets[selected];
     },
     addDatasetGraphs:function(dataset){
-      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i], dataset.graphs[i], dataset.data));
+      for(var i in dataset.graphs) this.graphs.push(this.addGraph(i, dataset.graphs[i], dataset.data));
     },
-    addGraph:function(i, graph, data){
+    addGraph:function(i, cols, data){
       var g;
-      if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i+" Chart", graph, this.graph_counter);
-      else g = this.draw.containers.generic("#content", i+" Chart", graph, this.graph_counter);      
-      this.draw.graphs[i](data, defaults[i], this.graph_counter);
+      if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i+" Chart", cols, this.graph_counter);
+      else g = this.draw.containers.generic("#content", i+" Chart", cols, this.graph_counter);      
+      this.draw.graphs[i](data, cols, this.graph_counter);
       this.graph_counter++;
       return g;
     },
