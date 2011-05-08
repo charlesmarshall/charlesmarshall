@@ -14,8 +14,8 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
-      {_type:'line', _group_line:"browser", x:"hour", y:"views", _shade:true},
-      {_type:'line', _group_line:false, x:"hour", y:"views"},
+      {_type:'line', group_line:"browser", x:"hour", y:"views", _shade:true},
+      {_type:'line', group_line:false, x:"hour", y:"views"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
       {_type:'pie', value:"views", group:"browser"}
@@ -115,7 +115,7 @@ jQuery(document).ready(function(){
       containers:{
         line:function(appendTo, title, cols, graph_number){
           var colstr ="", container = "";
-          for(var z in cols) if(z.charAt(0) != "_") colstr+= cols[z]+"/";
+          for(var z in cols) if(cols[z] && z.charAt(0) != "_") colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
           container = "<div class='g-container container container-large clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
           jQuery(appendTo).append(container);
@@ -123,7 +123,7 @@ jQuery(document).ready(function(){
         },
         generic:function(appendTo, title, cols, graph_number){
           var colstr ="", container = "";
-          for(var z in cols) if(z.charAt(0) != "_") colstr+= cols[z]+"/";
+          for(var z in cols) if(cols[z] && z.charAt(0) != "_") colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
           container = "<div class='g-container container clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
           jQuery(appendTo).append(container);
@@ -135,7 +135,7 @@ jQuery(document).ready(function(){
         line:function(data, cols, graph_number){
           jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
-              line_group = cols._group_line,
+              line_group = cols.group_line,
               xcol = cols.x,
               ycol = cols.y,
               w=(ca.outerWidth()*0.95),
