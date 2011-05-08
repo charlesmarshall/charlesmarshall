@@ -14,8 +14,6 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
-      {_type:'line', group:'hour', x:'hour', y:'views'},
-      {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
       {_type:'pie', value:"views", group:"browser"}
@@ -152,9 +150,7 @@ jQuery(document).ready(function(){
             values[ind].x.push(data[i][xcol]);
             values[ind].y.push(data[i][ycol]);
           }
-
-
-
+          
           for(var ind in values){
             x.push(values[ind].x.sort());
             y.push(values[ind].y.sort());
