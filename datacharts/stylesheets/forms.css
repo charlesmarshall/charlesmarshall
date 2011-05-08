@@ -14,3 +14,17 @@ form{padding:5px;}
       margin-bottom:10px;
     }
     
+form.data-set-select{
+  width:35%;
+  float:right;
+}
+  form.data-set-select label{
+    float:left;
+    font-size:116%;
+    width:29%;
+    margin-right:1%;
+  }
+  form.data-set-select{
+    width:65%;
+    float:left;
+  }
