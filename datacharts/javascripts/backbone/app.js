@@ -48,7 +48,7 @@ var DEFAULT_DATASETS = {
       {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"9"},
       {views:1, page:"/login", country:"UK", hour:1500, browser:"IE", version:"8"},
 
-      {views:1, page:"/", country:"UK", hour:1100, browser:"IE", version:"8"}
+      {views:1, page:"/", country:"UK", hour:1100, browser:"FireFox", version:"8"},
       {views:1, page:"/", country:"UK", hour:1500, browser:"IE", version:"8"}
     ]
   }
