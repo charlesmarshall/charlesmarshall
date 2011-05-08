@@ -77,16 +77,20 @@ jQuery(document).ready(function(){
     graphs:[],
     graph_counter: 0,
     events:{
-      "change .data-set-list":"new_data_and_graphs"
+      "change .data-set-list":"datasetChange"
     },
     initialize: function(){
       this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
-      this.current_data_set = this.getSelectedDataset(jQuery("#data-set-list"));
+      this.redrawAll(jQuery("#data-set-list"));
+    },
+    redrawAll:function(select){
+      this.current_data_set = this.getSelectedDataset(select);
       this.current_data_set.column_names = this.findAllColumnNames(this.current_data_set.data);
       this.addDatasetGraphs(this.current_data_set);
     },
-    new_data_and_graphs:function(e){
-      console.log(e);
+    datasetChange:function(e){
+      e.preventDefault();
+      this.redrawAll(jQuery(e.target||e.srcElement));      
     },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
