@@ -251,8 +251,8 @@ jQuery(document).ready(function(){
           ca.addClass('graph-loaded');
 
           for(var i in data){
-            _data.unshift(data[i][xcol]);
-            _labels.unshift(data[i][ycol]);
+            _data.unshift(data[i][ycol]);
+            _labels.unshift(data[i][xcol]);
           }
           chart = r.g.barchart(0, 10, (w-20), (h-20), [_data], {stacked: true});
           chart.hover(function() {
