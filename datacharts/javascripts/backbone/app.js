@@ -32,7 +32,6 @@ var DEFAULT_DATASETS = {
   },
   'Weekly Expenditure':{
     'graphs':{
-      'line':{group:'type',x:'week', 'y':'amount'},
       'pie':{value:"amount", group:"type"},
       'bar':{x:"week", y:"amount"}
     },
@@ -84,6 +83,8 @@ jQuery(document).ready(function(){
       this.redrawAll(jQuery("#data-set-list"));
     },
     redrawAll:function(select){
+      jQuery(".g-container").remove();
+      this.graph_counter = 0;
       this.current_data_set = this.getSelectedDataset(select);
       this.current_data_set.column_names = this.findAllColumnNames(this.current_data_set.data);
       this.addDatasetGraphs(this.current_data_set);
@@ -134,7 +135,7 @@ jQuery(document).ready(function(){
           var colstr ="", container = "";
           for(var z in cols) colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
-          container = "<div class='container container-large clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
+          container = "<div class='g-container container container-large clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
           jQuery(appendTo).append(container);
           return jQuery(container);
         },
@@ -142,7 +143,7 @@ jQuery(document).ready(function(){
           var colstr ="", container = "";
           for(var z in cols) colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
-          container = "<div class='container clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
+          container = "<div class='g-container container clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
           jQuery(appendTo).append(container);
           return jQuery(container);
         }
