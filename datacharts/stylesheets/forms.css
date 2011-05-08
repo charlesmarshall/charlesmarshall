@@ -15,16 +15,16 @@ form{padding:5px;}
     }
     
 form.data-set-select{
-  width:28%;
+  width:29%;
   float:right;
 }
   form.data-set-select label{
     float:left;
     font-size:116%;
-    width:29%;
-    margin-right:1%;
+    width:32%;
+    margin-right:2%;
   }
   form.data-set-select select{
-    width:65%;
+    width:55%;
     float:left;
   }
