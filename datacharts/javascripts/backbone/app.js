@@ -13,11 +13,11 @@ function removeDuplicate(_array){
 
 var DEFAULT_DATASETS = {
   'Game Scores':{
-    'graphs':{
-      'line':{group:'player',x:'game_number', 'y':'score'},
-      'line':{group:'player',x:'accuracy', 'y':'score'},
-      'pie':{value:"score", group:"player"},
-    },
+    'graphs':[
+      {group:'player',x:'game_number', 'y':'score', type:'line'},
+      {group:'player',x:'accuracy', 'y':'score', type:'line'},
+      {value:"score", group:"player", type:'pie'},
+    ],
     'data':[
       {'player':'Blue', 'score':14, 'accuracy':23, 'game_number':1},
       {'player':'Red', 'score':10, 'accuracy':30, 'game_number':1},
@@ -31,10 +31,10 @@ var DEFAULT_DATASETS = {
     ]
   },
   'Weekly Expenditure':{
-    'graphs':{
-      'line':{group:'type',x:'week', 'y':'amount'},
-      'pie':{value:"amount", group:"type"}
-    },
+    'graphs':[
+      {type:'line', group:'type',x:'week', 'y':'amount'},
+      {type:'pie', value:"amount", group:"type"}
+    ],
     'data':[
       {'type':'Food', 'amount':35, 'week':1},
       {'type':'Rent', 'amount':120, 'week':1},
@@ -80,9 +80,9 @@ jQuery(document).ready(function(){
     },
     initialize: function(){
       this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
-      this.redrawAll(jQuery("#data-set-list"));
+      this.redrawAllGraphs(jQuery("#data-set-list"));
     },
-    redrawAll:function(select){
+    redrawAllGraphs:function(select){
       jQuery(".g-container").remove();
       this.graph_counter = 0;
       this.current_data_set = this.getSelectedDataset(select);
@@ -91,7 +91,7 @@ jQuery(document).ready(function(){
     },
     datasetChange:function(e){
       e.preventDefault();
-      this.redrawAll(jQuery(e.target||e.srcElement));
+      this.redrawAllGraphs(jQuery(e.target||e.srcElement));
     },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
@@ -105,13 +105,13 @@ jQuery(document).ready(function(){
       return this.data_sets[selected];
     },
     addDatasetGraphs:function(dataset){
-      for(var i in dataset.graphs) this.graphs.push(this.addGraph(i, dataset.graphs[i], dataset.data));
+      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i].type, dataset.graphs[i], dataset.data));
     },
-    addGraph:function(i, cols, data){
+    addGraph:function(graphtype, cols, data){
       var g;
-      if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i.charAt(0).toUpperCase()+i.substring(1)+" Chart", cols, this.graph_counter);
-      else g = this.draw.containers.generic("#content", i.charAt(0).toUpperCase()+i.substring(1)+" Chart", cols, this.graph_counter);
-      this.draw.graphs[i](data, cols, this.graph_counter);
+      if(typeof this.draw.containers[graphtype] != "undefined") g = this.draw.containers[graphtype]("#content", graphtype.charAt(0).toUpperCase()+graphtype.substring(1)+" Chart", cols, this.graph_counter);
+      else g = this.draw.containers.generic("#content", graphtype.charAt(0).toUpperCase()+graphtype.substring(1)+" Chart", cols, this.graph_counter);
+      this.draw.graphs[graphtype](data, cols, this.graph_counter);
       this.graph_counter++;
       return g;
     },
