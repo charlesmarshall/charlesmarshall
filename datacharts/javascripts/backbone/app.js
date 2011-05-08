@@ -16,6 +16,7 @@ var DEFAULT_DATASETS = {
     graphs:[
       {_type:'line', group_line:"browser", x:"hour", y:"views", _shade:true},
       {_type:'line', group_line:false, x:"hour", y:"views"},
+      {_type:'bar', x:"hour", y:"views"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
       {_type:'pie', value:"views", group:"browser"}
@@ -129,7 +130,6 @@ jQuery(document).ready(function(){
           jQuery(appendTo).append(container);
           return jQuery(container);
         }
-
       },
       graphs:{
         line:function(data, cols, graph_number){
