@@ -15,6 +15,7 @@ var DEFAULT_DATASETS = {
   'Game Scores':{
     'graphs':{
       'line':{group:'player',x:'game_number', 'y':'score'},
+      'line':{group:'player',x:'accuracy', 'y':'score'},
       'pie':{value:"score", group:"player"},
     },
     'data':[
@@ -31,7 +32,7 @@ var DEFAULT_DATASETS = {
   },
   'Weekly Expenditure':{
     'graphs':{
-      'line':{group:'week',x:'accuracy', 'y':'score'},
+      'line':{group:'type',x:'week', 'y':'amount'},
       'pie':{value:"amount", group:"type"}
     },
     'data':[
