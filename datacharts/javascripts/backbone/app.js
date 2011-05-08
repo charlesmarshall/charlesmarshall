@@ -14,8 +14,8 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
-      // {_type:'line', group_line:"browser", x:"hour", y:"views", shade:true},
-      {_type:'line', group_line:false, x:"hour", y:"views"},
+      {_type:'line', group_line:"browser", x:"hour", y:"views"},
+      {_type:'line', _group_line:false, x:"hour", y:"views"},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
       {_type:'pie', value:"views", group:"browser"}
@@ -135,7 +135,7 @@ jQuery(document).ready(function(){
         line:function(data, cols, graph_number){
           jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
-              line_group = cols.group_line,
+              line_group = cols._group_line,
               xcol = cols.x,
               ycol = cols.y,
               w=(ca.outerWidth()*0.95),
@@ -168,18 +168,21 @@ jQuery(document).ready(function(){
               if(typeof lines[a] == "undefined") lines[a] = 0;
               lines[a] += parseInt(data[ind][ycol]);
             }
-            console.log(lines);
+            for(var pos in lines){
+              x.push(pos);
+              y.push(lines[pos]);
+            }
           }
           
           
-          // line = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o", shade:cols.shade}).hoverColumn(function () {
-          //         this.tags = r.set();
-          //         for (var i = 0, ii = this.y.length; i < ii; i++) {
-          //           this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
-          //         }
-          //         }, function () {
-          //           this.tags && this.tags.remove();
-          //         });
+          line = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
+                  this.tags = r.set();
+                  for (var i = 0, ii = this.y.length; i < ii; i++) {
+                    this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
+                  }
+                  }, function () {
+                    this.tags && this.tags.remove();
+                  });
 
 
         },
