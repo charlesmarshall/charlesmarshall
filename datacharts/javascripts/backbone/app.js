@@ -39,14 +39,14 @@ jQuery(document).ready(function(){
   window.AppView = Backbone.View.extend({
     el: jQuery("body"),
     data_sets:DEFAULT_DATASETS,
+    current_data_set:false,
     graphs:[],
     graph_counter: 0,
     initialize: function(){
-      var dataset;
       this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
-      dataset = this.getSelectedDataset(jQuery("#data-set-list"));
-      dataset.column_names = this.findAllColumnNames(dataset.data);
-      this.addDatasetGraphs(this.dataset);
+      this.current_data_set = this.getSelectedDataset(jQuery("#data-set-list"));
+      this.current_data_set.column_names = this.findAllColumnNames(this.current_data_set.data);
+      this.addDatasetGraphs(this.current_data_set);
     },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
