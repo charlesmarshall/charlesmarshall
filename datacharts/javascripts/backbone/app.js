@@ -11,22 +11,32 @@ function removeDuplicate(_array){
 }
 
 
-var dDATA =
-[
-  {"Player":"Player 1", "Score":"140", "Date":20},
-  {"Player":"Player 1", "Score":"100", "Date":21},
-  {"Player":"Player 1", "Score":"105", "Date":22},
-  {"Player":"Player 2", "Score":"110", "Date":20},
-  {"Player":"Player 2", "Score":"120", "Date":21},
-  {"Player":"Player 2", "Score":"125", "Date":22},
-  {"Player":"Player 3", "Score":"100", "Date":20},
-  {"Player":"Player 3", "Score":"100", "Date":21},
-  {"Player":"Player 3", "Score":"100", "Date":22}
-];
+var DEFAULTS_DATASETS = {
+  'Game Scores':{
+    'form_value':'game_scores',
+    'graphs':{
+      'line':{group:'player',x:'game_number', 'y':'score'},
+      'pie':{value:"score", group:"player"},
+      'bar':{x:"score", y:"game_number"}
+    },
+    'data':[
+      {'player':'Blue', 'score':14, 'accuracy':23, 'game_number':1},
+      {'player':'Red', 'score':10, 'accuracy':30, 'game_number':1},
+      {'player':'Green', 'score':15, 'accuracy':20, 'game_number':1},
+      {'player':'Blue', 'score':18, 'accuracy':20, 'game_number':2},
+      {'player':'Red', 'score':10, 'accuracy':30, 'game_number':2},
+      {'player':'Green', 'score':15, 'accuracy':25, 'game_number':2},
+      {'player':'Blue', 'score':12, 'accuracy':12, 'game_number':3},
+      {'player':'Red', 'score':14, 'accuracy':21, 'game_number':3},
+      {'player':'Green', 'score':17, 'accuracy':26, 'game_number':3}
+    ]
+  }
+}
 
 jQuery(document).ready(function(){
 
   jQuery("#raw-data-example").html(JSON.stringify(dDATA).replace(/(},)/gi, "},\n") );
+  
 
 
   window.AppView = Backbone.View.extend({
@@ -34,15 +44,22 @@ jQuery(document).ready(function(){
     graphs:[],
     graph_counter: 0,
     initialize: function(){
-      var data = dDATA, names = this.findAllColumnNames(data), g, defaults = {'line':{group:'Player',x:'Date', 'y':'Score'},'pie':{value:"Score", group:"Player"}, 'bar':{x:"Score", y:"Date"}};
-
-      for(var i in defaults){
-        if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", "Bar Chart", defaults[i], this.graph_counter);
-        else g = this.draw.containers.generic("#content", "Bar Chart", defaults[i], this.graph_counter);
-        this.graphs.push(g);
-        this.draw.graphs[i](data, defaults[i], this.graph_counter);
-        this.graph_counter++;
-      }
+      this.addDatasetsToSelect(DEFAULT_DATASETS, jQuery(".data-set-list"));
+      
+      // var data = dDATA, names = this.findAllColumnNames(data), g, defaults = };
+      // 
+      // for(var i in defaults){
+      //   if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", "Bar Chart", defaults[i], this.graph_counter);
+      //   else g = this.draw.containers.generic("#content", "Bar Chart", defaults[i], this.graph_counter);
+      //   this.graphs.push(g);
+      //   this.draw.graphs[i](data, defaults[i], this.graph_counter);
+      //   this.graph_counter++;
+      // }
+    },
+    addDatasetsToSelect:function(datasets, select){
+      var options = '';
+      for(var x in datasets) options +'<option value="'+datasets[x].form_value+'">'+x+'</option>';
+      select.each(function(){ jQuery(this).html(options); });
     },
     parseData: function(data){
       try{
@@ -80,6 +97,7 @@ jQuery(document).ready(function(){
       },
       graphs:{
         line:function(data, cols, graph_number){
+          jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
               groupcol = cols.group,
               xcol = cols.x,
@@ -87,8 +105,6 @@ jQuery(document).ready(function(){
               w=(ca.outerWidth()*0.95),
               h=300,
               values={},
-              all_y=[],
-              all_x=[],
               x = [],
               y = [],
               r = Raphael("g-"+graph_number, w, h);
@@ -99,8 +115,6 @@ jQuery(document).ready(function(){
             if(typeof values[ind] == "undefined") values[ind]={x:[], y:[]};
             values[ind].x.push(data[i][xcol]);
             values[ind].y.push(data[i][ycol]);
-            all_y.push(data[i][ycol]);
-            all_x.push(data[i][xcol]);
           }
 
 
@@ -121,6 +135,7 @@ jQuery(document).ready(function(){
 
         },
         pie:function(data, cols, graph_number){
+          jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
               groupcol = cols.group,
               valuecol = cols.value,
@@ -168,6 +183,7 @@ jQuery(document).ready(function(){
 
         },
         bar:function(data, cols, graph_number){
+          jQuery("#g-"+graph_number).html('');
           var ca = jQuery("#graph-"+graph_number),
               xcol = cols.x,
               ycol = cols.y,
