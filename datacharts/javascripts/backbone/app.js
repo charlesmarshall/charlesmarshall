@@ -42,19 +42,11 @@ jQuery(document).ready(function(){
     graphs:[],
     graph_counter: 0,
     initialize: function(){
-      var data, names, g;
+      var dataset;
       this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
-      data = this.getSelectedDataset(jQuery("#data-set-list"));
-      
-      // var data = dDATA, names = this.findAllColumnNames(data), g, defaults = };
-      // 
-      // for(var i in defaults){
-      //   if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", "Bar Chart", defaults[i], this.graph_counter);
-      //   else g = this.draw.containers.generic("#content", "Bar Chart", defaults[i], this.graph_counter);
-      //   this.graphs.push(g);
-      //   this.draw.graphs[i](data, defaults[i], this.graph_counter);
-      //   this.graph_counter++;
-      // }
+      dataset = this.getSelectedDataset(jQuery("#data-set-list"));
+      dataset.column_names = this.findAllColumnNames(dataset.data);
+      this.addDatasetGraphs(this.dataset);
     },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
@@ -65,8 +57,18 @@ jQuery(document).ready(function(){
     },
     getSelectedDataset:function(select){
       var selected = select.val();
-      console.log(selected);
       return this.data_sets[selected];
+    },
+    addDatasetGraphs:function(dataset){
+      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i]));
+    },
+    addGraph:function(i){
+      var g;
+      if(typeof this.drag.containers[i] != "undefined") g = this.draw.containers[i]("#content", i+" Chart", dataset.graphs[i], this.graph_counter);
+      else g = this.draw.containers.generic("#content", i+" Chart", dataset.graphs[i], this.graph_counter);      
+      this.draw.graphs[i](data, defaults[i], this.graph_counter);
+      this.graph_counter++;
+      return g;
     },
     parseData: function(data){
       try{
