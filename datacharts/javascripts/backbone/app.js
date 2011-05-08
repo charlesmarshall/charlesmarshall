@@ -11,7 +11,7 @@ function removeDuplicate(_array){
 }
 
 
-var DEFAULTS_DATASETS = {
+var DEFAULT_DATASETS = {
   'Game Scores':{
     'form_value':'game_scores',
     'graphs':{
