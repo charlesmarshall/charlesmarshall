@@ -32,7 +32,6 @@ var DEFAULT_DATASETS = {
   },
   'Weekly Expenditure':{
     'graphs':[
-      {_type:'line', group:'type',x:'week', 'y':'amount'},
       {_type:'pie', value:"amount", group:"type"}
     ],
     'data':[
