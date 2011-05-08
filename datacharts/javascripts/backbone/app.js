@@ -13,7 +13,6 @@ function removeDuplicate(_array){
 
 var DEFAULT_DATASETS = {
   'Game Scores':{
-    'form_value':'game_scores',
     'graphs':{
       'line':{group:'player',x:'game_number', 'y':'score'},
       'pie':{value:"score", group:"player"},
@@ -30,10 +29,44 @@ var DEFAULT_DATASETS = {
       {'player':'Red', 'score':14, 'accuracy':21, 'game_number':3},
       {'player':'Green', 'score':17, 'accuracy':26, 'game_number':3}
     ]
+  },
+  'Weekly Expenditure':{
+    'graphs':{
+
+    },
+    'data':{
+      {'type':'Food', 'amount':35, 'week':1},
+      {'type':'Rent', 'amount':120, 'week':1},
+      {'type':'Books', 'amount':10, 'week':1},
+      {'type':'Clothing', 'amount':70, 'week':1},
+      {'type':'Council Tax', 'amount':40, 'week':1},
+      {'type':'Utilitly Bills', 'amount':32, 'week':1},
+      {'type':'Petrol', 'amount':25, 'week':1},
+      {'type':'Pension', 'amount':25, 'week':1},
+      {'type':'Credit/Loans', 'amount':28, 'week':1},
+
+      {'type':'Food', 'amount':42, 'week':2},
+      {'type':'Rent', 'amount':120, 'week':2},
+      {'type':'Books', 'amount':25, 'week':2},
+      {'type':'Council Tax', 'amount':40, 'week':2},
+      {'type':'Utilitly Bills', 'amount':32, 'week':2},
+      {'type':'Petrol', 'amount':10, 'week':2},
+      {'type':'Pension', 'amount':25, 'week':2},
+      {'type':'Credit/Loans', 'amount':28, 'week':2},
+
+      {'type':'Food', 'amount':30, 'week':3},
+      {'type':'Rent', 'amount':120, 'week':3},
+      {'type':'Council Tax', 'amount':40, 'week':3},
+      {'type':'Utilitly Bills', 'amount':32, 'week':3},
+      {'type':'Petrol', 'amount':40, 'week':3},
+      {'type':'Pension', 'amount':25, 'week':3},
+      {'type':'Credit/Loans', 'amount':28, 'week':3}
+
+    }
   }
 }
 
-jQuery(document).ready(function(){  
+jQuery(document).ready(function(){
 
 
   window.AppView = Backbone.View.extend({
@@ -42,17 +75,23 @@ jQuery(document).ready(function(){
     current_data_set:false,
     graphs:[],
     graph_counter: 0,
+    events:{
+      "change .data-set-list":new_data_and_graphs
+    },
     initialize: function(){
       this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
       this.current_data_set = this.getSelectedDataset(jQuery("#data-set-list"));
       this.current_data_set.column_names = this.findAllColumnNames(this.current_data_set.data);
       this.addDatasetGraphs(this.current_data_set);
     },
+    new_data_and_graphs:function(e){
+      console.log(e);
+    },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
       for(var x in datasets) options +='<option value="'+x+'">'+x+'</option>';
-      select.each(function(){        
-        jQuery(this).html(options); 
+      select.each(function(){
+        jQuery(this).html(options);
       });
     },
     getSelectedDataset:function(select){
@@ -65,7 +104,7 @@ jQuery(document).ready(function(){
     addGraph:function(i, cols, data){
       var g;
       if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i.charAt(0).toUpperCase()+i.substring(1)+" Chart", cols, this.graph_counter);
-      else g = this.draw.containers.generic("#content", i.charAt(0).toUpperCase()+i.substring(1)+" Chart", cols, this.graph_counter);      
+      else g = this.draw.containers.generic("#content", i.charAt(0).toUpperCase()+i.substring(1)+" Chart", cols, this.graph_counter);
       this.draw.graphs[i](data, cols, this.graph_counter);
       this.graph_counter++;
       return g;
