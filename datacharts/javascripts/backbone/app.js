@@ -77,7 +77,7 @@ jQuery(document).ready(function(){
     graphs:[],
     graph_counter: 0,
     events:{
-      "change .data-set-list":new_data_and_graphs
+      "change .data-set-list":"new_data_and_graphs"
     },
     initialize: function(){
       this.addDatasetsToSelect(this.data_sets, jQuery(".data-set-list"));
