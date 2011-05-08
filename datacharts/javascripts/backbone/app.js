@@ -14,7 +14,8 @@ function removeDuplicate(_array){
 var DEFAULT_DATASETS = {
   'Website Stats':{
     graphs:[
-      {_type:'line', group_line:"browser", x:"hour", y:"views"},
+      {_type:'line', group_line:"browser", x:"hour", y:"views", shade:true},
+      {_type:'line', group_line:false, x:"hour", y:"views", shade:false},
       {_type:'pie', value:"views", group:"page"},
       {_type:'pie', value:"views", group:"country"},
       {_type:'pie', value:"views", group:"browser"}
@@ -161,12 +162,17 @@ jQuery(document).ready(function(){
               x.push(tmp_x);
               y.push(tmp_y);
             }
+          }else{
+            for(var i in data){
+              var a = data[i][xcol];
+              if(typeof lines[a] == "undefined") lines[a] = 0;
+              lines[a] += parseInt(data[i][ycol]);
+            }
+            console.log(lines);
           }
-          console.log(lines);
-          console.log(x);
-          console.log(y);
           
-          line = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o"}).hoverColumn(function () {
+          
+          line = r.g.linechart(40, 10, w-50, h-50, x, y, {nostroke: false, axis: "0 0 1 1", symbol: "o", shade:cols.shade}).hoverColumn(function () {
                   this.tags = r.set();
                   for (var i = 0, ii = this.y.length; i < ii; i++) {
                     this.tags.push(r.g.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{fill: "#fff"}, {fill: this.symbols[i].attr("fill")}]));
