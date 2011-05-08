@@ -56,10 +56,10 @@ jQuery(document).ready(function(){
     },
     addDatasetsToSelect:function(datasets, select){
       var options = '';
-      for(var x in datasets) options +'<option value="'+datasets[x].form_value+'">'+x+'</option>';
+      for(var x in datasets) options +='<option value="'+datasets[x].form_value+'">'+x+'</option>';
       select.each(function(){
         console.log(this);
-        console.log(options);
+        
         jQuery(this).html(options); 
       });
     },
