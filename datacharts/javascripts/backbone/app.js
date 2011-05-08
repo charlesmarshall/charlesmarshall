@@ -12,58 +12,41 @@ function removeDuplicate(_array){
 
 
 var DEFAULT_DATASETS = {
-  'Game Scores':{
-    'graphs':[
-      {group:'player',x:'game_number', 'y':'score', _type:'line'},
-      {group:'player',x:'accuracy', 'y':'score', _type:'line'},
-      {value:"score", group:"player", _type:'pie'},
+  'Website Stats':{
+    graphs:[
+      {_type:'line', group:'hour', x:'hour', y:'views'},
+      {_type:'pie', value:"views", group:"page"},
+      {_type:'pie', value:"views", group:"page"},
+      {_type:'pie', value:"views", group:"country"},
+      {_type:'pie', value:"views", group:"browser"}
     ],
     'data':[
-      {'player':'Blue', 'score':14, 'accuracy':23, 'game_number':1},
-      {'player':'Red', 'score':10, 'accuracy':30, 'game_number':1},
-      {'player':'Green', 'score':15, 'accuracy':20, 'game_number':1},
-      {'player':'Blue', 'score':18, 'accuracy':20, 'game_number':2},
-      {'player':'Red', 'score':10, 'accuracy':30, 'game_number':2},
-      {'player':'Green', 'score':15, 'accuracy':25, 'game_number':2},
-      {'player':'Blue', 'score':12, 'accuracy':12, 'game_number':3},
-      {'player':'Red', 'score':14, 'accuracy':21, 'game_number':3},
-      {'player':'Green', 'score':17, 'accuracy':26, 'game_number':3}
-    ]
-  },
-  'Weekly Expenditure':{
-    'graphs':[
-      {_type:'pie', value:"amount", group:"type"}
-    ],
-    'data':[
-      {'type':'Food', 'amount':35, 'week':1},
-      {'type':'Rent', 'amount':120, 'week':1},
-      {'type':'Books', 'amount':10, 'week':1},
-      {'type':'Clothing', 'amount':70, 'week':1},
-      {'type':'Council Tax', 'amount':40, 'week':1},
-      {'type':'Utilitly Bills', 'amount':32, 'week':1},
-      {'type':'Petrol', 'amount':25, 'week':1},
-      {'type':'Pension', 'amount':25, 'week':1},
-      {'type':'Credit/Loans', 'amount':28, 'week':1},
-
-      {'type':'Food', 'amount':42, 'week':2},
-      {'type':'Rent', 'amount':120, 'week':2},
-      {'type':'Books', 'amount':25, 'week':2},
-      {'type':'Council Tax', 'amount':40, 'week':2},
-      {'type':'Utilitly Bills', 'amount':32, 'week':2},
-      {'type':'Petrol', 'amount':10, 'week':2},
-      {'type':'Pension', 'amount':25, 'week':2},
-      {'type':'Credit/Loans', 'amount':28, 'week':2},
-
-      {'type':'Food', 'amount':30, 'week':3},
-      {'type':'Rent', 'amount':120, 'week':3},
-      {'type':'Council Tax', 'amount':40, 'week':3},
-      {'type':'Utilitly Bills', 'amount':32, 'week':3},
-      {'type':'Petrol', 'amount':40, 'week':3},
-      {'type':'Pension', 'amount':25, 'week':3},
-      {'type':'Credit/Loans', 'amount':28, 'week':3}
+      {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"7"},
+      {views:1, page:"/help", country:"UK", hour:1100, browser:"IE", version:"7"},
+      {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"7"},
+      {views:1, page:"/faq", country:"UK", hour:1100, browser:"IE", version:"7"},
+      {views:1, page:"/", country:"UK", hour:1900, browser:"IE", version:"8"},
+      {views:1, page:"/about", country:"UK", hour:1100, browser:"IE", version:"8"},
+      {views:1, page:"/", country:"Ireland", hour:1200, browser:"IE", version:"8"},
+      {views:1, page:"/contact", country:"UK", hour:1100, browser:"IE", version:"7"},
+      {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"7"},
+      {views:1, page:"/login", country:"Germany", hour:1500, browser:"IE", version:"9"},  
+      
+      {views:1, page:"/", country:"UK", hour:0900, browser:"FireFox", version:"4"},
+      {views:1, page:"/help", country:"UK", hour:1100, browser:"FireFox", version:"4"},
+      
+      {views:1, page:"/", country:"France", hour:1400, browser:"Chrome", version:"13"},
+      {views:1, page:"/faq", country:"UK", hour:2100, browser:"Chrome", version:"13"},
+      {views:1, page:"/", country:"UK", hour:2300, browser:"IE", version:"7"},
+      {views:1, page:"/forgot", country:"UK", hour:2000, browser:"IE", version:"8"},
+      {views:1, page:"/", country:"UK", hour:1200, browser:"IE", version:"7"},
+      {views:1, page:"/contact", country:"UK", hour:1100, browser:"IE", version:"8"},
+      {views:1, page:"/", country:"UK", hour:0900, browser:"IE", version:"9"},
+      {views:1, page:"/login", country:"UK", hour:1500, browser:"IE", version:"8"}   
     ]
   }
-}
+  
+};
 
 jQuery(document).ready(function(){
 
