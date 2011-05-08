@@ -33,10 +33,7 @@ var DEFAULTS_DATASETS = {
   }
 }
 
-jQuery(document).ready(function(){
-
-  jQuery("#raw-data-example").html(JSON.stringify(dDATA).replace(/(},)/gi, "},\n") );
-  
+jQuery(document).ready(function(){  
 
 
   window.AppView = Backbone.View.extend({
