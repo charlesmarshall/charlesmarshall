@@ -60,12 +60,12 @@ jQuery(document).ready(function(){
       return this.data_sets[selected];
     },
     addDatasetGraphs:function(dataset){
-      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i]), dataset);
+      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i], dataset.graphs[i]));
     },
-    addGraph:function(i, dataset){
+    addGraph:function(i, graph){
       var g;
-      if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i+" Chart", dataset.graphs[i], this.graph_counter);
-      else g = this.draw.containers.generic("#content", i+" Chart", dataset.graphs[i], this.graph_counter);      
+      if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i+" Chart", graph, this.graph_counter);
+      else g = this.draw.containers.generic("#content", i+" Chart", graph, this.graph_counter);      
       this.draw.graphs[i](data, defaults[i], this.graph_counter);
       this.graph_counter++;
       return g;
