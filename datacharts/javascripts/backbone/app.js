@@ -16,7 +16,6 @@ var DEFAULT_DATASETS = {
     'graphs':{
       'line':{group:'player',x:'game_number', 'y':'score'},
       'pie':{value:"score", group:"player"},
-      'bar':{y:"score", x:"game_number"}
     },
     'data':[
       {'player':'Blue', 'score':14, 'accuracy':23, 'game_number':1},
