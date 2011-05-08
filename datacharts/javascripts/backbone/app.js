@@ -32,7 +32,9 @@ var DEFAULT_DATASETS = {
   },
   'Weekly Expenditure':{
     'graphs':{
-
+      'line':{group:'type',x:'week', 'y':'amount'},
+      'pie':{value:"amount", group:"type"},
+      'bar':{x:"week", y:"amount"}
     },
     'data':{
       {'type':'Food', 'amount':35, 'week':1},
