@@ -36,7 +36,7 @@ var DEFAULT_DATASETS = {
       'pie':{value:"amount", group:"type"},
       'bar':{x:"week", y:"amount"}
     },
-    'data':{
+    'data':[
       {'type':'Food', 'amount':35, 'week':1},
       {'type':'Rent', 'amount':120, 'week':1},
       {'type':'Books', 'amount':10, 'week':1},
@@ -63,8 +63,7 @@ var DEFAULT_DATASETS = {
       {'type':'Petrol', 'amount':40, 'week':3},
       {'type':'Pension', 'amount':25, 'week':3},
       {'type':'Credit/Loans', 'amount':28, 'week':3}
-
-    }
+    ]
   }
 }
 
