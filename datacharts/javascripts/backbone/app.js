@@ -141,7 +141,7 @@ jQuery(document).ready(function(){
         },
         generic:function(appendTo, title, cols, graph_number){
           var colstr ="", container = "";
-          for(var z in cols) colstr+= cols[z]+"/";
+          for(var z in cols) if(z.charAt(0) != "_") colstr+= cols[z]+"/";
           if(colstr.length) colstr = colstr.substring(0,colstr.length-1);
           container = "<div class='g-container container clearfix graph-"+graph_number+"' id='graph-"+graph_number+"'><h2>"+title+" ("+colstr+")</h2><div class='inner' id='g-"+graph_number+"'></div></div>";
           jQuery(appendTo).append(container);
