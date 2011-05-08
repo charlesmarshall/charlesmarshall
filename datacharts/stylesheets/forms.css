@@ -15,7 +15,7 @@ form{padding:5px;}
     }
     
 form.data-set-select{
-  width:35%;
+  width:28%;
   float:right;
 }
   form.data-set-select label{
@@ -24,7 +24,7 @@ form.data-set-select{
     width:29%;
     margin-right:1%;
   }
-  form.data-set-select{
+  form.data-set-select select{
     width:65%;
     float:left;
   }
