@@ -60,9 +60,9 @@ jQuery(document).ready(function(){
       return this.data_sets[selected];
     },
     addDatasetGraphs:function(dataset){
-      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i], dataset.graphs[i]));
+      for(var i in dataset.graphs) this.graphs.push(this.addGraph(dataset.graphs[i], dataset.graphs[i], dataset.data));
     },
-    addGraph:function(i, graph){
+    addGraph:function(i, graph, data){
       var g;
       if(typeof this.draw.containers[i] != "undefined") g = this.draw.containers[i]("#content", i+" Chart", graph, this.graph_counter);
       else g = this.draw.containers.generic("#content", i+" Chart", graph, this.graph_counter);      
