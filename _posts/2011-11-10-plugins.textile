@@ -53,3 +53,6 @@ A common request on sites is a "standard competition forms":https://github.com/p
 h3. Events
 
 "A standard events section for a website":https://github.com/phpwax/wildfire.events, hooks in to the dynamic content model and adds relevant fields and extra scopes. Provides a calendar partial and an ics view.
+
+In between other projects I'll try to make more of these so using a wildfire site is super easy.
+
