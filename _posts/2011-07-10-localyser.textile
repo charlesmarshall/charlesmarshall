@@ -12,7 +12,7 @@ description: "An attempt to crowd source UK postcodes."
 introduction: "<p>An attempt to crowd source UK postcodes.</p>"
 ---
 
-Localyser is an attempt to crowd-source postcode to address lookups and thus start to avoid Royal Mail's monopoly on what should be public data.
+"Localyser is an attempt to crowd-source postcode to address lookups":http://localyser.com and thus start to avoid Royal Mail's monopoly on what should be public data.
 
 It's simple to include on your site and provides free postcode to address lookups in return for your sharing of similar data.
 
