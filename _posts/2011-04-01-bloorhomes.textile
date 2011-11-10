@@ -1,0 +1,39 @@
+---
+layout: default
+title: Bloorhomes and SVG
+category: work
+keywords:
+- bloorhomes
+- svg
+- svgweb
+- houses
+- homes
+- house developer
+description: "Cutting edge technology to lay the foundations of large home builders website."
+introduction: "<p>A completely new website from one the top home builders in the UK. Using cutting edge SVG technology to make life easier and make the site more appealing.</p>"
+---
+
+With a higher rate of adoption of 'class a' browsers the new "bloorhomes site":http://bloorhomes.com has some great features that really push the boundaries of current technology.
+
+As your typical development has hundreds of plots, sometimes even thousands, one of the key factors to address is the laborious task of adding information for each of these plots. As you can imagine this data is very important to the people visiting but if you had to do it by hand it would take hours.
+
+Obviously, we needed to automate this process; SVG's to the rescue.
+
+h2. SVG import
+
+All development layouts are already generated within Illustrator, so getting that data to a SVG is easy (that's why we picked them). Before the original files are exported to SVG some extra data is added via attributes (plot number, number of rooms, house style etc) and each plot is grouped together. That file is then exported and uploaded to the cms.
+
+Once on the cms the code reads and parses the SVG file creating or updating plots and matching them up with styles. This means your typical development is now ready to go in a few minutes.
+
+h2. Front end SVG usage
+
+As the development now has an SVG attached to it, its time to do some cool front end things with it. All zooming & panning are built in SVG features, so thats great, but not very useful.
+
+To give the layouts something extra they have some nice javascript interactions:
+
+* Hovering on the plot listings highlights the matching area on the layout
+* Hovering on the layout displays plot information
+* The on hover details can be automatically opened via the url
+
+Along with loots of other nice bits.
+

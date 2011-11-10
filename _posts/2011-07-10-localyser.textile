@@ -1,0 +1,13 @@
+---
+layout: default
+title: Localyser
+category: web
+keywords:
+- post codes
+- open source
+- crowd source
+- royal mail
+- free data
+description: "An attempt to crowd source UK postcodes."
+introduction: "<p>An attempt to crowd source UK postcodes.</p>"
+---
