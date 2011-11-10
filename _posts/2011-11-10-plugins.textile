@@ -1,0 +1,55 @@
+---
+layout: default
+title: Plugins Galore
+category: web
+keywords:
+- wildfire
+- phpwax
+- plugins
+- forms
+- basket
+- search
+- sitemap
+- recursive html sitemap
+- events calendar
+description: "A set of plugins for wildfire & phpwax that handle common tasks"
+introduction: "<p>A set of plugins for wildfire & phpwax that handle common tasks</p>"
+---
+
+"Phpwax":https://github.com/phpwax/phpwax/ is the framework we use and develop at "one black bear":http://oneblackebar.com for the majority of websites and is normally used in conjunction with its cms, "wildfire":https://github.com/phpwax/wildfire.
+
+There are several things we constantly do on websites as standard, sitemaps, contact forms and similar. By themselves they aren't very big jobs, but they eat in to project time.
+
+We've now made the most common tasks into wildfire (v6+ only) friendly plugins:
+
+h3. Search
+
+Most sites have a similar site search, so this is no abstracted in to a plugin ("wildfire.search":https://github.com/phpwax/wildfire.search) and all you need to do is create the views for it.
+
+h3. Sitemap
+
+A plugin ("wildfire.sitemap":https://github.com/phpwax/wildfire.sitemap) with built in google xml sitemap view automatically generated from the cms content is included (just need to create a sitemap page in the cms) along with a recursive html version that you can include where needed on the site. Obviously it doesn't do the verification / signup for you so you'll still need to do that in google webmaster tools.
+
+h3. Basket
+
+Many recent sites have a basket of some kind, be it a lightbox, job basket, pdf download etc so here is a "wildfire based one":https://github.com/phpwax/wildfire.basket that can be plugged in with ease, just setup the config and your done. This only provides basket tracking, not payments etc, that will be a different plugin later on.
+
+h3. Dynamic content
+
+An interesting stop gap until php gets traits fully stable. With several plugins needing to extend the content model and be "used at the same time this model allows for fields and scopes to be added dynamically":https://github.com/phpwax/wildfire.dynamic_content by other plugins, so no need keep extending models.
+
+h3. Advertising
+
+Lots of sites like to have and sell advertising space on to others and "this gives wildfire cms a basic module that allows adding and tracking of different types of adverts":https://github.com/phpwax/wildfire.advertising based on the sites needs. Provides the backend code, front end views will need to be created.
+
+h3. Forms
+
+"Covering off the most common types of forms":https://github.com/phpwax/wildfire.forms used on websites: contact form, quick callback and email subscription. Provides cms modules and notification email hooks for each.
+
+h3. Competitions
+
+A common request on sites is a "standard competition forms":https://github.com/phpwax/wildfire.competitions. Generally requested as either multiple choice or free text, so this plugin makes use of the dynamic content plugin to create the ability to do either on any cms page. Entries are recorded with a module in the cms to view them.
+
+h3. Events
+
+"A standard events section for a website":https://github.com/phpwax/wildfire.events, hooks in to the dynamic content model and adds relevant fields and extra scopes. Provides a calendar partial and an ics view.
