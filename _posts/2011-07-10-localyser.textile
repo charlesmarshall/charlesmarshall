@@ -11,3 +11,15 @@ keywords:
 description: "An attempt to crowd source UK postcodes."
 introduction: "<p>An attempt to crowd source UK postcodes.</p>"
 ---
+
+Localyser is an attempt to crowd-source postcode to address lookups and thus start to avoid Royal Mail's monopoly on what should be public data.
+
+It's simple to include on your site and provides free postcode to address lookups in return for your sharing of similar data.
+
+Installing is easy, a Google Analytics style javascript snippet gets you up and running immediately and there's an API too for more in depth usage.
+
+All the data is free for any use under the Creative Commons license.
+
+"Read more about freeing UK postcode data":http://www.guardian.co.uk/technology/2009/jul/22/free-our-data.
+
+If you are looking for postcode to coordinate data you can "find it on a mirror here":http://parlvid.mysociety.org:81/os/ONSPD_FEB_2011_UK_O.zip.
