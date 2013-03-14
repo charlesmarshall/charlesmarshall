@@ -221,3 +221,21 @@ h4{
   * HOME PAGE - Wildfire
   */
 #wildfire{}
+
+/***
+  * WILDFIRE OVERVIEW
+  */
+  #wildfire-overview .minor-release h2,
+  #wildfire-overview .minor-release h2 a,
+  #wildfire-overview .minor-release p{
+    color:#666;
+  }
+  #wildfire-overview .minor-release img{
+    width:55px;
+  }
+  #wildfire-overview .minor-release .inner{
+    margin-left:70px;
+  }
+  #wildfire-overview .minor-release h2{
+    font-size:20px;
+  }
