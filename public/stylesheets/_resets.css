@@ -90,14 +90,15 @@ h1{
   font-size:50px;
   color:#333333;
   font-family: 'Berkshire Swash', cursive;
-
   text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 
 h2{
   font-weight:bold;
-  font-size:21px;
+  font-size:30px;
+  font-family: 'Berkshire Swash', cursive;
   color:#333333;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 
 h3{
