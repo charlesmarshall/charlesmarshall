@@ -1,0 +1,129 @@
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 3.3.0
+build: 3167
+*/
+html{color:#000;background:#EBEBEB;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
+legend{color:#000;}
+body{font:13px/1.231  "Open Sans", helvetica,arial,clean,sans-serif;*font-size:small;*font:x-small;background:#EBEBEB;}
+select,input,button,textarea{font:99% helvetica,arial,clean,sans-serif;}
+table{font-size:inherit;font:100%;}
+pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+/*************************/
+/* Nasty clearfix hacks */
+.clearfix{display:inline-block;}
+/* Hide from IE Mac \*/
+.clearfix{display:block;}
+/* End hide from IE Mac */
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+/*************************/
+
+*{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family:helvetica, arial;
+}
+
+/** base tags **/
+em,i{
+  font-style: italic;
+}
+strong,b{
+  font-weight: bold;
+}
+small{
+  font-size:77%;
+}
+html, body{
+  height:100%;
+}
+
+p{
+  font-size:15px;
+  line-height:1.6em;
+  letter-spacing: 0.5px;
+  margin-bottom:15px;
+}
+  p:last-child{margin-bottom:0;}
+
+a{
+  color:#333333;
+}
+
+/** tables **/
+table{
+  width:100%;
+}
+  td, th{
+    padding:8px 6px;
+    font-size:14px;
+    color:#333;
+  }
+  th{
+    font-weight:bold;
+    font-size:15px;
+  }
+  td a, th a{
+    text-decoration: none;
+  }
+
+/** headers **/
+h1{
+  font-weight:bold;
+  font-size:50px;
+  color:#333333;
+  font-family: 'Berkshire Swash', cursive;
+
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+}
+
+h2{
+  font-weight:bold;
+  font-size:21px;
+  color:#333333;
+}
+
+h3{
+  font-size:18px;
+  font-weight:bold;
+  margin:0;
+  padding:3px 0 0 0;
+  color:#333333;
+}
+
+h4{
+  font-size:18%;
+  font-weight:normal;
+  margin:0;
+  padding:0 0 0 0;
+  color:#333333;
+}
+
+
+
+.feature{
+  width:100%;
+  padding:20px 5%;
+  margin:0 auto;
+  background: #f2f2f2; /* Old browsers */
+}
+.feature:nth-child(even){
+  background:none;
+}

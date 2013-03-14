@@ -1,9 +1,0 @@
----
-layout: default
-title: Isuzu
-category: work
----
-
-!/images/work/isuzu.jpg!:http://isuzu.co.uk
-
-With wining the "digital" work for Isuzu the first thing on the list was a new website... So "here it is":http://isuzu.co.uk

@@ -1,9 +1,0 @@
----
-layout: default
-title: Footy Mums
-category: work
----
-
-!/images/work/footy-mums.jpg!:http://footymums.com/
-
-Mums in football - this is your website (although anyone who wants to make a positive contribution is welcome too). Share your thoughts, ideas, successes and anything else with other footy mums. If you've a disappointment or frustration you want to share go right ahead and shout about it here!

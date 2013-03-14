@@ -1,9 +1,0 @@
-key: "1234567890"
-base_url: "http://1234567890.api.co.uk/"
-pages:
-  news:
-    url: "/news/all.xml"
-    filename: "news.xml"
-  offers:
-    url: "/offers/all.xml"
-    filename: "offers.xml"

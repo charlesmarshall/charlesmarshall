@@ -1,7 +1,0 @@
----
-layout: default
-title: Google Closure Optimiser
-category: work
----
-
-After the release of Googles Closure library I decided to quickly put together a site using it; pass in some javascript and out comes your compiled version. "Nice and simple":http://closureoptimizer.com/

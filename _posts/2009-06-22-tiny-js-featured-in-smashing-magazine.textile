@@ -1,9 +1,0 @@
----
-layout: default
-title: Tiny JS Featured in Smashing Magazine!
-category: web
----
-
-My pet project, "Tiny JS":http://tinyjs.com made it in to "a recent article":http://www.smashingmagazine.com/2009/06/21/50-fresh-javascript-tools-that-will-improve-your-workflow/ on Smashing Magazine regarding javascript tools, resources etc!
-
-Great way to start a Monday!
