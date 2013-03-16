@@ -7,6 +7,9 @@ class Headlines{
   public $h = array();
   public $weighted = array();
   public $occurances = array();
+  public $words_to_remove = array(
+      'and', 'was', 'you',  'she', 'now', 'then', 'with', 'her', 'him'
+    );
 
   public function __construct($newspaper, $xpath=false, $name, $weight_map = array()){
     $this->newspaper = $newspaper;
@@ -22,8 +25,8 @@ class Headlines{
   }
 
   public function tidy($item){
-    $content = strtolower(str_replace("'", "", str_replace("\n", "", str_replace("\r\n", "", trim($item->textContent)))));
-    preg_replace("#'[^A-Za-z0-9 ]#i", "", $content);
+    $content = str_replace("!", "", str_replace("?", "", strtolower(str_replace("'", "", str_replace("\n", "", str_replace("\r\n", "", trim($item->textContent)))))));
+    preg_replace("#'[^A-Za-z ]#i", "", $content);
     return $content;
   }
 
@@ -116,11 +119,17 @@ class Headlines{
     $use = array_slice(array_keys($this->weighted),0,10);
     foreach($use as $word) $this->stats['popular_words'][$word] = array('word'=>$word,'weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );
     //popular, but excluding words like 'the', 'of' etc
-
+    $non_joining = array_slice($this->non_joining(array_keys($this->weighted)), 0, 10);
+    foreach($non_joining as $word) $this->stats['popular_words_non_joining'][$word] = array('word'=>$word,'weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );
 
     asort($this->stats['word_length'], SORT_NUMERIC);
     asort($this->stats['title_length'], SORT_NUMERIC);
     return $this->stats;
+  }
+
+  public function non_joining($words){
+    foreach($words as $k=>$word) if(in_array($word, $this->words_to_remove) || strlen($word) < 4) unset($words[$k]);
+    return $words;
   }
 
 
