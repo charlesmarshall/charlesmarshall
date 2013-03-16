@@ -1,4 +1,8 @@
 <?
+/**
+  * Daily script to fetch data
+  *
+  */
 date_default_timezone_set('Europe/London');
 
 include __DIR__. "/newspapers.php";
@@ -12,14 +16,10 @@ foreach($NEWSPAPERS as $paper=>$config){
   $stats[$paper] = $h->get()->parse()->weighted()->json()->stats();
 
 }
-print_r($stats);
 
-//meta information about today
-//most popular words overall
-//title length distibution - per & overall
-//word length distribution - per & overall
-//
-
+$file = __DIR__."/".date("Y/W/w")."/totals.json";
+$string = json_encode($stats);
+file_put_contents($file, $string);
 
 
 //title length, word length, popular words,
