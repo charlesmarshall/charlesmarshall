@@ -9,7 +9,7 @@ $stats = array();
 foreach($NEWSPAPERS as $paper=>$config){
   echo "==== $config[name] ====\r\n";
   $h = new Headlines($paper, $config['xpath'], $config['name'], $config['weight_map']);
-  $stats[$paper] = $h->get()->parse()->weighted()->stats();
+  $stats[$paper] = $h->get()->parse()->weighted()->json()->stats();
 
 }
 print_r($stats);

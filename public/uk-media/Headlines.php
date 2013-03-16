@@ -7,6 +7,7 @@ class Headlines{
   public $h = array();
   public $weighted = array();
   public $occurances = array();
+  public $date_format = "Y/W/w";
   public $words_to_remove = array(
       'and', 'was', 'you',  'she', 'now', 'then', 'with', 'her', 'him'
     );
@@ -66,34 +67,20 @@ class Headlines{
     return $this;
   }
 
-  public function html(){
-    $dir = __DIR__ ."/".date("Ymd");
-    if(!is_dir($dir)) mkdir($dir, 0777, true);
-
-    $table = "<table><thead><tr><td></td><th>Weighted</th><th>Occurances</th></tr></thead><tbody>";
-    foreach(array_keys($this->weighted) as $word){
-      $table .= "<tr><th>".$word."</th><td>".$this->weighted[$word]."</td><td>".$this->occurances[$word]."</td></tr>";
-    }
-    $table .= "</tbody></table>";
-    file_put_contents($dir."/".$this->name.".html", $table);
-    return $this;
-  }
 
   public function csv(){
-    $dir = __DIR__ ."/".date("Ymd");
+    $dir = __DIR__ ."/".date($this->date_format);
     if(!is_dir($dir)) mkdir($dir, 0777, true);
     $file = fopen($dir."/".$this->name.".csv", "w+");
     fputcsv($file, array('word', 'weighted', 'occurances'));
-    foreach(array_keys($this->weighted) as $word){
-      fputcsv($file, array($word, $this->weighted[$word], $this->occurances[$word]));
-    }
+    foreach(array_keys($this->weighted) as $word) fputcsv($file, array($word, $this->weighted[$word], $this->occurances[$word]));
     fclose($file);
     return $this;
   }
 
 
   public function json(){
-    $dir = __DIR__ ."/".date("Ymd");
+    $dir = __DIR__ ."/".date($this->date_format);
     if(!is_dir($dir)) mkdir($dir, 0777, true);
     $parse = array();
     foreach(array_keys($this->weighted) as $word) $parse[$word] = array('weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );
