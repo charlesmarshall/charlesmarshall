@@ -5,20 +5,30 @@ class Headlines{
   public $newspaper;
   public $scanner;
   public $h = array();
-  public $weight = 7; //h6 is max... so value of header is 7 - h
   public $weighted = array();
   public $occurances = array();
 
-  public function __construct($newspaper, $xpath=false, $name){
+  public function __construct($newspaper, $xpath=false, $name, $weight_map = array()){
     $this->newspaper = $newspaper;
     $this->xpath = $xpath;
     $this->name = $name;
+    $this->weight_map = $weight_map;
   }
 
   public function get(){
     $this->scanner = new Scanner(array('url'=>$this->newspaper));
     $this->raw_content = $this->scanner->fetch()->content;
     return $this;
+  }
+
+  public function tidy($item){
+    $content = strtolower(str_replace("'", "", str_replace("\n", "", str_replace("\r\n", "", trim($item->textContent)))));
+    preg_replace("#'[^A-Za-z0-9 ]#i", "", $content);
+    return $content;
+  }
+
+  public function weight($tag){
+    return ($this->weight_map[$tag]) ? $this->weight_map[$tag] :  1;
   }
 
   public function parse(){
@@ -28,8 +38,8 @@ class Headlines{
     $xpath = new DOMXPath($dom);
 
     foreach($xpath->query($this->xpath) as $item){
-      $h = str_replace("h", "",$item->tagName);
-      $this->h[$h][] = str_replace("\n", "", str_replace("\r\n", "", trim($item->textContent)));
+      $h = $item->tagName;
+      $this->h[$h][] = $this->tidy($item);
     }
     return $this;
   }
@@ -42,7 +52,7 @@ class Headlines{
         if(count($words) > 1){
           foreach($words as $word){
             if($word){
-              @$this->weighted[$word]+= $this->weight - $h;
+              @$this->weighted[$word]+= $this->weight($h);
               @$this->occurances[$word] ++;
             }
           }

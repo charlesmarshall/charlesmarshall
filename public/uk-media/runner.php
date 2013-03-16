@@ -6,7 +6,7 @@ include __DIR__ ."/Scanner.php";
 include __DIR__ ."/Headlines.php";
 
 foreach($NEWSPAPERS as $paper=>$config){
-  $h = new Headlines($paper, $config['xpath'], $config['name']);
+  $h = new Headlines($paper, $config['xpath'], $config['name'], $config['weight_map']);
   $h->get()->parse()->weighted()->html()->csv();
 }
 
