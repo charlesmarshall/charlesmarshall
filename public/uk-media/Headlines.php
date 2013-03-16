@@ -32,7 +32,6 @@ class Headlines{
   }
 
   public function parse(){
-    $segment = $this->raw_content;
     $dom = new DOMDocument;
     @$dom->loadHTML($this->raw_content);
     $xpath = new DOMXPath($dom);
@@ -89,6 +88,40 @@ class Headlines{
     return $this;
   }
 
+
+  public function json(){
+    $dir = __DIR__ ."/".date("Ymd");
+    if(!is_dir($dir)) mkdir($dir, 0777, true);
+    $parse = array();
+    foreach(array_keys($this->weighted) as $word) $parse[$word] = array('weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );
+    $string = json_encode($parse);
+    file_put_contents($dir."/".$this->name.".json", $string);
+    return $this;
+  }
+
+
+  public function stats(){
+    $stats = array();
+    //word length
+    foreach(array_keys($this->weighted) as $word) @$stats['word_length'][strlen($word)] ++;
+    //title length
+    foreach($this->h as $titles){
+      foreach($titles as $title){
+        $count = count(preg_split("/[\s,]+/", $title));
+        if($count > 1) @$stats['title_length'][$count]++;
+      }
+    }
+    //popular words
+    $this->stats = $stats;
+    $use = array_slice(array_keys($this->weighted),0,10);
+    foreach($use as $word) $this->stats['popular_words'][$word] = array('word'=>$word,'weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );
+    //popular, but excluding words like 'the', 'of' etc
+
+
+    asort($this->stats['word_length'], SORT_NUMERIC);
+    asort($this->stats['title_length'], SORT_NUMERIC);
+    return $this->stats;
+  }
 
 
 }
