@@ -26,9 +26,7 @@ class Headlines{
   }
 
   public function tidy($item){
-    $content = str_replace("!", "", str_replace("?", "", strtolower(str_replace("'", "", str_replace("\n", "", str_replace("\r\n", "", trim($item->textContent)))))));
-    preg_replace("#'[^A-Za-z ]#i", "", $content);
-    return $content;
+    return preg_replace("#[^A-Za-z ]#i", "", strtolower($item->textContent));
   }
 
   public function weight($tag){
@@ -103,8 +101,9 @@ class Headlines{
     }
     //popular words
     $this->stats = $stats;
-    $use = array_slice(array_keys($this->weighted),0,10);
-    foreach($use as $word) $this->stats['popular_words'][$word] = array('word'=>$word,'weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );
+    $keys = array_keys($this->weighted);
+    $use = array_slice($keys,0,10);
+    foreach($use as $word) if($word) $this->stats['popular_words'][$word] = array('word'=>$word,'weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );
     //popular, but excluding words like 'the', 'of' etc
     $non_joining = array_slice($this->non_joining(array_keys($this->weighted)), 0, 10);
     foreach($non_joining as $word) $this->stats['popular_words_non_joining'][$word] = array('word'=>$word,'weighted'=>$this->weighted[$word], 'occurances'=>$this->occurances[$word] );

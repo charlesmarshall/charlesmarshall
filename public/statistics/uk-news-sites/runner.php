@@ -10,10 +10,11 @@ include __DIR__ ."/Scanner.php";
 include __DIR__ ."/Headlines.php";
 
 $stats = array();
+echo "== DAILY ==\r\n";
 foreach($NEWSPAPERS as $paper=>$config){
-  echo "==== $config[name] ====\r\n";
+  echo "  $config[name] \r\n";
   $h = new Headlines($paper, $config['xpath'], $config['name'], $config['weight_map']);
-  $stats[$paper] = $h->get()->parse()->weighted()->json()->stats();
+  $stats[$config['name']] = $h->get()->parse()->weighted()->json()->stats();
 
 }
 
@@ -22,5 +23,10 @@ $string = json_encode($stats);
 file_put_contents($file, $string);
 
 
-//title length, word length, popular words,
+if(date("w") == 6){
+  $cmd = "/usr/local/opt/php54/bin/php ".__DIR__."/weekly.php";
+  echo " == WEEKLY ==\r\n";
+  exec($cmd);
+}
+
 ?>
