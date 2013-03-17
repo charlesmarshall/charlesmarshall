@@ -1,7 +1,7 @@
 var
   base_source = "/statistics/uk-news-sites/",
   data_sources = ["word-length", 'title-length'],
-  graph_types = {"multiBarChart":"Bar chart", "stackedAreaChart":"Area chart", "lineChart":"Line chart"},
+  graph_types = {"multiBarChart":"Bar chart", "lineChart":"Line chart"},
   current_graph_type = "multiBarChart",
   xlabels = {"word-length":"Word size"},
   ylabels = {"word-length": "% Occurrences"},
@@ -13,7 +13,7 @@ var
           chart.xAxis.axisLabel(xlabel);
           chart.yAxis.axisLabel(ylabel);
           d3.select('#'+id+' svg').selectAll("*").remove();
-          d3.select('#'+id+' svg').datum(data).transition().duration(500).call(chart);
+          d3.select('#'+id+' svg').datum(data).transition().duration(100).call(chart);
           nv.utils.windowResize(chart.update);
           return chart;
         } );
@@ -27,19 +27,7 @@ var
           chart.yAxis.axisLabel(ylabel);
           chart.showControls(false);
           d3.select('#'+id+' svg').selectAll("*").remove();
-          d3.select('#'+id+' svg').datum(data).transition().duration(500).call(chart);
-          nv.utils.windowResize(chart.update);
-          return chart;
-        } );
-      } );
-    },
-    "stackedAreaChart":function(id, url, xlabel, ylabel){
-      d3.json(url, function(data){
-        nv.addGraph(function() {
-          var chart = nv.models.stackedAreaChart();
-
-          d3.select('#'+id+' svg').selectAll("*").remove();
-          d3.select('#'+id+' svg').datum(data).transition().duration(500).call(chart);
+          d3.select('#'+id+' svg').datum(data).transition().duration(100).call(chart);
           nv.utils.windowResize(chart.update);
           return chart;
         } );
@@ -56,7 +44,6 @@ jQuery(document).ready(function(){
     var base = base_source + jQuery("#year_week").val()+"/";
     for(var i in data_sources){
       var id = data_sources[i], url = base+id+".json";
-      console.log(id);
       graph_inits[current_graph_type](id, url, xlabels[id], ylabels[id]);
     }
   }
@@ -87,28 +74,3 @@ jQuery(document).ready(function(){
   });
 
 });
-
-
-
-
-// nv.addGraph(function() {
-//   var chart = nv.models.lineChart();
-
-//   chart.xAxis
-//       .axisLabel('Time (ms)')
-//       .tickFormat(d3.format(',r'));
-
-//   chart.yAxis
-//       .axisLabel('Voltage (v)')
-//       .tickFormat(d3.format('.02f'));
-
-//   d3.select('#chart svg')
-//       .datum(sinAndCos())
-//     .transition().duration(500)
-//       .call(chart);
-
-//   nv.utils.windowResize(function() { d3.select('#chart svg').call(chart) });
-
-//   return chart;
-// });
-
