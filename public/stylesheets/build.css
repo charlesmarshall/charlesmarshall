@@ -159,7 +159,8 @@ h4{
 /***
   * CONTAINERS
   */
-.feature{
+.feature,
+#filters{
   width:100%;
   padding:20px 5%;
   margin:0 auto;
@@ -242,4 +243,17 @@ h4{
   }
   #wildfire-overview .old-release h2{
     font-size:20px;
+  }
+
+/***
+  * FORMS
+  */
+#filters{}
+  #filters label{
+    font-weight: bold;
+    padding-right:6px;
+  }
+  #filters select{
+    width:100px;
+    margin-right:20px;
   }
