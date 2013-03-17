@@ -7,7 +7,7 @@ class Headlines{
   public $h = array();
   public $weighted = array();
   public $occurances = array();
-  public $date_format = "Y/W/w";
+  public $date_format = "Y/W/N";
   public $words_to_remove = array(
       'and', 'was', 'you',  'she', 'now', 'then', 'with', 'her', 'him'
     );

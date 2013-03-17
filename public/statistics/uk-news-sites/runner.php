@@ -18,12 +18,12 @@ foreach($NEWSPAPERS as $paper=>$config){
 
 }
 
-$file = __DIR__."/".date("Y/W/w")."/totals.json";
+$file = __DIR__."/".date("Y/W/N")."/totals.json";
 $string = json_encode($stats);
 file_put_contents($file, $string);
 
 
-if(date("w") == 6){
+if(date("N") == 7){
   $cmd = "/usr/local/opt/php54/bin/php ".__DIR__."/weekly.php";
   echo " == WEEKLY ==\r\n";
   exec($cmd);

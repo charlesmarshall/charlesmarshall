@@ -9,5 +9,14 @@ $NEWSPAPERS = array(
    , 'http://www.thetimes.co.uk/' => array('xpath'=>"//h4|//h2", 'name'=>'the-times' , 'weight_map'=>array('h2'=>5,  'h4'=>3) )
 );
 
+$COLOURS = array(
+  'bbc-news'=>"#1f77b4",
+  'telegraph'=>'#2ca02c',
+  'sun'=>"#ff7f0e",
+  'daily-mail'=> "#d62728",
+  "independent" =>"#aec7e8",
+  "the-times"=> "#98df8a"
+);
+
 
 ?>
