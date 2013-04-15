@@ -173,6 +173,22 @@ h4{
     margin:20px 0 10px 0;
     width:105px;
   }
+
+    .gallery a{
+      display:block;
+      margin: 0 0 20px 0;
+      float:left;
+      width:20%;
+    }
+      .gallery a:nth-child(6n){
+        clear:both;
+      }
+    .gallery a img{
+      float:none;
+      margin:0;
+      width:100%;
+      padding-right:20px;
+    }
   .feature .inner{
     margin-left:120px;
   }
