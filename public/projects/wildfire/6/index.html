@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" id="wildfire-overview">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Version 6 of Wildfire CMS - PHP Project - Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/">Home</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/projects/" class='active'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Wildfire CMS version 6</h1>
+      <p>By converting all the content to run as a tree structure instead of the older idea of sections and content being split you can imagine how substantical a change this was.</p>
+      <p>I'll go over the main changes very briefly and work on the silly presumption that you know or have used Wildfire CMS or at <a href="/projects/wildfire/basics.html">least read the basics</a>.</p>
+    </section>
+
+    <section id="delete-everything" class='feature'>
+      <h2>Delete hammer</h2>
+      <p>The fun part of any big revision; clearing out all that excess code and trying to trim it down to the bare bones ready to start again. Back in Feburary 2011 I began the adventure of changing everything by <a href="https://github.com/phpwax/wildfire/commit/12b34b2693b94459f75535b16e68bb359f25d0ba">clearing out lots of references to sections, joins that won't be needed</a> etc.</p>
+      <p>Carrying on the code culling for a few more days and then starting to unfiy various names (so any date field starts with date_ rather than them swapping around) and changing the calls to match.</p>
+
+      <!-- IMAGE NEEDED HERE -->
+    </section>
+
+    <section id='make-like-a-tree' class='feature'>
+      <h2>Trees</h2>
+      <p>The main point of this refactor was to introduce a tree structure for content to replace the quagmire of sections &amp; page the CMS had previously.</p>
+      <p>Before we changed it the CMS would treat parts of a URL as a section, and others as a page. This is a rough idea of what would happen:</p>
+      <p><code>
+        $URL = "/projects/wildfire/6.html";<br>
+        $SECTIONS = array("/projects/", "/projects/wildfire/");<br>
+        $PAGE = "6";<br>
+      </code></p>
+      <p>In that example everything except for "6" would be queried via the Section database table and then "6" would be checked in the Page database. The Page would have to have a reference set as being inside the one of those Sections.</p>
+      <p>Somewhere along the line, years ago, we thought that was a good idea. Since then we've realised it clearly wasn't.</p>
+      <h3>Problems</h3>
+      <p>This old way had several issues with it that have caused numerous headaches in its life span; but the big one should of been obvious and can be summed up easily.</p>
+      <p><strong>We were treating content of the website differently purely based on if it had children or not.</strong></p>
+      <p>As an example of why this is a bad idea, how about we take the <code>$URL</code> mentioned above. We've carefully added the Pages in the right places to match but now we need a slight change:</p>
+      <p><code>
+        $URL = "/projects/wildfire/6/help";
+      </code></p>
+      <p>Adding a help page about "6" in a relevant place on the website. As "6" itself is a page, this isn't possible without reengineering all the exisiting content; you can imagine how painful that can be on larger websites.</p>
+      <p>The other nail in the coffin for this old approach was the functionality differed on Page &amp; Section. In particular, imagery was missing on Sections but present on Pages, this had to get written in many times.</p>
+      <h3>Solution</h3>
+      <p>By merging Section &amp; Page together creating a generalised tree database model we solved this issue and opened up a few new interesting things for the CMS.</p>
+    </section>
+
+    <section id="mapping-urls" class='feature'>
+      <h2>URL mapping (and some speed)</h2>
+      <p>With now just a single Content model to worry about the CMS lookup functions would already be faster as there are less <code>MySQL</code> queries to do, but why not make them even faster still...</p>
+      <p>By adding an extra database table in to the mix (originally called <a href="https://github.com/phpwax/wildfire/commit/58b5778ac14be909c4993d41d766b57a16c0f2cb">CmsUrlMap</a>) we could reduce the incoming look up time by quite a chunk.</p>
+      <p>Now the code effectively looks for just the one item:</p>
+      <p><code>
+        $URL = "/projects/wildfire/6.html";<br>
+        $URL_MAP_PERMALINK = "/projects/wildfire/6";<br>
+      </code></p>
+      <p>Instead of having to query a tree mechanism as before, all it had to do was look for the matching URL in the table and fetch the matching rows. This does mean that writes became slightly slower (2 tables instead of one) but provides much faster reads.</p>
+      <p>Another nice side effect is being able to deprecate some of the older functionality in the main controller.</p>
+    </section>
+
+    <section id="languages-and-utf8" class='feature'>
+      <h2>Language support</h2>
+
+      <p>As we now only had a single Content model, language support became much easier. This version of the CMS was to support multiple languages out of the box with just some basic config changes required to enabled as many as you need.</p>
+      <p><a href="https://github.com/phpwax/wildfire/commit/f029c3e3b7516db97389c1bfc6c415c62ceb4498">Right at the start of the rewrite</a> there are some commits dedicated to adding this in to the mapping mechanism within the CMS:</p>
+      <!-- insert image of code -->
+      <p>However, with the changes made to make content lookups faster (see below) this was altered qute a lot and eventutally became a static array quite low down in the MVC stack.</p>
+      <!-- insert updated version of code -->
+      <p>Ensuring utf-8 is being used on the connections to the database for PDO and various string functions etc are utf-8 safe was arduous at times, but worthwhile. Certain parts of this are still going to be dependant on the individual application to respect the charset being used etc.</p>
+
+    </section>
+
+    <section id="smarter-editing" class='feature'>
+      <h2>A more dynamic CMS</h2>
+      <p>A big bug-bear of the previous generation was customisation inside the CMS itself; changing or adding just one new field to a model meant making a new form or view.</p>
+      <h3>Listing</h3>
+      <p>To add in a new filter or column to list was a pain, now it's based on the model, much easier.</p>
+      <h3>Editing</h3>
+      <p>Pretty much since the start of the CMS the editing views were handcoded for each section and had to be updated every time you changed something. By the time you get to large sites with lots of new and custom fields that are used are various different page layouts it is a real pain to maintain.</p>
+      <p>Instead of all this manual outputting we made the forms and lists smarter and based on the data held on the Model. Now when you add a custom field to Content all you need to do is tell the model how &amp; where to be displayed within the CMS and it does the hard work for you.</p>
+      <h4>Files &amp; Extras</h4>
+      <p>As some data you may want to customise for easier display, such as files, there needs to be an extra mechanism to allow simple changes to seub sections of the form. We handle this by making use of the partial system and checking for a compatible view in the stack, if it is found then render that instead of the default.</p>
+      <p>A good example of this is on the Content editing form, where joins can be controlled via simple check boxes built into the CMS.</p>
+      <h4>Joins</h4>
+      <p>This basic interface for setting joins from one model to another in an automated fashion is also customisable; you just have to say the field lives in the 'Relationships' group and the rest happens automatically.</p>
+
+    </section>
+    <section id="events" class='feature' >
+      <h2>Event hooks</h2>
+      <p>During the rewrite one of the main changes to the actual coding style was swapping over to make use of the new WaxEvent methodology. In the same way that partials are used to contain repeatable blocks of layout, events do similar for the controller code.</p>
+      <p>Now instead of having large functions we tried to make much smaller and encapsulated chunks that can be used anywhere and and inconjunction with others. You can then clear or add to that event to only alter that small segment.</p>
+      <p>In this version the code is a bit rough and ready so its not as modular as would like it to be, but you can see <a href="https://github.com/phpwax/wildfire/blob/v6/lib/controller/CMSAdminComponent.php">plenty of examples in the lower level controllers</a>.</p>
+    </section>
+
+  </body>
+</html>
