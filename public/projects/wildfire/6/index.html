@@ -36,7 +36,7 @@
     <section id='make-like-a-tree' class='feature'>
       <h2>Trees</h2>
       <p>The main point of this refactor was to introduce a tree structure for content to replace the quagmire of sections &amp; page the CMS had previously.</p>
-      <p>Before we changed it the CMS would treat parts of a URL as a section, and others as a page. This is a rough idea of what would happen:</p>
+      <p>Before we changed it the CMS would treat parts of a URL as a section, and others as a page. This is a rough idea psedu code of what would happen (nothing like the real code):</p>
       <p><code>
         $URL = "/projects/wildfire/6.html";<br>
         $SECTIONS = array("/projects/", "/projects/wildfire/");<br>
@@ -57,7 +57,7 @@
       <p>By merging Section &amp; Page together creating a generalised tree database model we solved this issue and opened up a few new interesting things for the CMS.</p>
     </section>
 
-    <section id="mapping-urls" class='feature'>
+    <section id="i-feel-the-need" class='feature'>
       <h2>URL mapping (and some speed)</h2>
       <p>With now just a single Content model to worry about the CMS lookup functions would already be faster as there are less <code>MySQL</code> queries to do, but why not make them even faster still...</p>
       <p>By adding an extra database table in to the mix (originally called <a href="https://github.com/phpwax/wildfire/commit/58b5778ac14be909c4993d41d766b57a16c0f2cb">CmsUrlMap</a>) we could reduce the incoming look up time by quite a chunk.</p>
@@ -75,7 +75,7 @@
 
       <p>As we now only had a single Content model, language support became much easier. This version of the CMS was to support multiple languages out of the box with just some basic config changes required to enabled as many as you need.</p>
       <p><a href="https://github.com/phpwax/wildfire/commit/f029c3e3b7516db97389c1bfc6c415c62ceb4498">Right at the start of the rewrite</a> there are some commits dedicated to adding this in to the mapping mechanism within the CMS:</p>
-      <!-- insert image of code -->
+
       <p>However, with the changes made to make content lookups faster (see below) this was altered qute a lot and eventutally became a static array quite low down in the MVC stack.</p>
       <!-- insert updated version of code -->
       <p>Ensuring utf-8 is being used on the connections to the database for PDO and various string functions etc are utf-8 safe was arduous at times, but worthwhile. Certain parts of this are still going to be dependant on the individual application to respect the charset being used etc.</p>
@@ -90,22 +90,29 @@
       <h3>Editing</h3>
       <p>Pretty much since the start of the CMS the editing views were handcoded for each section and had to be updated every time you changed something. By the time you get to large sites with lots of new and custom fields that are used are various different page layouts it is a real pain to maintain.</p>
       <p>Instead of all this manual outputting we made the forms and lists smarter and based on the data held on the Model. Now when you add a custom field to Content all you need to do is tell the model how &amp; where to be displayed within the CMS and it does the hard work for you.</p>
-      <h4>Files &amp; Extras</h4>
+      <h4>Files &amp; More</h4>
       <p>As some data you may want to customise for easier display, such as files, there needs to be an extra mechanism to allow simple changes to seub sections of the form. We handle this by making use of the partial system and checking for a compatible view in the stack, if it is found then render that instead of the default.</p>
       <p>A good example of this is on the Content editing form, where joins can be controlled via simple check boxes built into the CMS.</p>
       <h4>Joins</h4>
       <p>This basic interface for setting joins from one model to another in an automated fashion is also customisable; you just have to say the field lives in the 'Relationships' group and the rest happens automatically.</p>
 
     </section>
-    <section id="events" class='feature' >
+    <section id="shit-happens" class='feature' >
       <h2>Event hooks</h2>
       <p>During the rewrite one of the main changes to the actual coding style was swapping over to make use of the new WaxEvent methodology. In the same way that partials are used to contain repeatable blocks of layout, events do similar for the controller code.</p>
       <p>Now instead of having large functions we tried to make much smaller and encapsulated chunks that can be used anywhere and and inconjunction with others. You can then clear or add to that event to only alter that small segment.</p>
       <p>In this version the code is a bit rough and ready so its not as modular as would like it to be, but you can see <a href="https://github.com/phpwax/wildfire/blob/v6/lib/controller/CMSAdminComponent.php">plenty of examples in the lower level controllers</a>.</p>
     </section>
 
-    <section id="gallery" class='feature gallery'>
-      <div>
+    <section id="new-shiny" class='feature'>
+      <h2>HTML 5</h2>
+      <p>Bearing in mind, this was 2011, so quite early on in the adoption of HTML5 feature set and only really top end browsers supported it. However, we like to develop for the future so replaced the flash uploadng tool from version 5 with a HTML5 uploader instead.</p>
+      <p>A much nicer experience than flash, although it did prove to be tricky to get right in the begining. Making use of the new javascript File API, XMLHttpRequest and good old drag &amp; drop the files are uploaded asyncronously and then the main listing is automatically updated.</p>
+      <p>Honestly, there are a few issues with this and the method for doing it has chnaged as the HTML5 spec has evolved.</p>
+    </section>
+
+
+    <section id="pretty-pictures" class='feature gallery'>
       <a rel="gallery" href="/projects/wildfire/6/gallery/login.png" class='fancybox'><img src="/projects/wildfire/6/gallery/login.png" alt="Login page"></a>
       <a rel="gallery" href="/projects/wildfire/6/gallery/dash.png" class='fancybox'><img src="/projects/wildfire/6/gallery/dash.png" alt="Dashboard"></a>
       <a rel="gallery" href="/projects/wildfire/6/gallery/listing.png" class='fancybox'><img src="/projects/wildfire/6/gallery/listing.png" alt="Listing page"></a>
@@ -113,7 +120,20 @@
       <a rel="gallery" href="/projects/wildfire/6/gallery/editing-files.png" class='fancybox'><img src="/projects/wildfire/6/gallery/editing-files.png" alt="Edit page (files)"></a>
       <a rel="gallery" href="/projects/wildfire/6/gallery/editing-relationships.png" class='fancybox'><img src="/projects/wildfire/6/gallery/editing-relationships.png" alt="Edit page (relationships)"></a>
       <a rel="gallery" href="/projects/wildfire/6/gallery/files.png" class='fancybox'><img src="/projects/wildfire/6/gallery/files.png" alt="Files listing"></a>
-      </div>
+
+    </section>
+
+    <section id="bits" class='feature'>
+      <h2>Odds and Sodds</h2>
+      <p>Outside of the key features there were many other things changed in this version; almost every file was changed in some way. While I don't want to go in to extreme detail, here are some of the highlights.</p>
+      <h3>New editor, with templates</h3>
+      <p>During the development of version 6 we replaced our text editor. Moving over from WYM Editor to TinyMCE gave us a lot of javascript coding to do, but it gives a more rounded experience and has neater ties with jQuery, which is what we mostly use in the CMS.</p>
+      <p>Another factor we went with TinyMCE is the built in template tool that allows us to do more complicated layout of content by providing small HTML snippets whose copy can be replaced. Really makes things like multi-column pages easier while still allowing the client to control the content.</p>
+    </section>
+
+    <section class='feature'>
+      <p>Have a read about the other versions of Wildfire; theres always some new interesting feature being built.</p>
+      <a href="/projects/wildfire/" class='button clearfix'><span class='action'>►</span><span>More about Wildfire</span></a>
     </section>
 
     <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
