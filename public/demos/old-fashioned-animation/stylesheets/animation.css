@@ -1,0 +1,34 @@
+#data_centre_security,
+#data_centre_security .stage{
+  position:relative;
+  height:400px;
+  margin:0 auto;
+}
+#animation_demo{
+  background: #fff;
+}
+#data_centre_security{
+  width:500px;
+  overflow: hidden;
+}
+
+
+#data_centre_security img{
+  position: absolute;
+  width:100%;
+}
+
+#data_centre_security .server-room{
+  width:61%;
+  margin-left:24%;
+  margin-top:21%;
+}
+
+#data_centre_security .camera,
+#data_centre_security .light,
+#data_centre_security .dome{
+  display:none;
+}
+#data_centre_security .dome{
+  top:-900px;
+}
