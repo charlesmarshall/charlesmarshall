@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <title>Version 7.1 of Wildfire CMS - Projects - Charles Marshall</title>
+  </head>
+  <body id="wildfire-cms">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Wildfire CMS version 7.1</h1>
+      <p>Meet the new, clean and lean version of Wildfire. Time and design have moved on, so it was about time Wildfire did as well.</p>
+      <p>A lighter interface (some of which I've used on there) with a lot of the layout issues we've had in <a href="/projects/wildfire/v6.pretty">v6.pretty</a> sorted out.</p>
+      <p>With every upgrade, we always try to make it faster &amp; smarter and we've done both for this version.</p>
+    </section>
+
+    <section id="pretty-pictures" class='feature gallery'>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/login.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/login.png" alt="Login page"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/dash-1.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/dash-1.png" alt="Dashboard"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/dash-2.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/dash-2.png" alt="Dashboard (analytics)"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/dash-3.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/dash-3.png" alt="Dashboard (more analytics)"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/listing.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/listing.png" alt="Listing page"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/editing.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/editing.png" alt="Edit page (content)"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/editing-extra.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/editing-extra.png" alt="Edit page (extra bits)"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/editing-design.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/editing-design.png" alt="Edit page (layout)"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/editing-media.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/editing-media.png" alt="Edit page (media)"></a>
+      <a rel="gallery" href="/projects/wildfire/7.1/gallery/help.png" class='fancybox'><img src="/projects/wildfire/7.1/gallery/help.png" alt="Help system example"></a>
+
+    </section>
+
+    <section class='feature' id="never-ending-nav">
+      <h2>That's a long one...</h2>
+      <p>On our larger projects we started to encounter a few issues with just how many extra "modules" they had. On some sites, especially those with multiple languages, the left hand navigation would be immense.</p>
+      <p>The extreme examples of these lead to users struggling to find things, taking many seconds of scrolling down to find the right button to press. Now we've introduced a sub-navigation element that collapses and much tighter spacing.</p>
+    </section>
+    <section class='feature' id="show-me-the-numbers">
+      <h2>Number love</h2>
+      <p>As a bit of a number fan, it was about time we gave some love to the analytics part of the dashboard. Vastly improved graphs (google charts), much bigger and cleaner than before, there is also a couple of new ones added in.</p>
+      <p>With the ever increasing mobile usage, we've added in a infographic on the dash to show the percentage split for your website.</p>
+      <p>The other new graph is, of course, browser usage; so now you can monitor the decline of IE without leaving the CMS</p>
+    </section>
+
+    <section class='feature' id="i-feel-the-need">
+      <h2>The need for speed</h2>
+      <p>In recent times there has been a tendancy towards more complicated sites, as what used to be the cutting edge becomes commoditised, more things become standard features.</p>
+      <p>Speed becomes more and more important. One of the slowest parts of the CMS has always been the tree structure, so it was about time that got checked out.</p>
+      <h3>Tree-tastic</h3>
+      <p>Probably the biggest single speed fix in this upgrade was one of the simpliest, once thought about it the other way around. As part of the tree models save it makes a few integratity &amp; validation checks, one of those was to prevent cyclic trees.</p>
+      <p>It turned out that how it had been doing this previously was over-zealous to say the least. It built the entire content tree from the database in order to check that it hadn't been made a child of one of it's own children; on sites with large databases this causes memory issues.<p>
+      <p>What it now does instead is check the new parents upward stack to make sure its not in there. Although this takes a few more DB calls, these are based on indexed columns, so are much more efficient than an entire table scan.</p>
+      <h3>Kids</h3>
+      <p>As the content part fo the CMS operates like a tree, the interface need to let you view a nodes children, if it has any. Originally this was done by making a secondary database call, so on wide trees you can imagine how many that would be.</p>
+      <p>Swapping that over to a simple sub-query in the original SQL solved that in one go.</p>
+      <h3>Permission</h3>
+      <p>One of the features in Wildfire is user permissions, so you can restrict users from doing certain things; that of course means these permissions have to be checked in many places.</p>
+      <p>We do have a cache mechanism for that setup, so permissions are only checked once per render. The permissions operate on a blacklist, so unless you have been blocked from something, your permissions are empty.</p>
+      <p>Unfortunately, there was a slight problem. The cache was not recording empty permissions, so looking them up in the database every time. That is now fixed and it holds a placeholder regardless.</p>
+    </section>
+
+    <section class='feature' id="the-tabs-are-trying-to-get-me">
+      <h2>Attack of the tabs</h2>
+      <p>In a similar vain to the long navigation issues, the content editing pages were just getting too much; large sites ended up with 10 or more tabs accross the top, each with losely related form fields.</p>
+      <p>Now it's much easier. Normally, no more than 3 top level tabs split in to very specific items: content, design &amp; media.</p>
+      <p>Although we still need all of those fields, not every page is an event, or location, so now only the common demoninators are shown, extras are split in to accordions underneath.</p>
+    </section>
+
+    <section class='feature' id="sneaky-peak">
+      <h2>Seeing is believing</h2>
+      <p>In previous versions we've always had a 'preview' button, but this is a bit clunky and forces new windows / tabs to be opened. With the rise of mobile / tablets its become important to cater for those kind of devices, so we've included a customisable way of checking these in our CMS.</p>
+      <p>The design tab on the editing page gives you an iframed version of the page you are editing, as you are editing it. This can also be configured to show repsonsive versions of the page.</p>
+      <p>Obviously, the responsive preview only works for browsers that support media queries</p>
+    </section>
+
+
+    <section class='feature' id="help">
+      <h2>Help</h2>
+      <p>A real sticking point with building and supporting large CMS based sites is remember how to use then! Sometimes you don't need to change things for months at a time (bus routes, quarterly offers etc) and people forget.</p>
+      <p>Wildfire now contains help system for its modules (not all are written yet); by default it gives you the basics, but it can be extended per application to accomodate all of bespoke items.</p>
+      <h3>How?</h3>
+      <p>The system itself works from a simple json config version of the page. When you trigger the help it fetches the json file, goes to the first 'stage' of the help and uses jQuery to clone over the specified elements into an overlay.</p>
+      <p>It moves the cloned items to the position of the original and add highlighting.</p>
+    </section>
+
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+  </body>
+</html>
