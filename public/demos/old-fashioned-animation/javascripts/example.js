@@ -28,7 +28,7 @@ jQuery(document).ready(function(){
 
   });
 
-  jQuery(".play").on("click", function(e){
+  jQuery(".play, #animation_demo").on("click", function(e){
     e.preventDefault();
     jQuery(window).trigger("datacentre.security.initialstate", [true]);
   });
