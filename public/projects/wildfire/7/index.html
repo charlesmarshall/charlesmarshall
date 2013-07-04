@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <title>Version 7 of Wildfire CMS - Projects - Charles Marshall</title>
+  </head>
+  <body id="wildfire-cms">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Wildfire CMS version 7</h1>
+      <p>While working on a couple of larger projects that required tighter integration with multi-media channels such as youtube and flickr. </p>
+      <p>As the CMS already had a basic file system to allow local uploads and render from files saved there it made sense to give this an update.</p>
+      <p>A big change to the how media works under the hood, so any sites running on older versions need some time to upgrade, but otherwise it all looks the same.</p>
+    </section>
+
+    <section class="feature" id="api-for-everyone">
+      <h2>Abstraction</h2>
+      <p>Instead of just giving the file system a quick update, it was time to make it more robust and more flexible. Uploading files to one location is fine, but when you have dozens of videos stretched out accross youtube, vimeo and a few other places you really don't want the pain of having to re-upload them.</p>
+      <p>In a similar vain, storing, transcoding and having cutting edge video playback tech  for all of those videos isn't exactly cost effective when you're already paying for Pro accounts with other providers.</p>
+      <p>With that in mind it made sense to utilise these existing platforms instead of trying to remake the wheel, especially as most have APIs</p>
+    </section>
+
+    <section class="feature" id="giants">
+      <h2>Standing on shoulders</h2>
+      <p>It made a lot of sense to make use providers such as youtube and vimeo instead of trying to create our own. They have teams of people keeping their players up to date with the latest standards and platforms so we don't have to.</p>
+      <p>Making a media object which stores some very basic information to uniquely identifiy itself and what kind of media it was (ie youtube / vimeo etc) the standard content to files join is maintained and is simple enough to upgrade from <a href="/projects/wildfire/6.pretty/">v6.pretty</a> style to this method.</p>
+    </section>
+
+    <section class="feature" id="k-i-s-s">
+      <h2>Keeping it simple</h2>
+      <p>The way the code accesses and uses the media changes slightly, but kept it nice and simple with all work being done for you.</p>
+      <p>As the media knows what kind of item it is, it handles what it returns. It creates the right classes and calls the right methods so you end up with an img, iframe or whatever is suitable.</p>
+      <p>Not all sites need this kind of complexity, so we've kept the standard file upload to server style in, but 3rd party based media is split to their own respective plugins.</p>
+      <p>Most 3rd party APIs require OAUTH or similar to make use of them, but there are files included to help sort that.</p>
+    </section>
+
+    <section class="feature" id="sync-it">
+      <h2>Go fetch</h2>
+      <p>Once the website is authorised and configured, you of course want to sync your videos / images from that source, so that is built in as well.</p>
+      <p>As part of the new media section you can use the sync tool to update the CMS; you just need to click the button and follow the wizard. It will fetch all the information it needs, tag them and add them to your media library.</p>
+    </section>
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+  </body>
+</html>

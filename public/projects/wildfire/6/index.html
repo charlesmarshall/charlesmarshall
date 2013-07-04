@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="wildfire-overview">
+<html lang="en" id="projects">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
@@ -7,15 +7,16 @@
 
     <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
 
-    <title>Version 6 of Wildfire CMS - PHP Project - Charles Marshall</title>
+    <title>Version 6 of Wildfire CMS - Projects - Charles Marshall</title>
   </head>
-  <body>
+  <body id="wildfire-cms">
 
     <header id="header">
       <nav id="navigation" class='clearfix'>
-        <a href="/">Home</a>
-        <a href="/statistics/">Statistics</a>
-        <a href="/projects/" class='active'>Projects</a>
+        <a href="/" class='home'>Home</a>
+
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
       </nav>
     </header>
 
@@ -75,9 +76,7 @@
 
       <p>As we now only had a single Content model, language support became much easier. This version of the CMS was to support multiple languages out of the box with just some basic config changes required to enabled as many as you need.</p>
       <p><a href="https://github.com/phpwax/wildfire/commit/f029c3e3b7516db97389c1bfc6c415c62ceb4498">Right at the start of the rewrite</a> there are some commits dedicated to adding this in to the mapping mechanism within the CMS:</p>
-
       <p>However, with the changes made to make content lookups faster (see below) this was altered qute a lot and eventutally became a static array quite low down in the MVC stack.</p>
-      <!-- insert updated version of code -->
       <p>Ensuring utf-8 is being used on the connections to the database for PDO and various string functions etc are utf-8 safe was arduous at times, but worthwhile. Certain parts of this are still going to be dependant on the individual application to respect the charset being used etc.</p>
 
     </section>
@@ -124,7 +123,7 @@
     </section>
 
     <section id="bits" class='feature'>
-      <h2>Odds and Sodds</h2>
+      <h2>Odds and sodds</h2>
       <p>Outside of the key features there were many other things changed in this version; almost every file was changed in some way. While I don't want to go in to extreme detail, here are some of the highlights.</p>
       <h3>New editor, with templates</h3>
       <p>During the development of version 6 we replaced our text editor. Moving over from WYM Editor to TinyMCE gave us a lot of javascript coding to do, but it gives a more rounded experience and has neater ties with jQuery, which is what we mostly use in the CMS.</p>

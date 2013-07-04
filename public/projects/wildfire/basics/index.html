@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="wildfire-overview">
+<html lang="en" id="projects">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
@@ -9,29 +9,66 @@
 
     <title>Wildfire CMS Principles and Basics - Charles Marshall</title>
   </head>
-  <body>
+  <body id="wildfire-cms">
 
     <header id="header">
       <nav id="navigation" class='clearfix'>
-        <a href="/">Home</a>
-        <a href="/statistics/">Statistics</a>
-        <a href="/projects/" class='active'>Projects</a>
+        <a href="/" class='home'>Home</a>
+
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
       </nav>
     </header>
 
     <section id="intro">
-      <h1>Wildfire CMS - Principles &amp; Basics</h1>
+      <h1>Wildfire CMS - Basics</h1>
       <p>I won't go in to too much detail  here, instead just keeping a very abstract description of how the system works and what it provides.</p>
       <p>If you do want to have an in depth look at what the CMS does, I would recommend heading to our stand alone site (<a href="http://wildfirecms.com/">wildfirecms.com</a>) or the <a href="https://github.com/phpwax/wildfire">github project page</a>.</p>
-    </section>
-
-    <section class="feature" id="how-it-works">
-      <h2></h2>
-
+      <p>If you are game for jumping straight in, you can grab the <a href="https://github.com/phpwax/wax-site">skeleton site from github</a></p>
     </section>
 
 
+    <section class="feature" id="like-water">
+      <h2>Go with the flow</h2>
+      <p>As the CMS sits on top of our existing MVC stack using it is very simple and unobtrusive. All you need to do is add it as a plugin (or as composer item), extends the provided controller instead of the basic and call a couple of functions.</p>
+      <p>From that point the CMS listens incoming requests and decides what to do with them.</p>
+    </section>
 
+    <section class="feature" id="catch-me-if-you-can">
+      <h2>Interception</h2>
+      <p>The default controller (PageController) calls a function of the cms, called cms (very creative).  That functions does a few things, but heres the core of it:</p>
+      <div class='process-diagram diagram'>
+        PHPWax->CMS: Intercepts URL
+        CMS->Method Check: Is this a static webpage?
+        Method Check-->PHPWax: Yes, so return
+        CMS->Stack: No, so create a stack from URL
+        Stack->Lang: Check &amp; set language
+        Lang->DB: Check for URL in DB
+        DB->Error: If not found, throw a 404
+        DB-->PHPWax: Set data &amp; return
+      </div>
+    </section>
+
+
+    <section class="feature" id="provisions">
+      <h2>Goodies</h2>
+      <p>Once the CMS has matched the URL up to an actual CMS entry, you get all sorts of handy features ready for you to use &amp; abuse.</p>
+      <p>The main object you want, is <code>$cms_content</code>; that contents all the details of the content item and lets you access images, copy etc.</p>
+      <p>If you run the option <code>cms_stacks()</code> function you will also get <code>$content_object_stack</code> containing all items in the tree (upwards) &amp; <code>$top_level</code>, a var containing the root of the tree.</p>
+    </section>
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src="/javascripts/raphael-min.js"></script>
+    <script src="/javascripts/underscore-min.js"></script>
+    <script src="/javascripts/sequence-diagram-min.js"></script>
+    <script>
+    jQuery(document).ready(function(){
+      jQuery(".diagram").sequenceDiagram({theme: 'simple'});
+    });
+    </script>
 
   </body>
 </html>
