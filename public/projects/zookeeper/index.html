@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>ZooKeeper - Projects - Charles Marshall</title>
+  </head>
+  <body id="zookeeper">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>ZooKeeper</h1>
+      <p>A project management system I built for internal use at One Black Bear. We use this, as the name suggests, to run the day to day operations of what's going on within the company as well as tracking income &amp; expenditure.</p>
+      <p>An extensive feature set of tools and reports it keeps you up to date and running on time.</p>
+    </section>
+
+    <section id="pretty-pictures" class='feature gallery'>
+      <a rel="gallery" href="/projects/zookeeper/gallery/dash.png" class='fancybox'><img src="/projects/zookeeper/gallery/dash.png" alt="Dashboard"></a>
+      <a rel="gallery" href="/projects/zookeeper/gallery/schedule.png" class='fancybox'><img src="/projects/zookeeper/gallery/schedule.png" alt="scheduling page"></a>
+      <a rel="gallery" href="/projects/zookeeper/gallery/job.png" class='fancybox'><img src="/projects/zookeeper/gallery/job.png" alt="Job details page"></a>
+      <a rel="gallery" href="/projects/zookeeper/gallery/pie.png" class='fancybox'><img src="/projects/zookeeper/gallery/pie.png" alt="Job reports"></a>
+      <a rel="gallery" href="/projects/zookeeper/gallery/bar.png" class='fancybox'><img src="/projects/zookeeper/gallery/bar.png" alt="More reports"></a>
+      <a rel="gallery" href="/projects/zookeeper/gallery/combo.png" class='fancybox'><img src="/projects/zookeeper/gallery/combo.png" alt="Combo charts"></a>
+      <a rel="gallery" href="/projects/zookeeper/gallery/billable.png" class='fancybox'><img src="/projects/zookeeper/gallery/billable.png" alt="Billable work"></a>
+    </section>
+
+    <section class='feature' id="take-me-to-your-admin">
+      <h2>Roles, rates &amp; teams</h2>
+      <p>ZooKeeper has the concept of teams (or departments), rates and roles. These effect how &amp; what you see and have access to within the system.</p>
+      <h3>Roles</h3>
+      <p>These are like your typical access levels; staff, admin &amp; owner.</p>
+      <p>Your standard member of staff can use the day to day things, time tracking, job creation and similar.</p>
+      <p>An admin gains some extra features, scheduling abilities and access to basic reporting tools</p>
+      <p>The top level, owner, can see everything on the system.</p>
+      <h3>Focused</h3>
+      <p>Everyone is different, and so are their needs. Along with a role, you can set a 'focus' for each staff member, allowing them to see different things.</p>
+      <p>We typically have a team admin view, a project manager style layout and a higher company overview. As you can imagine the admin view gives you lots of information about work needing to be schedule, team availability etc.<p>
+      <p>Project managers need a different kind of view, details about budget, deadlines, and briefs that need more information etc.</p>
+      <p>Of course someone like the MD would need more details about finances, so there's a focus for that too.</p>
+      <h3>Teams</h3>
+      <p>Companies are generally split up in to some form of departmental / division / team structure, including ourselves. Being a bit blurry on where some teams start and others end, ZooKeeper allows for multiples so one staff member can be in as many as you need.</p>
+      <h3>Variable rates</h3>
+      <p>Different people normally cost different amounts; a senior experienced member of staff should cost more than the intern. You'd think then that you could just add a hourly cost to a member of staffs profile, but there are issues with that.</p>
+      <p>The best laid plans don't always work out, you might of originally planned for the junior to work on something, but due to illness or other issues a departmental head has had to pick it up. </p>
+      <p>To avoid these kind of situtations ZooKeeper has multiple rates and you can pick which to use when creating a task.</p>
+    </section>
+
+    <section class='feature' id="concepts">
+      <h2>Jobs &amp; tasks</h2>
+      <p>Instead of just a single level, ZooKeeper has a concept of multiples. A Job is your overarching ideal, like 'Build awesome website', and the tasks are the granular parts of that, such as 'Design super cool home page', 'Develop google super smart search tool'.</p>
+      <p>Due to this, the job information is quite sparse, a title, client and a few basics, the details all shift on to the individual tasks.</p>
+      <p>The task is assigned to a team, with an hourly rate, due dates and all that jazz.</p>
+    </section>
+
+    <section class='feature' id="im-free">
+      <h2>Billable or not</h2>
+      <p>While you're setting up a job you get to choose how it's paid for; it can either be unbillable, costed or from a fee. This is then used in the reporting system to determine the efficency / profit of the job &amp; client within the monthly or quartly reports.</p>
+    </section>
+
+    <section class='feature' id="last-orders">
+      <h2>Time please</h2>
+      <p>Of course you can't do useful reporting without tracking how long things took to do and ZooKeeper comes with a great timing system.</p>
+      <p>All your assigned tasks are visible on every page, with just a simple button click to start recording your time. Once one is running, it keeps on tracking until you tell it not to, even if you close the page, or even the browser.</p>
+      <p>By making use of HTML5 localStorage ZooKeeper stores and syncs your time whenever it can connect.</p>
+    </section>
+
+    <section class='feature' id="can-i-have-graph-with-that">
+      <h2>Reports</h2>
+      <p>A vast array of reporting tools are included in ZooKeeper and of course a good chunk of those are graphs, making it as easy as possible to see what is going on.</p>
+      <h3>Charts</h3>
+      <p>With pie, column and combo charts ZooKeeper uses various ways to best show data. Information like actual hours vs targeted hours over a month is best expressed as a combo, where as something like what percentage each of available time does a client use each month would be best in a pie chat.</p>
+      <p>You can see some of the graphs used in the image gallery at the top of this page.</p>
+      <h3>Exports</h3>
+      <p>Sometimes you need something more than graph or you need to be able to give other that information without giving them access to ZooKeeper. For those kinds of situtations we have various export options.</p>
+      <p>Virtually every page on ZooKeeper can be exported to a PDF and the vast majority as a CSV.</p>
+    </section>
+    <section class='feature' id='beta-please'>
+      <h2>What to try it out?</h2>
+      <p>ZooKeeper is still being worked on and I have lots left to do on it, but if you are interested in testing it out or being a tester, head on over to <a href="http://zookeeper.pm">the main website</a> and request an invite.</p>
+    </section>
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+  </body>
+</html>
