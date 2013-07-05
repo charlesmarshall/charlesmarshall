@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" id="demos">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <!-- CSS FOR THIS DEMO -->
+    <link rel="stylesheet" href="/demos/css3-filters/stylesheets/styles.css" type="text/css" media="all" charset="utf-8" >
+    <title>CSS3 Filters - Demos - Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+
+
+    <section id="intro">
+      <h1>CSS3 filters</h1>
+      <p>Some nice filter effects have been introduced in the CSS3 spec, support is coming, so here is some playing around with them.</p>
+      <p>These are just one filter at a time, but they can be chained together.</p>
+    </section>
+
+    <section class="example_block">
+      <img src="/demos/css3-filters/birmingham-night.jpg" alt="Birmingham at night">
+      <div class='picker'>
+        <a href="#" class='button clearfix' data-class="blur"><span>Blur</span></a>
+        <a href="#" class='button clearfix' data-class="greyscale"><span>Grey scale</span></a>
+        <a href="#" class='button clearfix' data-class="sepia"><span>Sepia</span></a>
+        <a href="#" class='button clearfix' data-class="brightness"><span>Brightness</span></a>
+        <a href="#" class='button clearfix' data-class="huerotate"><span>Hue rotate</span></a>
+        <a href="#" class='button clearfix' data-class="invert"><span>Invert</span></a>
+        <a href="#" class='button clearfix' data-class="saturate"><span>Saturate</span></a>
+      </div>
+    </section>
+
+    <section class='feature' id="show-tell">
+      <h2>For the curious</h2>
+      <p>If you are interested, here are the files used for this:</p>
+      <a href="/demos/css3-filters/javascripts/javascript.js" class='button clearfix'><span class='action'>►</span><span>Javascript</span></a>
+      <a href="/demos/css3-filters/stylesheets/styles.css" class='button clearfix'><span class='action'>►</span><span>CSS</span></a>
+    </section>
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+
+    <!-- JS FOR THIS DEMO -->
+    <script src='/demos/css3-filters/javascripts/javascript.js'  type='text/javascript'></script>
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
