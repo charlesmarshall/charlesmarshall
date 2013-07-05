@@ -1,0 +1,37 @@
+.example_block{
+  padding:40px;
+  background: #fff;
+}
+
+.uploading_container{
+  width:50%;
+  margin:auto;
+}
+
+.drop-area{
+  border:6px dashed #000;
+  height:150px;
+  margin-bottom:30px;
+}
+
+.fu-dragenter{
+  background:#edeaff;
+}
+
+.file-list{
+  padding:10px;
+  min-height:150px;
+  border:6px dashed #049704;
+}
+
+.file-summary{
+  padding:8px 0;
+}
+  .file-summary img{
+    margin-right:10px;
+  }
+  .file-summary strong,
+  .file-summary span{
+    display:inline-block;
+    margin-right:10px;
+  }

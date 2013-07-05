@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" id="demos">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <!-- CSS FOR THIS DEMO -->
+    <link rel="stylesheet" href="/demos/html5-upload/stylesheets/styles.css" type="text/css" media="all" charset="utf-8" >
+    <title>Demos - Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+
+
+    <section id="intro">
+      <h1>HTML5 Upload</h1>
+      <p>This is actually a modified version of what is used in <a href="/projects/wildfire/6.pretty/">Wildfire CMS v6.pretty</a>, from around 2011.</p>
+      <p>In this example I'm sending the data to this page, so it will always trigger 100% and not show the file upload progress bar.</p>
+    </section>
+
+    <section class="example_block">
+
+      <div class='index_container clearfix uploading_container'>
+        <h2>Drag a file into this box</h2>
+        <div class='data_info'>
+          <div class='drop-area clearfix'></div>
+          <h2>Uploaded files are shown below</h2>
+          <div class='file-list drop-list clearfix'></div>
+        </div>
+      </div>
+
+    </section>
+    <section class='feature' id="extras">
+      <h2>Not just the file</h2>
+      <p>In the version of this used in our <a href="/projects/wildfire/6.pretty/">CMS</a> we also send along tags as part of the xhr request; but you can send pretty much any extra information you want.</p>
+      <p>All you need to do is add it to the request header before you do the send, so something like this:</p>
+      <p><code>xhr.setRequestHeader("X-File-Categories", "Photos");</code></p>
+    </section>
+    <section class='feature' id="show-tell">
+      <h2>For the curious</h2>
+      <p>If you are interested, here are the files used for this:</p>
+      <a href="/demos/html5-upload/javascripts/upload.js" class='button clearfix'><span class='action'>►</span><span>Javascript</span></a>
+      <a href="/demos/html5-upload/stylesheets/styles.css" class='button clearfix'><span class='action'>►</span><span>CSS</span></a>
+    </section>
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+
+    <!-- JS FOR THIS DEMO -->
+    <script src='/demos/html5-upload/javascripts/upload.js'  type='text/javascript'></script>
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
