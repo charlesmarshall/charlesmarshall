@@ -235,8 +235,8 @@ h4.date{
 }
   .old .tile{
     height:190px;
-    width:18%;
-    margin-right:2.5%;
+    width:15%;
+    margin-right:1.5%;
   }
   .old .tile img{
     width:100%;
@@ -245,9 +245,9 @@ h4.date{
     margin-right:0;
   }
   .old .tile:nth-child(4n){
-    margin-right:2.5%;
+    margin-right:1.5%;
   }
-  .old .tile:nth-child(5n){
+  .old .tile:nth-child(6n){
     margin-right:0;
   }
   .wip{
@@ -285,41 +285,63 @@ h4.date{
     line-height: 1.4em;
   }
   @media only screen and (max-width: 800px){
-    .tile{
+    .tile,
+    .old .tile{
       width:32%;
       margin-right:2%;
     }
-    .tile:nth-child(4n),
-    .old .tile:nth-child(5n){
-      margin-right:2%;
+    .tile img{
+      max-width:100%;
+    }
+    .tile:nth-child(4n){
+      margin-right: 2%;
     }
     .tile:nth-child(3n){
       margin-right: 0;
     }
+    .old .tile{
+      width:22%;
+      margin-right:4%;
+    }
+    .old .tile:nth-child(3n),
+    .old .tile:nth-child(6n){
+      margin-right:4%;
+    }
+    .old .tile:nth-child(4n){
+      margin-right:0;
+    }
   }
   @media only screen and (max-width: 550px){
-    .tile{
+    .tile,
+    .old .tile{
       width:48%;
       margin-right:4%;
     }
-    .tile:nth-child(2n){
+    .tile:nth-child(2n),
+    .old .tile:nth-child(2n){
       margin-right: 0;
     }
-    .tile:nth-child(4n){
+    .tile:nth-child(4n),
+    .old .tile:nth-child(4n),
+    .old .tile:nth-child(6n){
       margin-right: 0;
     }
     .tile:nth-child(3n),
-    .old .tile:nth-child(5n){
+    .old .tile:nth-child(5n),
+    .old .tile:nth-child(3n){
       margin-right: 4%;
     }
   }
   @media only screen and (max-width: 400px){
-    .tile{
+    .tile,
+    .old .tile{
       width:100%;
       margin-right:0;
     }
 
   }
+
+
 /***
   * HEADERS
   */

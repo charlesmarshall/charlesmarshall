@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" id="demos">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Regular Expressions - Demos - Charles Marshall</title>
+  </head>
+  <body id="iterators">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Regular Expressions</h1>
+      <p>At some point in time you always end up having to write a regular expression to parse something. In the web, it’s normally because the site/service you want to use doesn’t provide and API, so you end up scrapping the page and having to rip the data out. Sometimes you need them for something simple, like finding links inside a block of plain text.</p>
+      <p>The common problem, I can never remember them and end up redoing them each time, so I’m listing some here.</p>
+      <p>As most of these include /‘s &amp; similar I normally use # as the pattern delimiter so I don’t have to back slash them and as I work mostly in PHP, the code will be PHP code.</p>
+    </section>
+    <section class='feature' id='uri'>
+      <h2>URLs in plain text</h2>
+      <p>With everyone wanting their latest tweet on their websites this is a pretty common case. You can use the plain text version of the tweet from the persons RSS feed (no need for oauth) and replace and urls with a working anchor tag:</p>
+      <p><code>$tweet = preg_replace('@(https?://([ -\w\.]+)+(:\d+)?(/([\w/_\.\-\%]*(\?\S+)?)?)?)@i', '&lt;a href="$1"&gt;$1&lt;/a&gt;', $tweet);</code></p>
+      <p><small>Note - this doesn't like brackets in the URL, need to fix that</small></p>
+    </section>
+
+    <section class='feature' id='date-time'>
+      <h2>Find date &amp; time</h2>
+      <p>Sometimes you need to pull out a date & time from a block of copy (like an email) in an automated way.</p>
+      <p><code>preg_match_all('#([0-9-]{4}-[0-9]{2}-[0-9]{2}\s{1}[0-9]{2}:[0-9]{2}:[0-9]{2}|[0-9-]{4}-[0-9]{2}-[0-9]{2})#i', $copy, $matches);</code></p>
+    </section>
+
+    <section class='feature' id='postcode'>
+      <h2>Find date &amp; time</h2>
+      <p>Several of our sites have geo-location based services (like finding your nearest dealer for example) and like to incorporate those into the main search facility.</p>
+      <p>We take what you entered and use a regex to guess if what you typed conforms to a postcode.</p>
+      <p><code>preg_match('#^([A-z]{1,3}[0-9]{1,2})+#i', $search_string);</code></p>
+      <p>If it matches, then we look for a dealer nearby.</p>
+    </section>
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
