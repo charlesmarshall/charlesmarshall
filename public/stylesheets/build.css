@@ -123,6 +123,11 @@ h4{
   padding:0 0 0 0;
   color:#333333;
 }
+h4.date{
+  font-size: 18px;
+  font-weight:bold;
+  font-family: 'Oleo Script', cursive;
+}
 
 
 /***
