@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <title>Bloorhomes - Projects & Websites- Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Bloorhomes</h1>
+      <h4 class='date'>2<sup>nd</sup> April 2011</h4>
+      <p>With a higher rate of adoption of ‘class a’ browsers the new bloorhomes site has some great features that really push the boundaries of current technology.</p>
+      <a href="http://bloorhomes.com" class='button clearfix'><span class='action'>►</span><span>Visit bloorhomes</span></a>
+      <a href="http://m.bloorhomes.com" class='button clearfix'><span class='action'>►</span><span>Visit bloorhomes mobile site</span></a>
+    </section>
+
+    <section class='feature'>
+      <h2>SVG</h2>
+      <p>As your typical development has hundreds of plots, sometimes even thousands, one of the key factors to address is the laborious task of adding information for each of these plots. As you can imagine this data is very important to the people visiting but if you had to do it by hand it would take hours.</p>
+      <p>Obviously, we needed to automate this process; SVG's to the rescue.</p>
+    </section>
+
+    <section class='feature'>
+      <h2>SVG import</h2>
+      <p>All development layouts are already generated within Illustrator, so getting that data to a SVG is easy (that’s why we picked them). Before the original files are exported to SVG some extra data is added via attributes (plot number, number of rooms, house style etc) and each plot is grouped together. That file is then exported and uploaded to the cms.</p>
+      <p>Once on the cms the code reads and parses the SVG file creating or updating plots and matching them up with styles. This means your typical development is now ready to go in a few minutes.</p>
+    </section>
+
+    <section class='feature'>
+      <h2>Front end SVG usage</h2>
+      <p>As the development now has an SVG attached to it, its time to do some cool front end things with it. All zooming &amp; panning are built in SVG features, so thats great, but not very useful.</p>
+      <p>To give the layouts something extra they have some nice javascript interactions:</p>
+      <ul>
+        <li>Hovering on the plot listings highlights the matching area on the layout</li>
+        <li>Hovering on the layout displays plot information</li>
+        <li>The on hover details can be automatically opened via the url</li>
+      </ul>
+      <p>Along with loots of other nice bits.</p>
+    </section>
+
+    <section class='feature'>
+      <h2>Mobile</h2>
+      <h4 class='date'>4<sup>th</sup> May 2011</h4>
+      <p>As "smart phone" usage &amp; popularity increases so does the number of people surfing the web via such a device. With information &amp; asset heavy sites it makes sense to have a simplified version for those as the normal mobile connection is a bit rough around the edges.</p>
+      <p>As part of Bloor Homes project we’ve now launched <a href="http://m.bloorhomes.com">the mobile site</a> to suit those users who are on flakey 3G and don’t want to load up large images etc.</p>
+    </section>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
