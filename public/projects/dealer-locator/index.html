@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <title>Dealer Locator - Projects & Websites- Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Dealer Locator</h1>
+      <p>Having recently completed an upgrade of the Subaru and Isuzu national website Dealer locator I thought I'd tell you a bit about it.</p>
+      <p>The locators, originally run off Multimap, now use the Google maps system. The project required a fast turnaround and was completed for both brands within two weeks of receiving the brief.</p>
+      <p>By using Google maps IM Group (Subaru UK and Isuzu UK's parent company) has saved over &pound;20,000 and improved their service to site visitors.</p>
+      <p>The new system is faster, allowing for live information, filtering of sales, servicing &amp; parts dealers and the re-designed interface makes finding a dealer even simpler.</p>
+    </section>
+
+    <section class='feature' id="tech-tastic">
+      <h2>Looking at the tech..</h2>
+      <p>As mentioned above this new dealer locator is faster and smoother than before. Speed kills; if a page is slow to load then people are going to give up and assume it's not working.</p>
+      <p>With a map system of this nature, large amounts of data are flying around the place doing everything possible to make the site slow. To keep the speed in check we use many things from boring old compression to new fangeled ajax loads, but there has to be a balance.</p>
+      <p>We load the primary map components and wait until the page has loaded before going and fetching all the dealer data. As a nice little visual cue an obligatory loading box appears.</p>
+      <p>Now all the data is in, we're good to go! The searching is kept nice and accurate using the google search API on top of their map API to ensure a greater level accuracy. Couple this with some clever bounding calculations and an appropriate coordinate and zoom level is found to show the user some dealers and a marker of the search point.</p>
+      <p>To help you choose the right dealer, the list is reordered according to proximity, so your nearest dealer is on top. You can get some directions, view their used car range or read more about them right on this page.</p>
+      <p>The directions are pretty close to exact, with it taking you to the stored co-ordinates of the dealer you selected and with google's system there is now a print option, so no way to get lost on the way (hopefully)!</p>
+      <p>If you don't fancy a drive, the used car stock is just a click away; the same loading box appears to let you know we are checking their website, if we can get it, we then show you their details right there. This should mean that comparing what your local dealers have in stock just got a whole bunch easier.</p>
+      <p>When you find a dealer you like the look of you can have a quick read about them by clicking the more details.</p>
+      <p>This new version of the dealer locator should help users of both websites; with more features to come.</p>
+      <h3>See it in action..</h3>
+      <p>You can see the dealer locators at either <a href="http://subaru.co.uk">Subaru</a>, <a href="http://isuzu.co.uk">Isuzu</a> or <a href="http://greatwallmotor.co.uk/">Great Wall</a>.</p>
+    </section>
+
+    <section class='feature' id="replay">
+      <h2>Updates &amp; rewrites</h2>
+      <p>EDIT (Aug 02 2009): Due to an increasing number of dealers the map is starting to chug a little bit in older javascript engines (yes, I'm looking at you IE). I will re-write the javascript to make it smarter and have a lower memory footprint, speeding up its performance.</p>
+      <h3>More updates</h3>
+      <p>With a new version of google maps api coming though, the tech has been re-visited again to update to the latest version. This new version of maps comes with built in Street view.</p>
+      <h3>Changes...</h3>
+      <p>The ever changing landscape of web enabled devices means we've done some more tweaking to make these dealer locators tablet friendly.</p>
+    </section>
+
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

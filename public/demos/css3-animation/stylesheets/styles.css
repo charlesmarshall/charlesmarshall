@@ -1,0 +1,103 @@
+.example_block{
+  background: #9dc7f1;
+  overflow: hidden;
+}
+/** animations **/
+
+@-webkit-keyframes moveCloud {
+  0% { left:0px;}
+  100% { left:100%;}
+}
+@-moz-keyframes moveCloud {
+  0% { left:0px;}
+  100% { left:100%;}
+}
+@-o-keyframes moveCloud {
+  0% { left:0px;}
+  100% { left:100%;}
+}
+@keyframes moveCloud {
+  0% { left:0px;}
+  100% { left:100%;}
+}
+
+@-webkit-keyframes moveBus {
+  0% { left:40%;-webkit-transform:scale(0);bottom:-10px;}
+  100% { left:0%;-webkit-transform:scale(1);bottom:40px;}
+}
+@-moz-keyframes moveBus {
+  0% { left:40%;-moz-transform:scale(0);bottom:-10px;}
+  100% { left:0%;-moz-transform:scale(1);bottom:40px;}
+}
+@-o-keyframes moveBus {
+  0% { left:40%;-o-transform:scale(0);bottom:-10px;}
+  100% { left:0%;-o-transform:scale(1);bottom:40px;}
+}
+@keyframes moveBus {
+  0% { left:40%;transform:scale(0);bottom:-10px;}
+  100% { left:0%;transform:scale(1);bottom:40px;}
+}
+
+
+/** segment 1 **/
+.natex{
+  width:100%;
+  position: relative;
+  height:450px;
+}
+.natex #segment1{
+  background:#acd2f1;
+}
+
+.natex #segment1 .background{
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:0;
+}
+
+
+.natex #segment1 .cloud{
+  height:90%;
+  margin-left:-80%;
+}
+.natex #segment1 .cityscape{
+  width:105%;
+}
+.natex #segment1 .coventrybus,
+.natex #segment1 .westmidsbus{
+  bottom:40px;
+}
+
+.natex #segment1 .coventrybus{
+  z-index:1;
+  margin-left:50%;
+  max-width:28%;
+
+}
+.natex #segment1 .westmidsbus{
+  z-index:2;
+  margin-left:66%;
+  max-width:28%;
+}
+
+
+
+  /** animation **/
+  .natex #segment1.animate .cloud{
+    left:100%;
+    -webkit-animation: moveCloud 25s linear;
+    -moz-animation: moveCloud 25s linear;
+    -o-animation: moveCloud 25s linear;
+    animation: moveCloud 25s linear;
+  }
+
+  .natex #segment1.animate .coventrybus,
+  .natex #segment1.animate .westmidsbus{
+    -webkit-animation: moveBus 5s linear;
+    -moz-animation: moveBus 5s linear;
+    -o-animation: moveBus 5s linear;
+    animation: moveBus 5s linear;
+  }
+
+

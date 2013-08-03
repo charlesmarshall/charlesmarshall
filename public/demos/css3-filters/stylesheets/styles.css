@@ -6,14 +6,18 @@
 .example_block img,
 .picker{
   width:50%;
+  min-width: 580px;
   max-width:849px;
   margin:0 auto 20px auto;
 }
 .example_block img{
   display: block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   -moz-filter:none;
   filter:none;
+}
+.picker{
+  margin-bottom: 0;
 }
 
 /** FILTERS **/

@@ -203,17 +203,37 @@ h4{
 .grid{
   background:none;
 }
+
+
+
 .tile{
   float:left;
-  width:200px;
+  width:22%;
   height:230px;
-  margin-right:20px;
+  margin-right:4%;
   margin-bottom:20px;
   padding:20px;
   display:block;
   text-decoration: none;
   background: #f2f2f2 repeat top left;
 }
+  .old .tile{
+    height:190px;
+    width:18%;
+    margin-right:2.5%;
+  }
+  .old .tile img{
+    width:100%;
+  }
+  .tile:nth-child(4n){
+    margin-right:0;
+  }
+  .old .tile:nth-child(4n){
+    margin-right:2.5%;
+  }
+  .old .tile:nth-child(5n){
+    margin-right:0;
+  }
   .wip{
     opacity: 0.8;
     background-image: url('/images/stripe.png');
@@ -221,6 +241,11 @@ h4{
   .tile:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     background-color: #fff;
+  }
+  .tile article{
+    overflow: hidden;
+    height:100%;
+    width: 100%;
   }
   .tile img{
     display:block;
@@ -234,10 +259,50 @@ h4{
     text-align: center;
     font-size:26px;
   }
-  .tile p{
+  .old .tile h2,
+  .old .tile h3{
+    font-size:18px;
+  }
+  body .tile p{
     margin:8px 0 0 0;
     font-size:12px;
     line-height: 1.4em;
+  }
+  @media only screen and (max-width: 800px){
+    .tile{
+      width:32%;
+      margin-right:2%;
+    }
+    .tile:nth-child(4n),
+    .old .tile:nth-child(5n){
+      margin-right:2%;
+    }
+    .tile:nth-child(3n){
+      margin-right: 0;
+    }
+  }
+  @media only screen and (max-width: 550px){
+    .tile{
+      width:48%;
+      margin-right:4%;
+    }
+    .tile:nth-child(2n){
+      margin-right: 0;
+    }
+    .tile:nth-child(4n){
+      margin-right: 0;
+    }
+    .tile:nth-child(3n),
+    .old .tile:nth-child(5n){
+      margin-right: 4%;
+    }
+  }
+  @media only screen and (max-width: 400px){
+    .tile{
+      width:100%;
+      margin-right:0;
+    }
+
   }
 /***
   * HEADERS
