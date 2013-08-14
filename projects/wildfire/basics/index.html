@@ -68,17 +68,18 @@
     <section class="feature" id="catch-me-if-you-can">
       <h2>Interception</h2>
       <p>The default controller (PageController) calls a function of the cms, called cms (very creative).  That functions does a few things, but heres the core of it:</p>
-      <div class='process-diagram diagram'>
-        PHPWax->CMS: Intercepts URL
-        CMS->Method Check: Is this a static webpage?
-        Method Check-->PHPWax: Yes, so return
-        CMS->Stack: No, so create a stack from URL
-        Stack->Lang: Check &amp; set language
-        Lang->DB: Check for URL in DB
-        DB->Error: If not found, throw a 404
-        DB-->PHPWax: Set data &amp; return
-      </div>
+
     </section>
+    <div class='process-diagram diagram'>
+      PHPWax->CMS: Intercepts URL
+      CMS->Method Check: Is this a static webpage?
+      Method Check-->PHPWax: Yes, so return
+      CMS->Stack: No, so create a stack from URL
+      Stack->Lang: Check &amp; set language
+      Lang->DB: Check for URL in DB
+      DB->Error: If not found, throw a 404
+      DB-->PHPWax: Set data &amp; return
+    </div>
 
 
     <section class="feature" id="provisions">
