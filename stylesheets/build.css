@@ -390,6 +390,12 @@ h4.date{
     background:#1C1C1C;
   }
 /***
+  * demos
+  */
+.example_block{
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+/***
   * HOME PAGE - Wildfire
   */
 
