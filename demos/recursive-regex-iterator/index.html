@@ -54,7 +54,7 @@
       <p>As one the of big parts of our php wax framework we recursively scan over a set of directories and find all the php files. This did throw up quite a few performance issues over the course of developing wax, which I'll go over.</p>
     </section>
     <section class='feature' id='ice-ice-baby'>
-      <h2>Vanilla Iterators</h2>
+      <h2>Vanilla iterators</h2>
       <p>At the very start of wax we started to use the slightly documented RecursiveDirectoryIterator with the RecursiveIteratorIterator like this:</p>
       <p><code>$dir = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory), true);</code></p>
       <p>However, this gave us a big old problem with hidden files. The iterators themselves only ignore . &amp; .. directories, everything else it will recurse into, including .git folders.</p>
@@ -62,7 +62,7 @@
       <p>We improved this slightly by checking the file name inside the loop that traverses the <code>$dir</code> variable, but that had knock on effect of now having to fetch the file name of all the files, even when they aren&#8217;t php ones.</p>
     </section>
     <section class='feature' id='an-iterator-to-call-my-own'>
-      <h2>Custom Iterator</h2>
+      <h2>Custom iterator</h2>
       <p>To try and combat the extra invocations and reduce the number of the iterations <code>$dir</code> causes we created a custom recursive iterator, <code>WaxRecursiveDirectoryIterator</code>, this is a simple extension of a standard <code>RecursiveDirectoryIterator</code> that overrides the <code>hasChildren</code> method:</p>
       <p><code>
       class WaxRecursiveDirectoryIterator extends RecursiveDirectoryIterator {</p>
@@ -75,7 +75,7 @@
       <p>This worked well, it reduced iteration count substantially by ignoring any folder starting with . (therefore ignoring everything in .git). The downside of this is invocation of getFilename &amp; the performance drop of leaving the raw c class.</p>
     </section>
     <section class='feature' id="the-good-kind-of-final-solution">
-      <h2>Keeping Standard</h2>
+      <h2>Keeping standard</h2>
       <p>Recently we&#8217;ve started looking at some performance and functionality changes and as every page runs though the autoloader, it is very important to get it as quick and light as possible. The majority of the self cost was still the recursive looping.</p>
       <p>After looking around for new ways of doing this, I found the RecursiveRegexIterator. As one of the more obscure iterators, there just isn&#8217;t much in the way of documentation or examples or how it works,</p>
       <p>With some playing around we found the right order to use:</p>
