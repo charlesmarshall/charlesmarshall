@@ -283,6 +283,7 @@ h4.date{
     margin:8px 0 0 0;
     font-size:12px;
     line-height: 1.4em;
+    text-align: center;
   }
   @media only screen and (max-width: 800px){
     .tile,
