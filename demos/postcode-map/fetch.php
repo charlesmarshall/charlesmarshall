@@ -14,7 +14,6 @@ $areas = array(
               "BN",
               "BR",
               "BS",
-              "BT",
               "CA",
               "CB",
               "CF",
