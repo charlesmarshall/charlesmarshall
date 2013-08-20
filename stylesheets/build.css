@@ -206,9 +206,11 @@ h4.date{
     .gallery a{
       display:block;
       margin: 0 0 20px 0;
+      padding-right:20px;
       float:left;
       width:20%;
     }
+
       .gallery a:nth-child(6n){
         clear:both;
       }
@@ -216,7 +218,7 @@ h4.date{
       float:none;
       margin:0;
       width:100%;
-      padding-right:20px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
     }
   .feature .inner{
     margin-left:120px;
