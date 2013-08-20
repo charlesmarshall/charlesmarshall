@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <title>National Express Buses - Projects & Websites- Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>National Express Buses</h1>
+      <h4 class='date'>20<sup>th</sup> October 2010</h4>
+      <p>We've launched the brand new national express buses website in 2010. It had some very nice new features, such as the live service alerts system, maps of the routes, and an overall improved interface, searching and of course tech.</p>
+      <a href="http://nxbus.co.uk" class='button clearfix'><span class='action'>►</span><span>Visit nxbus</span></a>
+      <a href="http://nxbus.mobi" class='button clearfix'><span class='action'>►</span><span>Visit nxbus mobile site</span></a>
+    </section>
+
+    <section class='feature' id="change-tastic">
+      <h2>All in one</h2>
+      <p>Previously all the areas had their own individual websites, domains, admin area and were totally separated. With this new site we have merged all of the previous sites under the single domain, so each share a common identity, layout, structure and functionality.</p>
+      <p>Since the original design we have added some illustrated cityscapes matching the section of the you are viewing; so the bullring shows up for the west midlands, desperate dan for dundee etc.</p>
+    </section>
+
+    <section class='feature' id="data">
+      <h2>Data</h2>
+      <p>As the largest passenger in the West Midlands, the vast majority of bus users in the region use national express services and rely on the website as the first port of call for information, even if it's about another provider.</p>
+      <p>Making sure the new website was up to the job meant getting a lot of data about a lot of buses.</p>
+
+      <h3>Timetables</h3>
+      <p>A vitial function while developing this site was to provide as up to date timetable information as possible and present it in a user friendly way. The previous site showed either a direct link to the centro website or a large html table.</p>
+      <p>Instead, the new site actually imports that data from Centro on a weekly basis. There is a massively complicated set of regular expression that are used to parse out a scraped version of a centro time table page; that data is then re-arranged into a multi-demensional array, the previous version backed up, checked and finally the new data is inserted into a MySQL database table.</p>
+      <p>This process takes in over 20,000 bus stops covering more than 100 routes and with old data being maintained (incase the timetables are wrong) for at least one cycle, the data produced is massive by normal standards.</p>
+      <p>Generaly, the active timetable table has over 1,000,000 entries; combine that with the backup table (normaly about 1,500,000) and the import table (1,000-20,000 depending on what route is being imported) you have an impressively large set.</p>
+      <p>Obviously in a web environment where results and information are expected within a couple of seconds we could not query this data in real time, so we used a caching system for site pages (detailed below).</p>
+
+      <h3>Alerts</h3>
+      <p>A very useful feature added to the site is a very visible area for service alerts. As soon as an alert is added in to the <a href="/projects/wildfire/">CMS</a> the scrolling banner is updated on the home to display what the alert is, and if you click though, which routes it effects.</p>
+      <p>When it comes to bad weather this is a heavily used feature by both visitors and their webmasters alike. It provides a simple and reliable area to find up to date information in times where its need the most.</p>
+      <p>This information is also reflected on the route page for those that are effected, so if you found the page via google or have gone to it direct, so still get the message of what is going on.</p>
+      <p>Being heavily reliant on accurate information the service alert system can also be updated via a simple email format, allowing inspectors to send back reports as and when it is happening.</p>
+
+      <h3>Prices</h3>
+      <p>The price tag is always cruicial. Whenever ticket prices are changed the website has to be updated the same day, accuracy is vitial here. If the price is out by 5%, that might not sound much, but when you do a thousand transactions, it soon adds up.</p>
+      <p>Where possible we sync this data with the ticketing system to ensure the website gets the same information as the phyical tills in shops.</p>
+    </section>
+    <section class='feature' id="load">
+      <h2>Coping with the load</h2>
+      <p>The bus site is a very busy website, with your average day getting ~17k visitors. That isn't too bad, and more than capable of handling that on a simple setup. The real problems start with the huge spikes.</p>
+      <p>Currently the record stands at almost 122,000 visitors in a single day. At one point the site had over 2,500 concurrent visitors and stayed around the ~2,000 mark for many hours.</p>
+      <p>Caused by a heavy snowfall in January that effected all of the UK that lasted for around 3 days the website recieved an entire months worth of traffic. Other situtations like the riots of 2011 have similar effects, but the website has manged to stay up and stable.</p>
+      <h3>Speed</h3>
+      <p>Under heavy load situations the faster you can serve a page the better. Every extra second someone is fetching assets from your server thats one extra second before the next person can start. With small sites thats no much of an issue, but here it is a high priority.</p>
+      <p>Even on an average day the site gets triffic spikes around work &amp; school times of people checking bus routes, lerts and the like. We can see over 100 concurrent requests in these peak times, more than 1 a second.</p>
+      <h3>Nginx</h3>
+      <p>Instead of using apache this site is running an nginx front end that then proxies to apache for dynamic pages. This has saved a reasonable amount of time on each request, nginx handles any static file (images, css, js etc) directly and does so much faster than apache can.</p>
+      <p>With the configuration we have setup on this box it was typically saving about 300ms on a page load.</p>
+      <h3>Static content</h3>
+      <p>As discussed above, there is a lot of data need on this site, and therefore a lot of database calls. The <a href="/projects/phpwax/">PHP</a> &amp; MySQL underpinnings would struggle to get everything fresh from the database and parsed etc in less than a couple a seconds with the load it has; and that is too slow.</p>
+      <p>Instead we run a background caching system. When you visit a page on the website you are actually seeing a saved version of that page that has been written out to disk. The location and cotnent of the file is, of course, based on the URL you are visiting.</p>
+      <p>Behind the scences a visit to a page triggers a parallel process that checks the age of page you visited. If the cached file is out of date, this other process will generate an updated version and save it back to the correct location.</p>
+      <p>This means that the vast majority of the time all you are being served is static files, this really speeds up the page load times.</p>
+      <p>Average server response time is around 150ms with the entire home page (minus 3rd party things) loading in just under a second (987ms)</p>
+    </section>
+
+    <section class='feature' id="homemovers">
+      <h2>Personalised travel data</h2>
+      <p>A hidden, but handy, tool of the website that shows you bus stops &amp; routes that go near to a location you enter. If you put in a post code to the search system you will get redirected to listing with the closet stops and popular destinations. </p>
+      <p>Each stop listed shows you what routes go there, their timetables and map of the route. It also has the ability to show you live bus times.</p>
+    </section>
+
+    <section class='feature' id="mobile">
+      <h2>Mobile</h2>
+      <p>Unsuprisingly a large percentage of people checking bus times and routes are not at their desks / homes, they are actually at a bus stop waiting or on their way to one.</p>
+      <p>Checking the analytics statistics mobile usage has grown consisently and is now getting close to being equal with non-mobile users.</p>
+      <p>With that in mind, there is now a stand alone mobile website, <a href="http://nxbus.mobi">nxbus.mobi</a>, which is cleaner and purely informative. The home page is a search system, with options to find the bus stops near to you and view the timetable data for any route.</p>
+    </section>
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

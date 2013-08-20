@@ -122,11 +122,12 @@ h2 a{
 }
 
 h3{
-  font-size:18px;
+  font-size:24px;
   font-weight:bold;
   margin:0;
   padding:3px 0 0 0;
   color:#333333;
+  font-family: 'Oleo Script', cursive;
 }
 
 h4{
