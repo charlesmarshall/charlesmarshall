@@ -23,7 +23,7 @@ __conf__.prototype.page_timer = 4000;
 __conf__.prototype.push_timer = 700;
 __conf__.prototype.token = "T";
 __conf__.prototype.protocol = "//";
-__conf__.prototype.hostname = "charlesmarshall.dev";
+__conf__.prototype.hostname = "charlesmarshall.co.uk";
 __conf__.prototype.version = "test";
 __conf__.prototype.selectors = [
   {"selector":"input", "event":"blur"},
