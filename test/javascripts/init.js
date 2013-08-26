@@ -5,8 +5,9 @@ function ___XSTART(){
   XR.bindEvents();
 }
 
-function __XeventTriggered(e){
-  var ele = (typeof e.srcElement != "undefined") ? e.srcElement : e.targetElement,
+function __XeventTriggered(e, x){
+
+  var ele = (typeof this != "function") ? this : ( (typeof e.srcElement != "undefined") ? e.srcElement : e.targetElement ),
         val = (typeof ele.value) ? ele.value : ele.href,
         name = (ele.name) ? ele.name : ele.id
        ;
