@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <title>e-know.net - Projects & Websites- Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>e-know.net</h1>
+      <h4 class='date'>16<sup>th</sup> September 2013</h4>
+      <p>That stand out features of this build were the complicated animations used within the data centre and service sections and the custom templates used for content entry.</p>
+      <p>On a side note, it is also one of the first sites to use <a href="/projects/wildfire/7.1/">Wildfire v7.1</a>.</p>
+      <a href="http://www.e-know.net" class='button clearfix'><span class='action'>►</span><span>Visit e-know.net</span></a>
+    </section>
+    <section id="pictures" class="feature gallery">
+      <a rel="gallery" href="/projects/e-know/gallery/home.png" class="fancybox"><img src="/projects/e-know/gallery/home.png" alt="home page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/blog.png" class="fancybox"><img src="/projects/e-know/gallery/blog.png" alt="blog page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/contact.png" class="fancybox"><img src="/projects/e-know/gallery/contact.png" alt="contact page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/services.png" class="fancybox"><img src="/projects/e-know/gallery/services.png" alt="services page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/services-saas.png" class="fancybox"><img src="/projects/e-know/gallery/services-saas.png" alt="services SaaS page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/saas.png" class="fancybox"><img src="/projects/e-know/gallery/saas.png" alt="SaaS page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/data-centre-resilient.png" class="fancybox"><img src="/projects/e-know/gallery/data-centre-resilient.png" alt="data centre page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/template-1.png" class="fancybox"><img src="/projects/e-know/gallery/template-1.png" alt="template page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/template-2.png" class="fancybox"><img src="/projects/e-know/gallery/template-2.png" alt="template page"></a>
+      <a rel="gallery" href="/projects/e-know/gallery/template-3.png" class="fancybox"><img src="/projects/e-know/gallery/template-3.png" alt="template page"></a>
+    </section>
+    <section class='feature' id="animations">
+      <h2>Animations</h2>
+      <p>A big part of this build were the header &amp; data centre animations. As we had to support old versions of IE this meant we had to use javascriot in order to create these effects.</p>
+      <p>By keeping all images the same size as the canvas area this allowed for a simplified animation where everything is in the correct place by defauly and you just have to move images ot the new locations. This kept the css and transitions much cleaner, very is very handy considering how many there are.</p>
+      <p>Each animation stage is triggered within custom jquery event, which itself is called form a bound event on a pagination link.</p>
+      <p>You can see an isolated example of the <a href="/demos/old-fashioned-animation/">animation working on my demo page</a></p>
+    </section>
+    <section class='feature' id="templates">
+      <h2>Content entry templates</h2>
+      <p>To spice up the layout of the page content we created several alternative layouts that can be selected within the editor.</p>
+      <p>This is a built in feature for the last couple of versions of Wildfire CMS, it makes use of TinyMCEs function, but we overwrite it with a dynamic listing created from the CMS.</p>
+      <p>You can see a few of the templates in the image gallery above.</p>
+    </section>
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
