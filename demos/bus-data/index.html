@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" id="demos">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <!-- CSS FOR THIS DEMO -->
+    <link rel="stylesheet" href="/demos/css3-animation/stylesheets/styles.css" type="text/css" media="all" charset="utf-8" >
+    <title>Bus Route Visualisation - Demos - Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+
+
+    <section id="intro">
+      <h1>Bus Route Visualisation</h1>
+      <h4 class='date'>16<sup>th</sup> September 2013</h4>
+      <p>Over the weekend myself and others from One Black Bear (Ross Riley, Gareth Brown and Sheldon Els) got together and built something quite cool.</p>
+      <p>Using the information we handle for National Express we were able to put together a 3d representation of 309 routes that we had information for within the midlands.</p>
+      <p>Below is a simplified version, we're working on adding more features such as postcode search, points of interest and boundary lines.</p>
+      <p>Be warned, this uses webgl and 3js, so doesn't work for everyone (recommend using Chrome) and can be slow on low spec machines.</p>
+      <a href="http://busdata.oneblackbear.com" class='button clearfix'><span class='action'>►</span><span>Visit full site</span></a>
+    </section>
+
+    <section class="example_block" id="routeexample"></section>
+
+    <section class='feature' id="data">
+      <h2>Data</h2>
+      <p>All the data you see is accurate and generated directly from what we use on the main nxbus.co.uk website. We also added in elevation data (via google elevation api) to represent the z axis. Both that and the lat &amp; lng data are simply scaled down a bit to fit into the canvas area.</p>
+      <p>You can see that some of the lines are more vibrant that others, this is from multiple routes crossing that road.</p>
+    </section>
+
+
+    <script src="/demos/bus-data/javascripts/three.min.js"></script>
+    <script src="/demos/bus-data/javascripts/Detector.js"></script>
+
+    <!-- postprocessing -->
+    <script src="/demos/bus-data/javascripts/postprocessing/BloomPass.js"></script>
+    <script src="/demos/bus-data/javascripts/postprocessing/EffectComposer.js"></script>
+    <script src="/demos/bus-data/javascripts/postprocessing/RenderPass.js"></script>
+    <script src="/demos/bus-data/javascripts/postprocessing/ShaderPass.js"></script>
+    <script src="/demos/bus-data/javascripts/postprocessing/MaskPass.js"></script>
+    <script src="/demos/bus-data/javascripts/shaders/CopyShader.js"></script>
+    <script src="/demos/bus-data/javascripts/shaders/ConvolutionShader.js"></script>
+    <script src="/demos/bus-data/javascripts/shaders/FXAAShader.js"></script>
+
+    <!-- app specific -->
+    <script src="/demos/bus-data/data.js"></script>
+    <script src="/demos/bus-data/javascripts/app.js"></script>
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
