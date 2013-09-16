@@ -21,7 +21,7 @@ function init(){
   camera.position.z = 700;
   scene = new THREE.Scene();
   renderer = new THREE.WebGLRenderer({antialias:true});
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(window.innerWidth-100, window.innerHeight);
   container.appendChild(renderer.domElement);
 
   document.addEventListener('mousemove', onDocumentMouseMove, false);
