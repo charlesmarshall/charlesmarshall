@@ -14,11 +14,17 @@
     <form action="" method="post">
       <input type="text" name="blah" value="">
       <textarea></textarea>
-      <select><option value="">test</option><option value="one">one</option></select>
+      <select name="dropdown"><option value="">test</option><option value="one">one</option></select>
 
     </form>
 
-    <script type="text/javascript" src="/test/javascripts/init.js"></script>
+    <script type="text/javascript" >
+    var __AC = "BETA";
+    (function() {
+      var xr = document.createElement('script'); xr.type = 'text/javascript'; xr.async = true; xr.src = '//collecta.co.uk/a/0.1/js/build.js?ac='+__AC;
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(xr, s);
+    })();
+    </script>
 
 </body>
 </html>
