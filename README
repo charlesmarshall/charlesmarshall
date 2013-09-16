@@ -2,3 +2,8 @@ h1 - title case
 h2 - sentence case
 h3 - sentence case
 h4 - title case
+
+
+function beer_o_clock(sun_percentage, numeric_day_of_week){
+ return ((5/numeric_day_of_week) * sun_percentage)/100;
+}
