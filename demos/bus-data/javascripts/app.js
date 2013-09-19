@@ -7,21 +7,28 @@ var mouseX = 0,
     camera,
     scene,
     renderer,
-    material = new THREE.LineBasicMaterial({color:0x14557a, opacity:0.3, transparent:true, linewidth:1, vertexColors:THREE.VertexColors});
+    material;
 
-init();
-data();
-postprocessing();
-animate();
+
+
+
+jQuery(document).ready(function($) {
+  material = new THREE.LineBasicMaterial({color:0x14557a, opacity:0.3, transparent:true, linewidth:1, vertexColors:THREE.VertexColors});
+  init();
+  data();
+  postprocessing();
+  animate();
+});
 
 function init(){
-  var container = document.createElement('div'), sect = document.getElementById("routeexample");
-  sect.appendChild(container);
+  var container = document.createElement('div');
+  container.id = "viewport";
+  document.getElementById("routeexample").appendChild(container);
   camera = new THREE.PerspectiveCamera(33, window.innerWidth / window.innerHeight, 1, 10000);
   camera.position.z = 700;
   scene = new THREE.Scene();
   renderer = new THREE.WebGLRenderer({antialias:true});
-  renderer.setSize(window.innerWidth-100, window.innerHeight);
+  renderer.setSize(window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
 
   document.addEventListener('mousemove', onDocumentMouseMove, false);
@@ -31,28 +38,25 @@ function init(){
 }
 
 function data(){
-  for(var i in routes){
-    for(var j in routes[i]){
+  for(var j in busroutes){
+    var group = busroutes[j];
+    for(var i = 0; i < group.length; i++) {
+      var route = group[i];
       var geometry = new THREE.Geometry(),
           colors = [],
-          position,
-          index,
-          route = routes[i][j],
           spline = new THREE.Spline(route);
+      for(var k = 0; k < route.length; k++) {
+        if(route.hasOwnProperty(k)) {
+          var index = k / (route.length);
+          position = spline.getPoint(index);
+          var plot = getPosition(position.x, position.y, position.z);
+          geometry.vertices[k] = new THREE.Vector3(plot.x, plot.y, plot.z);
+          geometry.colors[k] = new THREE.Color(0xffffff);
+        }
+      };
 
-      for(var k = 0; k < route.length; k++){
-        index = k / (route.length);
-        position = spline.getPoint(index);
-        var x = ((position.x - 52.28596) * 300 / (52.69065 - 52.28596)) - 150,
-            y = ((position.y - -1.43301) * 300 / (-2.20937 - -1.43301)) - 150,
-            z = (( (position.z - 52.3) * 300 / (258.96-52.3) )- 150) / 5;
-        geometry.vertices[k] = new THREE.Vector3(x, y, z);
-        geometry.colors[k] = new THREE.Color(0xffffff);
-      }
-
-      var line = new THREE.Line(geometry, material),
-          scale = 0.8 * 1.5,
-          d = 225;
+      var line = new THREE.Line(geometry, material);
+      var scale = 1;
 
       line.scale.x = line.scale.y = line.scale.z = scale;
 
@@ -65,9 +69,13 @@ function data(){
   }
 }
 
-function rescale(val, max, min, target_max, target_min){
-  return ((val - min) * (target_max - target_min) / (max - min)) - target_min;
+function getPosition(raw_x,raw_y,raw_z) {
+  var x = ((raw_x - 52.28596) * 300 / (52.69065 - 52.28596)) - 150,
+      y = -((raw_y - -1.43301) * 300 / (-2.20937 - -1.43301)) + 150,
+      z = (( (raw_z - 52.3) * 300 / (258.96-52.3) )- 150) / 5;
+  return {"x":y,"y":x,"z":z};
 }
+
 
 function postprocessing(){
   var renderModel = new THREE.RenderPass( scene, camera );
@@ -127,13 +135,14 @@ function animate(){
 
 function render(){
   // mouse based camera tilt
-  camera.position.x += (mouseX - camera.position.x) * .05;
-  camera.position.y += (- mouseY + 200 - camera.position.y) * .05;
+  camera.position.x += (mouseX - camera.position.x) * .005;
+  camera.position.y += (- mouseY + 200 - camera.position.y) * .005;
+  camera.position.z = camera.position.z
   camera.lookAt(scene.position);
 
   // rotation in time
-  var time = Date.now() * 0.0005;
-  for(var i = 0; i < scene.children.length; i++) scene.children[i].rotation.y = time;
+  //var time = Date.now() * 0.00005;
+  //for(var i = 0; i < scene.children.length; i++) scene.children[i].rotation.y = time;
 
   composer.render();
 }
