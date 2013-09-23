@@ -54,6 +54,11 @@ small{
 html, body{
   height:100%;
 }
+code.block,
+pre.block{
+  display:block;
+  padding:10px 5%;
+}
 
 ul li{
   margin:0 0 15px 15px;
