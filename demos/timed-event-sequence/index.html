@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en" id="demos">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <!-- CSS FOR THIS DEMO -->
+    <link rel="stylesheet" href="/demos/timed-event-sequence/stylesheets/styles.css" type="text/css" media="all" charset="utf-8" >
+    <title>jQuery Timed Event Sequences - Demos - Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+   <section id="intro">
+    <h1>jQuery Timed Event Sequences</h1>
+    <p>One of the very common jQuery / javascript snippets I need regulary is a typical "trigger X in Y seconds". This for the inevitable "can we make this auto change" banners and the like on image heavy sections etc.</p>
+    <p>I finally got fed up of redoing it every time when they almost always take the same kind of layout and decided to turn it in to a jQuery plugin.</p>
+    <p>It does work with any jQuery event type, but it is much easier to demonstrate with a click.</p>
+   </section>
+
+   <section class='feature' id="example-1-copy">
+    <h2>Zero config</h2>
+    <p>This is with no config; so it will do nothing other than trigger the click. As that would cause your browser to jump around horribly I've used span instead of an 'a' tag.</p>
+    <p>You'll see that the active class stays in the same place and it's quite boring &amp; uneventful.</p>
+   </section>
+
+    <section class="example_block clearfix" id="example-1-elements">
+      <span class='item active'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+    </section>
+
+    <section class='feature' id="real-examples">
+     <h2>Getting it to do things..</h2>
+     <p>Obviously example 1 is pretty much useless, as 90% of the time you want it to do something. We have a few ways of doing that, <code>beforeEvent</code> and <code>afterEvent</code>.</p>
+    </section>
+
+    <!-- EXAMPLE 2 -->
+    <section class='feature' id="example-2-copy">
+     <h2>Before...</h2>
+     <p>To start off with, lets get the class swapping around. In the example below we use a beforeEvent function to swap what item has the active class attached to it.</p>
+     <p>You will see the red box swap and change over to each item in turn and eventually move back to the start.</p>
+    </section>
+
+     <section class="example_block clearfix" id="example-2-elements">
+       <span class='item active'></span>
+       <span class='item'></span>
+       <span class='item'></span>
+       <span class='item'></span>
+       <span class='item'></span>
+       <span class='item'></span>
+       <span class='item'></span>
+       <span class='item'></span>
+     </section>
+
+     <!-- EXAMPLE 3 -->
+     <section class='feature' id="example-3-copy">
+      <h2>After...</h2>
+      <p>You can do almost exactly the same thing, but after the click has happened....</p>
+      <p>Just to make this one a bit more exciting then changing a function name, I've reduced the time between events down to 2 seconds from 3.</p>
+    </section>
+    <section class="example_block clearfix" id="example-3-elements">
+      <span class='item active'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+    </section>
+
+
+     <!-- EXAMPLE 4 -->
+     <section class='feature' id="example-4-copy">
+      <h2>Before &amp; after...</h2>
+      <p>In this demo we should probably remove the active class before click, and then re add it afterwards, so we can just combine the previous two examples.</p>
+    </section>
+    <section class="example_block clearfix" id="example-4-elements">
+      <span class='item active'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+    </section>
+
+     <!-- EXAMPLE 5 -->
+     <section class='feature' id="example-5-copy">
+      <h2>Different starting positions</h2>
+      <p>Sometimes you may not want to start the sequence at the begining; for those galleries that start in the middle or those that effect the browser state.</p>
+      <p>You can set the starting position manually as an option and it will start from that point, allowing you to resume etc.</p>
+    </section>
+    <section class="example_block clearfix" id="example-5-elements">
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item active'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+    </section>
+
+     <!-- EXAMPLE 6 -->
+     <section class='feature' id="example-6-copy">
+      <h2>Showing it working..</h2>
+      <p>I'm listening to all clicks on spans on the demo blocks and pushing their details in to this listing, so you can see each plugin working independantly.</p>
+    </section>
+    <section class="example_block clearfix" id="example-6-elements">
+      <div class='output example-1'></div>
+      <div class='output example-2'></div>
+      <div class='output example-3'></div>
+      <div class='output example-4'></div>
+      <div class='output example-5'></div>
+    </section>
+
+     <section class='feature'>
+      <h2>Usage</h2>
+      <p>In your javascript, after document ready, you can make use of this function in the standard way:</p>
+      <code class='block'>jQuery("#selector").timedEventSequence(configurationOptions);</code>
+
+    </section>
+
+
+     <section class='feature'>
+      <h2>Configuration options</h2>
+      <p>These are the things you can actually change and what they do:</p>
+      <h3>interval</h3>
+      <p>Defaults to 3000. An integer representing the desired milliseconds between events.</p>
+      <h3>eventType</h3>
+      <p>Defaults to "click". A string and can be any standard jQuery bindable event.</p>
+      <h3>position</h3>
+      <p>Defaults to 0. An integer representing the starting position in the sequence.</p>
+      <h3>beforeEvent &amp; afterEvent</h3>
+      <p>Defaults to a simple function that <strong>returns true</strong> (if not returning true it will stop the trigger). Can be set to any function:</p>
+<code class='block'>
+beforeEvent: function(allItems, oldItem, newItem, eventType);
+<br>afterEvent: function(allItems, oldItem, newItem, eventType);
+</code>
+      <p>This is what the params passed in represent:</p>
+      <p><code>allItems:</code> This is all of the items matching the selector.</p>
+      <p><code>oldItem:</code> This is the item from the selection that was active before the event.</p>
+      <p><code>newItem:</code> This is item from the selection that is active after the event.</p>
+      <p><code>eventType:</code> This is the type of event ("click" etc), handy if you are using the same function on multiple instances of this plugin.</p>
+    </section>
+    <section class='feature'>
+      <h2>Example configuration</h2>
+<pre class='block'>
+jQuery(".auto-trigger").timedEventSequence({
+    interval:2500,
+    eventType: "click",
+    beforeEvent: function(allItems, oldItem, newItem, eventType){
+      oldItem.removeClass("active");
+      return true;
+    };
+    afterEvent: function(allItems, oldItem, newItem, eventType){
+      newItem.removeClass("active");
+      return true;
+    };
+});
+</pre>
+    </section>
+    <section class='feature'>
+    <h2>Notes &amp; files</h2>
+    <p>Currently this plugin does not update if anything is added in to the DOM, I'm looking at sorting that out shortly.</p>
+    <a href="/demos/timed-event-sequence/javascripts/timedEventSequence.js" class='button clearfix'><span class='action'>►</span><span>Plugin</span></a>
+    <a href="/demos/timed-event-sequence/javascripts/example-1.js" class='button clearfix'><span class='action'>►</span><span>Example 1 js</span></a>
+    <a href="/demos/timed-event-sequence/javascripts/example-2.js" class='button clearfix'><span class='action'>►</span><span>Example 2 js</span></a>
+    <a href="/demos/timed-event-sequence/javascripts/example-3.js" class='button clearfix'><span class='action'>►</span><span>Example 3 js</span></a>
+    <a href="/demos/timed-event-sequence/javascripts/example-4.js" class='button clearfix'><span class='action'>►</span><span>Example 4 js</span></a>
+    <a href="/demos/timed-event-sequence/javascripts/example-5.js" class='button clearfix'><span class='action'>►</span><span>Example 5 js</span></a>
+    <a href="/demos/timed-event-sequence/javascripts/example-6.js" class='button clearfix'><span class='action'>►</span><span>Event reporting js</span></a>
+    </section>
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+
+    <!-- JS FOR THIS DEMO -->
+    <!-- main plugin file -->
+    <script src='/demos/timed-event-sequence/javascripts/timedEventSequence.js'  type='text/javascript'></script>
+    <!-- example 1 -->
+    <script src='/demos/timed-event-sequence/javascripts/example-1.js'  type='text/javascript'></script>
+    <!-- example 2 -->
+    <script src='/demos/timed-event-sequence/javascripts/example-2.js'  type='text/javascript'></script>
+    <!-- example 3 -->
+    <script src='/demos/timed-event-sequence/javascripts/example-3.js'  type='text/javascript'></script>
+    <!-- example 4 -->
+    <script src='/demos/timed-event-sequence/javascripts/example-4.js'  type='text/javascript'></script>
+    <!-- example 5 -->
+    <script src='/demos/timed-event-sequence/javascripts/example-5.js'  type='text/javascript'></script>
+    <!-- example 6 -->
+    <script src='/demos/timed-event-sequence/javascripts/example-6.js'  type='text/javascript'></script>
+
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
