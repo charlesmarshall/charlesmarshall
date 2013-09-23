@@ -1,0 +1,3 @@
+[submodule "demos/timed-event-sequence/js"]
+	path = demos/timed-event-sequence/js
+	url = https://github.com/charlesmarshall/timedEventSequence.git
