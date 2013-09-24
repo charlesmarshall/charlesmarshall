@@ -192,7 +192,7 @@
      <section class='feature'>
       <h2>Usage</h2>
       <p>In your javascript, after document ready, you can make use of this function in the standard way:</p>
-      <code class='block'>jQuery("#selector").timedEventSequence(configurationOptions);</code>
+      <code class='block'>jQuery(".selector").timedEventSequence(configurationOptions);</code>
 
     </section>
 
@@ -208,10 +208,10 @@
       <p>Defaults to 0. An integer representing the starting position in the sequence.</p>
       <h3>beforeEvent &amp; afterEvent</h3>
       <p>Defaults to a simple function that <strong>returns true</strong> (if not returning true it will stop the trigger). Can be set to any function:</p>
-<code class='block'>
+<pre class='block'>
 beforeEvent: function(allItems, oldItem, newItem, eventType);
 <br>afterEvent: function(allItems, oldItem, newItem, eventType);
-</code>
+</pre>
       <p>This is what the params passed in represent:</p>
       <p><code>allItems:</code> This is all of the items matching the selector.</p>
       <p><code>oldItem:</code> This is the item from the selection that was active before the event.</p>
@@ -221,7 +221,7 @@ beforeEvent: function(allItems, oldItem, newItem, eventType);
     <section class='feature'>
       <h2>Example configuration</h2>
 <pre class='block'>
-jQuery(".auto-trigger").timedEventSequence({
+jQuery(".selector").timedEventSequence({
     interval:2500,
     eventType: "click",
     beforeEvent: function(allItems, oldItem, newItem, eventType){
@@ -261,11 +261,11 @@ jQuery(".selector").timedEventSequence(function_name);
       <h2>Rebinding after DOM changes</h2>
       <p>If the DOM has been updated and you need to update the items within the collection this is currently a manual process in a similar style as the previous functions; here is an example:</p>
 <pre class='block'>
-  var items = jQuery(".auto-trigger").timedEventSequence();
+  var items = jQuery(".selector").timedEventSequence();
   //.... other code goes here
   // a new .auto-trigger item is added to the DOM
   //.... in a dom listener or function called when successfully added to the dom (ajax success etc)
-  var new_items = jQuery(".auto-trigger");
+  var new_items = jQuery(".selector");
   items.timedEventSequence("rebind", new_items);
 </pre>
     </section>
