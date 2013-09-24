@@ -3,10 +3,10 @@
 }
 
   .example_block .output{
-    width:20%;
+    width:16%;
     float:left;
   }
-  #example-6-elements{
+  #output-events{
     height:120px;
     overflow: auto;
     padding:10px 20px;

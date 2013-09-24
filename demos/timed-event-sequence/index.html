@@ -55,10 +55,11 @@
     <p>One of the very common jQuery / javascript snippets I need regulary is a typical "trigger X in Y seconds". This for the inevitable "can we make this auto change" banners and the like on image heavy sections etc.</p>
     <p>I finally got fed up of redoing it every time when they almost always take the same kind of layout and decided to turn it in to a jQuery plugin.</p>
     <p>It does work with any jQuery event type, but it is much easier to demonstrate with a click.</p>
+    <p>Need to give this a good testing in multiple browsers...</p>
    </section>
 
    <section class='feature' id="example-1-copy">
-    <h2>Zero config</h2>
+    <h2>1. Zero config</h2>
     <p>This is with no config; so it will do nothing other than trigger the click. As that would cause your browser to jump around horribly I've used span instead of an 'a' tag.</p>
     <p>You'll see that the active class stays in the same place and it's quite boring &amp; uneventful.</p>
    </section>
@@ -81,7 +82,7 @@
 
     <!-- EXAMPLE 2 -->
     <section class='feature' id="example-2-copy">
-     <h2>Before...</h2>
+     <h2>2. Before...</h2>
      <p>To start off with, lets get the class swapping around. In the example below we use a beforeEvent function to swap what item has the active class attached to it.</p>
      <p>You will see the red box swap and change over to each item in turn and eventually move back to the start.</p>
     </section>
@@ -99,7 +100,7 @@
 
      <!-- EXAMPLE 3 -->
      <section class='feature' id="example-3-copy">
-      <h2>After...</h2>
+      <h2>3. After...</h2>
       <p>You can do almost exactly the same thing, but after the click has happened....</p>
       <p>Just to make this one a bit more exciting then changing a function name, I've reduced the time between events down to 2 seconds from 3.</p>
     </section>
@@ -117,7 +118,7 @@
 
      <!-- EXAMPLE 4 -->
      <section class='feature' id="example-4-copy">
-      <h2>Before &amp; after...</h2>
+      <h2>4. Before &amp; after...</h2>
       <p>In this demo we should probably remove the active class before click, and then re add it afterwards, so we can just combine the previous two examples.</p>
     </section>
     <section class="example_block clearfix" id="example-4-elements">
@@ -133,7 +134,7 @@
 
      <!-- EXAMPLE 5 -->
      <section class='feature' id="example-5-copy">
-      <h2>Different starting positions</h2>
+      <h2>5. Different starting positions</h2>
       <p>Sometimes you may not want to start the sequence at the begining; for those galleries that start in the middle or those that effect the browser state.</p>
       <p>You can set the starting position manually as an option and it will start from that point, allowing you to resume etc.</p>
     </section>
@@ -148,17 +149,44 @@
       <span class='item'></span>
     </section>
 
+
      <!-- EXAMPLE 6 -->
      <section class='feature' id="example-6-copy">
-      <h2>Showing it working..</h2>
-      <p>I'm listening to all clicks on spans on the demo blocks and pushing their details in to this listing, so you can see each plugin working independantly.</p>
+      <h2>6. Adding control</h2>
+      <p>You may want to stop / pause the sequence of events, that is now built in, just give it a try</p>
+      <a href="#" class='button clearfix stop'><span>Stop</span></a>
+      <a href="#" class='button clearfix start'><span>Start</span></a>
+      <a href="#" class='button clearfix restart'><span>Restart</span></a>
+      <a href="#" class='button clearfix reset'><span>Reset to 0</span></a>
+      <a href="#" class='button clearfix slow'><span>6s interval</span></a>
+      <a href="#" class='button clearfix fast'><span>1s interval</span></a>
+      <a href="#" class='button clearfix normal'><span>3s interval</span></a>
     </section>
     <section class="example_block clearfix" id="example-6-elements">
+      <span class='item active'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+      <span class='item'></span>
+    </section>
+
+
+
+     <!-- OUTPUT -->
+     <section class='feature' id="output-copy">
+      <h2>Is it working..</h2>
+      <p>I'm listening to all clicks on spans on the demo blocks and pushing their details in to this listing, so you can see each plugin working independantly.</p>
+    </section>
+    <section class="example_block clearfix" id="output-events">
       <div class='output example-1'></div>
       <div class='output example-2'></div>
       <div class='output example-3'></div>
       <div class='output example-4'></div>
       <div class='output example-5'></div>
+      <div class='output example-6'></div>
     </section>
 
      <section class='feature'>
@@ -207,16 +235,51 @@ jQuery(".auto-trigger").timedEventSequence({
 });
 </pre>
     </section>
+    <section class='feature' >
+      <h2>Changing configuration values</h2>
+      <p>Once an instance has been created you can still make changes to it (see example 6) in a standard way.</p>
+      <p>If you want to change one of the configurable options you simple recall the plugin on the same collection:</p>
+<pre class='block'>
+  jQuery(".selector").timedEventSequence("option", "interval", 6000);
+</pre>
+    <p>That would change the interval to 6 seconds. You can rebind any option from the initial configuration call.</p>
+
+    </section>
+    <section class='feature'>
+      <h2>Stop, start, reset etc</h2>
+      <p>The plugin comes with some handy extra functionality that you can trigger in this format:</p>
+<pre class='block'>
+jQuery(".selector").timedEventSequence(function_name);
+</pre>
+      <p>The available functions are:</p>
+      <p><code>start</code>: starts the internal timed event trigger.</p>
+      <p><code>stop</code>: stops the timed event by clearing the interval timer.</p>
+      <p><code>restart</code>: runs <code>stop</code> and then <code>start</code>.</p>
+      <p><code>reset</code>: sets the position to 0, then runs <code>stop</code> and <code>start</code>.</p>
+    </section>
+    <section class='feature'>
+      <h2>Rebinding after DOM changes</h2>
+      <p>If the DOM has been updated and you need to update the items within the collection this is currently a manual process in a similar style as the previous functions; here is an example:</p>
+<pre class='block'>
+  var items = jQuery(".auto-trigger").timedEventSequence();
+  //.... other code goes here
+  // a new .auto-trigger item is added to the DOM
+  //.... in a dom listener or function called when successfully added to the dom (ajax success etc)
+  var new_items = jQuery(".auto-trigger");
+  items.timedEventSequence("rebind", new_items);
+</pre>
+    </section>
     <section class='feature'>
     <h2>Notes &amp; files</h2>
-    <p>Currently this plugin does not update if anything is added in to the DOM, I'm looking at sorting that out shortly.</p>
+    <p>I will look at getting a configuration option set to automatically update the collection being used when the DOM is changed.</p>
     <a href="/demos/timed-event-sequence/js/timedEventSequence.js" class='button clearfix'><span class='action'>►</span><span>Plugin</span></a>
     <a href="/demos/timed-event-sequence/example-js/1.js" class='button clearfix'><span class='action'>►</span><span>Example 1 js</span></a>
     <a href="/demos/timed-event-sequence/example-js/2.js" class='button clearfix'><span class='action'>►</span><span>Example 2 js</span></a>
     <a href="/demos/timed-event-sequence/example-js/3.js" class='button clearfix'><span class='action'>►</span><span>Example 3 js</span></a>
     <a href="/demos/timed-event-sequence/example-js/4.js" class='button clearfix'><span class='action'>►</span><span>Example 4 js</span></a>
     <a href="/demos/timed-event-sequence/example-js/5.js" class='button clearfix'><span class='action'>►</span><span>Example 5 js</span></a>
-    <a href="/demos/timed-event-sequence/example-js/6.js" class='button clearfix'><span class='action'>►</span><span>Event reporting js</span></a>
+    <a href="/demos/timed-event-sequence/example-js/6.js" class='button clearfix'><span class='action'>►</span><span>Example 6 js</span></a>
+    <a href="/demos/timed-event-sequence/example-js/output.js" class='button clearfix'><span class='action'>►</span><span>Event reporting js</span></a>
     </section>
 
 
@@ -239,6 +302,8 @@ jQuery(".auto-trigger").timedEventSequence({
     <script src='/demos/timed-event-sequence/example-js/5.js'  type='text/javascript'></script>
     <!-- example 6 -->
     <script src='/demos/timed-event-sequence/example-js/6.js'  type='text/javascript'></script>
+    <!-- showing the output -->
+    <script src='/demos/timed-event-sequence/example-js/output.js'  type='text/javascript'></script>
 
 
 

@@ -58,6 +58,7 @@ code.block,
 pre.block{
   display:block;
   padding:10px 5%;
+  margin-bottom:15px;
 }
 
 ul li{
