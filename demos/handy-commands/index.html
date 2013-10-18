@@ -65,7 +65,11 @@
       <p>Count inbound connections per IP.</p>
       <code class='block'>netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n</code>
     </section>
-
+    <section class='feature'>
+      <h2>Bound ports</h2>
+      <p>Ports being used in a nice grid..</p>
+      <code class='block'>netstat -anltp</code>
+    </section>
 
 
 
