@@ -27,4 +27,4 @@ var completed = function(){
   if(typeof console != "undefined") console.log("LOADED ALL");
 };
 
-var testing = new loader( config, completed);
+var testing = new loader(config, completed);
