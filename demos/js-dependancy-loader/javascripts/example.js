@@ -18,13 +18,13 @@ var config = [
   {
     url:"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js",
     afterLoad: function(){
-      console.log("loaded jquery ui");
+      if(typeof console != "undefined") console.log("loaded jquery ui");
     }
   }
 ];
 
 var completed = function(){
-  console.log("LOADED ALL");
+  if(typeof console != "undefined") console.log("LOADED ALL");
 };
 
 var testing = new loader( config, completed);
