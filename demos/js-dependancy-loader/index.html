@@ -147,7 +147,7 @@ config = [
 ];
 </pre>
     <p>Breakdown on an item within the <code>config</code> array:</p>
-    <p><code>url</code> is the location of the file. A required field, unless you are using an .</p>
+    <p><code>url</code> is the location of the file. A required field, unless you are overwritting it via the <code>attrs</code> setup.</p>
     <p><code>tagName</code> is the element name you wish to create; defaults to <code>script</code> but could feasibly be an <code>img</code>.</p>
     <p><code>afterLoad</code> is a function that will be called after an item has been loaded in.</p>
     <p><code>attrs</code> is a dict of any valid attributes for the elements; so <code>src</code>, <code>height</code>, <code>width</code>, <code>style</code> etc.</p>
