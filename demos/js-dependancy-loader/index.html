@@ -54,13 +54,114 @@
     <section id="intro">
       <h1>JS Dependancy Loader</h1>
       <p>As the web is maturing we are seeing more app like experiences and a richer interfaces coming to the fore. Driving these applications is a new generation of javascript libraries; frameworks like <a href="http://backbonejs.org/">Backbone</a>, <a href="http://angularjs.org/">AngularJS</a> and <a href="http://emberjs.com/">EmberJS</a>.</p>
+      <p>....</p>
+      <p><em>some copy about needing to load things</em></p>
+      <p>....</p>
+      <p><em>focus on doing just one thing to keep it clean &amp; small</em></p>
+      <p>....</p>
+      <p><em>can do images as well as scripts</em></p>
+      <h3>Skip to:</h3>
+      <a href="#getting-started" class='button clearfix'><span class='action'>►</span><span>Getting started</span></a>
+      <a href="#indepth" class='button clearfix'><span class='action'>►</span><span>In-depth</span></a>
+      <a href="#fullspec" class='button clearfix'><span class='action'>►</span><span>Full configuration spec</span></a>
+    </section>
 
+
+    <section class='feature' id="getting-started">
+      <h2>Getting started</h2>
+      <p>Being a tiny javascript file (&lt; 2k uncompressed) all you need to do is add loader to your DOM:</p>
+      <code class='block'>
+&lt;script type="text/javascript" src="/path/to/loader.js">&lt;/script>
+      </code>
+      <p>You can place this in the head or at the bottom of your body; really just depends on what you need it for. Once it has been included you can use it anywhere by simply making a new instance and passing along a config:</p>
+      <pre class='block'>
+var config = [
+  {url: "path/to/js/file.js"}
+];
+var pageAssets = new loader(config);
+      </pre>
+      <p>That will then start the loading process and insert a javascript tag with a src to the file you specify.</p>
+      <p>As you can see, the <code>config</code> is an array containing dicts of information; this allows you to load multiple files in different ways at the same time and is standard json.</p>
+    </section>
+
+
+    <section class='feature' id="indepth">
+      <h2>In-depth example</h2>
+      <p>Here is a complex configuration for a more real-world example</p>
+<pre class='block'>
+var all_loaded = function(){
+  console.log("all assets loaded");
+};
+
+var advanced_config =
+  //simple loading of script
+  {
+    url:"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"
+  },
+  //loading an image instead of a script and setting
+  {
+    tagName: "img",
+    attrs:{
+      src:"/path/to/static/image.png",
+      style:{
+        display:"none"
+      },
+      height:1
+    }
+  },
+  //after load function
+  {
+    url:"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js",
+    afterLoad: function(dom_element){
+      console.log("loaded jquery ui");
+    }
+  }
+];
+//create
+var load = new loader(advanced_config, all_loaded);
+</pre>
+      <p>You can see that you can customise the attributes of the element loaded, use alternative elemets like images, provided callbacks at each stage and a callback when it all items have been loaded.</p>
+      <p>There are quite a few things you can do do, I'll try and list them.</p>
+    </section>
+
+    <section id="fullspec" class='feature'>
+      <h2>Configuration options</h2>
+      <p>When creating an instance you have the following configuration options:</p>
+      <pre class='block'>
+var loaderExample = new loader(config, onCompleteFunction, async);
+      </pre>
+      <p>These break down as follows:</p>
+      <p><code>async</code> is a boolean, so true or false. When set to true all items are loaded straight away via for loop and do not wait for other assets.</p>
+      <p><code>onCompleteFunction</code> should be a valid function in scope; will be called when all items have been completed. <strong>Does not run</strong> if <code>async</code> is set to <code>true</code>.</p>
+      <p><code>config</code> is a standard javascript <code>array</code> with a dict for each item in the following layout:</p>
+<pre class='block'>
+config = [
+  {
+    url: "/path/to/file",
+    tagName: "script",
+    afterLoad: function(element){},
+    attrs: {
+      width:1
+    }
+  }
+];
+</pre>
+    <p>Breakdown on an item within the <code>config</code> array:</p>
+    <p><code>url</code> is the location of the file. A required field, unless you are using an .</p>
+    <p><code>tagName</code> is the element name you wish to create; defaults to <code>script</code> but could feasibly be an <code>img</code>.</p>
+    <p><code>afterLoad</code> is a function that will be called after an item has been loaded in.</p>
+    <p><code>attrs</code> is a dict of any valid attributes for the elements; so <code>src</code>, <code>height</code>, <code>width</code>, <code>style</code> etc.</p>
     </section>
 
 
 
 
 
+
+
+
+    <script type="text/javascript" src="/demos/js-dependancy-loader/javascripts/loader.js"></script>
+    <script type="text/javascript" src="/demos/js-dependancy-loader/javascripts/example.js"></script>
 
 
     <script type="text/javascript">
