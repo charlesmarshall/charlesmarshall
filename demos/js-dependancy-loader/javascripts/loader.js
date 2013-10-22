@@ -39,6 +39,8 @@ loader.prototype.load = function(item){
     ele = document.createElement(tag);
     //set as a property so it can run even without async
     ele.__afterLoad = current.afterLoad;
+    //if there is a beforeLoad set, run it
+    if(typeof current.beforeLoad != "undefined") current.beforeLoad();
     //copy over the attrs
     this.attrs(ele, attrs);
     //call the function to handle load events

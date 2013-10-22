@@ -1,30 +1,14 @@
 var config = [
   //simple loading of script
   {
-    url:"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"
-  },
-  //loading an image instead of a script and setting
-  {
-    tagName: "img",
-    attrs:{
-      src:"http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_2013_Google.png/251px-Logo_2013_Google.png",
-      style:{
-        display:"none"
-      },
-      height:1
-    }
-  },
-  //after load function
-  {
-    url:"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js",
-    afterLoad: function(){
-      if(typeof console != "undefined") console.log("loaded jquery ui");
+    url:"http://www.google-analytics.com/ga.js",
+    beforeLoad: function(){
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-927511-5']);
+      _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+      _gaq.push(['_trackPageview']);
     }
   }
 ];
 
-var completed = function(){
-  if(typeof console != "undefined") console.log("LOADED ALL");
-};
-
-var testing = new loader(config, completed);
+var analytics = new loader(config);

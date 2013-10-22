@@ -139,41 +139,37 @@ config = [
   {
     url: "/path/to/file",
     tagName: "script",
+    beforeLoad: function(){},
     afterLoad: function(element){},
     attrs: {
       width:1
-    }
+    },
+    insertAt: domElement
   }
 ];
 </pre>
-    <p>Breakdown on an item within the <code>config</code> array:</p>
-    <p><code>url</code> is the location of the file. A required field, unless you are overwritting it via the <code>attrs</code> setup.</p>
-    <p><code>tagName</code> is the element name you wish to create; defaults to <code>script</code> but could feasibly be an <code>img</code>.</p>
-    <p><code>afterLoad</code> is a function that will be called after an item has been loaded in.</p>
-    <p><code>attrs</code> is a dict of any valid attributes for the elements; so <code>src</code>, <code>height</code>, <code>width</code>, <code>style</code> etc.</p>
+      <p>Breakdown on an item within the <code>config</code> array:</p>
+      <p><code>url</code> is the location of the file. A required field, unless you are overwritting it via the <code>attrs</code> setup.</p>
+      <p><code>tagName</code> is the element name you wish to create; defaults to <code>script</code> but could feasibly be an <code>img</code>.</p>
+      <p><code>beforeLoad</code> is a function that will be called before the item is added to DOM, allowing for var setups etc.</p>
+      <p><code>afterLoad</code> is a function that will be called after an item has been loaded in.</p>
+      <p><code>attrs</code> is a dict of any valid attributes for the elements; so <code>src</code>, <code>height</code>, <code>width</code>, <code>style</code> etc.</p>
+      <p><code>insertAt</code> is a DOM element where you want to insert this item. The code uses <code>appendChild</code> and defaults to the <code>body</code> tag.</p>
+    </section>
+
+    <section id="example-usage" class='feature'>
+      <h2>Example..</h2>
+      <p>There are lots of things you might want to use this script for; from pre-loading heavy image gallerys etc. I'm using it on this page to load and trigger google analytics.</p>
     </section>
 
 
 
 
-
-
-
-
+    <!-- JS FOR THIS DEMO -->
     <script type="text/javascript" src="/demos/js-dependancy-loader/javascripts/loader.js"></script>
     <script type="text/javascript" src="/demos/js-dependancy-loader/javascripts/example.js"></script>
 
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-927511-5']);
-    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
   </script>
 </body>
 </html>
