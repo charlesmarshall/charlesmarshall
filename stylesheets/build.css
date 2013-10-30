@@ -125,6 +125,7 @@ h2,
 h2 a,
 h3 a,
 h4 a{
+  font-weight:700;
   text-decoration: none;
   font-family: 'News Cycle', sans-serif;
   color:#565656;
