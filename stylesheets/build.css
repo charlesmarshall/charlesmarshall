@@ -38,7 +38,6 @@ pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family:helvetica, arial;
 }
 
 /** base tags **/
@@ -72,18 +71,19 @@ ol li{
 li{
   font-size: 15px;
   line-height:1.6em;
-  letter-spacing: 0.5px;
+  font-weight: 300;
 }
 p{
   font-size:15px;
   line-height:1.6em;
-  letter-spacing: 0.5px;
   margin-bottom:15px;
+  font-weight: 300;
 }
   p:last-child{margin-bottom:0;}
 
 a{
   color:#333333;
+  font-weight: 400;
 }
 
 /** tables **/
@@ -106,19 +106,19 @@ table{
 /** headers **/
 h1,
 .intro h2{
-  font-weight:bold;
+  font-weight:700;
   font-size:50px;
-  color:#333333;
-  font-family: 'Oleo Script', cursive;
+  color:#565656;
+  font-family: 'News Cycle', sans-serif;
   text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 
 h2,
 .tile h3{
-  font-weight:bold;
+  font-weight:700;
   font-size:40px;
-  font-family: 'Oleo Script', cursive;
-  color:#333333;
+  font-family: 'News Cycle', sans-serif;
+  color:#565656;
   text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 
@@ -129,11 +129,11 @@ h2 a{
 
 h3{
   font-size:24px;
-  font-weight:bold;
+  font-weight:700;
   margin:0;
   padding:3px 0 0 0;
-  color:#333333;
-  font-family: 'Oleo Script', cursive;
+  color:#565656;
+  font-family: 'News Cycle', sans-serif;
 }
 
 h4{
@@ -141,7 +141,7 @@ h4{
   font-weight:normal;
   margin:0;
   padding:0 0 0 0;
-  color:#333333;
+  color:#565656;
 }
 h4.date{
   margin-bottom: 20px;

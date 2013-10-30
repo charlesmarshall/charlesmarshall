@@ -9,7 +9,6 @@ function loader(stack, callback, async){
 loader.prototype.stack = [];
 loader.prototype.onComplete = false;
 loader.prototype.async = false;
-
 loader.prototype.onLoad = function(ele, obj){
   ele.onload = ele.onreadystatechange = function(){
     //if the item we just loaded has an afterLoad function, call it & pass along the element
@@ -26,7 +25,6 @@ loader.prototype.attrs = function(ele, attrs){
     else ele[x] = attrs[x];
   }
 };
-
 loader.prototype.load = function(item){
 
   var current = (typeof item != "undefined") ? item : this.stack.shift(), attrs, tag, insertAt, ele;
