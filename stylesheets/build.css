@@ -122,9 +122,12 @@ h2,
   text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 
-h2 a{
+h2 a,
+h3 a,
+h4 a{
   text-decoration: none;
   font-family: inherit;
+  color:#565656;
 }
 
 h3{
