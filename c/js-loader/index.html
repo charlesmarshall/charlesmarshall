@@ -37,7 +37,7 @@
     <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
 
-    <title>JS Dependancy Loader - Demos - Charles Marshall</title>
+    <title>JS Loader - Demos - Charles Marshall</title>
   </head>
   <body>
 
@@ -52,15 +52,18 @@
 
 
     <section id="intro">
-      <h1>JS Dependancy Loader</h1>
-      <p>As the web is maturing we are seeing more app like experiences and a richer interfaces coming to the fore. Driving these applications is a new generation of javascript libraries; frameworks like <a href="http://backbonejs.org/">Backbone</a>, <a href="http://angularjs.org/">AngularJS</a> and <a href="http://emberjs.com/">EmberJS</a>.</p>
-      <p>....</p>
-      <p><em>some copy about needing to load things</em></p>
-      <p>....</p>
-      <p><em>focus on doing just one thing to keep it clean &amp; small</em></p>
-      <p>....</p>
-      <p><em>can do images as well as scripts</em></p>
-      <h3>Skip to:</h3>
+      <h1>JS Loader</h1>
+      <p>As the web is maturing we are seeing more app like experiences and richer interfaces coming to the fore. Driving these applications is a new generation of javascript libraries; frameworks like <a href="http://backbonejs.org/">Backbone</a>, <a href="http://angularjs.org/">AngularJS</a>, <a href="http://emberjs.com/">EmberJS</a> and, of course, the ubiquitous <a href="http://jquery.com">jQuery</a> can also be used.</p>
+      <p>These all have their own plus points to them, so which one you use should always be a balance between the most suitable functionality and your deadline. There is no point using the most cutting edge advanced framework if you only have 2 days and no prior knowledge; you're better using one you know and hitting the target date.</p>
+
+      <p>The more complicated you application gets, the more javascript you need to run it; directly leading to larger files, slow loading times etc. One thing you can't underestimate is the impatience of your users, even a <a href="http://www.globaldots.com/how-website-speed-affects-conversion-rates/">one second improvment in you page loading can have impressive results</a>. Building your app for speed should be something you think about form the begining, but one of the best things you can do with heavy javascript laden is a modular, peice by peice layout.</p>
+      <p>Instead of loading all 2,000 lines of javascript in one go, you only load in the first chunk you need to render the skeleton of your site / app. From there, you can start loading in your other assets as and when you need them. Although this does mean the site might show you a loading message or your standard spinning wheels for a while, the extra feeling of speed is more important.</p>
+
+      <h2>How?</h2>
+      <p>There are many 'loader' scripts out there that are made to do this; you give them an array of files and they get loaded in that order. However, most are large as they have extra features or based on libraries like jQuery, so we've put together the smallest one around (&lt; 2k uncompressed, ~600 bytes gziped). It's a simple class done in raw javascript that can load assets (images as well as js) either asynchronously or not.</p>
+
+
+
       <a href="#getting-started" class='button clearfix'><span class='action'>►</span><span>Getting started</span></a>
       <a href="#indepth" class='button clearfix'><span class='action'>►</span><span>In-depth</span></a>
       <a href="#fullspec" class='button clearfix'><span class='action'>►</span><span>Full configuration spec</span></a>
@@ -157,17 +160,13 @@ config = [
       <p><code>insertAt</code> is a DOM element where you want to insert this item. The code uses <code>appendChild</code> and defaults to the <code>body</code> tag.</p>
     </section>
 
-    <section id="example-usage" class='feature'>
-      <h2>Example..</h2>
-      <p>There are lots of things you might want to use this script for; from pre-loading heavy image gallerys etc. I'm using it on this page to load and trigger google analytics.</p>
-    </section>
 
 
 
 
     <!-- JS FOR THIS DEMO -->
-    <script type="text/javascript" src="/demos/js-dependancy-loader/javascripts/loader.js"></script>
-    <script type="text/javascript" src="/demos/js-dependancy-loader/javascripts/example.js"></script>
+    <script type="text/javascript" src="/c/js-loader/javascripts/loader.js"></script>
+    <script type="text/javascript" src="/c/js-loader/javascripts/example.js"></script>
 
 
   </script>
