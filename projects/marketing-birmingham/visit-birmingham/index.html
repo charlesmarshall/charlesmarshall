@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+    <title>Visit Birmingham CRM - Projects & Websites - Charles Marshall</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Visit Birmingham &amp; CRM Usage</h1>
+      <p>With a wealth of experience that spans many different demographics, from automotive to tourist, there is one common factor when it comes to selling yourself. Everyone looks at your website before doing anything else. </p>
+      <p>This means it is imperitive that the first impression potential customers have is the best it can be. A beautifuly branded, interactive site is, of course, what you need, but when you are talking larger organisations, it should be seen as just the beginning.</p>
+      <a href="http://visitbirmingham.com" class='button clearfix'><span class='action'>►</span><span>Visit the site</span></a>
+    </section>
+    <section class='feature'>
+      <p>Maintaining large, event based sites such as <a href="http://visitbirmingham.com">Visit Birmingham</a> requires a lot more than your basic <a href="/projects/wildfire/">CMS</a> behind the scences. At any point in time there are over 50,000 events (including individual showings), around 2,000 venues with almost 300 hotels and similar. All of that information is tied to over 1,000 categories with ~70,000 combinations between them. Big data indeed, and that is before you add in the membership / newsletter details.</p>
+      <p>This information is managed in house by a team of people at Marketing Birmingham and updated many times a day, either by phone calls from members, automated feeds (from various event providers) or email updates. All of these changes are entered into their internal CRM.</p>
+    </section>
+    <section class='feature'>
+      <h2>Why a CRM?</h2>
+      <p>A CRM provides many benefits, but in this case the big reason is ownership of the data. Marketing Birmingham run everything internally, which has its own sets of negatives and positives, but when your primary concern is trying to provide information on a large city, it makes sense to take the extra responsibility and keep the data yourself. After all, they are one of the main information sources for the region.</p>
+      <p>By running a large scale internal CRM with a web-friendly API, you can allow other parties (like One Black Bear) to read or edit that data. Each user is tied to an advanced permission system, allowing granular control on what they can access, if they have permission to write and more.</p>
+    </section>
+    <section class='feature'>
+      <h2>How do we use this data?</h2>
+      <p>On <a href="http://visitbirmingham.com">visitbirmingham.com</a> the CRM is used to power all of the explore section (made up of all of those big numbers above) and every form you see on the website. That is membership & newsletter preferences, contact forms and a multitude of competition forms, pushing close to 1,000,000 rows of data.</p>
+      <p>We are both a reciever and creator of CRM information, processing several thousand in & out bound events every month. When you factor in the general web traffic the system gets as well, we have to be clever on how we handle this information.</p>
+    </section>
+    <section class='feature'>
+      <h2>Exploring Birmingham</h2>
+      <p>Being information lead, one of the key parts of the site is to provide simple access to the what is going on, where it is happening and the like. This is what the <a href="http://visitbirmingham.com/explore-birmingham/">Explore Birmingham</a> part of the site is all about, with search tools, maps, pdf printouts and more.</p>
+      <p>As there is a fully fledged API system running on the CRM, on the surface it would make sense to query the information needed directly whenever a site visitor asks for it; that way everything is always accurate.</p>
+      <p>However, the Explore Birmingham part of the website gets thousands of visitors every day, so doing such queries would cause their CRM to inevitably slow down and, in the worst cases, lock up entirely. That would effect both the website &amp; their back office staff, obviously not ideal.</p>
+      <p>Instead, all information is stored locally in a well indexed MySQL database, with both query cache &amp; memcache running on top of it. This allows us to serve and respond to all the complicated queries in sub-second speeds, but the data is not quite real time accurate; a trade-off for stability and usability.</p>
+    </section>
+    <section class='feature'>
+      <h2>Competitions, newsletters and more</h2>
+      <p>You can see thoughout the site many forms for information, be it a competition to win a prize or a simple membership signup form; all of this information is pushed back to the CRM. Again, doing this in real time could cripple the CRM (due to load etc) and seem horribly slow for any user. Very few people would come back to the site if they had to wait 3 minutes to join your newsletter and there are several studies about how <a href="http://www.icrossing.co.uk/slow-pages-lose-users">page speed effects your user base</a>.</p>
+      <p>In actuallity, we store that information locally first. Giving an almost instant repsonse on filling in forms and making sure the user has a smoother experience.</p>
+
+      <p>With all this data running on our database, how does it get to / from the CRM?</p>
+    </section>
+
+    <section class='feature'>
+      <h2>Stacking data</h2>
+      <p>Being British, we are of course using queues.</p>
+      <p>When a record is edited on the Visit Birmingham internal CRM a notification is sent to our website. This snapshot contains the body of content, locations, times, contact details, any links to images or other media and all the categorisation for it; providing everything the website needs to know to show it on the website. After reciving this, we save the information and push it to the bottom of the queue in a typical first in, first out fashion.</p>
+      <p>In the background, code runs to "pop" items of this queue, processing each one and updating the locally stored information to match the new records. Handling hundreds of these daily, everything is kept as fresh as we can.</p>
+      <p>Collected data is handled in a similar way. Information from forms is validated before they are saved to ensure the CRM would allow them, stored in a local database and then added to the end of the queue.</p>
+      <p>When the background processing routine finds an out bound item it forms a suitable package of data (typically SOAP or variant of XML) to be transmitted to the CRM. Result of the transmission are stored, reported on failure and updated locally.</p>
+    </section>
+    <section class='feature'>
+      <h2>Wood for trees</h2>
+      <p>From the number crunching side of things, it's hard to tell when & what is being updated without knowing our database structure, some MySQL and linux commands, so we have some simple reporting.</p>
+      <p>A daily digest of what type of records have been sent, processed and even failed is created and email around to relevant parties, so any obvious issues can be sorted quickly.</p>
+    </section>
+    <section class='feature'>
+      <p>You can also see this article in the One Black Bear Blog.</p>
+    </section>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
