@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" id="droplets">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Droplet - Charles Marshall</title>
+  </head>
+  <body id="droplet">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>Droplet</h1>
+      <p><a href='https://dropletpay.com'>Droplet</a> is a Birmingham based start-up with a disruptive agenda; aiming to make payment easier than ever before. Recently joining the staff as Operations Engineer, it's now my role to keep the systems running smoothly while focusing on the future infrastructure.</p>
+    </section>
+    <section class="feature grid clearfix">
+      <a href="/droplet/2014/04/overview/" class='tile'>
+        <article>
+          <img src="/droplet/logo.png" alt="Overview">
+          <h3>Overview</h3>
+          <p>An overview of what we need.</p>
+        </article>
+      </a>
+      <a href="/droplet/2014/04/local-development-with-vagrant/" class='tile'>
+        <article>
+          <img src="/droplet/vagrant.png" alt="Vagrant">
+          <h3>Vagrant</h3>
+          <p>Local development environment setup with vagrant</p>
+        </article>
+      </a>
+      <a href="/droplet/2014/04/cloud-config/" class='tile'>
+        <article>
+          <img src="/droplet/cloud-config.png" alt="Cloud config">
+          <h3>Cloud config</h3>
+          <p>Basic configuration of the cluster</p>
+        </article>
+      </a>
+      <a href="/droplet/2014/04/service-discovery/" class='tile'>
+        <article>
+          <img src="/droplet/service-discovery.png" alt="Service discovery">
+          <h3>Service discovery</h3>
+          <p>Using etcd &amp; fleet</p>
+        </article>
+      </a>
+    </section>
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

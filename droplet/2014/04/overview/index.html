@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" id="droplets">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Overview - Droplet</title>
+  </head>
+  <body id="droplet">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+     <section id="intro">
+      <h1>Overview</h1>
+      <h4 class='date'>21<sup>st</sup> April 2014</h4>
+      <p>Although it might not be obvious, Droplet is much more than a smart phone application. Behind the scenes we run an in-depth admin area, a RESTfull API, an auth process, email system, blog and more. As you can imagine, they all have different needs, different usage amounts and, of course, different peak times.</p>
+      <p>We currently run these over various host machines and use a central message queue system to pass data around and communicate with other elements of our eco-system. This distributed layout allows for a good amount of flexibility and scaling, but at the moment there is still a lot of manual intervention required and can be difficult to replicate in a development environment.</p>
+      <p>Over the last year or so there has been a large amount new software coming out trying to solve these kinds of infrastructure problems, even a new acronym, PaaS, to cover this new field of DevOps work. Once particular piece of software, called Docker, has been the driving force behind a large number of these projects, such as Flynn, Deis and Shipyard. </p>
+      <p>Docker itself is an extension of linux containers, but with all the hard work simplified down to a series of simple commands and very useful configuration file. By using this as a base, you the ability to create multiple, self-contained, environments running any sequence of commands you want. It can be a simple consumer process that reads something off our message queue, or something more complex like a website running via nginx.</p>
+      <p>On top of that, these PaaS tools add a level of management and distribution, allowing you to spread over multiple physical or virtualised machines.  Of course, this creates another problem, how does A know about B. That is where a service discovery element is needed. There are a few of these available, such as etcd and Zookeeper. </p>
+      <p>In general, these call a central point to (normally a tokenised web service) to register themselves and find out what other hosts are available. Once connected, they can fetch a simple set of key value data pairs, these will normally be things to do with responsbility (which host does what) and availability (which host is online).</p>
+      <p>After that, all you need to do is direct traffic to the correct place via a 'conductor' process. This is normally some form of reverse proxy, like nginx or haproxy.</p>
+      <p></p>
+    </section>
+
+
+    <section>
+      <p></p>
+    </section>
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
