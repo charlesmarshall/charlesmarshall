@@ -102,8 +102,7 @@ touch ./provision-slave.sh
       <pre>sudo systemctl stop update-engine-reboot-manager.service
 sudo systemctl mask update-engine-reboot-manager.service
 </pre>
-      <p>You might very well notice some network speed issues and dropped packages; there can be an issue with the local vagrant setup that puts a 10.x.x.x series ip address as the nameserver and regenerates it via a systemd unit.</p>
-      <p>Simply remove the symlink /etc/resolv.conf and replace with googles (or your own):</p>
+      <p>You might very well notice some network speed issues and dropped packages; there can be an issue with the local vagrant setup that puts a 10.x.x.x series ip address as the nameserver and regenerates it via a systemd unit. Simply remove the symlink /etc/resolv.conf and replace with googles (or your own):</p>
       <pre>sudo mv /etc/resolv.conf /etc/resolv.old.conf
 sudo touch /etc/resolv.conf
 sudo chmod 0777 /etc/resolv.conf
