@@ -73,7 +73,7 @@
       <p>Lets start to flesh out our config with some of our own systemd unit files, starting with enabling fleet and etcd.</p>
 
       <h3>Starting fleet and etcd</h3>
-      <p>CoreOS makes use of systemd unit files to run servies, two of the key services are <a href="http://coreos.com/using-coreos/etcd/">etcd</a> (for ser of vice discovery) and <a href="https://coreos.com/using-coreos/clustering/">fleet</a> (for cluster mangement). The unit files are pre-built, but we need to enable them and, for fleet, we need to make an adjustment to pass in the assigned ip address from our cloud provider.</p>
+      <p>CoreOS makes use of systemd unit files to run services, two of the key services are <a href="http://coreos.com/using-coreos/etcd/">etcd</a> (for ser of vice discovery) and <a href="https://coreos.com/using-coreos/clustering/">fleet</a> (for cluster mangement). The unit files are pre-built, but we need to enable them and, for fleet, we need to make an adjustment to pass in the assigned ip address from our cloud provider.</p>
       <p>To do this we make use of the <code>coreos/units</code> segment to automatically start these (see lines 11-21):</p>
       <script src="https://gist.github.com/charlesmarshall/8b77bfbbc30f279ca6f1.js"></script>
       <p>On top of these, we can add others to do a mixture of automated tasks, from downloading a git repository, updating environment variables and more.</p>
