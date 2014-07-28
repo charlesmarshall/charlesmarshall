@@ -50,53 +50,52 @@
     </header>
 
      <section id="intro">
-      <h1>Cloud Configuration</h1>
 
-      <p><em>A Droplet Engineering post by Charles Marshall</em></p>
+<p><em>A Droplet Engineering post by Charles Marshall</em></p>
 
 
-      <p>Cloud based systems designed to scale according to demand, rapidly adding or removing available resources without human intervantion, to ensure your application stays up and running at all times in a cost effective manner. As which, and how many, hosts are running at any given time cannot be guaranteed, we need a way to provide a consistent environment for our applications to run in.<p>
+<p>Cloud based systems are designed to scale according to demand, rapidly adding or removing available resources without human intervention, to ensure your application stays up and running at all times in a cost effective manner. As which, and how many, hosts are running at any given time cannot be guaranteed, we need a way to provide a consistent environment for our applications to run in.<p>
 
-      <p>CoreOS has a <a href="http://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/">cloud-config format</a>, similar to <a href="http://cloudinit.readthedocs.org/en/latest/index.html">Cloud-Init</a>, that allows us to setup key elements of our host systems automatically. At the moment CoreOS supports <code>ssh_authorized_keys</code>, <code>hostname</code>, <code>users</code>, <code>write_files</code>, <code>manage_etc_hosts</code> from Cloud-Init and adds a new one of its own, <code>coreos</code>.</p>
+<p>CoreOS has a <a href="http://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/">cloud-config format</a>, similar to <a href="http://cloudinit.readthedocs.org/en/latest/index.html">Cloud-Init</a>, that allows us to setup key elements of our host systems automatically. At the moment CoreOS supports <code>ssh_authorized_keys</code>, <code>hostname</code>, <code>users</code>, <code>write_files</code>, <code>manage_etc_hosts</code> from Cloud-Init and adds a new one of its own, <code>coreos</code>.</p>
 
-      <h3>Host access</h3>
-      <p>Although PaaS is very automated, we still need to be able to access the hosts and they still need to be able to see and connect to each other. This is done by them sharing an SSH key and discovery token</p>
+<h3>Host access</h3>
+<p>Although PaaS is highly automated, we still need to be able to access the hosts and they still need to be able to see and connect to each other. This is done by sharing an SSH key and discovery token between hosts.</p>
 
-      <p>The discovery token is so <code>etcd</code> and <code>fleet</code> cluster tools work correctly, with all hosts visible. To get a new token, visit <a href="https://discovery.etcd.io/new">https://discovery.etcd.io/new</a> and copy the text the page shows and add that to the <code>coreos/etcd/discovery</code> segment of our file.</p>
+<p>The discovery token allows <code>etcd</code> and <code>fleet</code> cluster tools to work correctly, with all hosts visible. To get a new token, we will visit <a href="https://discovery.etcd.io/new">https://discovery.etcd.io/new</a> and copy the text the page shows and add that to the <code>coreos/etcd/discovery</code> segment of our file.</p>
 
-      <p>Generate a fresh SSH key, store the file on your local system (so we can use it if we need to), then add the contents of the public cert to the <code>ssh_authorized_keys</code>, this means the key gets added to the hosts <em>~core/.ssh/authorized_keys</em> file. Now we also add both the public and private certs via the <code>write_files</code> so we can use them as the internal identity files allowing the hosts <code>core</code> user to SSH each into each other host system.</p>
+<p>Generate a fresh SSH key, store the file on your local system (so we can use it if we need to), then add the contents of the public cert to the <code>ssh_authorized_keys</code>, this means the key gets added to the hosts <em>~core/.ssh/authorized_keys</em> file. Now we also add both the public and private certs via the <code>write_files</code> so we can use them as the internal identity files allowing the hosts <code>core</code> user to SSH each into each other host system.</p>
 
-      <p>At this point you should have somthing that looks like the gist below:</p>
-      <script src="https://gist.github.com/charlesmarshall/6511f2a5dcabe2193118.js"></script>
-      <p>CoreOS does allow you to install keys from a github account, have a look at how to do that on <a href="http://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/#toc_15">CoreOS website</a>. This, or similar, is needed if you are planning on using private repositories as a base for docker containers.</p>
+<p>At this point you should have something that looks like the gist below:</p>
+<script src="https://gist.github.com/charlesmarshall/6511f2a5dcabe2193118.js"></script>
+<p>CoreOS does allow you to install keys from a github account, have a look at how to do that on <a href="http://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/#toc_15">CoreOS website</a>. This, or similar, is needed if you are planning on using private repositories as a base for docker containers.</p>
 
-      <p>Lets start to flesh out our config with some of our own systemd unit files, starting with enabling fleet and etcd.</p>
+<p>Lets start to flesh out our config with some of our own systemd unit files, starting with enabling fleet and etcd.</p>
 
-      <h3>Starting fleet and etcd</h3>
-      <p>CoreOS makes use of systemd unit files to run services, two of the key services are <a href="http://coreos.com/using-coreos/etcd/">etcd</a> (for ser of vice discovery) and <a href="https://coreos.com/using-coreos/clustering/">fleet</a> (for cluster mangement). The unit files are pre-built, but we need to enable them and, for fleet, we need to make an adjustment to pass in the assigned ip address from our cloud provider.</p>
-      <p>To do this we make use of the <code>coreos/units</code> segment to automatically start these (see lines 11-21):</p>
-      <script src="https://gist.github.com/charlesmarshall/8b77bfbbc30f279ca6f1.js"></script>
-      <p>On top of these, we can add others to do a mixture of automated tasks, from downloading a git repository, updating environment variables and more.</p>
+<h3>Starting fleet and etcd</h3>
+<p>CoreOS makes use of systemd unit files to run services, two of the key services are <a href="http://coreos.com/using-coreos/etcd/">etcd</a> (for service discovery) and <a href="https://coreos.com/using-coreos/clustering/">fleet</a> (for cluster mangement). The unit files are pre-built, but we need to enable them and, for fleet, we need to make an adjustment to pass in the assigned IP address from our cloud provider.</p>
+<p>To do this we make use of the <code>coreos/units</code> segment to automatically start these (see lines 11-21):</p>
+<script src="https://gist.github.com/charlesmarshall/8b77bfbbc30f279ca6f1.js"></script>
+<p>On top of these, we can add others to do a mixture of automated tasks, from downloading a git repository, to updating environment variables and more.</p>
 
-      <h3>Host annoucement</h3>
-      <p>As part of service discovery integrity check the first service to add is a host announcement service; this will add the hosts ip address in to the etcd registry. Systemd unit files come with some handy vairables to help us do that (see <a href="http://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/">this list</a>) and the '%m' matches the fleet machine id.</p>
-      <script src="https://gist.github.com/charlesmarshall/6c346a6035c750db0f7c.js"></script>
-      <p>This service (line 25-35) loops indefinitely and constantly sets and etcd value with a short time to live and a sleep command at the end. Now if a host system it will remove itself from etcd after a few seconds of going offline, we can use this in the future to create a simple notification service that can email if values change.</p>
-      <p>You may notice the <code>X-Fleet</code> section of this service, the <code>X-Conflict</code> means it will not run on a machine with any other services matching that name. In this case we don't need it that much as it is run locally anyway.</p>
+<h3>Host annoucement</h3>
+<p>As part of service discovery integrity check the first service to add is a host announcement service; this will add the hosts IP address in to the etcd registry. Systemd unit files come with some handy vairables to help us do that (see <a href="http://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/">this list</a>) and the '%m' matches the fleet machine id.</p>
+<script src="https://gist.github.com/charlesmarshall/6c346a6035c750db0f7c.js"></script>
+<p>This service (line 25-35) loops indefinitely and constantly sets and etcd value with a short time to live and a sleep command at the end. Now a host system will remove itself from etcd after a few seconds of going offline, we can use this in the future to create a simple notification service that can email if values change.</p>
+<p>You may notice the <code>X-Fleet</code> section of this service, the <code>X-Conflict</code> means it will not run on a machine with any other services matching that name. In this case we don't need it that much as it is run locally anyway.</p>
 
-      <h3>Environment extras</h3>
-      <p>With a complicated cluster you may want to add your own bash scripts and similar to give some extra functionality to help handle and maintain the setup. A simple way is to update the system <code>/etc/environment</code> file to load a custom script of your own, a bit like the gist below:</p>
+<h3>Environment extras</h3>
+<p>With a complicated cluster you may want to add your own bash scripts and similar to give some extra functionality to help handle and maintain the setup. A simple way is to update the system <code>/etc/environment</code> file to load a custom script of your own, a bit like the gist below:</p>
 
-      <script src="https://gist.github.com/charlesmarshall/2c15fdbbd3f7200f06b9.js"></script>
+<script src="https://gist.github.com/charlesmarshall/2c15fdbbd3f7200f06b9.js"></script>
 
-      <p>Now you can just add whatever you need in to the <code>/etc/environment_extras</code> file. In our case, we have another couple of units that download a github repository and symlink a pre-made bash script to that location.</p>
+<p>Now you can just add whatever you need in to the <code>/etc/environment_extras</code> file. In our case, we have another couple of units that download a github repository and symlink a pre-made bash script to that location.</p>
 
-      <p>A useful service that we've added in to our setup is a small unit file to pre-load docker images; this is just a time saver so when we start an application most of what it needs is already on the host machine. On hosts with poor / slow network speeds (such as the t1.micro ec2 instance) this is especially helpful.</p>
+<p>A useful service that we've added in to our setup is a small unit file to pre-load docker images; this is just a time saver: When we start an application most of what it needs is already on the host machine. On hosts with poor / slow network speeds (such as the t1.micro ec2 instance) this is especially helpful.</p>
 
-      <p>On a side note, if you do have a unit file that fetches or tries to set items in etcd, these may fail if the cluster is not syncronised yet. Again, this is normally due to just poor network performace and can be avoid with a simple bash loop to check availability:</p>
-      <script src="https://gist.github.com/charlesmarshall/4f0bbe145480dec3b2bb.js"></script>
+<p>On a side note, if you do have a unit file that fetches or tries to set items in etcd, these may fail if the cluster is not yet syncronised. Again, this is normally due to just poor network performance and can be avoid with a simple bash loop to check availability:</p>
+<script src="https://gist.github.com/charlesmarshall/4f0bbe145480dec3b2bb.js"></script>
 
-      <p>Now we have a consistent setup of tools automatically distributed accross all the host systems without human intervention. The next stage is to start building and creating <a href="http://www.docker.com/">Docker</a> ready applications.</p>
+<p>Now we have a consistent setup of tools automatically distributed across all the host systems without human intervention. The next stage is to start building and creating <a href="http://www.docker.com/">Docker</a> ready applications.</p>
 
     </section>
 
