@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Environment Data  - DevOps - Projects & Websites - Charles Marshall</title>
+  </head>
+  <body id="droplet">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+     <section id="intro">
+      <h1>Environment Data</h1>
+      <h4 class='date'>17<sup>th</sup> Septemeber 2014</h4>
+
+<p>The <a href="https://www.docker.io">Docker</a> and <a href="https://coreos.com/">CoreOS</a> ecosystem allows for an intuitive implementation of a <a href="http://12factor.net/">twelve factor app methodology</a>; which is what we've been using as a guide for adjusting our existing SOA services. By keeping the services as agnostic as possible we can ensure our setup can be transferable to other twelve factor compatible services, such as Heroku, and adds a certain level of future-proofing.</p>
+
+<p>In both twelve factor and auto-scaling services in general keeping data fresh is a core concern of the setup. With Docker containers we can pass environment data in, so we can tell our new service if it's staging or production, where the database or redis cache is, and much more. However, this information does not get updated if it is changed on `etcd`, which could mean stale or even incorrect data inside running containers.</p>
+
+
+<p>With a small deployment setup, you can add a bash snippet to fetch and parse the data within `etcd` and convert to a compatible string variable that can be added to the `docker run` command. By reading a segment of `etcd` we can convert that information into an array, which we can then implode to a `-e` style string.</p>
+
+<script src="https://gist.github.com/charlesmarshall/2768693b9631b087e263.js"></script>
+
+<p>The functions in the bash script gives a very simple example of how to read in and convert, however it does contain some output to show you what is happening and only provides a single environment. Ideally, we would like ability to overwrite certain elements depending on application or environment mode, so we can swap databases, table names and the like to avoid data collision and isolate the application data from all others.</p>
+
+<script src="https://gist.github.com/charlesmarshall/03eca5a47a92fb8a053c.js"></script>
+
+<p>You would then have to  restart all the services that require the environment variables that have changed. If you're doing this in a staged fashion (one container at a time) then this should only give a short downtime as docker container restarts are fast. In a large deployment you may be running dozens, or even hundreds, of services, where this could cause a lot of issues and downtime.</p>
+
+<p>In those cases you will want a more advanced routing system, where your application code always uses an internal host name (eg "DB_HOST.local") that gets routed to the correct container IP address. Take a look at something like <a href="https://github.com/deis/deis/tree/master/router">Deis' router</a> code for that.</p>
+
+<p>Now we have dockerised services, mixed and overwritable environment variables, we need to evaluate them. The architecture has to meet a set of criteria focused around up-time, load and integrity. Next time we'll cover how we test and analyse elements of our setup.</p>
+
+
+    </section>
+
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

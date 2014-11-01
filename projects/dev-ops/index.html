@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>DevOps With Droplet - Projects & Websites - Charles Marshall</title>
+  </head>
+  <body id="dev-ops">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <h1>DevOps With Droplet</h1>
+      <p>While working at <a href="https://dropletpay.com">Droplet</a> my main responsibility is to create a new, modern infrastructure that provides stability, security and speed (both for the end-user and the developers). To provide this we'll be working with containerisation technology such as <a href="https://www.docker.com/">Docker</a> and systems that build on this (CoreOs for example).</p>
+
+      <p>I've written a series of technical posts about the various tech and environment tools that we now use and rough guides on how.</p>
+    </section>
+
+    <section class="feature" >
+      <h2><a href="/projects/dev-ops/overview/">Overview</a></h2>
+      <p>A quick summary of what we are looking for in a PaaS.</p>
+      <a href="/projects/dev-ops/overview/" class='button clearfix'><span class='action'>►</span><span>More</span></a>
+
+    </section>
+
+    <section class="feature" >
+      <h2><a href="/projects/dev-ops/vagrant/">Local development using vagrant</a></h2>
+      <p>We need a good way to create local versions of CoreOS and similar for fast testing and assentment; we did it with vagrant.</p>
+      <a href="/projects/dev-ops/vagrant/" class='button clearfix'><span class='action'>►</span><span>More</span></a>
+    </section>
+
+
+    <section class="feature" >
+      <h2><a href="/projects/dev-ops/cloud-config/">Configuring your cloud</a></h2>
+      <p>Informtion on how to use the standard cloud-config file for cluster configuration</p>
+      <a href="/projects/dev-ops/cloud-config/" class='button clearfix'><span class='action'>►</span><span>More</span></a>
+    </section>
+
+    <section class="feature" >
+      <h2><a href="/projects/dev-ops/dockerisation/">Docker containers</a></h2>
+      <p>Creating a Docker-based service</p>
+      <a href="/projects/dev-ops/dockerisation/" class='button clearfix'><span class='action'>►</span><span>More</span></a>
+    </section>
+
+    <section class="feature" >
+      <h2><a href="/projects/dev-ops/service-discovery/">Discovery &amp; Registration</a></h2>
+      <p>Using etcd and side kicks to announce services to the cluster</p>
+      <a href="/projects/dev-ops/service-discovery/" class='button clearfix'><span class='action'>►</span><span>More</span></a>
+    </section>
+
+
+    <section class="feature" >
+      <h2><a href="/projects/dev-ops/environment-data/">Environment Data</a></h2>
+      <p>Passing environment variables into docker services.</p>
+      <a href="/projects/dev-ops/environment-data/" class='button clearfix'><span class='action'>►</span><span>More</span></a>
+    </section>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

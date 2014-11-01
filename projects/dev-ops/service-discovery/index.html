@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Service Discovery  - DevOps - Projects & Websites - Charles Marshall</title>
+  </head>
+  <body id="droplet">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+     <section id="intro">
+      <h1>Service Registration and Discovery</h1>
+      <h4 class='date'>29<sup>th</sup> July 2014</h4>
+<p>As the old idiom goes, knowledge is power. Even in a <a href="http://en.wikipedia.org/wiki/Service-oriented_architecture">SOA</a> ecosystem running almost atomic operations, we still need to pass on a certain level of knowledge in order for them to function properly. These tend to be snippets of data about the world they are operating in; where to find the message queue, the IP address and port for the database and so on. With CoreOS we have a built in way of doing this, <code>etcd</code>.</p>
+
+<p><code>etcd</code> is a distrubted key-value store based on <a href="http://raftconsensus.github.io/">Raft</a> and is used inside CoreOS to manage information about hosts in the cluster, sofrware updates and reboot strategies. It has great features (see <a href="http://coreos.com/using-coreos/etcd/">the project page</a> for details), with TTL option being very useful and the CLI tool simple to use:</p>
+
+<pre># list all top levels<br>etcdctl ls<br># list all levels<br>etcdctl ls --recursive<br># set a simple value<br>etcdctl set /foo bar<br># remove a value<br>etcdctl rm /foo</pre>
+
+<h3>Service registration</h3>
+
+<p>As <code>etcd</code> is setup and running on all the clustered hosts, it makes sense that we should use this as are base method of service discovery and registration. We've already shown how to use <code>etcd</code> as an annoucer in our post on <a href="https://blog.dropletpay.com/droplet-infrastructure-cloud-config/">Cloud-Config</a>; where we simply push a value to etcd with TTL, so if the host goes down, then the value will vanish from etcd. </p>
+
+<p>We use this same principle for all our services, so for each <code>fleet</code> unit file we also create a 'heartbeat' file. By running inside a while loop, they constantly send values to etcd and then sleep for a short time. The key difference with these heartbeats is that they bind to the main <code>fleet</code> unit file, so instead of only stopping when the host goes down, these will stop whenever the main service file does.</p>
+
+<p>Lets see how this would work in practice by using the simple website service from previous post:<p>
+
+<script src="https://gist.github.com/charlesmarshall/72209d999146b43eb107.js"></script>
+
+<p>This service runs on a fixed external port (80, of course) which means that if another instance starts on the same host, it will fail. Being limited to a single instance per host isn't useful, so we'll need to change that by not specifiying the external port number. <code>Docker</code> will now pick its own port to use, somewhere between 49000-49900 by default:</p>
+
+<script src="https://gist.github.com/charlesmarshall/71db923774c7253196aa.js"></script>
+
+<p>Of course, now we've removed the fixed port, we'll need a way to find that out so it can be reported to <code>etcd</code>; here is a little peice of <code>bash</code> to do that:</p>
+
+<script src="https://gist.github.com/charlesmarshall/e50c00857fe7bb3af0d7.js"></script>
+<p><small>Note: you'll want to add this to a file thats loaded on to all machines in the cluster, via Cloud-Config.</small></p>
+<p>By passing in the service name and the internal port, it will echo the IP address and port number it finds from docker, which is the start of our service registration.</p>
+
+<p>To segregate our etcd data, we will keep all information about services within their own namespace area, under a <code>/services</code>. </p>
+
+<script src="https://gist.github.com/charlesmarshall/22894dd746bb4cf768e5.js"></script>
+
+<p>By using an environment file and various environment varibles we're moving in to the realm of more advanced unit files, so you may want to take a look at <a href="http://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/">a guide on using them</a>. As always, you'll need to change  some variables (<code>$pathToBashUtilitiesFile</code> and <code>$counter</code>) to their real values before you use the file.</p>
+
+<p>Once you have submitted both the <code>website.service</code> and this <code>website-heartbeat.service</code> to fleet, you can start them both. However, you may notice that the heartbeat is registering values to etcd before the service is actually running.</p>
+
+<p>As services could end up on any machine in the cluster, we added the <code>docker pull</code> command to the main unit file. This can be a heavy and time consuming action if the image we are pulling is large, which would mean the heartbeat starts to set values in etcd before the <code>docker run</code> has completed.</p>
+
+<p>Obviously, we don't want inaccurate information being added to etcd as other services might be using and reacting to the data stored on there. To adjust for this we include just one extra command to the heartbeat file:</p>
+
+<script src="https://gist.github.com/charlesmarshall/c9d92ce8c9656a08890b.js"></script>
+
+<p>Adding a <code>docker pull</code> to the chain of commands will pause, as docker has an exclusive lock on image pulls and will ensure any futher requests will wait until the current has completed. This allows us to effectively stop execution until the image has been fetched and some time for the run command before we set values in etcd.</p>
+
+<h3>Service discovery</h3>
+
+<p>Other services within our setup need to access information about others from the <code>etcd</code> key store and the two primary ways of doing this are the API or the pre-built version etcdctl. If you are running a full programming stack in your docker environments (something like ruby / python etc) then the API has a JSON format and would probably be your best bet. You can read the documentation on the <a href="http://coreos.com/docs/distributed-configuration/etcd-api/">etcd site</a>.</p>
+
+<p>To keep your docker a little slimmer, you could download the <a href="https://github.com/coreos/etcd/releases">latest release of etcd</a>, extract and use the pre-built <code>etcdctl</code> with the <code>-peers</code> option. This allows etcdctl to talk to the version operating on the location specified; in this case we'd use the host machines private IP address (which is routed correctly with the docker0 interface).</p>
+
+<p>This will allow any local bash scripts or similar to make use of <code>etcdctl get</code> to fetch values at run time from the key value store.</p>
+
+<h3>Automated changes</h3>
+
+<p>When used in conjunction with the rather useful <code>exec-watch</code> and <code>--recursive</code> CLI options, you can trigger code in a reaction to a change of value on <code>etcd</code>. By monitoring only specific parts of etcd then we can run very targeted scripts to update and adjust configuration values.</p>
+
+<p>A great example would be that of a simple load balancer. By having a docker container setup and running nginx we make use of its built in forwarding abilities. However, we'd have to adjust the heartbeat slighty:</p>
+
+
+<script src="https://gist.github.com/charlesmarshall/4efaa9f560ec0bb12c34.js"></script>
+
+<p>With a simple script to read in the values from etcdctl (via <code>etcdctl ls /domains --recursive</code> and <code>etcdctl get</code>) that can convert those to an appropriate nginx configuration file, we now have a a way to load balance between versions of websites that are running.</p>
+
+<p>As docker containers only run a single foreground command and we need to run nginx as well, its best to use a simple bash script that simply starts nginx and then sets up the exec-watch script command:</p>
+
+<pre>etcdctl -peers "$HOST:$PORT" exec-watch --recursive /domains -- ./load-balancer.sh</pre>
+
+<p>In cases where you need to run many services on a single docker, you'll want to make use of something more advanced, such as supervisor.</p>
+
+<p>We also use etcd as a way to share variables, such as a database password and third party oauth tokens, accross the cluster. With consideration for "globals", multiple environments nad application specific overwrites, we have a smart environment setup that we use to inform docker, which is what we'll cover next time.</p>
+
+    </section>
+
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

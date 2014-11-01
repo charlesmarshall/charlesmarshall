@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="droplets">
+<html lang="en" id="projects">
   <head>
 <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -37,9 +37,9 @@
     <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
 
-    <title>Overview - Droplet</title>
+    <title>DevOps - Projects & Websites - Charles Marshall</title>
   </head>
-  <body id="droplet">
+  <body>
 
     <header id="header">
       <nav id="navigation" class='clearfix'>
@@ -50,9 +50,9 @@
     </header>
 
      <section id="intro">
-      <h1>Overview</h1>
+      <h1>Droplet DevOps</h1>
       <h4 class='date'>21<sup>st</sup> April 2014</h4>
-      <p>Although it might not be obvious, Droplet is much more than a smart phone application. Behind the scenes we run an in-depth admin area, a RESTfull API, an auth process, email system, blog and more. As you can imagine, they all have different needs, different usage amounts and, of course, different peak times.</p>
+      <p>Although it might not be obvious, <a href="https://dropletpay.com">Droplet</a> is much more than a smart phone application. Behind the scenes we run an in-depth admin area, a RESTfull API, an auth process, email system, blog and more. As you can imagine, they all have different needs, different usage amounts and, of course, different peak times.</p>
       <p>We currently run these over various host machines and use a central message queue system to pass data around and communicate with other elements of our eco-system. This distributed layout allows for a good amount of flexibility and scaling, but at the moment there is still a lot of manual intervention required and can be difficult to replicate in a development environment.</p>
       <p>Over the last year or so there has been a large amount new software coming out trying to solve these kinds of infrastructure problems, even a new acronym, PaaS, to cover this sector of DevOps work. </p>
       <p>With that in mind, we decided to take a look at our internal systems and see what new technology we could use to improve ourselves. One particular piece of software, called Docker, has been the driving force behind a large number of these projects, such as Flynn, Deis and Shipyard. </p>
@@ -60,11 +60,9 @@
       <p>These PaaS tools add a level of management and distribution, allowing you to spread over multiple physical or virtualised machines. Of course, this creates another problem, how does A know about B. That is where a service discovery element is needed. There are a few of these available, such as etcd and Zookeeper. </p>
       <p>In general, these call a central point (normally a tokenised web service) to register themselves and find out what other hosts are available. Once connected, they can fetch a simple set of key value data pairs, these will normally be things to do with responsbility (which host does what) and availability (which host is online).</p>
       <p>After that, you need to direct traffic to the correct place via a 'conductor' process. This is normally some form of reverse proxy, like nginx or haproxy.</p>
-      <p>PICTURE</p>
       <p>After a lot of research and testing of various platforms, we decided to pursue a solution using CoreOS. This has etcd, docker, git, fleet and systemd built in, so a ready made OS designed for PaaS; exactly what we are looking for.</p>
       <p>It also has added benifit of having pre-built images for a large range of hosting providers including EC2 &amp; Rackspace, making it easy to use in production. Vagrant support, boxes and config files are also available, making it great for virtualised development work as well.</p>
       <p>Although this sounds simple, there is a lot more in the details, like running a docker registry and creating bash scripts for high level mangement tools.</p>
-      <p>First things first, why not have a read about how to get your local vagrant setup working nicely and cloud ready.</p>
     </section>
 
     <section>

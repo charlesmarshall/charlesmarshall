@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Environment Data  - DevOps - Projects & Websites - Charles Marshall</title>
+  </head>
+  <body id="droplet">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+     <section id="intro">
+   <p>Before even thinking about using Beta software in a production environment we need to make sure the architecture can hold up to the task. With a brand new operating system like CoreOS there are a lot of questions about performance we need try out before we can sleep soundly at night.</p>
+
+<p>With AWS being a very mature and widely adopted platform we can safely tick off most of the hardware related concerns. With the current terms and conditions, we had to let the right people know before we did any testing. If you are planning on doing high loads, you might want to enquire about <a href="https://aws.amazon.com/articles/1636185810492479#pre-warming">ELB pre-warming</a> as well.</p>
+
+<p>Load testing has been around for a long time, and there are many good tools out there for it, but the most common open-source tool is <a href="http://jmeter.apache.org/">Apache's JMeter</a>.</p>
+
+<p>The key feature we are looking to use in JMeter is its ability to run an SSL proxy to record what our application can do, then we can mimic and replay these actions later, but scaling them up in numbers.</p>
+
+<p>We will be using an iOS device, so we can install custom SSL certificates easily and use the latest version of our application.</p>
+
+<h2>Setup</h2>
+
+<p>To simulate a full end-to-end test of our CoreOS environment and new Docker based services, we want to be as close to how our user-base actually operate in real life. To do this, we use JMeter to act as a proxy and record everything the application does.</p>
+
+<p>JMeter can be intensive, as its memory and CPU usage will scale on how many concurrent threads (Users) and tests are run. To ensure we don't eat in to our testing environment, we run our tests on our own laptops.</p>
+
+<p>As a Java based piece of software we need to do some preparation work (we are mostly Ruby based) to get JMeter running.</p>
+
+<p>The main component is, of course, installing the JDK:</p>
+
+<code>sudo apt-get install openjdk-7-jre</code>
+
+<p>The version needs to be 7+ to ensure all the features we need are enabled. Once the install has finished, next we install JMeter itself (in this case, from the <a href="http://jmeter.apache.org/download_jmeter.cgi">source binaries</a>):</p>
+
+<p><code>cd $DIR ; <br>wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/jmeter/binaries/apache-jmeter-2.11.tgz ; <br>tar xvzf apache-jmeter-2.11.tgz ;<br>rm -f apache-jmeter-2.11.tgz ;</code></p>
+
+<p>This will download and extract JMeter 2.11 into <code>$DIR</code>. Once you have done that, you just need to add to your <code>$PATH</code>. Firstly, lets keep things versioned and neat by creating a symlink to a more standard directory:</p>
+
+<p><code>sudo ln -s $DIR/apache-jmeter-2.11/ /usr/local/bin/jmeter</code></p>
+
+<p>Now we need to add this to the your <code>$PATH</code>:</p>
+
+<p><code>PATH="${PATH}:/usr/local/bin/jmeter/bin" ;<br>echo "PATH=${PATH}" >> ~/.bashrc</code></p>
+
+<p>You can change <code>~/.bahrc</code> to <code>~/.profile</code> or similar depending on what your setup is.</p>
+
+<h3>Running the SSL Proxy</h3>
+
+<p>For security, our application communicates to our API via SSL, so in order to record what is going on we have to insert a middle-man with an SSL certificate that both JMeter and the device have installed. This will log all traffic, so you probably want to disable Facebook, Twitter et al so you don't get erroneous data.</p>
+
+<p>Before we start JMeter, we want to change the SSL certificate validity length, as by default it is rather short lived. Open up the <code>jmeter.properties</code> file:</p>
+
+<p><code>vim /usr/local/bin/jmeter/bin/jmeter.properties</code></p>
+
+<p>Now find <code>proxy.cert.validity</code> in the file; this is the specified in number of days, so increase that to something like 365 and save the file. You can now start JMeter with a simple command:</p>
+
+<p><code>sudo env PATH=$PATH jmeter</code><br><small>*This was run as sudo as during our testing we had issues with SSL cert creation otherwise.</</small></p>
+
+<p>You should now be presented with a GUI interface. As JMeter has hundreds of features and is a very in-depth toolset, I would recommend having a read of the various guides on how to it works (<a href="http://blazemeter.com/jmeter">Blazemeter have an extensive set</a>).</p>
+
+<p>To get started, we need a workbench with a recorder:</p>
+
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_001.png"></p>
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_002.png"></p>
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_003.png"></p>
+
+<p>With this added we can now run a proxy on our local machine on port 8888 that will record all calls except for static assets (images, css files, etc) that are excluded with a pattern match.</p>
+
+<p>To get the SSL certificate, run this test and JMeter will auto-generate a USR and CRT file and show a information message about the certificate creation.</p>
+
+<h3>Installing the SSL Certificate on an iOS Device</h3>
+
+<p>The USR and CRT files are stored in JMeters <code>bin</code> directory:</p>
+
+<p><code>/usr/local/bin/jmeter/bin/ApacheJMeterTemporaryRootCA.usr<br>/usr/local/bin/jmeter/bin/ApacheJMeterTemporaryRootCA.crt</code></p>
+
+<p>If you can see these files, then your setup has worked and the certificates have been generated correctly. At this point, stop the JMeter test to avoid accidental data collection.</p>
+
+<p>Make sure your iOS device is on the same (private) network as the machine you are testing on and is web accessible. You will need the JMeter host to be running a website, so either a default <code>nginx</code> or <code>apache</code> vhost etc that will respond based to the IP address.</p>
+
+<p>Copy the CSR and CRT files from the JMeter bin directory to the public root of your default website (remove these after) and give them a sensible name, like <code>jmeter.crt</code> etc.</p>
+
+<p>On the iOS device, open up Safari and vist the JMeter hosts IP:</p>
+
+<p><code>http://$HOST_IP/jmeter.crt</code></p>
+
+<p>This should open up a profile interface that will allow you to install the certificate on the device. Once that is installed, we can now set the device to use our JMeter host as a proxy.</p>
+
+<h3>iOS Proxy Setup</h3>
+
+<p>Go to you 'Settings' -> 'Wi-Fi', find the network you are currently attached to and click on the arrow next to it.</p>
+
+<p>At the bottom of that screen will be a section header called 'HTTP Proxy', turn this to 'Manual'. In the fields that are presented, fill in the 'Server' as the IP address of the JMeter host; for 'Port' enter 8888 (or whatever you set, some versions default to 8080) and leave authentication off. <a href="http://www.ibvpn.com/billing/knowledgebase/72/How-to-configure-proxy-usage-for-iphoneoripad.html">Here is a guide in pictures</a>, but ignore the last step about logging in.</p>
+
+<h2>Recording</h2>
+
+<p>Go back to your JMeter host and run your test again. Open up the application on the iOS device and start doing things, your actions are now being recorded!</p>
+
+<p>To view what is being recorded, expand your recorder (shortcut, press + while highlighted). You should have a list of top level calls that have been made.</p>
+
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_004.png"></p>
+
+<h3>Recorded Data</h3>
+<p>In the above we made a call to https://google.co.uk with a search query. If you select and expand the controller called "/", you can see the HTTP Requests that it generated and the contents of those requests.</p>
+
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_005.png"></p>
+
+<p>On typical web applications, or even sites that remember you in some way (like logins, shopping baskets and so on) you will normally be able to view the cookie information and any other parameterised data sent along.</p>
+
+<p>On "/" we don't see much, but if we take a look at the search call, there are many more parameters:</p>
+
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_006.png"></p>
+
+<p>This is great if you are checking for data leakage (another time, maybe), but we want to load test out setup, so we need to be able to repeat these calls many times with concurrency; to do that we will add in a 'Thread Group' and a 'Recording Controller'.</p>
+
+<h2>Applying the load</h2>
+
+<p>The thread controller enables us to specify frequency information about the request, looping, error conditions, etc and control the HTTP calls that are made. Our new test setup should look like this:</p>
+
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_007.png"></p>
+<p>Above we have modified the HTTP(S) Recorder to store results under our new 'Recording Controller', which sits under the 'Thread Group'.</p>
+
+<p>By setting values on the thread group (see image below) we can decide just how much load we want to test out.</p>
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_008.png"></p>
+
+<p>Not very hard in this case; we just want to see a working test, not cause any problems.</p>
+
+<p>Although this test runs smoothly, with no errors, it is always useful to see the results for each HTTP request so we can diagnose any that do fail, or just confirm the resulting data is as expected.</p>
+
+<h3>Viewing results</h3>
+
+<p>With a 'Result Tree' (shown below) you can view the original request, the response headers and response data.</p>
+
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_009.png"></p>
+
+<p>Sometimes this is just too much information, you may have thousands of requests and all you need to know are the basics such as failure rate and throughput.</p>
+
+<p><img src="/projects/dev-ops/stress-testing/images/rsz_010.png"></p>
+
+<p>This 'Summary Report' gives a good overview of what happened in your test without the fine detail.</p>
+
+<h2>Advanced Testing</h2>
+
+<p>These tests are very basic, they are using only a single user (via the cookie values) and although they have some concurrency, are not a real world example of load.</p>
+
+<p>Most modern applications (including ours) will have cache based on the user and the data they are asking by implementing tools such as Redis and Memcached.</p>
+
+<p>We need a more advanced test, that can modify the values stored in the cookies, allow us to swap auth tokens and split our end points in to different groups. JMeter can do this, and we'll cover that next time.</p>
+
+    </section>
+
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

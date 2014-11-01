@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" id="projects">
+  <head>
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<style>
+         .chromeFrameInstallDefaultStyle {
+           width: 800px;
+           border: 2px solid #222;
+           z-index: 99999;
+         }
+        </style>
+
+        <script>
+         // The conditional ensures that this code will only execute in IE,
+         // Therefore we can use the IE-specific attachEvent without worry
+         window.attachEvent("onload", function() {
+            if(typeof(chromeframe_disable) == "undefined") {
+               CFInstall.check({
+                 mode: "inline", // the default
+                 oninstall: function(){
+                    alert("Chrome Frame is now installed. You may need to restart your browser.");
+                 }
+               });
+            }
+         });
+
+        </script>
+<![endif]-->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/build.css" type="text/css" media="all" charset="utf-8" >
+
+    <title>Dockerisation  - DevOps - Projects & Websites - Charles Marshall</title>
+  </head>
+  <body id="droplet">
+
+    <header id="header">
+      <nav id="navigation" class='clearfix'>
+        <a href="/" class='home'>Home</a>
+        <a href="/demos/" class='demos'>Demos</a>
+        <a href="/projects/" class='projects'>Projects</a>
+      </nav>
+    </header>
+
+   <section id="intro">
+      <h1>Dockerisation</h1>
+      <h4 class='date'>22<sup>th</sup> July 2014</h4>
+
+<p><a href="https://coreos.com/">CoreOS</a> is designed to run applications via <a href="https://www.docker.com">Docker</a> containers; a pre-packaged configuration of everything the application needs. Working in isolation from one another, but sharing the system resources, they have a smaller foot print than traditional <a href="http://en.wikipedia.org/wiki/Virtual_machine">Virtual Machines</a> and can start up in milliseconds.</p>
+
+<p>Fast boot up times are very appealing when you need to scale to meet demand, but they also help with <a href="http://en.wikipedia.org/wiki/Continuous_delivery">CD</a>, <a href="http://en.wikipedia.org/wiki/Continuous_integration">CI</a> and similar methodologies. However, there is some work required to ensure you can run your code base in this way. As we already had a <a href="http://en.wikipedia.org/wiki/Service-oriented_architecture">SOA</a> system, converting to using a single service per docker container was relatively simple. It also made the most sense, as by using this approach we can scale individual elements of our application based on the demand at the time, which tends to fluctuate significantly.</p>
+
+<p>For example, if we ran daily reports at 11pm, we can, at 10.59pm, turn on two or three (or more, if needed) versions of the service until the reporting has completed. Outside of that time frame we could either run a single version or non at all. If you are using a cloud based hosting solution, such as <a href="http://aws.amazon.com/">AWS</a> or <a href="http://www.rackspace.co.uk/cloud">Rackspace</a>, this internal efficiency can make a significant difference in your costs.</p>
+
+<p>Once you're familiar with Docker and how it works (take a look <a href="https://coreos.com/docs/launching-containers/building/getting-started-with-docker/">here</a>) then its time to get started on making your own containers.</p>
+
+<h3>Running your own registry</h3>
+
+<p>A Docker registry is a central location to store pre-built docker images that are used to run a container. You can either use a paid for service (like <a href="https://quay.io">Quay.io</a>) or run a local version. As we tend to have a lot of images (from various stages of CI) running our own makes more sense</p>
+
+<p>Getting one up and running is very easy, there is a <a href="https://github.com/dotcloud/docker-registry">docker image</a> ready to use:</p>
+
+<pre>docker pull registry:latest && docker run --name registry -p 5000:5000 registry</pre>
+
+<p>This pulls down a prebuilt registry image (at the latest tag), so we don't have to build anything. However, running it like that means it won't restart if the host goes down or show up inside <code>fleetctl</code>, so only one host can see information about it, not good for a cluster setup. Instead, we should run it as a <code>fleetctl</code> unit:</p>
+
+<script src="https://gist.github.com/charlesmarshall/4a20a1e34a9cc8f34ceb.js"></script>
+
+<p>Once that file is saved that to an accessible file location, then we can submit it to <code>fleet</code>:</p>
+
+<pre>cd ~core/path/to/file && fleetctl submit registry.service</pre>
+
+<p><small>Note: the file needs to end with a .service suffix to register correctly and contain only letters, numbers and hyphens.</small></p>
+
+<p>This will add it to a list of services <code>fleetctl</code> knows about, meaning its status and location are visible to all hosts in the cluster, you see it by running:</p>
+
+<pre>fleetctl list-units</pre>
+
+<p>You will see that although the registry service is loaded, it is not active, so we need to start it with:</p>
+<pre>fleetctl start registry.service</pre>
+
+<p>This will start the service, but as this is distributed over the cluster, it could start on any available machine. This is why the <code>docker pull registry:latest</code> needs to happen inside the <code>fleet</code> unit file, to make sure it is downloaded on the machine it starts up on.</p>
+
+<h3>Creating your first service</h3>
+
+<p>Now we have a registry available, we can get started on creating a service for our application. There are a lot of offical images for standalone services, like databases and cache systems, which you can find at <a href="http://index.docker.io/">index.docker.io</a>, but if you want something more custom then you will need to build your own <code>docker image</code>.</p>
+
+<p>A <code>Dockerfile</code>, which is a set of commands (see <a href="http://docs.docker.com/reference/builder/">docs</a> or <a href="https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images">this tutorial</a>) that are used, in sequence, to create an environment and converted to an image file. Once you have a Dockerfile, then all you need to do is run the build command:</p>
+
+<pre>cd ~core/path/to/dockerfile && docker build -t $image_name .</pre>
+
+<p>Just change <code>$image_name</code> for a sensible value, as we'll be using that soon. Depending on how complicated your Dockerfile is, this may take a while to create, especially if you have any ssytem updates or downloads. Once thats completed, it will be visible in the docker image list:</p>
+
+<pre>docker images</pre>
+
+<p>Now all you have to do is run the service:</p>
+
+<pre>docker run --name $container_name -d -i $image_name $cmd</pre>
+
+<p>Subsitute out <code>$container_name</code> with a real value and change <code>$cmd</code> to the command you want to run inside the container.</p>
+
+<h3>Practical example</h3>
+
+<p>To help illustrate things I've setup a very basic, 'hello world' example <a href="https://github.com/charlesmarshall/dockerised-website">repo you can see here</a> that uses <code>nginx</code> to run a static web page. There are plenty of other examples and tutorials out there for single service containers, such as <a href="https://docs.docker.com/examples/running_redis_service/">a redis instance</a>, a database like <a href="https://docs.docker.com/examples/mongodb/">MongoDB</a> or a <a href="https://docs.docker.com/examples/nodejs_web_app/">Node.js application</a>.</p>
+
+
+<p>As before, running the service directly isn't very good in a cluster, so instead we need to run it via a unit service file. To do this, we need to push the image we made above to the registry, so are new set of commands looks like:</p>
+
+<pre>cd ~core/path/to/dockerfile && docker build -t $image_name . && docker push $registry_ip:5000/$image_name</pre>
+
+<p>This extra step allows other machines within the cluster to pull the image from our registry, but before running it replace the variables (<code>$image_name</code> and <code>$registry_ip</code>) with there real values, now we can create a <code>fleetctl</code> file that looks like this:</p>
+
+<script src="https://gist.github.com/charlesmarshall/72209d999146b43eb107.js"></script>
+
+<p>Again, before using that file, replace the variables with real values. Once you've changed those, you can submit and start the service via <code>fleet:</code></p>
+
+<pre>cd ~core/path/to/website.service && fleetctl submit website.service && fleetctl start website.service</pre>
+
+<p>If you need more versions running, you can copy the <code>website.service</code> file, change the <code>$container_name</code> to a new value, submit and start it. In practice, you want to add some scripting around this process to generate the files for you, but you now have units running in the cluster with <code>fleet</code>.</p>
+
+<p>Now things start to get more complicated when containers need to know about each other; such as a CMS based website reading from a database. Thats where service discovery and <code>etcd</code> come in, which we'll be covering next time.</p>
+    </section>
+
+
+
+    <script src='http://www.google.com/jsapi?'  type='text/javascript'></script>
+    <script type="text/javascript">google.load('jquery', '1.7');</script>
+    <script src='/javascripts/fancybox.js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-927511-5']);
+    _gaq.push(['_setDomainName', 'charlesmarshall.co.uk']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
