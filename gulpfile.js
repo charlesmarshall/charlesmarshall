@@ -18,19 +18,19 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('src/sass/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('build/sass'))
+        .pipe(gulp.dest('dist/sass'))
         .pipe(concat('style.css'))
-        .pipe(gulp.dest('build/css'));
+        .pipe(gulp.dest('dist/css'));
 });
 
 // Concatenate & Minify JS
 gulp.task('js', function() {
     return gulp.src('src/js/*.js')
-        .pipe(concat('build/js/all.js'))
+        .pipe(concat('dist/js/all.js'))
         .pipe(gulp.dest('./'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('build/js/'));
+        .pipe(gulp.dest('dist/js/'));
 });
 
 // Watch Files For Changes
@@ -40,4 +40,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'js', 'watch']);
+gulp.task('default', ['lint', 'sass', 'js']);
