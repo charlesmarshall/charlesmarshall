@@ -18,7 +18,6 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('src/sass/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('dist/sass'))
         .pipe(concat('style.css'))
         .pipe(gulp.dest('dist/css'));
 });
@@ -33,6 +32,12 @@ gulp.task('js', function() {
         .pipe(gulp.dest('dist/js/'));
 });
 
+// images
+gulp.task('images', function() {
+    return gulp.src('src/img/*')
+        .pipe(gulp.dest('dist/img/'));
+});
+
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('src/js/*.js', ['lint', 'js']);
@@ -40,4 +45,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'js']);
+gulp.task('default', ['lint', 'sass', 'js', 'images']);
