@@ -1,3 +1,16 @@
 /* normalise */
 @import 'vendor/resets.scss';
 @import 'vendor/normalize.scss';
+/* variables */
+@import "variables.scss";
+/* mixins */
+@import "mixins.scss";
+/* core styles */
+@import "modules/base.scss";
+@import "modules/animations.scss";
+@import "modules/navigation.scss";
+@import "modules/buttons.scss";
+@import "modules/hero.scss";
+@import "modules/banner.scss";
+@import "modules/featured-items.scss";
+@import "modules/intro.scss";
