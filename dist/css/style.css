@@ -502,8 +502,7 @@ body.home #logo path {
       border-bottom: 2px solid transparent;
       border-top: 2px solid transparent;
       text-transform: none; }
-      .navigation-and-logo nav a:hover,
-      .navigation-and-logo nav a .active {
+      .navigation-and-logo nav a:hover, .navigation-and-logo nav a.active {
         border-bottom-color: #2b7a78; }
 
 /**
@@ -518,8 +517,7 @@ body.home .navigation-and-logo {
   box-shadow: none; }
   body.home .navigation-and-logo nav a {
     color: #feffff; }
-    body.home .navigation-and-logo nav a:hover,
-    body.home .navigation-and-logo nav a .active {
+    body.home .navigation-and-logo nav a:hover, body.home .navigation-and-logo nav a.active {
       border-bottom-color: #feffff; }
 
 .button {

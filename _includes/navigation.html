@@ -1,10 +1,19 @@
+{% if page.categories contains "project" or page.bodyClass == "project" %}
+	{% assign projectClass = "active" %}
+{% endif %}
+
+{% if page.categories contains "client" or page.bodyClass == "client" %}
+	{% assign clientClass = "active" %}
+{% endif %}
+
+<!-- cat:  -->
 <section class='navigation-and-logo'>
 	
 	<a class="logo-container" href="/">{% include logo.svg %}</a>
 	
 	<nav>
-		<a href="/projects/" class="slab button">Projects</a>
-		<a href="/clients/" class="slab button">Clients</a>
+		<a href="/projects/" class="slab button {{ projectClass }}">Projects</a>
+		<a href="/clients/" class="slab button {{ clientClass }}">Clients</a>
 	</nav>
 	
 </section>

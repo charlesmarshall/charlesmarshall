@@ -24,7 +24,7 @@
 			text-transform: none;
 			
 			&:hover,
-			.active{
+			&.active{
 				border-bottom-color: $accentColour;
 			}
 		}
@@ -45,7 +45,7 @@ body.home .navigation-and-logo{
 	nav a{
 		color: $paleColour;
 		&:hover,
-		.active{
+		&.active{
 			border-bottom-color: $paleColour;
 		}
 	}
