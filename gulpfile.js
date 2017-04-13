@@ -41,7 +41,7 @@ gulp.task('images', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('src/js/*.js', ['lint', 'js']);
-    gulp.watch('src/sass/*.scss', ['sass']);
+    gulp.watch('src/sass/**/*.scss', ['sass']);
 });
 
 // Default Task

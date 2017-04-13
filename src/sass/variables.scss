@@ -1,0 +1,60 @@
+$breakpoints: (
+  small : 480px,
+  medium: 700px,
+  large : 1000px,
+  xlarge: 1100px
+);
+/**
+ * Base styles
+ */
+$backgroundColour: #f7f9fb;
+
+$blue: #8fc1e3;
+/**
+ * Logos
+ */
+$logoWidth: 5vw;
+
+/**
+ * Hero
+ */
+$heroHeightNormal: 70vh;
+$heroHeightSlim: 30vh;
+$heroTextWidth: 65vw;
+$heroTextMarginLeft: 10vw;
+$heroTextMarginTop: 22vh;
+/**
+ * Banners
+ */
+$bannerHeight: 45vh;
+
+/**
+ * Buttons
+ */ 
+$buttonPadding: 10px 16px;
+
+/**
+ * Container padding
+ * - top level container such as featured-services is paddingOuter
+ * - inner containers such as hero / featured service text is paddingInner
+ */
+$paddingOuter: 20px;
+$paddingInner: 20px;
+
+/**
+ * Body copy variables
+ */
+$copyMarginBottom: 2em; 
+$copyFontSize: 16px;
+$copyLineHeight: 1.6em;
+
+/**
+ * Headings
+ */
+$h3FontSize: 16px;
+
+/**
+ * Featured Items
+ */
+$featuredItemMinHeight: 240px; 
+

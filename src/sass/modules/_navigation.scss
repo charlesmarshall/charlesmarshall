@@ -1,0 +1,5 @@
+.navigation-and-logo{
+	@extend %clearfix;
+	position: relative;
+	padding: ($paddingOuter / 2) $paddingOuter;
+}

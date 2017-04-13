@@ -1,0 +1,52 @@
+*{
+	box-sizing: border-box;
+	font: inherit;
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4{
+	margin-top:0;
+	font-weight: bold;
+	
+}
+
+
+p{
+	margin-bottom: $copyMarginBottom;
+	line-height: $copyLineHeight;
+	@include fontSize($copyFontSize);
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+body,
+html{
+	background-color: $backgroundColour;
+}
+
+table{
+
+	th,
+	td{
+		text-align: left;
+		padding: ($paddingInner / 2);
+	}
+	
+	
+	th{
+		font-weight: bold;
+	}
+}
+
+strong,
+b{
+	font-weight: bold;
+}
+
+i{
+	font-style: italic;
+}

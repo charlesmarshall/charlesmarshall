@@ -1,0 +1,14 @@
+@include keyFrames(fadeIn) {
+  from 	{ opacity: 0; }
+  to	{ opacity: 1; }
+}
+
+@include keyFrames(slideIn) {
+  from  {  top: 78%; }
+  to  { top: 30%; }
+}
+
+@include keyFrames(slideOut) {
+  from  { top: 30%; }
+  to  { top: 78%; }
+}

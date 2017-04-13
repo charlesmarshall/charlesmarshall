@@ -1,0 +1,10 @@
+<!-- featured: {{ site.categories.featured | size }} -->
+{% if site.categories.featured | size > 0 %}
+	<section class='featured-items-wrapper' data-count="{{ site.categories.featured | size }}">
+		<div class='featured-items'>
+		{% for post in site.categories.featured limit:4 %}
+			{% include featured-item.html title=post.title copy=post.summary imageURL=post.thumbnail ctaLink=post.permalink ctaCopy="More" %}
+		{% endfor %}
+		</div>		
+	</section>
+{% endif %}
