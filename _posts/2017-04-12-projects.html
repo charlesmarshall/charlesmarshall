@@ -1,0 +1,21 @@
+---
+layout: main
+title: Projects
+bodyClass: projects
+permalink: "/projects/"
+summary: "Over the years I've worked on a mixture of projects in and out fo work. A selection of those projects developed in to bigger peices or interesting ideas - I list some of these below."
+heroImage: "/dist/img/cathedral.png"
+---
+
+{% include hero.html copy="Over the years I've worked on a mixture of projects in and out fo work. A selection of those projects developed in to bigger peices or interesting ideas - I list some of these below." title="Projects" imageURL="/dist/img/cathedral.png" isSlim="true" %}
+
+<section class='container'>
+	{% include featured-items.html cat="project" limit=8 %}
+</section>
+
+
+<section class='container'>
+	<h2>Archived Projects</h2>
+	<p>Over time, some of the projects become obsolete due to changes in technology, industry standards adjusting and the like. There are useful lessons that can be learnt from some older works, even if its just how not to do things!</p>
+	{% include featured-items.html cat="archived-project" limit=4 %}
+</section>

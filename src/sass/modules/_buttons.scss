@@ -4,13 +4,13 @@
 	display: inline-block;
 	padding: $buttonPadding;
 	text-decoration: none;
-	cursor: pointer;
+	text-transform: uppercase;
+	border: 1px solid;
 
 	&:hover{
 		text-decoration: none;
 		
 	}
-
 
 	&.inverted{
 		

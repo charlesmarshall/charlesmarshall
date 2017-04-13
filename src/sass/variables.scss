@@ -12,9 +12,11 @@ $breakpoints: (
  */
 $paleColour: #feffff; //body 
 $highlightColour: #3aafa9; //logo
+$highlightColourRGBA: rgba(58,175,169, 0.7);
 $headerColour: #17252a; //h1
 $accentColour: #2b7a78; // bold / strong etc
 $contrast: #def2f1;
+$contrastRGBA: rgba(222,242,241, 0.8);
 /**
  * Logos
  */
@@ -24,7 +26,7 @@ $navHeight: 40px;
  * Hero
  */
 $heroHeightNormal: 70vh;
-$heroHeightSlim: 30vh;
+$heroHeightSlim: 40vh;
 $heroTextWidth: 65vw;
 $heroTextMarginLeft: 10vw;
 $heroTextMarginTop: 22vh;
@@ -46,22 +48,27 @@ $buttonPadding: 8px 14px;
 $paddingOuter: 20px;
 $paddingInner: 20px;
 
+
+$boxShadowOuterBottom: 0px 12px 26px -6px rgba(0,0,0,0.1);
 /**
  * Body copy variables
  */
 $copyMarginBottom: 0.8em; 
-$copyFontSize: 16px;
+$copyFontSize: 18px;
 $copyLineHeight: 1.6em;
 
 /**
  * Headings
  */
-$h1FontSize: 30px;
-$h2FontSize: 24px;
+$h1FontSize: 40px;
+$h2FontSize: 28px;
 $h3FontSize: 18px;
-
+$h4FontSize: 18px;
 /**
  * Featured Items
  */
-$featuredItemMinHeight: 240px; 
+$featuredItemMinHeight: 260px; 
 
+
+$contentContainerWidth: 80%;;
+$contentContainerMaxWidth: 850px;

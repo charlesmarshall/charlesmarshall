@@ -1,0 +1,19 @@
+---
+layout: main
+title: Clients
+bodyClass: clients
+permalink: "/clients/"
+summary: "I've worked on a massive number of sites over the years for various different brands. Below is a collection of more recent."
+heroImage: "/dist/img/victoria-square.png"
+---
+
+{% include hero.html copy="I've worked on a substantial number of web sites and associated technology over the years for various different brands. Below are some of the more recent ones." title="Clients" imageURL="/dist/img/victoria-square.png" isSlim="true" %}
+
+
+<section class='client-grid' data-count="{{ site.categories.client | size }}">
+	{% for post in site.categories.client limit:8 %}
+		<img src="{{ post.logo }}" alt="{{ post.title }}" class="client">
+	{% endfor %}
+</section>
+
+

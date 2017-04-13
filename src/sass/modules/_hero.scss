@@ -1,44 +1,35 @@
 
 
-.heroes,
-.banners{
+.hero{
 	@extend %clearfix;
 	position: relative;
-}
-
-.hero,
-.banner{
-	position: relative;	
 	height: $heroHeightNormal;
 	width: 100%;
 	background: center center no-repeat;
 	background-size: cover;
-
+	color: $paleColour;
+	
 
 	&__text{
-		float:left;
 		display: block;
-		min-width: ($heroTextWidth * 0.7);
-		max-width: $heroTextWidth;
-		margin-left: $heroTextMarginLeft;
-		margin-top: $heroTextMarginTop;
 		padding: $paddingInner;
-		opacity: 0;
-
-		@include animation("fadeIn 1.5s 0.5s forwards");
-
-		p{
-			margin-bottom: 1em;
-		}
+		background-color: $highlightColourRGBA;
+		width: $contentContainerWidth;
+		max-width: $contentContainerMaxWidth;
+		margin: 20vh auto;		
+		@extend %clearfix;
 	}
 
+	&__logo{
+		display: block;
+		float: right;
+		max-width: 20%;
+	}
 
-}
-
-.banner-slim{
-	height: $heroHeightSlim;
-
-	&__text{
-		margin-top: ($heroTextMarginTop * 0.6);
+	&.slim{
+		height: $heroHeightSlim;
+		.hero__text{
+			margin-top: ($heroTextMarginTop * 0.4);
+		}
 	}
 }

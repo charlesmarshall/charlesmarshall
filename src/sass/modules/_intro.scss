@@ -3,7 +3,7 @@
 	width: 100%;
 	background: url("/dist/img/birmingham.png") no-repeat center center;
 	background-size: cover;
-	min-height: 80vh;	
+	min-height: 100vh;	
 
 	background-color: $highlightColour;
 
@@ -11,10 +11,11 @@
 	&__text{
 		display: block;
 		padding: $paddingInner;
-		background-color: rgba(222,242,241, 0.8);
-		width: 80%;
-		max-width: 600px;
+		background-color: $contrastRGBA;
+		width: $contentContainerWidth;
+		max-width: $contentContainerMaxWidth;
 		margin: 20vh auto;
+		@extend %clearfix;
 
 	}
 }

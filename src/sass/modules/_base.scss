@@ -8,7 +8,7 @@ h1,
 h2,
 h3,
 h4{
-	margin-top:0;
+	margin:0;
 }
 
 /**
@@ -16,8 +16,6 @@ h4{
  */
 h1,
 h2,
-h3,
-h4,
 .title,
 .slab{
 	font-family: 'Josefin Slab', serif;
@@ -29,17 +27,49 @@ h1,
 	@include fontSize($h1FontSize);
 }
 
+h2{
+	font-weight: 400;
+	@include fontSize($h2FontSize);
+}
+
+h3{
+	font-weight: 700;
+	@include fontSize($h3FontSize);
+}
+
+h4{
+	font-weight: 700;
+	@include fontSize($h4FontSize);
+}
+
+h3,
+h4,
 p,
 ul,
 ol,
+td,
+th,
+span,
 .sans
 {
 	font-family: 'Open Sans Condensed', serif;
 }
 
 a,
-li{
+li,
+strong,
+b,
+i,
+em{
 	font-family: inherit;
+}
+
+a{
+	transition: all 0.4s ease-out;
+
+	&:hover{
+		color: $accentColour;
+	}
 }
 
 /**
@@ -79,6 +109,21 @@ b{
 	font-weight: 700;
 }
 
-i{
+i,
+em{
 	font-style: italic;
+}
+
+
+.container{
+	padding: $paddingOuter;
+	width: $contentContainerWidth;
+	max-width: $contentContainerMaxWidth;
+	margin: auto;
+	@extend %clearfix;
+}
+
+.feature-img{
+	float: left;
+	max-width: 25%;
 }

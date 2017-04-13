@@ -1,5 +1,5 @@
 {% if include.ctaLink  %}
-	<a href="{{ include.ctaLink | prepend: site.github.url }}" class="featured-item" style="background-image: url('{{ include.imageURL | prepend: site.github.url }}');">
+	<a href="{{ include.ctaLink | prepend: site.github.url }}" class="featured-item cat-{{ include.cat }}" style="background-image: url('{{ include.imageURL | prepend: site.github.url }}');">
 		<div class="featured-item__text">
 			<h3>{{ include.title }}</h3>
 			<p>{{ include.copy }}</p>
@@ -7,7 +7,7 @@
 		</div>
 	</a>
 {% else %}
-	<div class="featured-item" style="background-image: url('{{ include.imageURL }}');">
+	<div class="featured-item cat-{{ include.cat }}" style="background-image: url('{{ include.imageURL }}');">
 		<div class="featured-item__text">
 			<h3>{{ include.title }}</h3>
 			<p>{{ include.copy }}</p>

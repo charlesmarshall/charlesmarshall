@@ -1,7 +1,0 @@
-<section class="heroes-wrapper">
-	<div class="heroes">
-		{% for post in site.categories.heroes limit:4 %}
-			{% include hero.html title=post.title copy=post.summary imageURL=post.thumbnail ctaLink=post.permalink ctaCopy="More"  %}
-		{% endfor %}
-	</div>
-</section>

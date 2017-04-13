@@ -1,22 +1,32 @@
 .navigation-and-logo{
 	@extend %clearfix;
 	position: relative;
-	padding: ($paddingOuter / 2) $paddingOuter;
+	padding: 0 $paddingOuter;
 	z-index: 10;
-	box-shadow: 0px 12px 26px -6px rgba(0,0,0,0.25);
-	height: $navHeight + $paddingOuter;
+	box-shadow: $boxShadowOuterBottom;
+	
 	
 	nav{
 		float:left;
 		display: table;
-		height: $navHeight;
+		height: $navHeight + $paddingOuter;
 		margin-left: 5%;
-
+		
 		a{
 			display: table-cell;
 			vertical-align: middle;
 			font-weight: 400;
 			@include fontSize($h3FontSize);
+			padding: ($paddingOuter / 2) $paddingOuter;
+			border-width: 0;
+			border-bottom: 2px solid transparent;
+			border-top: 2px solid transparent;
+			text-transform: none;
+			
+			&:hover,
+			.active{
+				border-bottom-color: $accentColour;
+			}
 		}
 	}
 }
@@ -34,5 +44,9 @@ body.home .navigation-and-logo{
 
 	nav a{
 		color: $paleColour;
+		&:hover,
+		.active{
+			border-bottom-color: $paleColour;
+		}
 	}
 }

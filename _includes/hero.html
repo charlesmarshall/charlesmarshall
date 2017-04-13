@@ -1,5 +1,12 @@
-<div class="hero" style="background-image: url('{{ include.imageURL | prepend: site.github.url }}');">
+{% if include.isSlim %}
+	{% assign slimClass = "slim" %}
+{% endif %}
+
+<div class="hero {{ slimClass }}" style="background-image: url('{{ include.imageURL | prepend: site.github.url }}');">
 	<div class="hero__text">
+		{% if include.logo %}
+			<img src="{{ include.logo | prepend: site.github.url }}" class="hero__logo"/>
+		{% endif %}
 		<h1>{{ include.title }}</h1>
 		<p>{{ include.copy }}</p>
 		{% if include.ctaLink and include.ctaCopy %}
@@ -7,4 +14,3 @@
 		{% endif %}
 	</div>
 </div>
-
