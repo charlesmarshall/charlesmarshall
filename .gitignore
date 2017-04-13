@@ -3,5 +3,4 @@
 Gemfile*
 _site
 build/*
-dist/*
 node_modules*
