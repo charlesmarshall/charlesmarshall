@@ -388,7 +388,8 @@ em {
 
 .feature-img {
   float: left;
-  max-width: 25%; }
+  max-width: 25%;
+  margin-right: 15px; }
 
 @-webkit-keyframes fadeIn {
   from {
@@ -551,9 +552,11 @@ body.home .navigation-and-logo {
     float: right;
     max-width: 20%; }
   .hero.slim {
-    height: 40vh; }
+    height: auto;
+    min-height: 40vh; }
     .hero.slim .hero__text {
-      margin-top: 8.8vh; }
+      margin-top: 8.8vh;
+      margin-bottom: 8.8vh; }
 
 /**
  * Uses hero scss, but with overwrites

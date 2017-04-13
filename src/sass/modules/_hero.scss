@@ -27,9 +27,13 @@
 	}
 
 	&.slim{
-		height: $heroHeightSlim;
+		height: auto;
+		min-height: $heroHeightSlim;
+		
 		.hero__text{
 			margin-top: ($heroTextMarginTop * 0.4);
+			margin-bottom: ($heroTextMarginTop * 0.4);
 		}
+
 	}
 }
