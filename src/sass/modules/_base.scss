@@ -9,10 +9,42 @@ h2,
 h3,
 h4{
 	margin-top:0;
-	font-weight: bold;
-	
 }
 
+/**
+ * fonts
+ */
+h1,
+h2,
+h3,
+h4,
+.title,
+.slab{
+	font-family: 'Josefin Slab', serif;
+}
+
+h1,
+.title{
+	font-weight: 700;
+	@include fontSize($h1FontSize);
+}
+
+p,
+ul,
+ol,
+.sans
+{
+	font-family: 'Open Sans Condensed', serif;
+}
+
+a,
+li{
+	font-family: inherit;
+}
+
+/**
+ * copy
+ */
 
 p{
 	margin-bottom: $copyMarginBottom;
@@ -25,7 +57,7 @@ p{
 
 body,
 html{
-	background-color: $backgroundColour;
+	background-color: $paleColour;
 }
 
 table{
@@ -44,7 +76,7 @@ table{
 
 strong,
 b{
-	font-weight: bold;
+	font-weight: 700;
 }
 
 i{

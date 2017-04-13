@@ -1,6 +1,6 @@
 .logo-container{
-	width: $logoWidth;
-	min-width: 40px;
+	width: $navHeight;
+	height: $navHeight;
 	display: block;
 	float: left;
 	cursor: pointer;
@@ -10,4 +10,12 @@
 	width: 100%;
 	height: 100%;
 	display: block;
+
+	path{
+		fill: $highlightColour;
+	}
+}
+
+body.home #logo path{
+	fill: $paleColour;
 }

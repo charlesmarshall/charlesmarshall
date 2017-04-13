@@ -4,16 +4,21 @@ $breakpoints: (
   large : 1000px,
   xlarge: 1100px
 );
-/**
- * Base styles
- */
-$backgroundColour: #f7f9fb;
 
-$blue: #8fc1e3;
+
+
+/**
+ * Colours
+ */
+$paleColour: #feffff; //body 
+$highlightColour: #3aafa9; //logo
+$headerColour: #17252a; //h1
+$accentColour: #2b7a78; // bold / strong etc
+$contrast: #def2f1;
 /**
  * Logos
  */
-$logoWidth: 5vw;
+$navHeight: 40px;
 
 /**
  * Hero
@@ -31,7 +36,7 @@ $bannerHeight: 45vh;
 /**
  * Buttons
  */ 
-$buttonPadding: 10px 16px;
+$buttonPadding: 8px 14px;
 
 /**
  * Container padding
@@ -44,14 +49,16 @@ $paddingInner: 20px;
 /**
  * Body copy variables
  */
-$copyMarginBottom: 2em; 
+$copyMarginBottom: 0.8em; 
 $copyFontSize: 16px;
 $copyLineHeight: 1.6em;
 
 /**
  * Headings
  */
-$h3FontSize: 16px;
+$h1FontSize: 30px;
+$h2FontSize: 24px;
+$h3FontSize: 18px;
 
 /**
  * Featured Items
