@@ -1,0 +1,29 @@
+---
+layout: main
+title: CDN Detection
+permalink: "/cdn-detector/"
+bodyClass: project
+summary: "Chrome extension to check for CDN usage."
+heroImage: "/dist/img/victoria-square.png"
+thumbnail: "/dist/img/projects/cdn.png"
+categories: project
+---
+
+
+{% include hero.html copy="Google Chrome extension to check CDN usage" title="CDN Detector" imageURL="/dist/img/victoria-square.png" isSlim="true" %}
+
+<section class='container'>
+	<p>While working on a recent web project I found the need to easily see if the a website was being cached correctly via a CDN (<a href="https://aws.amazon.com/cloudfront">AWS CloudFront</a> in this case). While I could do this easily with a quick curl command to view the headers, this was not possible for the client.</p>
+	<p>To get around this I created a Chrome extension that provides a colour coded icon and some basic info about CDN usage. When it detects a CDN hit, the icon goes green, if its a miss, it is red and the default state is grey.</p>
+
+	<p>Where possible, it provides the UTC time that the page was cached.<p>
+
+	<h2>Analytics</h2>
+	<p>At the moment, the extension uses Google Analytics to track Hits &amp; Misses, but does not pass along any other information.</p>
+
+	<p>In the next release I will add an option to disable this tracking.</p>
+
+	<h2>Going Forward</h2>
+	<p>I will add more CDN's to the list that the extension can detect and improve this page to be more of a project landing page, hopefully with metrics about CDN usage.</p>
+
+</section>
