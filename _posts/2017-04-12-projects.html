@@ -7,7 +7,7 @@ summary: "Over the years I've worked on a mixture of projects in and out fo work
 heroImage: "/dist/img/cathedral.png"
 ---
 
-{% include hero.html copy="Over the years I've worked on a mixture of projects in and out fo work. A selection of those projects developed in to bigger peices or interesting ideas - I list some of these below." title="Projects" imageURL="/dist/img/cathedral.png" isSlim="true" %}
+{% include hero.html copy=page.summary title=page.title imageURL=page.heroImage isSlim="true" logo=page.thumnbail %}
 
 <section class='container'>
 	{% include featured-items.html cat="project" limit=8 %}

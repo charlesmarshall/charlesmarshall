@@ -3,12 +3,11 @@ layout: main
 title: Clients
 bodyClass: client
 permalink: "/clients/"
-summary: "I've worked on a massive number of sites over the years for various different brands. Below is a collection of more recent."
+summary: "I've worked on a massive number of sites over the years for various different brands. Below is a collection of the more recent."
 heroImage: "/dist/img/victoria-square.png"
 ---
 
-{% include hero.html copy="I've worked on a substantial number of web sites and associated technology over the years for various different brands. Below are some of the more recent ones." title="Clients" imageURL="/dist/img/victoria-square.png" isSlim="true" %}
-
+{% include hero.html copy=page.summary title=page.title imageURL=page.heroImage isSlim="true" logo=page.thumnbail %}
 
 <section class='client-grid' data-count="{{ site.categories.client | size }}">
 	{% for post in site.categories.client limit:8 %}

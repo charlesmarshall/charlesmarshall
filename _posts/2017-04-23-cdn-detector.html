@@ -1,6 +1,6 @@
 ---
 layout: main
-title: CDN Detection
+title: CDN Detector
 permalink: "/cdn-detector/"
 bodyClass: project
 summary: "Chrome extension to check for CDN usage."
@@ -10,7 +10,7 @@ categories: project
 ---
 
 
-{% include hero.html copy="Google Chrome extension to check CDN usage" title="CDN Detector" imageURL="/dist/img/victoria-square.png" isSlim="true" %}
+{% include hero.html copy=page.summary title=page.title imageURL=page.heroImage isSlim="true" %}
 
 <section class='container'>
 	<p>While working on a recent web project I found the need to easily see if the a website was being cached correctly via a CDN (<a href="https://aws.amazon.com/cloudfront">AWS CloudFront</a> in this case). While I could do this easily with a quick curl command to view the headers, this was not possible for the client.</p>
