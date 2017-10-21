@@ -610,13 +610,15 @@ body.home .navigation-and-logo {
       width: 100%;
       margin-left: 0 !important;
       margin-right: 0 !important;
-      margin-bottom: 2em; } }
+      margin-bottom: 2em;
+      max-width: 100%; } }
   @media screen and (min-width: 700px) {
     .featured-item {
       width: 49%;
       margin-left: 0 !important;
       margin-right: 0 !important;
-      margin-bottom: 2em; }
+      margin-bottom: 2em;
+      max-width: 49%; }
       .featured-item:nth-child(odd) {
         margin-right: 2% !important; } }
   @media screen and (min-width: 1000px) {
